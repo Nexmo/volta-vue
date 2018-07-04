@@ -1,0 +1,8 @@
+src/assets
+src/docs
+src/*.vue
+src/*.js
+.babelrc
+.editorconfig
+index.html
+webpack.config.js
