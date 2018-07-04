@@ -2,19 +2,19 @@
 
 > Vue.js single file components for Vonage [Volta](https://github.com/Nexmo/volta) authored with [vue-loader](https://github.com/vuejs/vue-loader)
 
-##Getting Started with NPM
+## Getting Started with NPM
 ``` bash
 npm install @vonagevolta/vue
 ```
 
-###Fonts
+### Fonts
 Set the font variable value before loading the volta style sheet
 ``` bash
 $Vlt-font-url: '~@vonagevolta/core/fonts/';
 @import '~@vonagevolta/core/scss/volta';
 ```
 
-###Icons
+### Icons
 Icons have a dependency on [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)
 
 ``` bash
@@ -61,7 +61,7 @@ data () {
 </script>
 ```
 
-##Viewing the docs
+## Viewing the docs
 
 Clone repo
 
