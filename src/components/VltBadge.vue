@@ -1,49 +1,64 @@
 <template>
-  <div class="Vlt-badge" :class="classObject">
+  <span v-if="!dismissed" class="Vlt-badge" :class="classObject">
     <slot></slot>
-    <button v-if="dismissable" @click="dismiss()" class="Vlt-badge__dismiss"></button>
-  </div>
+    <button v-if="dismissable" @click="dismiss($event)" class="Vlt-badge__dismiss"></button>
+  </span>
 </template>
 
 <script>
-    export default {
-      name: "vlt-badge",
+  export default {
+    name: "vlt-badge",
 
-      props: {
-        color: String,
-        dismissable: Boolean,
-        large: Boolean,
-        small: Boolean
+    props: {
+      color: String,
+      dismissable: Boolean,
+      large: Boolean,
+      stacked: {
+        type: Boolean,
+        default: false
       },
+      small: Boolean
+    },
 
-      data: function() {
-        return {
-          dismissed: false
+    data: function() {
+      return {
+        dismissed: false
+      }
+    },
+
+    computed: {
+      classObject: function() {
+        let badgeColor;
+        let obj = {
+          'Vlt-badge--dismissable': this.dismissable,
+          'Vlt-badge--large': this.large,
+          'Vlt-badge--stacked': this.stacked
         }
-      },
 
-      computed: {
-        classObject: function() {
-          let badgeColor;
-          let obj = {
-            'Vlt-badge--dismissable': this.dismissable,
-            'Vlt-badge--dismissed': this.dismissed,
-            'Vlt-badge--large': this.large
-          }
-
-          if(this.color) {
-            badgeColor = `Vlt-badge--${this.color}`;
-            obj[badgeColor] = true;
-          }
-          return obj;
+        if(this.color) {
+          badgeColor = `Vlt-badge--${this.color}`;
+          obj[badgeColor] = true;
         }
-      },
+        return obj;
+      }
+    },
 
-      methods: {
-        dismiss: function() {
-          this.dismissed = true;        
-          this.$emit('dismissed');     
-        }
+    methods: {
+      dismiss (event) {
+        event.stopPropagation();
+        event.preventDefault();
+
+        this.dismissed = true; 
+        this.$emit('dismissed');
       }
     }
+  }
 </script>
+
+<style lang="scss" scoped>
+  @import "~@vonagevolta/core/scss/lib/_variables.scss";
+
+  .Vlt-badge--stacked {
+    margin-bottom: $unit1;
+  }
+</style>

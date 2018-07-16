@@ -1,6 +1,6 @@
 <template>
     <div class="Vlt-form__element" :class="[{'Vlt-form__element--big' : big}, {'Vlt-form__element--elastic': elastic}]">
-      <label v-if="!big" class="Vlt-label">{{label}} <small class="Vlt-form__element_optional" v-if="optional">(optional)</small></label>
+      <label v-if="!big && label" class="Vlt-label">{{label}} <small class="Vlt-form__element_optional" v-if="optional">(optional)</small></label>
       <slot></slot>
       <small v-if="!valid" class="Vlt-form__element__error">{{errorMessage}}</small>
   </div>
@@ -34,7 +34,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '~@vonagevolta/core/scss/lib/_variables.scss';
+  @import "~@vonagevolta/core/scss/lib/_variables.scss";
 
   .Vlt-form__element_optional {
     color: $grey-darker;

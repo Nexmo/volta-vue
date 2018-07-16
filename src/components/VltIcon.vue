@@ -1,14 +1,13 @@
 <template>
-  <svg @click="handleClick" class="Vlt-icon" :class="{'pointer': pointer, 'spin': spin, 'Vlt-icon--small': small}">
-    <use :xlink:href="'#V_Vlt-icon-' + icon" />
+  <svg @click="handleClick" :class="{'Vlt-icon': !noClass,'pointer': pointer, 'spin': spin, 'Vlt-icon--small': small}">
+    <use :xlink:href="`#V_Vlt-icon-${icon}`" />
   </svg>
 </template>
 
 <script>
-  // Need to import icon here
-  // import './folder/icon.svg';
   export default {
     name: 'vlt-icon',
+
     methods: {
       handleClick() {
         if (this.clickable) {
@@ -16,6 +15,7 @@
         }
       }
     },
+
     props: {
       icon: {
         type: String,
@@ -24,6 +24,10 @@
       clickable: {
         type: Boolean,
         default: true
+      },
+      noClass: {
+        type: Boolean,
+        default: false
       },
       pointer: {
         type: Boolean,

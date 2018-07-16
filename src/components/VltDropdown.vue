@@ -1,9 +1,9 @@
 <template>
    <div class="Vlt-dropdown" :class="{ 'Vlt-dropdown--expanded' : expanded }">
     <button class="Vlt-dropdown__btn" @click="toggleDropdown($event)">
-      {{label}}<span v-if="showSelection">:</span> 
+      <span v-if="label && (!hideLabel || !selectedOption)">{{label}}<span v-if="showSelection">:</span></span>
       <span v-if="showSelection" class="Vlt-dropdown__selection">
-        {{selectedOption}}
+        {{ property && selectedOption ? selectedOption[property] : selectedOption }}
       </span>
     </button>
     <div class="Vlt-dropdown__panel">
@@ -25,11 +25,15 @@
       name: "vlt-dropdown",
 
       props: {
+        hideLabel: {
+          type: Boolean,
+          default: false
+        },
         label: String,
         options: Array,
         property: String,
         selected: {
-          type: String,
+          type: Object | String,
           required: false
         },
         showSelection: Boolean
@@ -44,7 +48,7 @@
 
       methods: {
         bodyListener(event) {
-         
+
           this.expanded = false;
           document.removeEventListener('click', this.bodyListener);
         },
@@ -55,12 +59,16 @@
 
           if(this.expanded) {
             document.addEventListener('click', this.bodyListener);
+
+            this.$nextTick(() => {
+              this.$el.querySelector('.Vlt-dropdown__panel__content').scrollIntoView();
+            });
           }
         },
 
         selectOption(option) {
-          let selection = this.property ? option[this.property] : option;
-         
+          let selection = option;
+
           this.selectedOption = selection;
           this.$emit('input', selection);
           this.expanded = false;
@@ -70,7 +78,8 @@
 
       mounted() {
         if(!this.selected) {
-          this.selectedOption = this.options[0];          
+          this.selectedOption = this.options[0];
+          this.$emit('input', this.selectedOption);
         }
       },
 

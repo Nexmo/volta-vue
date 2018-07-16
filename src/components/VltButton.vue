@@ -1,11 +1,11 @@
 <template functional>
-  <button class="Vlt-btn Vlt-btn--no-focus" v-b-tooltip.bottom.hover="props.tooltipTitle"
-          :class="[{'Vlt-btn--icon': slots().default, 'Vlt-btn--disabled': props.disabled, 'Vlt-btn--app': props.app, 'Vlt-btn--primary': props.primary,
+  <button class="Vlt-btn Vlt-btn--no-focus" 
+          :class="[{'Vlt-btn--icon': !props.label, 'Vlt-btn--disabled': props.disabled, 'Vlt-btn--app': props.app, 'Vlt-btn--primary': props.primary,
           'Vlt-btn--secondary': props.secondary, 'Vlt-btn--destructive': props.destructive, 'Vlt-btn--tertiary': !(props.secondary || props.primary || props.destructive),
           'Vlt-btn--small': props.small, 'Vlt-btn--large': props.large}, data.staticClass, data.class]"
           v-on="listeners">
-    <v-icon v-if="props.icon" :spin="props.spin" :icon="props.icon" />
-    <slot></slot>
+    <vlt-icon v-if="props.icon" :spin="props.spin" :icon="props.icon" />
+    {{props.label}}
 	</button>
 </template>
 
@@ -32,7 +32,14 @@
         type: Boolean,
         default: false
       },
-      icon: String,
+      icon: {
+        type: String,
+        required: false
+      },
+      label: {
+        type: String,
+        required: false
+      },
       large: {
         type: Boolean,
         default: false

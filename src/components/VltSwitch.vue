@@ -1,7 +1,7 @@
-<template functional>
-  <div class="Vlt-switch" :class="{'Vlt-switch--red': props.red, 'Vlt-switch--small': props.small}">
+<template>
+  <div class="Vlt-switch" :class="{'Vlt-switch--red': red, 'Vlt-switch--small': small}">
     <label>
-      <input type="checkbox" :checked="props.checked" />
+      <input type="checkbox" v-on="inputListeners" :checked="checked" />
       <!-- Without @click.stop, click on switch will trigger 2 click events, one for the input
       and one for span.Vlt-switch__slider -->
       <span @click.stop class="Vlt-switch__slider"></span>
@@ -12,6 +12,7 @@
 <script>
   export default {
     name: 'vlt-switch',
+
     props: {
       small: {
         type: Boolean,
@@ -21,10 +22,19 @@
         type: Boolean,
         default: false
       },
-      checked: {
-        type: Boolean,
-        required: true
+      checked: Boolean
+    },
+
+    computed: {
+        inputListeners: function() {
+          let vm = this
+
+          return Object.assign({}, this.$listeners, {
+            input: function(event) {  
+              vm.$emit('input', event.target.checked);
+            }
+          })
+        }
       }
-    }
   };
 </script>

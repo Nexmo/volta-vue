@@ -45,7 +45,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '~@vonagevolta/core/scss/lib/_variables.scss';
+  @import "~@vonagevolta/core/scss/lib/_variables.scss";
 
   .Vlt-radio__hint {
     color: $grey-darker;

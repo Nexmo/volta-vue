@@ -5,7 +5,7 @@
       <input v-else :disabled="disabled" :type="type" :value="val" :id="id" v-on="inputListeners" :maxlength="maxlength" :min="min" :max="max" :placeholder="placeholder" />
       <label v-if="label">{{label}}</label>
     </div>
-    <small class="Vlt-form__element__hint">{{hint}}</small>
+    <small v-if="hint" class="Vlt-form__element__hint">{{hint}}</small>
   </div>
 </template>
 
@@ -19,9 +19,9 @@
         id: String,
         //used for big input elements
         label: String,
-        max: Number,
-        maxlength: Number,
-        min: Number,
+        max: String,
+        maxlength: String,
+        min: String,
         placeholder: String,
         textarea: {
           default: false,

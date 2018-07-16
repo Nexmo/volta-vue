@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <!--Note: maybe there will be cases is which we want the state of the modal to be remembered on close, if that happens we can move v-if and put it instead on parent elements-->
   <div class="Vlt-modal" v-if="visible" :id="id" :class="{'Vlt-modal_visible': visible, 'Vlt-modal--large': large, 'Vlt-modal--message': !!message}">
     <div class="Vlt-modal__panel" @keyup.enter="confirm" @keyup.escape="close">
@@ -28,7 +28,7 @@
   import VltIcon from './VltIcon'
 
   export default {
-    name: "vlt-modal",
+    name: "vlt-input",
 
     components: {
       VltIcon

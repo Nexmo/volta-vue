@@ -1,6 +1,7 @@
 <template>
   <div id="app">
   	<h2>Volta Vue.js API</h2>
+
   	<div v-for="component in components" class="Vlt-card">
   		<h3 class="Vlt-title--icon" :id="component.title"><vlt-icon :icon="component.icon" />{{component.title}} - {{component.html}}</h3>
 
@@ -23,15 +24,25 @@
 </template>
 
 <script>
-  import { VltIcon, VltTable } from './components';
+  import { VltBadge, VltButton, VltCheckbox, VltDropdown, VltField, VltIcon, VltInput, VltModal, VltRadio, VltSwitch, VltTable, VltTooltip } from './components';
   import VoltaIcons from '@vonagevolta/core/dist/symbol/volta-icons.svg';
 
   export default {
     name: 'app',
 
     components: {
+      VltBadge,
+      VltButton,
+      VltCheckbox,
+      VltDropdown,
+      VltField,
       VltIcon,
-      VltTable
+      VltInput,
+      VltModal,
+      VltRadio,
+      VltSwitch,
+      VltTable,
+      VltTooltip
     },
 
     data () {
@@ -71,9 +82,9 @@
       			html: 'vlt-checkbox',
       			icon: 'checkbox',
       			propertyRows: [
-		        	{ property: 'label', type: 'String' }, 
-		        	{ property: 'options', type: 'Array' },
-		        	{ property: 'property', type: 'String' },     	
+              { property: 'checked', type: 'Boolean' },  
+              { property: 'id', type: 'String' },  
+              { property: 'label', type: 'String' },  	
 		        	{ property: 'tooltip-position', type: 'String', default: 'left' },		        	
 		        	{ property: 'tooltip-title', type: 'String' }
 		        ]
@@ -83,7 +94,6 @@
       			html: 'vlt-dropdown',
       			icon: 'circle-down',     			
 		        propertyRows: [
-		        	{ property: 'checked', type: 'Boolean' }, 
 		        	{ property: 'id', type: 'String' },
 		        	{ property: 'label', type: 'String' },     	
 		        	{ property: 'selected', type: 'String', default: 'the first option in the options array' },		        	
@@ -172,7 +182,7 @@
 		        	{ property: 'name', type: 'String' }, 
 		        	{ property: 'val', type: 'String' }
 		        ]
-		    },
+		      },
       		{
       			title: 'Switch',
       			html: 'vlt-switch',
@@ -215,6 +225,8 @@
       		{ title: 'Type' },
       		{ title: 'Default' }
   			],
+        modalVisible: false,
+        username: undefined,
       	VoltaIcons,
       	VltTable
       }

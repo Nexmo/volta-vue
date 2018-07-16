@@ -11,10 +11,7 @@
       name: "vlt-tooltip",
 
       props: {
-        position: {
-          type: String,
-          default: 'left'
-        },
+        position: String,
         title: String
       },
 
@@ -30,7 +27,7 @@
                       <div class="tooltip-inner Vlt-tooltip__content"></div>
                     </div>`, 
           title: this.title,
-          placement: this.position
+          placement: this.position || "left"
         });
       }
     }
