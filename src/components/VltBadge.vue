@@ -32,6 +32,7 @@
         let obj = {
           'Vlt-badge--dismissable': this.dismissable,
           'Vlt-badge--large': this.large,
+          'Vlt-badge--small': this.small,
           'Vlt-badge--stacked': this.stacked
         }
 
