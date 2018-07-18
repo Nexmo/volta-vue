@@ -5,11 +5,11 @@
  			:class="{ 'Vlt-tabs__link_active' : index === activeTab, 'Vlt-tabs__link_disabled': tab.disabled }" >
  			<vlt-icon v-if="tab.iconName && !hasIcons" :icon="tab.iconName" no-class />
  			
- 			<vlt-tooltip :title="tab.name" v-if="hasIcons">
+ 			<vlt-tooltip :title="tab.label" v-if="hasIcons">
  				<vlt-icon :icon="tab.iconName" no-class />
  			</vlt-tooltip>
 		
- 			<span v-else>{{ tab.name }}</span>
+ 			<span v-else>{{ tab.label }}</span>
  		</li>
   	</ul>
   	<div class="Vlt-tabs__content">

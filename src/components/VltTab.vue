@@ -11,7 +11,7 @@
     props: {
       disabled: Boolean,
       icon: String,
-      name: String,
+      label: String,
     },
 
     data() {
