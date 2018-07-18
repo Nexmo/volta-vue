@@ -69,27 +69,27 @@
 
     methods: {
       close () {
-        this.$emit('close');
+        this.$emit('close')
       },
 
       confirm () {
-        this.$emit('confirm');
+        this.$emit('confirm')
       },
 
       extraBtnClick () {
-        this.$emit('extraBtnClick');
+        this.$emit('extraBtnClick')
       },
 
       getCancelText () {
-        return this.canCancel ? this.cancelText ? this.cancelText : 'Cancel' : null;
+        return this.canCancel ? this.cancelText ? this.cancelText : 'Cancel' : null
       },
 
       getOkText () {
-        return this.okText ? this.okText : 'Ok';
+        return this.okText ? this.okText : 'Ok'
       },
 
       getPrimaryBtnClass() {
-        return this.destructive ? 'Vlt-btn--destructive' : 'Vlt-btn--secondary';
+        return this.destructive ? 'Vlt-btn--destructive' : 'Vlt-btn--secondary'
       }
     },
 

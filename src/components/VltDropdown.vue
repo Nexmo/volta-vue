@@ -49,19 +49,19 @@
       methods: {
         bodyListener(event) {
 
-          this.expanded = false;
-          document.removeEventListener('click', this.bodyListener);
+          this.expanded = false
+          document.removeEventListener('click', this.bodyListener)
         },
 
         toggleDropdown(event) {
-          event.stopPropagation();
-          this.expanded = !this.expanded;
+          event.stopPropagation()
+          this.expanded = !this.expanded
 
           if(this.expanded) {
-            document.addEventListener('click', this.bodyListener);
+            document.addEventListener('click', this.bodyListener)
 
             this.$nextTick(() => {
-              this.$el.querySelector('.Vlt-dropdown__panel__content').scrollIntoView();
+              this.$el.querySelector('.Vlt-dropdown__panel__content').scrollIntoView()
             });
           }
         },
@@ -69,23 +69,23 @@
         selectOption(option) {
           let selection = option;
 
-          this.selectedOption = selection;
-          this.$emit('input', selection);
-          this.expanded = false;
-          document.removeEventListener('click', this.bodyListener);
+          this.selectedOption = selection
+          this.$emit('input', selection)
+          this.expanded = false
+          document.removeEventListener('click', this.bodyListener)
         }
       },
 
       mounted() {
         if(!this.selected) {
-          this.selectedOption = this.options[0];
-          this.$emit('input', this.selectedOption);
+          this.selectedOption = this.options[0]
+          this.$emit('input', this.selectedOption)
         }
       },
 
       watch: {
         selected(selected) {
-          this.selectedOption = selected;
+          this.selectedOption = selected
         }
       }
     }

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import VltIcon from './VltIcon';
+  import VltIcon from './VltIcon'
 
   export default {
     name: 'vlt-button',

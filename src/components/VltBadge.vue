@@ -37,20 +37,20 @@
         }
 
         if(this.color) {
-          badgeColor = `Vlt-badge--${this.color}`;
-          obj[badgeColor] = true;
+          badgeColor = `Vlt-badge--${this.color}`
+          obj[badgeColor] = true
         }
-        return obj;
+        return obj
       }
     },
 
     methods: {
       dismiss (event) {
-        event.stopPropagation();
-        event.preventDefault();
+        event.stopPropagation()
+        event.preventDefault()
 
-        this.dismissed = true; 
-        this.$emit('dismissed');
+        this.dismissed = true
+        this.$emit('dismissed')
       }
     }
   }

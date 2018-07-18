@@ -32,7 +32,7 @@
 
       computed: {
         inputListeners: function() {
-          let vm = this;
+          let vm = this
 
           return Object.assign({}, this.$listeners, {
             input: function(event) {  

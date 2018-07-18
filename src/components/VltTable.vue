@@ -82,48 +82,48 @@
 
         computed: {
             visibleRows() {
-                if (!this.pagination) return this.newRows;
+                if (!this.pagination) return this.newRows
 
-                const currentPage = this.newCurrentPage;
+                const currentPage = this.newCurrentPage
 
                 if (this.newRows.length <= this.pageSize) {
                     return this.newRows;
                 } else {
                     const start = (currentPage - 1) * this.pageSize;
                     const end = parseInt(start, 10) + parseInt(this.pageSize, 10);
-                    return this.newRows.slice(start, end);
+                    return this.newRows.slice(start, end)
                 }
             },
 
            pages() {
-              const left = Math.max(1, this.currentPage - 1);
-              const right = Math.min(this.currentPage + 1, this.newRowsTotal / this.pageSize);
+              const left = Math.max(1, this.currentPage - 1)
+              const right = Math.min(this.currentPage + 1, this.newRowsTotal / this.pageSize)
 
-              const pages = [];
-              let vm = this;
+              const pages = []
+              let vm = this
               for (let i = left; i <= right; i++) {
                   pages.push({
                       number: i,
                       click: (event) => {
-                          this.pageChanged(i);
+                          this.pageChanged(i)
                           // Set focus on element to keep tab order
-                          this.$nextTick(() => event.target.focus());
+                          this.$nextTick(() => event.target.focus())
                       }
                   })
               }
-              return pages;
+              return pages
           }
         },
 
         watch: {
             rows(newRows) {
-              this.newRows = newRows;             
-              this.sort(this.currentSortColumn, true);        
-              this.newRowsTotal = newRows.length;
+              this.newRows = newRows
+              this.sort(this.currentSortColumn, true)      
+              this.newRowsTotal = newRows.length
             },
 
             currentPage(newCurrentPage) {
-                this.newCurrentPage = newCurrentPage;
+                this.newCurrentPage = newCurrentPage
             }
         },
 
@@ -131,12 +131,12 @@
             sortBy(array, property, isAsc) {
 
                 let sorted = [...array].sort((a, b) => {
-                    let aVal = a[property];
-                    let bVal = b[property];
+                    let aVal = a[property]
+                    let bVal = b[property]
 
-                    if (!aVal && aVal !== 0) return 1;
-                    if (!bVal && bVal !== 0) return -1;
-                    if (aVal === bVal) return 0;
+                    if (!aVal && aVal !== 0) return 1
+                    if (!bVal && bVal !== 0) return -1
+                    if (aVal === bVal) return 0
 
                     aVal = (typeof aVal === 'string')
                         ? aVal.toUpperCase()
@@ -148,21 +148,21 @@
 
                     return isAsc
                         ? aVal > bVal ? 1 : -1
-                        : aVal > bVal ? -1 : 1;
+                        : aVal > bVal ? -1 : 1
                 });
 
-                return sorted;
+                return sorted
             },
 
             sort(column, updatingData = false) {
-                if (!column || !column.sortable) return;
+                if (!column || !column.sortable) return
 
                 if (!updatingData) {
-                    if(!this.isAsc) this.isAsc = true;
+                    if(!this.isAsc) this.isAsc = true
                     else {
                       this.isAsc = column === this.currentSortColumn
                         ? !this.isAsc 
-                        : true;
+                        : true
                     }
                     
                 }
@@ -171,16 +171,16 @@
                     column.property,
                     this.isAsc
                 )
-                this.currentSortColumn = column;
+                this.currentSortColumn = column
             },
 
             clickRow(row) {
-                this.$emit('click', row);
+                this.$emit('click', row)
             },
 
             pageChanged(page) {
-                this.newCurrentPage = page;
-                this.$emit('page-change', this.newCurrentPage);
+                this.newCurrentPage = page
+                this.$emit('page-change', this.newCurrentPage)
             }
         }
     }

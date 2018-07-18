@@ -50,23 +50,23 @@
     },
 
     mounted(){
-    	this.activeTab = this.activeIndex;
-    	this.updateTabsActive();
-    	this.hasIcons = this.icon;
+    	this.activeTab = this.activeIndex
+    	this.updateTabsActive()
+    	this.hasIcons = this.icon
     },
 
     methods: {
     	selectTab(index) {
-    		this.activeTab = index;
-    		this.updateTabsActive();  		
+    		this.activeTab = index
+    		this.updateTabsActive() 		
     	},
 
     	updateTabsActive(){
     		this.tabs.forEach((tab, i) => {
     			if(this.activeTab === i) {
-    				tab.activate();
+    				tab.activate()
     			} else {
-    				tab.deactivate();
+    				tab.deactivate()
     			}
     		});
     	}	
@@ -74,8 +74,8 @@
 
     watch: {
     	activeIndex(newIndex) {
-    		this.activeTab = activeIndex;
-    		this.updateTabsActive();
+    		this.activeTab = activeIndex
+    		this.updateTabsActive()
     	}
     }
   }

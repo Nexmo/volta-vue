@@ -31,7 +31,7 @@
 
           return Object.assign({}, this.$listeners, {
             input: function(event) {  
-              vm.$emit('input', event.target.checked);
+              vm.$emit('input', event.target.checked)
             }
           })
         }
