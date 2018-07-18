@@ -1,5 +1,5 @@
 <template>
-  <div class="Vlt-checkbox">
+  <div class="Vlt-checkbox" :class="{ 'Vlt-checkbox--inline': inline }">
     <label>
       <span class="Vlt-checkbox__button">
         <input type="checkbox" :id="id" v-on="inputListeners" :checked="checked"/>
@@ -19,6 +19,10 @@
     props: {
       checked: Boolean, 
       id: String,
+      inline: {
+        type: Boolean,
+        default: false
+      },
       label: String,
       tooltipPosition: {
         type: String,
