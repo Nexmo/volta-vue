@@ -2,7 +2,7 @@
   <div class="Vlt-radio" :class="{ 'Vlt-radio--inline': inline }">
     <label>
       <span class="Vlt-radio__button">
-        <input type="radio" :value="val" :name="name" :checked="checked" v-on="inputListeners"/>
+        <input type="radio" :value="val" :disabled="disabled" :name="name" :checked="checked" v-on="inputListeners"/>
         <span class="Vlt-radio__icon"></span>
       </span>
       <span>
@@ -19,6 +19,10 @@
 
       props: {
         checked: Boolean,
+        disabled: {
+          type: Boolean,
+          default: false
+        },
         hint: String,
         inline: {
           type: Boolean,
