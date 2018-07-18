@@ -20,7 +20,8 @@
 </template>
 
 <script>
-  import { VltIcon, VltTooltip } from './index';
+  import VltIcon from './VltIcon'
+  import VltTooltip from './VltTooltip'
 
   export default {
     name: 'vlt-tabs',

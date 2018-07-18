@@ -1,0 +1,200 @@
+<template>
+  <div>
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Badge</h4>
+        <div>
+          <vlt-badge>I'm a badge</vlt-badge> <vlt-badge large>I'm a large badge</vlt-badge> <vlt-badge small>I'm a small badge</vlt-badge> <vlt-badge color="red">I'm a red badge</vlt-badge>
+        </div>
+      </div>    
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Button</h4>
+        <div>
+          <vlt-button primary label="Primary" /> <vlt-button secondary label="Secondary" /> <vlt-button tertiary label="Tertiary" /> <vlt-button tertiary icon="bin" label="Icon" /> <vlt-button tertiary app label="App" /> 
+        </div>
+      </div>    
+    </div>
+  
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Checkbox</h4>
+        <div>
+          <vlt-checkbox inline label="Check me!"/> <vlt-checkbox checked inline label="I'm already checked!"/> <vlt-checkbox disabled inline label="I'm disabled!"/>
+        </div>
+      </div>    
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Dropdown</h4>
+        <div>
+          <vlt-dropdown label="Favourite pet" :options="['cat', 'dog', 'hamster', 'rabbit']"/>
+          <vlt-dropdown show-selection label="Favourite pet" :options="['cat', 'dog', 'hamster', 'rabbit']"/>
+        </div>
+      </div>    
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Field</h4>
+        <div>
+          <vlt-field>
+            I am wrapped in a field
+          </vlt-field>
+        </div>
+      </div>    
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Icon</h4>
+        <div>
+          <vlt-icon icon="volume" /> <vlt-icon small icon="volume" />
+        </div>
+      </div>    
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Input</h4>
+        <div>
+          <vlt-field big>
+            <vlt-input label="Label on input" placeholder="I'm wrapped with a big field"/>
+          </vlt-field>  
+          <vlt-field label="Label on field">
+            <vlt-input placeholder="I'm wrapped with a regular field"/>
+          </vlt-field>        
+        </div>
+      </div>    
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Modal</h4>
+        <div>
+          <vlt-button secondary app label="Mesasge modal" @click="modalVisible = true"></vlt-button> 
+          <vlt-modal message="You can dismiss me" title="Hello" :visible="modalVisible" @close="modalVisible = false" @confirm="modalVisible = false">
+          </vlt-modal>   
+
+          <vlt-button secondary app label="Large modal" @click="modalLargeVisible = true"></vlt-button> 
+          <vlt-modal large title="Hello" :visible="modalLargeVisible" @close="modalLargeVisible = false" @confirm="modalLargeVisible = false">
+            <vlt-field label="First name">
+              <vlt-input />
+            </vlt-field>
+            <vlt-field label="Last name" >
+              <vlt-input />
+            </vlt-field>
+          </vlt-modal>    
+        </div>
+      </div>    
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Radio</h4>
+        <div>
+          <vlt-radio inline disabled name="animal" label="Cat"/>  <vlt-radio inline name="animal" label="Dog"/> <vlt-radio inline name="animal" label="Rabbit"/>      
+        </div>
+      </div>    
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Switch</h4>
+        <div>
+          <vlt-switch/> <vlt-switch small/>  <vlt-switch red/>      
+        </div>
+      </div>    
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Table</h4>
+        <div>
+          <vlt-table :columns="[{ title: 'Name' }, { title: 'Job' }]" :rows="[{ name: 'Rasmus  Nichols', job: 'Baker'}, { name: 'Sandra  Jackson', job: 'Engineer'}]">
+            <template slot="item" slot-scope="slotProps">
+              <td>{{ slotProps.item.name }}</td>
+              <td>{{ slotProps.item.job }}</td>
+            </template>
+          </vlt-table>     
+        </div>
+      </div>    
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Tabs</h4>
+        <div>
+          <vlt-tabs>
+            <vlt-tab label="Regular">
+              Regular tab
+            </vlt-tab>
+            <vlt-tab label="With icon" icon="gear">
+              With label
+            </vlt-tab>
+            <vlt-tab label="Disabled">
+            </vlt-tab>
+          </vlt-tabs>   
+
+          <vlt-tabs icon>
+            <vlt-tab label="One" icon="rocket">
+              Step One
+            </vlt-tab>
+            <vlt-tab label="Two" icon="star">
+              Step Two
+            </vlt-tab>
+            <vlt-tab label="Disabled" icon="cart">
+            </vlt-tab>
+          </vlt-tabs> 
+        </div>
+      </div>    
+    </div>
+
+     <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Tooltip</h4>
+        <div>
+          <vlt-tooltip title="I have a default icon" />  
+          <vlt-tooltip title="I have text">Hover on me</vlt-tooltip>  
+          <vlt-tooltip position="bottom" title="I have my position set to bottom" />     
+        </div>
+      </div>    
+    </div>
+
+	</div>
+</template>
+
+<script>
+  import { VltBadge, VltButton, VltCheckbox, VltDropdown, VltField, VltIcon, VltInput, VltModal, VltRadio, VltSwitch, VltTabs, VltTab, VltTable, VltTooltip } from '../components';
+
+  export default {
+    name: 'volta-vue-demo',
+
+    components: {
+      VltBadge,
+      VltButton,
+      VltCheckbox,
+      VltDropdown,
+      VltField,
+      VltIcon,
+      VltInput,
+      VltModal,
+      VltRadio,
+      VltSwitch,
+      VltTab,
+      VltTabs,
+      VltTable,
+      VltTooltip
+    },
+
+    data() {
+      return {
+        modalVisible: false,
+        modalLargeVisible: false
+      }
+    }
+  }
+</script>
