@@ -15,8 +15,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="row in visibleRows" @click="clickRow(row)">  
-            <slot name="item" :item="row"></slot>
+          <tr v-for="(row, index) in visibleRows" @click="clickRow(row)">  
+            <slot name="item" :item="row" :index="index"></slot>
           </tr>
         </tbody>
       </table>
