@@ -2,7 +2,7 @@
   <div class="Vlt-checkbox" :class="{ 'Vlt-checkbox--inline': inline }">
     <label>
       <span class="Vlt-checkbox__button">
-        <input type="checkbox" :id="id" v-on="inputListeners" :checked="checked"/>
+        <input type="checkbox" :id="id" v-on="inputListeners" :checked="checked" :disabled="disabled"/>
         <span class="Vlt-checkbox__icon"></span>
       </span>
       {{label}} <vlt-tooltip v-if="tooltipTitle" :position="tooltipPosition" :title="tooltipTitle" />
@@ -18,6 +18,10 @@
 
     props: {
       checked: Boolean, 
+      disabled: {
+        type: Boolean,
+        default: false
+      },
       id: String,
       inline: {
         type: Boolean,
