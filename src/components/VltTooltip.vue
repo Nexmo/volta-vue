@@ -1,6 +1,8 @@
 <template>
   <span class="Vlt-tooltip">
-    <vlt-icon class="Vlt-blue" icon="help-negative" small></vlt-icon>
+    <slot>
+      <vlt-icon class="Vlt-blue" icon="help-negative" small></vlt-icon>
+    </slot>
   </span>
 </template>
 <script>
