@@ -1,5 +1,5 @@
 <template>
-  <div class="Vlt-tabs__panel" :class="{ 'Vlt-tabs__panel_active' : active }">
+  <div class="Vlt-tabs__panel" :class="{ 'Vlt-tabs__panel_active': active, 'Vlt-tabs__panel_disabled': disabled }">
  	<slot></slot>
   </div>
 </template>

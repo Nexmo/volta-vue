@@ -135,7 +135,7 @@
             <vlt-tab label="With icon" icon="gear">
               With label
             </vlt-tab>
-            <vlt-tab label="Disabled">
+            <vlt-tab label="Disabled" disabled>
             </vlt-tab>
           </vlt-tabs>   
 
@@ -146,7 +146,7 @@
             <vlt-tab label="Two" icon="star">
               Step Two
             </vlt-tab>
-            <vlt-tab label="Disabled" icon="cart">
+            <vlt-tab label="Disabled" icon="cart" disabled>
             </vlt-tab>
           </vlt-tabs> 
         </div>
