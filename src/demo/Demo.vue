@@ -159,7 +159,7 @@
         <div>
           <vlt-tooltip title="I have a default icon" />  
           <vlt-tooltip title="I have text">Hover on me</vlt-tooltip>  
-          <vlt-tooltip position="bottom" title="I have my position set to bottom" />     
+          <vlt-tooltip position="top" title="I have my position set to top" />     
         </div>
       </div>    
     </div>
