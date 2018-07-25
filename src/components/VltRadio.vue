@@ -2,7 +2,14 @@
   <div class="Vlt-radio" :class="{ 'Vlt-radio--inline': inline }">
     <label>
       <span class="Vlt-radio__button">
-        <input type="radio" :value="val" :disabled="disabled" :name="name" :checked="checked" v-on="inputListeners"/>
+        <input
+          type="radio"
+          :checked="checked"
+          :disabled="disabled"
+          :name="name"
+          :value="val"
+          v-on="inputListeners"
+        />
         <span class="Vlt-radio__icon"></span>
       </span>
       <span>
@@ -14,46 +21,45 @@
 </template>
 
 <script>
-    export default {
-      name: "vlt-radio",
+export default {
+  name: 'vlt-radio',
 
-      props: {
-        checked: Boolean,
-        disabled: {
-          type: Boolean,
-          default: false
+  props: {
+    checked: Boolean,
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    hint: String,
+    inline: {
+      type: Boolean,
+      default: false,
+    },
+    label: String,
+    name: String,
+    // need to use 'val' so we can emit the value to the parent, value does not work with v-model
+    val: String,
+  },
+
+  computed: {
+    inputListeners() {
+      const vm = this;
+
+      return Object.assign({}, this.$listeners, {
+        input(event) {
+          vm.$emit('input', event.target.value);
         },
-        hint: String,
-        inline: {
-          type: Boolean,
-          default: false
-        },
-        label: String,
-        name: String,
-        //need to use 'val' so we can emit the value to the parent, value does not work with v-model
-        val: String
-      },
-
-      computed: {
-        inputListeners: function() {
-          let vm = this
-
-          return Object.assign({}, this.$listeners, {
-            input: function(event) {  
-              vm.$emit('input', event.target.value)
-            }
-          })
-        }
-      }
-    }
+      });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-  @import "~@vonagevolta/core/scss/lib/_variables.scss";
+@import '~@vonagevolta/core/scss/lib/_variables.scss';
 
-  .Vlt-radio__hint {
-    color: $grey-darker;
-    display: flex;
-  }
-
+.Vlt-radio__hint {
+  color: $grey-darker;
+  display: flex;
+}
 </style>
