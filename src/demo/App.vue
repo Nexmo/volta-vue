@@ -6,7 +6,7 @@
       <vlt-tab label="Demo" icon="cursor">
         <volta-vue-demo />
       </vlt-tab>
-      
+
       <vlt-tab label="API" icon="rocket">
         <div v-for="component in components" class="Vlt-card">
           <h3 class="Vlt-title--icon" :id="component.title"><vlt-icon :icon="component.icon" />{{component.title}} - {{component.html}}</h3>
@@ -27,14 +27,14 @@
           </vlt-table>
         </div>
       </vlt-tab>
-    </vlt-tabs>  	
+    </vlt-tabs>
 	</div>
 </template>
 
 <script>
   import { VltIcon, VltTabs, VltTab, VltTable } from '../components';
   import Components from './data';
-  import VoltaVueDemo from './demo';
+  import VoltaVueDemo from './Demo';
   import VoltaIcons from '@vonagevolta/core/dist/symbol/volta-icons.svg';
 
   export default {
@@ -49,10 +49,10 @@
     },
 
     data () {
-      return { 
+      return {
       	components: [],
       	eventColumns: [
-      		{ title: 'Event' }, 
+      		{ title: 'Event' },
       		{ title: 'Description' }
       	],
       	propertyColumns: [
@@ -78,6 +78,6 @@ $Vlt-font-url: '~@vonagevolta/core/fonts/';
 
 body {
   background: $grey-lighter;
-  padding: $unit2 $unit3	
+  padding: $unit2 $unit3
 }
 </style>
