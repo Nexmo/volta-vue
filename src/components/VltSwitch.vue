@@ -10,31 +10,31 @@
 </template>
 
 <script>
-  export default {
-    name: 'vlt-switch',
+export default {
+  name: 'vlt-switch',
 
-    props: {
-      small: {
-        type: Boolean,
-        default: false
-      },
-      red: {
-        type: Boolean,
-        default: false
-      },
-      checked: Boolean
+  props: {
+    small: {
+      type: Boolean,
+      default: false,
     },
+    red: {
+      type: Boolean,
+      default: false,
+    },
+    checked: Boolean,
+  },
 
-    computed: {
-        inputListeners: function() {
-          let vm = this
+  computed: {
+    inputListeners() {
+      const vm = this;
 
-          return Object.assign({}, this.$listeners, {
-            input: function(event) {  
-              vm.$emit('input', event.target.checked)
-            }
-          })
-        }
-      }
-  };
+      return Object.assign({}, this.$listeners, {
+        input(event) {
+          vm.$emit('input', event.target.checked);
+        },
+      });
+    },
+  },
+};
 </script>

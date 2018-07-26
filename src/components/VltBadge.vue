@@ -6,60 +6,60 @@
 </template>
 
 <script>
-  export default {
-    name: "vlt-badge",
+export default {
+  name: 'vlt-badge',
 
-    props: {
-      color: String,
-      dismissable: Boolean,
-      large: Boolean,
-      stacked: {
-        type: Boolean,
-        default: false
-      },
-      small: Boolean
+  props: {
+    color: String,
+    dismissable: Boolean,
+    large: Boolean,
+    stacked: {
+      type: Boolean,
+      default: false,
     },
+    small: Boolean,
+  },
 
-    data: function() {
-      return {
-        dismissed: false
+  data() {
+    return {
+      dismissed: false,
+    };
+  },
+
+  computed: {
+    classObject() {
+      let badgeColor;
+      const obj = {
+        'Vlt-badge--dismissable': this.dismissable,
+        'Vlt-badge--large': this.large,
+        'Vlt-badge--small': this.small,
+        'Vlt-badge--stacked': this.stacked,
+      };
+
+      if (this.color) {
+        badgeColor = `Vlt-badge--${this.color}`;
+        obj[badgeColor] = true;
       }
+      return obj;
     },
+  },
 
-    computed: {
-      classObject: function() {
-        let badgeColor;
-        let obj = {
-          'Vlt-badge--dismissable': this.dismissable,
-          'Vlt-badge--large': this.large,
-          'Vlt-badge--small': this.small,
-          'Vlt-badge--stacked': this.stacked
-        }
+  methods: {
+    dismiss(event) {
+      event.stopPropagation();
+      event.preventDefault();
 
-        if(this.color) {
-          badgeColor = `Vlt-badge--${this.color}`
-          obj[badgeColor] = true
-        }
-        return obj
-      }
+      this.dismissed = true;
+      this.$emit('dismissed');
     },
-
-    methods: {
-      dismiss (event) {
-        event.stopPropagation()
-        event.preventDefault()
-
-        this.dismissed = true
-        this.$emit('dismissed')
-      }
-    }
-  }
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-  @import "~@vonagevolta/core/scss/lib/_variables.scss";
+@import '~@vonagevolta/core/scss/lib/_variables.scss';
 
-  .Vlt-badge--stacked {
-    margin-bottom: $unit1;
-  }
+.Vlt-badge--stacked {
+  margin-bottom: $unit1;
+}
 </style>

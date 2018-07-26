@@ -13,9 +13,9 @@
         v-else
         :disabled="disabled"
         :id="id"
+        :max="max"
         :maxlength="maxlength"
         :min="min"
-        :max="max"
         :placeholder="placeholder"
         :type="type"
         :value="val"
@@ -28,44 +28,40 @@
 </template>
 
 <script>
-    export default {
-      name: "vlt-input",
+export default {
+  name: 'vlt-input',
 
-      props: {
-        disabled: Boolean,
-        hint: String,
-        id: String,
-        //used for big input elements
-        label: String,
-        max: String,
-        maxlength: String,
-        min: String,
-        placeholder: String,
-        rows: {
-          type: Number,
-          required: false
-        },
-        textarea: {
-          default: false,
-          type: Boolean
-        },
-        type: {
-          default: "text",
-          type: String
-        },
-        val: String|Number
-      },
+  props: {
+    disabled: Boolean,
+    hint: String,
+    id: String,
+    // used for big input elements
+    label: String,
+    max: String,
+    maxlength: String,
+    min: String,
+    placeholder: String,
+    textarea: {
+      default: false,
+      type: Boolean,
+    },
+    type: {
+      default: 'text',
+      type: String,
+    },
+    val: String || Number,
+  },
 
-      computed: {
-        inputListeners: function() {
-          let vm = this
+  computed: {
+    inputListeners() {
+      const vm = this;
 
-          return Object.assign({}, this.$listeners, {
-            input: function(event) {
-              vm.$emit('input', event.target.value)
-            }
-          })
-        }
-      }
-    }
+      return Object.assign({}, this.$listeners, {
+        input(event) {
+          vm.$emit('input', event.target.value);
+        },
+      });
+    },
+  },
+};
 </script>
