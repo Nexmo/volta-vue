@@ -73,6 +73,7 @@ const Components = [
     propertyRows: [
       { property: 'icon', type: 'String' },
       { property: 'clickable', type: 'Boolean', default: false },
+      { property: 'color', type: 'String' },
       { property: 'no-class', type: 'Boolean', default: false },
       { property: 'pointer', type: 'Boolean', default: false },
       { property: 'spin', type: 'Boolean', default: false },

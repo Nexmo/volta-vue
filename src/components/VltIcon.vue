@@ -1,10 +1,14 @@
 <template>
-  <svg @click="handleClick" :class="{
-    'Vlt-icon': !noClass,
-    'pointer': pointer,
-    'spin': spin,
-    'Vlt-icon--small': small
-  }">
+  <svg
+    @click="handleClick"
+    :class="{
+      'Vlt-icon': !noClass,
+      'pointer': pointer,
+      'spin': spin,
+      'Vlt-icon--small': small
+    }"
+    :stroke="color"
+  >
     <use :xlink:href="`#V_Vlt-icon-${icon}`" />
   </svg>
 </template>
@@ -29,6 +33,9 @@ export default {
     clickable: {
       type: Boolean,
       default: true,
+    },
+    color: {
+      type: String,
     },
     noClass: {
       type: Boolean,
