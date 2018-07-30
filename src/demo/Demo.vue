@@ -186,6 +186,16 @@
 
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
+        <h4>Steps</h4>
+        <div>
+          <vlt-steps count="3" /> <br />
+          <vlt-steps :steps="['one', 'two']" />
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
         <h4>Switch</h4>
         <div>
           <vlt-switch/> <vlt-switch small/>  <vlt-switch red/>
@@ -281,6 +291,7 @@ import {
   VltSidemenuItem,
   VltSidemenuLink,
   VltSidemenuTitle,
+  VltSteps,
   VltSwitch,
   VltTab,
   VltTabs,
@@ -308,6 +319,7 @@ export default {
     VltSidemenuItem,
     VltSidemenuLink,
     VltSidemenuTitle,
+    VltSteps,
     VltSwitch,
     VltTab,
     VltTabs,

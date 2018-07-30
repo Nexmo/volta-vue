@@ -195,6 +195,16 @@ const Components = [
     ],
   },
   {
+    title: 'Steps',
+    html: 'vlt-steps',
+    icon: 'more-negative',
+    propertyRows: [
+      { property: 'count', type: 'Number' },
+      { property: 'selected', type: 'Number' },
+      { property: 'steps', type: 'Array' },
+    ],
+  },
+  {
     title: 'Switch',
     html: 'vlt-switch',
     icon: 'switch',
