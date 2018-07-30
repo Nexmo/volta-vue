@@ -5,5 +5,7 @@ src/*.vue
 src/*.js
 .babelrc
 .editorconfig
+.eslintrc.js
+.editorconfig
 index.html
 webpack.config.js
