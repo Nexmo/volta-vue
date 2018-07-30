@@ -19,15 +19,15 @@ export default {
     },
 
     getClassObject() {
-      let colorClass = `Vlt-${this.color}`;
+      const colorClass = `Vlt-${this.color}`;
 
       return {
         'Vlt-icon': !this.noClass,
-        'pointer': this.pointer,
-        'spin': this.spin,
+        pointer: this.pointer,
+        spin: this.spin,
         'Vlt-icon--small': this.small,
-        [colorClass]: this.color
-      }
+        [colorClass]: this.color,
+      };
     },
   },
 
@@ -59,7 +59,7 @@ export default {
       type: Boolean,
       default: false,
     },
-  }
+  },
 };
 </script>
 
