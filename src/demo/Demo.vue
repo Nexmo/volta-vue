@@ -130,6 +130,38 @@
 
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
+        <h4>Sidemenu (wrapped in a sidenav)</h4>
+        <div>
+          <div id="Vlt-sidenav" class="Vlt-sidenav Vlt-sidenav--dark">
+            <div class="Vlt-sidenav__scroll">
+              <vlt-sidemenu>
+                <vlt-sidemenu-link icon="pie-chart" label="Dashboard" to="/dashboard"/>
+                <vlt-sidemenu-title label="Basic Menu" />
+                <vlt-sidemenu-item trigger-label="Settings" trigger-icon="gear">
+                  <vlt-sidemenu-link icon="user" label="Account" to="/accounts"/>
+                </vlt-sidemenu-item>
+                <vlt-sidemenu-link
+                  icon="enter"
+                  color="purple"
+                  label="Internal link"
+                  href="https://github.com/Nexmo/volta-vue"
+                />
+                <vlt-sidemenu-link
+                  icon="open"
+                  external
+                  color="purple"
+                  label="External link"
+                  href="https://github.com/Nexmo/volta-vue"
+                />
+              </vlt-sidemenu>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
         <h4>Switch</h4>
         <div>
           <vlt-switch/> <vlt-switch small/>  <vlt-switch red/>
@@ -210,6 +242,10 @@ import {
   VltInput,
   VltModal,
   VltRadio,
+  VltSidemenu,
+  VltSidemenuItem,
+  VltSidemenuLink,
+  VltSidemenuTitle,
   VltSwitch,
   VltTabs,
   VltTab,
@@ -230,6 +266,10 @@ export default {
     VltInput,
     VltModal,
     VltRadio,
+    VltSidemenu,
+    VltSidemenuItem,
+    VltSidemenuLink,
+    VltSidemenuTitle,
     VltSwitch,
     VltTab,
     VltTabs,

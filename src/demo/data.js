@@ -139,6 +139,41 @@ const Components = [
     ],
   },
   {
+    title: 'Sidemenu',
+    html: 'vlt-sidemenu',
+    icon: 'menu',
+  },
+  {
+    title: 'Sidemenu item',
+    html: 'vlt-sidemenu-item',
+    icon: 'menu',
+    propertyRows: [
+      { property: 'trigger-icon', type: 'String' },
+      { property: 'trigger-label', type: 'String' },
+    ],
+  },
+  {
+    title: 'Sidemenu link',
+    html: 'vlt-sidemenu-link',
+    icon: 'menu',
+    propertyRows: [
+      { property: 'color', type: 'String' },
+      { property: 'external', type: 'Boolean' },
+      { property: 'href', type: 'String' },
+      { property: 'icon', type: 'String' },
+      { property: 'label', type: 'String' },
+      { property: 'to', type: 'String' },
+    ],
+  },
+  {
+    title: 'Sidemenu title',
+    html: 'vlt-sidemenu-title',
+    icon: 'menu',
+    propertyRows: [
+      { property: 'label', type: 'String' },
+    ],
+  },
+  {
     title: 'Switch',
     html: 'vlt-switch',
     icon: 'switch',
