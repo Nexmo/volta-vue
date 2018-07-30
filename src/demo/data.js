@@ -158,6 +158,7 @@ const Components = [
     icon: 'menu',
     propertyRows: [
       { property: 'color', type: 'String' },
+      { property: 'external', type: 'Boolean' },
       { property: 'href', type: 'String' },
       { property: 'icon', type: 'String' },
       { property: 'label', type: 'String' },

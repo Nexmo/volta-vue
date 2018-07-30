@@ -15,6 +15,7 @@
       class="Vlt-sidemenu__link "
       :href="href"
       active-class="Vlt-sidemenu__link_active"
+      :target="external ? '_blank' : ''"
     >
       <vlt-icon :icon="icon" :color="color" />
       <span class="Vlt-sidemenu__label">{{label}}</span>
@@ -30,6 +31,7 @@ export default {
 
   props: {
     color: String,
+    external: Boolean,
     href: String,
     icon: String,
     label: String,

@@ -141,9 +141,16 @@
                   <vlt-sidemenu-link icon="user" label="Account" to="/accounts"/>
                 </vlt-sidemenu-item>
                 <vlt-sidemenu-link
-                  icon="github"
+                  icon="enter"
                   color="purple"
-                  label="Github"
+                  label="Internal link"
+                  href="https://github.com/Nexmo/volta-vue"
+                />
+                <vlt-sidemenu-link
+                  icon="open"
+                  external
+                  color="purple"
+                  label="External link"
                   href="https://github.com/Nexmo/volta-vue"
                 />
               </vlt-sidemenu>
