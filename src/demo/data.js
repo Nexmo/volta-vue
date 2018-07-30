@@ -29,6 +29,18 @@ const Components = [
     ],
   },
   {
+    title: 'Callout',
+    html: 'vlt-callout',
+    icon: 'shout',
+    propertyRows: [
+      { property: 'critical', type: 'Boolean' },
+      { property: 'good', type: 'Boolean' },
+      { property: 'tip', type: 'Boolean' },
+      { property: 'shoutout', type: 'Boolean' },
+      { property: 'warning', type: 'Boolean' },
+    ],
+  },
+  {
     title: 'Checkbox',
     html: 'vlt-checkbox',
     icon: 'checkbox',
@@ -139,6 +151,15 @@ const Components = [
     ],
   },
   {
+    title: 'Select',
+    html: 'vlt-select',
+    icon: 'cursor',
+    propertyRows: [
+      { property: 'id', type: 'String' },
+      { property: 'options', type: 'Array' },
+    ],
+  },
+  {
     title: 'Sidemenu',
     html: 'vlt-sidemenu',
     icon: 'menu',
@@ -212,6 +233,16 @@ const Components = [
       { property: 'page-size', type: 'Number', default: 20 },
       { property: 'rows', type: 'Array' },
       { property: 'total', type: 'Number', default: 0 },
+    ],
+  },
+  {
+    title: 'Title',
+    html: 'vlt-title',
+    icon: 'cursor',
+    propertyRows: [
+      { property: 'icon-color', type: 'String' },
+      { property: 'icon', type: 'String' },
+      { property: 'title', type: 'String' },
     ],
   },
   {
