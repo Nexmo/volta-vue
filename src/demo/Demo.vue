@@ -256,7 +256,7 @@
       <div class="Vlt-col">
         <h4>Title</h4>
         <div>
-          <vlt-title icon="rocket" icon-color="purple" title="Getting Started"/>
+          <vlt-title icon="rocket" color="purple" title="Getting Started"/>
         </div>
       </div>
     </div>

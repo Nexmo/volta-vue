@@ -1,6 +1,6 @@
 <template>
   <h2 class="Vlt-title--icon">
-    <vlt-icon :color="iconColor" :icon="icon" />{{title}}
+    <vlt-icon :color="color || iconColor" :icon="icon" />{{title}}
   </h2>
 </template>
 
@@ -11,6 +11,7 @@ export default {
   name: 'VltTitle',
 
   props: {
+    color: String,
     iconColor: String,
     icon: {
       type: String,

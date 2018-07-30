@@ -250,7 +250,7 @@ const Components = [
     html: 'vlt-title',
     icon: 'cursor',
     propertyRows: [
-      { property: 'icon-color', type: 'String' },
+      { property: 'color', type: 'String' },
       { property: 'icon', type: 'String' },
       { property: 'title', type: 'String' },
     ],
