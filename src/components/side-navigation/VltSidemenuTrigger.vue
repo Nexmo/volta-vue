@@ -4,7 +4,7 @@
     class="Vlt-sidemenu__trigger"
     :class="{ 'Vlt-sidemenu__trigger_active' : active }"
     @click="active = !active">
-    <vlt-icon :icon="icon" />
+    <vlt-icon :icon="icon" :color="color" />
     <span class="Vlt-sidemenu__label">{{label}}</span>
   </p>
 </template>
