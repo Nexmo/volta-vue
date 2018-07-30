@@ -5,6 +5,7 @@
       class="Vlt-sidemenu__link "
       :to="to"
       active-class="Vlt-sidemenu__link_active"
+      exact
     >
       <vlt-icon :icon="icon" :color="color" />
       <span class="Vlt-sidemenu__label">{{label}}</span>
