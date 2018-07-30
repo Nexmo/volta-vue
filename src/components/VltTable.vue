@@ -4,7 +4,7 @@
       <table>
         <thead>
           <tr>
-            <th v-for="col in columns" @click="sort(col)" :key="col"
+            <th v-for="(col, index) in columns" :key="index" @click="sort(col)"
               :class="{
                 'Vlt-table__col--sortable': col.sortable,
                 'Vlt-table__col--ascending': currentSortColumn === col && !isAsc,
