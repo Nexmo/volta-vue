@@ -1,10 +1,8 @@
 <template>
-  <svg @click="handleClick" :class="{
-    'Vlt-icon': !noClass,
-    'pointer': pointer,
-    'spin': spin,
-    'Vlt-icon--small': small
-  }">
+  <svg
+    @click="handleClick"
+    :class="getClassObject()"
+  >
     <use :xlink:href="`#V_Vlt-icon-${icon}`" />
   </svg>
 </template>
@@ -19,6 +17,18 @@ export default {
         this.$emit('click');
       }
     },
+
+    getClassObject() {
+      let colorClass = `Vlt-${this.color}`;
+
+      return {
+        'Vlt-icon': !this.noClass,
+        'pointer': this.pointer,
+        'spin': this.spin,
+        'Vlt-icon--small': this.small,
+        [colorClass]: this.color
+      }
+    },
   },
 
   props: {
@@ -29,6 +39,9 @@ export default {
     clickable: {
       type: Boolean,
       default: true,
+    },
+    color: {
+      type: String,
     },
     noClass: {
       type: Boolean,
@@ -46,7 +59,7 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
+  }
 };
 </script>
 

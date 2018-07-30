@@ -65,7 +65,9 @@
       <div class="Vlt-col">
         <h4>Icon</h4>
         <div>
-          <vlt-icon icon="volume" /> <vlt-icon small icon="volume" />
+          <vlt-icon icon="volume" />
+          <vlt-icon icon="volume" color="blue-dark"/>
+          <vlt-icon small icon="volume" />
         </div>
       </div>
     </div>
