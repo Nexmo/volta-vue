@@ -1,6 +1,10 @@
 <template>
   <li>
-    <vlt-sidemenu-trigger :icon="triggerIcon" :label="triggerLabel"/>
+    <vlt-sidemenu-trigger
+      :icon="triggerIcon"
+      :label="triggerLabel"
+      :color="color"
+    />
     <ul>
       <slot></slot>
     </ul>
@@ -14,6 +18,7 @@ export default {
   name: 'VltSidemenuItem',
 
   props: {
+    color: String,
     triggerIcon: String,
     triggerLabel: String,
   },

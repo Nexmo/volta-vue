@@ -169,6 +169,7 @@ const Components = [
     html: 'vlt-sidemenu-item',
     icon: 'menu',
     propertyRows: [
+      { property: 'color', type: 'String' },
       { property: 'trigger-icon', type: 'String' },
       { property: 'trigger-label', type: 'String' },
     ],
