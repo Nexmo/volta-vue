@@ -16,6 +16,7 @@
         :max="max"
         :maxlength="maxlength"
         :min="min"
+        :size="size"
         :placeholder="placeholder"
         :type="type"
         :value="val"
@@ -41,6 +42,8 @@ export default {
     maxlength: String,
     min: String,
     placeholder: String,
+    rows: Number | String,
+    size: Number | String,
     textarea: {
       default: false,
       type: Boolean,
