@@ -16,6 +16,7 @@ export { default as VltSidemenuItem } from './side-navigation/VltSidemenuItem';
 export { default as VltSidemenuLink } from './side-navigation/VltSidemenuLink';
 export { default as VltSidemenuTitle } from './side-navigation/VltSidemenuTitle';
 export { default as VltSidemenuTrigger } from './side-navigation/VltSidemenuTrigger';
+export { default as VltSpinner } from './VltSpinner';
 export { default as VltSteps } from './VltSteps';
 export { default as VltSwitch } from './VltSwitch';
 export { default as VltTab } from './VltTab';
