@@ -76,6 +76,7 @@ const Components = [
       { property: 'error-message', type: 'String' },
       { property: 'label', type: 'String' },
       { property: 'optional', type: 'Boolean', default: false },
+      { property: 'tooltip', type: 'String' },
     ],
   },
   {
