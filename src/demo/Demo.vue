@@ -228,6 +228,16 @@
         </div>
       </div>
     </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Spinner</h4>
+        <div>
+          <vlt-spinner/>
+          <vlt-spinner small/>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -246,6 +256,7 @@ import {
   VltSidemenuItem,
   VltSidemenuLink,
   VltSidemenuTitle,
+  VltSpinner,
   VltSwitch,
   VltTabs,
   VltTab,
@@ -270,6 +281,7 @@ export default {
     VltSidemenuItem,
     VltSidemenuLink,
     VltSidemenuTitle,
+    VltSpinner,
     VltSwitch,
     VltTab,
     VltTabs,

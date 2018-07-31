@@ -174,6 +174,14 @@ const Components = [
     ],
   },
   {
+    title: 'Spinner',
+    html: 'vlt-spinner',
+    icon: 'reload',
+    propertyRows: [
+      { property: 'small', type: 'Boolean' },
+    ],
+  },
+  {
     title: 'Switch',
     html: 'vlt-switch',
     icon: 'switch',
