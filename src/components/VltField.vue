@@ -3,7 +3,7 @@
       class="Vlt-form__element"
       :class="[{'Vlt-form__element--big' : big}, {'Vlt-form__element--elastic': elastic}]"
     >
-      <label v-if="!big && label" class="Vlt-label">{{label}}>
+      <label v-if="!big && label" class="Vlt-label">{{label}}
         <small class="Vlt-form__element_optional" v-if="optional">(optional)</small>
       </label>
       <slot></slot>

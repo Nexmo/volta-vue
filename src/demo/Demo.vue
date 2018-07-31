@@ -27,6 +27,19 @@
 
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
+        <h4>Callout</h4>
+        <div>
+          <vlt-callout critical>A critical callout</vlt-callout>
+          <vlt-callout good>A good callout</vlt-callout>
+          <vlt-callout tip>A tip callout</vlt-callout>
+          <vlt-callout shoutout>A shoutout callout</vlt-callout>
+          <vlt-callout warning>A warning callout</vlt-callout>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
         <h4>Checkbox</h4>
         <div>
           <vlt-checkbox inline label="Check me!"/>
@@ -130,6 +143,17 @@
 
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
+        <h4>Select</h4>
+        <div>
+          <vlt-field>
+            <vlt-select :options="['dog', 'rabbit']"/>
+          </vlt-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
         <h4>Sidemenu (wrapped in a sidenav)</h4>
         <div>
           <div id="Vlt-sidenav" class="Vlt-sidenav Vlt-sidenav--dark">
@@ -156,6 +180,16 @@
               </vlt-sidemenu>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Steps</h4>
+        <div>
+          <vlt-steps count="3" /> <br />
+          <vlt-steps :steps="['one', 'two']" />
         </div>
       </div>
     </div>
@@ -218,6 +252,15 @@
       </div>
     </div>
 
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Title</h4>
+        <div>
+          <vlt-title icon="rocket" color="purple" title="Getting Started"/>
+        </div>
+      </div>
+    </div>
+
      <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
         <h4>Tooltip</h4>
@@ -245,6 +288,7 @@
 import {
   VltBadge,
   VltButton,
+  VltCallout,
   VltCheckbox,
   VltDropdown,
   VltField,
@@ -252,15 +296,18 @@ import {
   VltInput,
   VltModal,
   VltRadio,
+  VltSelect,
   VltSidemenu,
   VltSidemenuItem,
   VltSidemenuLink,
   VltSidemenuTitle,
   VltSpinner,
+  VltSteps,
   VltSwitch,
-  VltTabs,
   VltTab,
+  VltTabs,
   VltTable,
+  VltTitle,
   VltTooltip,
 } from '../components';
 
@@ -270,6 +317,7 @@ export default {
   components: {
     VltBadge,
     VltButton,
+    VltCallout,
     VltCheckbox,
     VltDropdown,
     VltField,
@@ -277,15 +325,18 @@ export default {
     VltInput,
     VltModal,
     VltRadio,
+    VltSelect,
     VltSidemenu,
     VltSidemenuItem,
     VltSidemenuLink,
     VltSidemenuTitle,
     VltSpinner,
+    VltSteps,
     VltSwitch,
     VltTab,
     VltTabs,
     VltTable,
+    VltTitle,
     VltTooltip,
   },
 

@@ -16,7 +16,7 @@
     v-on="listeners"
   >
     <vlt-icon v-if="props.icon" :spin="props.spin" :icon="props.icon" />
-    {{props.label}}
+    <slot>{{props.label}}</slot>
   </button>
 </template>
 
