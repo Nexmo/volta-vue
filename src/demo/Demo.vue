@@ -18,9 +18,10 @@
         <div>
           <vlt-button primary label="Primary"/>
           <vlt-button secondary label="Secondary"/>
-          <vlt-button tertiary label="Tertiary"/>
-          <vlt-button tertiary icon="bin" label="Icon"/>
-          <vlt-button tertiary app label="App"/>
+          <vlt-button label="Tertiary"/>
+          <vlt-button quaternary label="Quaternary"/>
+          <vlt-button icon="bin" label="Icon"/>
+          <vlt-button app label="App"/>
         </div>
       </div>
     </div>
