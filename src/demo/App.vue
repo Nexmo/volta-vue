@@ -9,9 +9,21 @@
 
       <vlt-tab label="API" icon="rocket">
         <div v-for="component in components" class="Vlt-card" :key="component.title">
-          <h3 class="Vlt-title--icon" :id="component.title">
-            <vlt-icon :icon="component.icon" />{{component.title}} - {{component.html}}
-          </h3>
+          <div class="Vlt-grid">
+            <div class="Vlt-col">
+              <h3 class="Vlt-title--icon" :id="component.title">
+                <vlt-icon :icon="component.icon" />{{component.title}} - {{component.html}}
+              </h3>
+            </div>
+            <div class="Vlt-col Vlt-col--right">
+              <vlt-button
+                app
+                label="Copy component"
+                @click="copyToClipboard(`copy-${component.title}`, $event)"
+              />
+              <div class="code" :id="`copy-${component.title}`">{{component.code}}</div>
+            </div>
+          </div>
 
           <vlt-table
             v-if="component.propertyRows"
@@ -40,7 +52,7 @@
 <script>
 import VoltaIcons from '@vonagevolta/core/dist/symbol/volta-icons.svg';
 
-import { VltIcon, VltTabs, VltTab, VltTable } from '../components';
+import { VltButton, VltIcon, VltTabs, VltTab, VltTable } from '../components';
 import Components from './data';
 import VoltaVueDemo from './Demo';
 
@@ -48,6 +60,7 @@ export default {
   name: 'app',
 
   components: {
+    VltButton,
     VltIcon,
     VltTab,
     VltTabs,
@@ -70,6 +83,20 @@ export default {
     };
   },
 
+  methods: {
+    copyToClipboard(targetElement, e) {
+      const node = document.getElementById(targetElement);
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.execCommand('copy');
+
+      e.target.innerText = 'Copied!';
+    },
+  },
+
   mounted() {
     this.components = Components;
   },
@@ -83,5 +110,10 @@ $Vlt-font-url: '~@vonagevolta/core/fonts/';
 body {
   background: $grey-lighter;
   padding: $unit2 $unit3;
+}
+
+.code {
+  position: absolute;
+  left: -99999999999px;
 }
 </style>

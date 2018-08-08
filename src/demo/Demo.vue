@@ -187,9 +187,19 @@
 
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
+        <h4>Spinner</h4>
+        <div>
+          <vlt-spinner />
+          <vlt-spinner small/>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
         <h4>Steps</h4>
         <div>
-          <vlt-steps count="3" /> <br />
+          <vlt-steps :count="3" /> <br />
           <vlt-steps :steps="['one', 'two']" />
         </div>
       </div>
@@ -199,7 +209,7 @@
       <div class="Vlt-col">
         <h4>Switch</h4>
         <div>
-          <vlt-switch/> <vlt-switch small/>  <vlt-switch red/>
+          <vlt-switch /> <vlt-switch small />  <vlt-switch red />
         </div>
       </div>
     </div>
@@ -269,16 +279,6 @@
           <vlt-tooltip title="I have a default icon" />
           <vlt-tooltip title="I have text">Hover on me</vlt-tooltip>
           <vlt-tooltip position="top" title="I have my position set to top" />
-        </div>
-      </div>
-    </div>
-
-    <div class="Vlt-grid Vlt-grid--margin-bottom3">
-      <div class="Vlt-col">
-        <h4>Spinner</h4>
-        <div>
-          <vlt-spinner/>
-          <vlt-spinner small/>
         </div>
       </div>
     </div>

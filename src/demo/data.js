@@ -10,6 +10,7 @@ const Components = [
     eventRows: [
       { event: 'dismissed', description: 'when the badge is dismissed' },
     ],
+    code: '<vlt-badge></vlt-badge>',
   },
   {
     title: 'Button',
@@ -28,6 +29,7 @@ const Components = [
       { property: 'spin', type: 'Boolean', default: false },
       { property: 'tooltip-title', type: 'String' },
     ],
+    code: '<vlt-button label="Label" secondary />',
   },
   {
     title: 'Callout',
@@ -40,6 +42,7 @@ const Components = [
       { property: 'shoutout', type: 'Boolean' },
       { property: 'warning', type: 'Boolean' },
     ],
+    code: '<vlt-callout>Callout text</vlt-callout>',
   },
   {
     title: 'Checkbox',
@@ -54,6 +57,7 @@ const Components = [
       { property: 'tooltip-position', type: 'String', default: 'left' },
       { property: 'tooltip-title', type: 'String' },
     ],
+    code: '<vlt-checkbox label="Label" />',
   },
   {
     title: 'Dropdown',
@@ -65,6 +69,7 @@ const Components = [
       { property: 'selected', type: 'String', default: 'the first option in the options array' },
       { property: 'show-selection', type: 'Boolean' },
     ],
+    code: '<vlt-dropdown label="Label" :options="[]" />',
   },
   {
     title: 'Field',
@@ -79,6 +84,7 @@ const Components = [
       { property: 'optional', type: 'Boolean', default: false },
       { property: 'tooltip', type: 'String' },
     ],
+    code: '<vlt-field></vlt-field>',
   },
   {
     title: 'Icon',
@@ -93,6 +99,7 @@ const Components = [
       { property: 'spin', type: 'Boolean', default: false },
       { property: 'small', type: 'Boolean', default: false },
     ],
+    code: '<vlt-icon icon="volume" />',
   },
   {
     title: 'Input',
@@ -111,6 +118,7 @@ const Components = [
       { property: 'type', type: 'String', default: 'text' },
       { property: 'val', type: 'String | Number' },
     ],
+    code: '<vlt-input label="Label" placeholder="Placeholder" />',
   },
   {
     title: 'Modal',
@@ -138,6 +146,7 @@ const Components = [
       { event: 'confirm', description: 'when the modal is confirmed' },
       { event: 'extraBtnClick', description: 'when the extra button is clicked' },
     ],
+    code: '<vlt-modal title="Title" :visible="true" @close="" @confirm=""></vlt-modal>',
   },
   {
     title: 'Radio',
@@ -151,6 +160,7 @@ const Components = [
       { property: 'name', type: 'String' },
       { property: 'val', type: 'String' },
     ],
+    code: '<vlt-radio name="Name" label="Label" />',
   },
   {
     title: 'Select',
@@ -160,11 +170,13 @@ const Components = [
       { property: 'id', type: 'String' },
       { property: 'options', type: 'Array' },
     ],
+    code: '<vlt-select :options="[]" />',
   },
   {
     title: 'Sidemenu',
     html: 'vlt-sidemenu',
     icon: 'menu',
+    code: '<vlt-sidemenu></vlt-sidemenu>',
   },
   {
     title: 'Sidemenu item',
@@ -175,6 +187,7 @@ const Components = [
       { property: 'trigger-icon', type: 'String' },
       { property: 'trigger-label', type: 'String' },
     ],
+    code: '<vlt-sidemenu-item trigger-label="Label" trigger-icon="gear"></vlt-sidemenu-item>',
   },
   {
     title: 'Sidemenu link',
@@ -188,6 +201,7 @@ const Components = [
       { property: 'label', type: 'String' },
       { property: 'to', type: 'String' },
     ],
+    code: '<vlt-sidemenu-link icon="pie-chart" label="Label" />',
   },
   {
     title: 'Sidemenu title',
@@ -196,6 +210,7 @@ const Components = [
     propertyRows: [
       { property: 'label', type: 'String' },
     ],
+    code: '<vlt-sidemenu-title label="Label" />',
   },
   {
     title: 'Spinner',
@@ -204,6 +219,7 @@ const Components = [
     propertyRows: [
       { property: 'small', type: 'Boolean' },
     ],
+    code: '<vlt-spinner />',
   },
   {
     title: 'Steps',
@@ -214,6 +230,7 @@ const Components = [
       { property: 'selected', type: 'Number' },
       { property: 'steps', type: 'Array' },
     ],
+    code: '<vlt-steps :count="3" />',
   },
   {
     title: 'Switch',
@@ -224,24 +241,7 @@ const Components = [
       { property: 'red', type: 'Boolean', default: false },
       { property: 'small', type: 'Boolean', default: false },
     ],
-  },
-  {
-    title: 'Tabs',
-    html: 'vlt-tabs',
-    icon: 'tabs',
-    propertyRows: [
-      { property: 'icon', type: 'Boolean', default: false },
-    ],
-  },
-  {
-    title: 'Tab',
-    html: 'vlt-tab',
-    icon: 'tabs',
-    propertyRows: [
-      { property: 'disabled', type: 'Boolean', default: false },
-      { property: 'icon', type: 'String' },
-      { property: 'label', type: 'String' },
-    ],
+    code: '<vlt-switch />',
   },
   {
     title: 'Table',
@@ -255,6 +255,31 @@ const Components = [
       { property: 'rows', type: 'Array' },
       { property: 'total', type: 'Number', default: 0 },
     ],
+    code: `<vlt-table :columns="[{ title: 'Name' }]" :rows="[]">
+            <template slot="item" slot-scope="slotProps">
+              <td></td>
+            </template>
+          </vlt-table>`,
+  },
+  {
+    title: 'Tabs',
+    html: 'vlt-tabs',
+    icon: 'tabs',
+    propertyRows: [
+      { property: 'icon', type: 'Boolean', default: false },
+    ],
+    code: '<vlt-tabs></vlt-tabs>',
+  },
+  {
+    title: 'Tab',
+    html: 'vlt-tab',
+    icon: 'tabs',
+    propertyRows: [
+      { property: 'disabled', type: 'Boolean', default: false },
+      { property: 'icon', type: 'String' },
+      { property: 'label', type: 'String' },
+    ],
+    code: '<vlt-tab label="Label"></vlt-tab>',
   },
   {
     title: 'Title',
@@ -265,6 +290,7 @@ const Components = [
       { property: 'icon', type: 'String' },
       { property: 'title', type: 'String' },
     ],
+    code: '<vlt-title icon="rocket" title="Title" />',
   },
   {
     title: 'Tooltip',
@@ -274,6 +300,7 @@ const Components = [
       { property: 'position', type: 'String', default: 'left' },
       { property: 'title', type: 'String' },
     ],
+    code: '<vlt-tooltip title="Text" />',
   },
 ];
 
