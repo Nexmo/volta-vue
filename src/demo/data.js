@@ -36,11 +36,7 @@ const Components = [
     html: 'vlt-callout',
     icon: 'shout',
     propertyRows: [
-      { property: 'critical', type: 'Boolean' },
-      { property: 'good', type: 'Boolean' },
-      { property: 'tip', type: 'Boolean' },
-      { property: 'shoutout', type: 'Boolean' },
-      { property: 'warning', type: 'Boolean' },
+      { property: 'type', type: 'String' },
     ],
     code: '<vlt-callout>Callout text</vlt-callout>',
   },
