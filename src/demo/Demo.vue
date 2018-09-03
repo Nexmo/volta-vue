@@ -96,6 +96,9 @@
           <vlt-field label="Label on field">
             <vlt-input placeholder="I'm wrapped with a regular field"/>
           </vlt-field>
+          <vlt-field label="Text Area">
+            <vlt-input rows="5" textarea placeholder="a textarea"/>
+          </vlt-field>
         </div>
       </div>
     </div>
