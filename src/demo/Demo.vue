@@ -30,11 +30,11 @@
       <div class="Vlt-col">
         <h4>Callout</h4>
         <div>
-          <vlt-callout critical>A critical callout</vlt-callout>
-          <vlt-callout good>A good callout</vlt-callout>
-          <vlt-callout tip>A tip callout</vlt-callout>
-          <vlt-callout shoutout>A shoutout callout</vlt-callout>
-          <vlt-callout warning>A warning callout</vlt-callout>
+          <vlt-callout type="critical">A critical callout</vlt-callout>
+          <vlt-callout type="good">A good callout</vlt-callout>
+          <vlt-callout type="tip">A tip callout</vlt-callout>
+          <vlt-callout type="shoutout">A shoutout callout</vlt-callout>
+          <vlt-callout type="warning">A warning callout</vlt-callout>
         </div>
       </div>
     </div>

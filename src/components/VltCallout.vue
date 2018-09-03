@@ -1,5 +1,5 @@
 <template>
-  <div class="Vlt-callout" :class="getClassObject()">
+  <div class="Vlt-callout" :class="getClassArray()">
     <i></i>
     <div class="Vlt-callout__content">
       <slot></slot>
@@ -8,26 +8,23 @@
 </template>
 
 <script>
+const VALID_TYPES = ['critical', 'good', 'tip', 'shoutout', 'warning'];
+
 export default {
   name: 'VltCallout',
 
   props: {
-    critical: Boolean,
-    good: Boolean,
-    tip: Boolean,
-    shoutout: Boolean,
-    warning: Boolean,
+    type: {
+      type: String,
+      required: true,
+      validator: (val) => VALID_TYPES.includes(val),
+    },
   },
 
   methods: {
-    getClassObject() {
-      return {
-        'Vlt-callout--critical': this.critical,
-        'Vlt-callout--good': this.good,
-        'Vlt-callout--tip': this.tip,
-        'Vlt-callout--shoutout': this.shoutout,
-        'Vlt-callout--warning': this.warning,
-      };
+    getClassArray() {
+      return VALID_TYPES.filter((type) => type === this.type)
+        .map((type) => `Vlt-callout--${type}`);
     },
   },
 };
