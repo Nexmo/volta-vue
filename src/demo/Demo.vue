@@ -77,6 +77,18 @@
 
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
+        <h4>Flash</h4>
+        <div>
+          <vlt-button secondary app label="Bottom flash" @click="bottomFlashVisible = true"/>
+          <vlt-button secondary app label="Top flash" @click="topFlashVisible = true"/>
+          <vlt-flash type="critical" bottom :visible="bottomFlashVisible" @dismissed="bottomFlashVisible = false">Bottom flash</vlt-flash>
+          <vlt-flash small :visible="topFlashVisible" @dismissed="topFlashVisible = false">Top flash</vlt-flash>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
         <h4>Icon</h4>
         <div>
           <vlt-icon icon="volume" />
@@ -296,6 +308,7 @@ import {
   VltCheckbox,
   VltDropdown,
   VltField,
+  VltFlash,
   VltIcon,
   VltInput,
   VltModal,
@@ -325,6 +338,7 @@ export default {
     VltCheckbox,
     VltDropdown,
     VltField,
+    VltFlash,
     VltIcon,
     VltInput,
     VltModal,
@@ -346,8 +360,10 @@ export default {
 
   data() {
     return {
-      modalVisible: false,
+      bottomFlashVisible: false,
       modalLargeVisible: false,
+      modalVisible: false,
+      topFlashVisible: false,
     };
   },
 };
