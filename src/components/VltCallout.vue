@@ -4,6 +4,7 @@
     <div class="Vlt-callout__content">
       <slot></slot>
     </div>
+    <button v-if="dismissible" class="Vlt-callout__dismiss" @click="dismiss"></button>
   </div>
 </template>
 
@@ -14,6 +15,7 @@ export default {
   name: 'VltCallout',
 
   props: {
+    dismissible: Boolean,
     type: {
       type: String,
       required: true,
@@ -21,10 +23,29 @@ export default {
     },
   },
 
+  data() {
+    return {
+      dismissed: false,
+    }
+  },
+
   methods: {
+    dismiss() {
+      this.dismissed = true;
+    },
+
     getClassArray() {
-      return VALID_TYPES.filter((type) => type === this.type)
+      const classArray = VALID_TYPES.filter((type) => type === this.type)
         .map((type) => `Vlt-callout--${type}`);
+
+      if(this.dismissible) {
+        const conditionalClass = {
+          'Vlt-callout--dismissed': this.dismissed,
+        }
+        classArray.push(conditionalClass);
+      }
+
+      return classArray;
     },
   },
 };
