@@ -24,7 +24,7 @@ export default {
   props: {
     bottom: {
       type: Boolean,
-      default: false
+      default: false,
     },
     dismissible: Boolean,
     type: {
@@ -34,7 +34,7 @@ export default {
     },
     small: Boolean,
     timeout: {
-      type: Number | String,
+      type: Number,
       default: 5000,
       required: false,
     },
@@ -47,29 +47,29 @@ export default {
       index: 0,
       flashVisible: this.visible,
       styleObject: {},
-    }
+    };
   },
 
   watch: {
-    flashVisible: function(value) {
-      if(value && this.bottom) {
-        countBottom++;
+    flashVisible(value) {
+      if (value && this.bottom) {
+        countBottom += 1;
         this.index = countBottom;
-        this.styleObject.bottom = `${this.index * 70 - 50}px`;
-      } else if(value) {
-        countTop++;
+        this.styleObject.bottom = `${(this.index * 70) - 50}px`;
+      } else if (value) {
+        countTop += 1;
         this.index = countTop;
-        this.styleObject.top = `${this.index * 70 - 50}px`;
+        this.styleObject.top = `${(this.index * 70) - 50}px`;
       }
     },
 
-    visible: function(value) {
+    visible(value) {
       this.flashVisible = value;
 
       const self = this;
 
-      if(!this.dismissible) {
-        setTimeout(function() {
+      if (!this.dismissible) {
+        setTimeout(() => {
           self.dismiss();
         }, this.timeout);
       }
@@ -77,60 +77,60 @@ export default {
   },
 
   methods: {
-    dismiss: function() {
-      if(this.bottom) {
-        if(countBottom > 0) countBottom--;
-        this.styleObject.bottom = '-100%'
+    dismiss() {
+      if (this.bottom) {
+        if (countBottom > 0) countBottom -= 1;
+        this.styleObject.bottom = '-100%';
       } else {
-        if(countTop > 0) countTop--;
-        this.styleObject.top = '-100%'
+        if (countTop > 0) countTop -= 1;
+        this.styleObject.top = '-100%';
       }
 
-      this.flashVisible = false
+      this.flashVisible = false;
       this.$emit('dismissed');
-      if(this.bottom) {
-        this.$FlashBus.$emit('bottom-dismissed', this.index)
+      if (this.bottom) {
+        this.$FlashBus.$emit('bottom-dismissed', this.index);
       } else {
-        this.$FlashBus.$emit('top-dismissed', this.index)
+        this.$FlashBus.$emit('top-dismissed', this.index);
       }
-    }
+    },
   },
 
   mounted() {
     const self = this;
 
-    if(this.bottom) {
-      this.$FlashBus.$on('bottom-dismissed', function(index) {
-        if(self.flashVisible) {
-          if(index < self.index) {
-            self.index--;
-            self.styleObject.bottom = `${self.index * 70 - 50}px`;
+    if (this.bottom) {
+      this.$FlashBus.$on('bottom-dismissed', (index) => {
+        if (self.flashVisible) {
+          if (index < self.index) {
+            self.index -= 1;
+            self.styleObject.bottom = `${(self.index * 70) - 50}px`;
           }
         }
-      })
+      });
     } else {
-      this.$FlashBus.$on('top-dismissed', function(index) {
-        if(self.flashVisible) {
-          if(index < self.index) {
-            self.index--;
-            self.styleObject.top = `${self.index * 70 - 50}px`;
+      this.$FlashBus.$on('top-dismissed', (index) => {
+        if (self.flashVisible) {
+          if (index < self.index) {
+            self.index -= 1;
+            self.styleObject.top = `${(self.index * 70) - 50}px`;
           }
         }
-      })
+      });
     }
   },
 
   computed: {
     classArray() {
-      let classArray = VALID_TYPES
+      const classArray = VALID_TYPES
         .filter((type) => type === this.type)
-        .map((type) => `Vlt-callout--${this.type}`);
+        .map((type) => `Vlt-callout--${type}`);
 
-      let conditionalClasses = {
+      const conditionalClasses = {
         'Vlt-flash_visible': this.flashVisible,
         'Vlt-flash--small': this.small,
-        'Vlt-flash--bottom': this.bottom
-      }
+        'Vlt-flash--bottom': this.bottom,
+      };
 
       classArray.push(conditionalClasses);
 
