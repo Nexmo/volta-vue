@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       dismissed: false,
-    }
+    };
   },
 
   methods: {
@@ -38,10 +38,10 @@ export default {
       const classArray = VALID_TYPES.filter((type) => type === this.type)
         .map((type) => `Vlt-callout--${type}`);
 
-      if(this.dismissible) {
+      if (this.dismissible) {
         const conditionalClass = {
           'Vlt-callout--dismissed': this.dismissed,
-        }
+        };
         classArray.push(conditionalClass);
       }
 
