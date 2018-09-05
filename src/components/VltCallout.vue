@@ -37,7 +37,7 @@ export default {
       return this.dismissible && this.dismissed ?
         ['Vlt-callout--dismissed', ...classArray]
         : classArray;
-    }
+    },
   },
 
   methods: {
