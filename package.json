@@ -9,7 +9,7 @@
     "pull-request-link": "sh bin/pull-request-link.sh"
   },
   "dependencies": {
-    "@vonagevolta/core": "^1.2.6",
+    "@vonagevolta/core": "^1.2.12",
     "tooltip.js": "^1.2.0",
     "vue": "^2.5.11"
   },
@@ -36,7 +36,7 @@
     "eslint-plugin-vue": "^4.0.0",
     "file-loader": "^1.1.11",
     "husky": "^1.0.0-rc.13",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.9.3",
     "sass-loader": "^6.0.6",
     "svg-sprite-loader": "^3.8.0",
     "vue-loader": "^13.0.5",
