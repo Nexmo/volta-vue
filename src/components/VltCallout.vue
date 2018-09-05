@@ -1,5 +1,5 @@
 <template>
-  <div class="Vlt-callout" :class="getClassArray()">
+  <div class="Vlt-callout" :class="classArray">
     <i></i>
     <div class="Vlt-callout__content">
       <slot></slot>
@@ -29,23 +29,20 @@ export default {
     };
   },
 
-  methods: {
-    dismiss() {
-      this.dismissed = true;
-    },
-
-    getClassArray() {
+  computed: {
+    classArray() {
       const classArray = VALID_TYPES.filter((type) => type === this.type)
         .map((type) => `Vlt-callout--${type}`);
 
-      if (this.dismissible) {
-        const conditionalClass = {
-          'Vlt-callout--dismissed': this.dismissed,
-        };
-        classArray.push(conditionalClass);
-      }
+      return this.dismissible && this.dismissed ?
+        ['Vlt-callout--dismissed', ...classArray]
+        : classArray;
+    }
+  },
 
-      return classArray;
+  methods: {
+    dismiss() {
+      this.dismissed = true;
     },
   },
 };
