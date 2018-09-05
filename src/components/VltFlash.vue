@@ -1,5 +1,5 @@
 <template>
-  <div class="Vlt-callout Vlt-flash" :class="classArray" :style="styleObject">
+  <div class="Vlt-callout Vlt-flash" :class="classObject" :style="styleObject">
     <i></i>
     <div class="Vlt-callout__content">
       <p><slot></slot></p>
@@ -121,20 +121,16 @@ export default {
   },
 
   computed: {
-    classArray() {
-      const classArray = VALID_TYPES
-        .filter((type) => type === this.type)
-        .map((type) => `Vlt-callout--${type}`);
+    classObject() {
+      const type = VALID_TYPES
+        .find((type) => type === this.type);
 
-      const conditionalClasses = {
+      return {
+        [`Vlt-callout--${type}`]: true,
         'Vlt-flash_visible': this.flashVisible,
         'Vlt-flash--small': this.small,
         'Vlt-flash--bottom': this.bottom,
       };
-
-      classArray.push(conditionalClasses);
-
-      return classArray;
     },
   },
 };
