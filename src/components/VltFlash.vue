@@ -122,11 +122,11 @@ export default {
 
   computed: {
     classObject() {
-      const type = VALID_TYPES
+      const calloutType = VALID_TYPES
         .find((type) => type === this.type);
 
       return {
-        [`Vlt-callout--${type}`]: true,
+        [`Vlt-callout--${calloutType}`]: true,
         'Vlt-flash_visible': this.flashVisible,
         'Vlt-flash--small': this.small,
         'Vlt-flash--bottom': this.bottom,
