@@ -2,6 +2,16 @@
 
 > Vue.js single file components for Vonage [Volta](https://github.com/Nexmo/volta) authored with [vue-loader](https://github.com/vuejs/vue-loader)
 
+## Contributing
+### Steps
+1. Create a branch from the **develop** branch
+2. Make your changes and commit to your branch
+3. Create a pull request to merge your branch to **develop**
+
+### Guidelines
+- Create one branch per feature/fix
+- Branches should be deleted after being merged in to **develop**
+
 ## Getting Started with NPM
 ``` bash
 npm install @vonagevolta/vue
@@ -37,9 +47,9 @@ npm install svg-sprite-loader --save-dev
 import VoltaIcons from '@vonagevolta/core/dist/symbol/volta-icons.svg';
 ...
 data () {
-	return { 
-  		VoltaIcons
-  	}
+  return { 
+    VoltaIcons
+  }
 }
 ```
 
@@ -53,9 +63,9 @@ data () {
 	import { VltIcon } from '@vonagevolta/vue';
 
 	export default {
-		components: {
-			VltIcon
-		}
+    components: {
+      VltIcon
+    }
 		...
 	}
 </script>
