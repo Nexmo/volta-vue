@@ -35,7 +35,7 @@
           <vlt-callout type="tip">A tip callout</vlt-callout>
           <vlt-callout type="shoutout">A shoutout callout</vlt-callout>
           <vlt-callout type="warning">A warning callout</vlt-callout>
-          <vlt-callout type="tip" dismissible>A dismissible callout</vlt-callout>
+          <vlt-callout type="tip" dismissable>A dismissible callout</vlt-callout>
         </div>
       </div>
     </div>

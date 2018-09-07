@@ -4,7 +4,7 @@
     <div class="Vlt-callout__content">
       <slot></slot>
     </div>
-    <button v-if="dismissible" class="Vlt-callout__dismiss" @click="dismiss"></button>
+    <button v-if="dismissable" class="Vlt-callout__dismiss" @click="dismiss"></button>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   name: 'VltCallout',
 
   props: {
-    dismissible: Boolean,
+    dismissable: Boolean,
     type: {
       type: String,
       required: true,
@@ -34,7 +34,7 @@ export default {
       const classArray = VALID_TYPES.filter((type) => type === this.type)
         .map((type) => `Vlt-callout--${type}`);
 
-      return this.dismissible && this.dismissed ?
+      return this.dismissable && this.dismissed ?
         ['Vlt-callout--dismissed', ...classArray]
         : classArray;
     },
@@ -43,6 +43,7 @@ export default {
   methods: {
     dismiss() {
       this.dismissed = true;
+      this.$emit('dismissed');
     },
   },
 };
