@@ -88,7 +88,7 @@ const Components = [
     icon: 'flash',
     propertyRows: [
       { property: 'bottom', type: 'Boolean', default: false },
-      { property: 'dismissible', type: 'Boolean', default: false },
+      { property: 'dismissable', type: 'Boolean', default: false },
       { property: 'type', type: 'String', default: 'shoutout' },
       { property: 'small', type: 'Boolean', default: false },
       { property: 'timeout', type: 'Number', default: 5000 },

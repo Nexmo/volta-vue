@@ -4,7 +4,7 @@
     <div class="Vlt-callout__content">
       <p><slot></slot></p>
     </div>
-    <button v-if="dismissible" class="Vlt-callout__dismiss" @click="dismiss"></button>
+    <button v-if="dismissable" class="Vlt-callout__dismiss" @click="dismiss"></button>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    dismissible: Boolean,
+    dismissable: Boolean,
     type: {
       type: String,
       default: 'shoutout',
@@ -68,7 +68,7 @@ export default {
 
       const self = this;
 
-      if (!this.dismissible) {
+      if (!this.dismissable) {
         setTimeout(() => {
           self.dismiss();
         }, this.timeout);
