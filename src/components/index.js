@@ -5,6 +5,7 @@ export { default as VltCol } from './grid/VltCol';
 export { default as VltCheckbox } from './VltCheckbox';
 export { default as VltDropdown } from './VltDropdown';
 export { default as VltField } from './VltField';
+export { default as VltFlash } from './VltFlash';
 export { default as VltGrid } from './grid/VltGrid';
 export { default as VltIcon } from './VltIcon';
 export { default as VltInput } from './VltInput';

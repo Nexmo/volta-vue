@@ -84,6 +84,20 @@ const Components = [
     code: '<vlt-field></vlt-field>',
   },
   {
+    title: 'Flash',
+    html: 'vlt-flash',
+    icon: 'flash',
+    propertyRows: [
+      { property: 'bottom', type: 'Boolean', default: false },
+      { property: 'dismissable', type: 'Boolean', default: false },
+      { property: 'type', type: 'String', default: 'shoutout' },
+      { property: 'small', type: 'Boolean', default: false },
+      { property: 'timeout', type: 'Number', default: 5000 },
+      { property: 'visible', type: 'Boolean', default: false },
+    ],
+    code: '<vlt-flash></vlt-flash>',
+  },
+  {
     title: 'Icon',
     html: 'vlt-icon',
     icon: 'info',
