@@ -3,8 +3,10 @@
     <div :class="{'Vlt-input': !textarea, 'Vlt-textarea': textarea}">
       <textarea
         v-if="textarea"
+        :disabled="disabled"
         :id="id"
         :maxlength="maxlength"
+        :placeholder="placeholder"
         :rows="rows"
         :value="val"
         v-on="inputListeners"

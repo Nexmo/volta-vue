@@ -7,5 +7,7 @@ src/*.js
 .editorconfig
 .eslintrc.js
 .editorconfig
+.eslintignore
+.prettierrc
 index.html
 webpack.config.js

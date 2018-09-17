@@ -6,9 +6,11 @@
       'Vlt-btn--disabled': props.disabled,
       'Vlt-btn--app': props.app,
       'Vlt-btn--primary': props.primary,
+      'Vlt-btn--quaternary': props.quaternary,
       'Vlt-btn--secondary': props.secondary,
       'Vlt-btn--destructive': props.destructive,
-      'Vlt-btn--tertiary': !(props.secondary || props.primary || props.destructive),
+      'Vlt-btn--tertiary':
+        !(props.secondary || props.primary || props.destructive || props.quaternary),
       'Vlt-btn--small': props.small,
       'Vlt-btn--large': props.large,
     }, data.staticClass, data.class
@@ -56,6 +58,10 @@ export default {
       default: false,
     },
     primary: {
+      type: Boolean,
+      default: false,
+    },
+    quaternary: {
       type: Boolean,
       default: false,
     },

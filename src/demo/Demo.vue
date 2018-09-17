@@ -18,9 +18,10 @@
         <div>
           <vlt-button primary label="Primary"/>
           <vlt-button secondary label="Secondary"/>
-          <vlt-button tertiary label="Tertiary"/>
-          <vlt-button tertiary icon="bin" label="Icon"/>
-          <vlt-button tertiary app label="App"/>
+          <vlt-button label="Tertiary"/>
+          <vlt-button quaternary label="Quaternary"/>
+          <vlt-button icon="bin" label="Icon"/>
+          <vlt-button app label="App"/>
         </div>
       </div>
     </div>
@@ -29,11 +30,12 @@
       <div class="Vlt-col">
         <h4>Callout</h4>
         <div>
-          <vlt-callout critical>A critical callout</vlt-callout>
-          <vlt-callout good>A good callout</vlt-callout>
-          <vlt-callout tip>A tip callout</vlt-callout>
-          <vlt-callout shoutout>A shoutout callout</vlt-callout>
-          <vlt-callout warning>A warning callout</vlt-callout>
+          <vlt-callout type="critical">A critical callout</vlt-callout>
+          <vlt-callout type="good">A good callout</vlt-callout>
+          <vlt-callout type="tip">A tip callout</vlt-callout>
+          <vlt-callout type="shoutout">A shoutout callout</vlt-callout>
+          <vlt-callout type="warning">A warning callout</vlt-callout>
+          <vlt-callout type="tip" dismissable>A dismissible callout</vlt-callout>
         </div>
       </div>
     </div>
@@ -76,6 +78,32 @@
 
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
+        <h4>Flash</h4>
+        <div>
+          <vlt-button
+            secondary app label="Bottom flash"
+            @click="bottomFlashVisible = true"
+          />
+          <vlt-button
+            secondary app label="Top flash"
+            @click="topFlashVisible = true"
+          />
+          <vlt-flash
+            type="critical" bottom :visible="bottomFlashVisible"
+            @dismissed="bottomFlashVisible = false">
+            Bottom flash
+          </vlt-flash>
+          <vlt-flash
+            small :visible="topFlashVisible"
+            @dismissed="topFlashVisible = false">
+            Top flash
+          </vlt-flash>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
         <h4>Icon</h4>
         <div>
           <vlt-icon icon="volume" />
@@ -94,6 +122,9 @@
           </vlt-field>
           <vlt-field label="Label on field">
             <vlt-input placeholder="I'm wrapped with a regular field"/>
+          </vlt-field>
+          <vlt-field label="Text Area">
+            <vlt-input rows="5" textarea placeholder="a textarea"/>
           </vlt-field>
         </div>
       </div>
@@ -186,9 +217,19 @@
 
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
+        <h4>Spinner</h4>
+        <div>
+          <vlt-spinner />
+          <vlt-spinner small/>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
         <h4>Steps</h4>
         <div>
-          <vlt-steps count="3" /> <br />
+          <vlt-steps :count="3" /> <br />
           <vlt-steps :steps="['one', 'two']" />
         </div>
       </div>
@@ -198,7 +239,7 @@
       <div class="Vlt-col">
         <h4>Switch</h4>
         <div>
-          <vlt-switch/> <vlt-switch small/>  <vlt-switch red/>
+          <vlt-switch /> <vlt-switch small />  <vlt-switch red />
         </div>
       </div>
     </div>
@@ -271,16 +312,6 @@
         </div>
       </div>
     </div>
-
-    <div class="Vlt-grid Vlt-grid--margin-bottom3">
-      <div class="Vlt-col">
-        <h4>Spinner</h4>
-        <div>
-          <vlt-spinner/>
-          <vlt-spinner small/>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -292,6 +323,7 @@ import {
   VltCheckbox,
   VltDropdown,
   VltField,
+  VltFlash,
   VltIcon,
   VltInput,
   VltModal,
@@ -321,6 +353,7 @@ export default {
     VltCheckbox,
     VltDropdown,
     VltField,
+    VltFlash,
     VltIcon,
     VltInput,
     VltModal,
@@ -342,8 +375,10 @@ export default {
 
   data() {
     return {
-      modalVisible: false,
+      bottomFlashVisible: false,
       modalLargeVisible: false,
+      modalVisible: false,
+      topFlashVisible: false,
     };
   },
 };
