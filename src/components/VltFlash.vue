@@ -52,11 +52,14 @@ export default {
 
   watch: {
     flashVisible(value) {
-      if (value && this.bottom) {
+      if (!value) {
+        return;
+      }
+      if (this.bottom) {
         countBottom += 1;
         this.index = countBottom;
         this.styleObject.bottom = `${(this.index * 70) - 50}px`;
-      } else if (value) {
+      } else {
         countTop += 1;
         this.index = countTop;
         this.styleObject.top = `${(this.index * 70) - 50}px`;
@@ -64,14 +67,12 @@ export default {
     },
 
     visible(value) {
+      if (!value) {
+        return;
+      }
       this.flashVisible = value;
-
-      const self = this;
-
       if (!this.dismissable) {
-        setTimeout(() => {
-          self.dismiss();
-        }, this.timeout);
+        setTimeout(this.dismiss, this.timeout);
       }
     },
   },
