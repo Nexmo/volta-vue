@@ -190,24 +190,24 @@
           <div id="Vlt-sidenav" class="Vlt-sidenav Vlt-sidenav--dark">
             <div class="Vlt-sidenav__scroll">
               <vlt-sidemenu>
-                <vlt-sidemenu-link icon="pie-chart" label="Dashboard" to="/dashboard"/>
+                <li><vlt-sidemenu-link icon="pie-chart" label="Dashboard" to="/dashboard"/></li>
                 <vlt-sidemenu-title label="Basic Menu" />
                 <vlt-sidemenu-item trigger-label="Settings" trigger-icon="gear">
-                  <vlt-sidemenu-link icon="user" label="Account" to="/accounts"/>
+                  <li><vlt-sidemenu-link icon="user" label="Account" to="/accounts"/></li>
                 </vlt-sidemenu-item>
-                <vlt-sidemenu-link
+                <li><vlt-sidemenu-link
                   icon="enter"
                   color="purple"
                   label="Internal link"
                   href="https://github.com/Nexmo/volta-vue"
-                />
-                <vlt-sidemenu-link
+                /></li>
+                <li><vlt-sidemenu-link
                   icon="open"
                   external
                   color="purple"
                   label="External link"
                   href="https://github.com/Nexmo/volta-vue"
-                />
+                /></li>
               </vlt-sidemenu>
             </div>
           </div>
