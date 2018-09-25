@@ -2,7 +2,6 @@
    <div class="Vlt-dropdown" :class="{ 'Vlt-dropdown--expanded' : expanded }">
     <button
       :class="getButtonClass()"
-      :style="getButtonStyle()"
       @click="toggleDropdown($event)"
     >
       <span v-if="label && (!hideLabel || !selectedOption)">
@@ -40,7 +39,6 @@ export default {
       default: false,
     },
     label: String,
-    minWidth: String,
     options: Array,
     property: String,
     selected: {
@@ -66,13 +64,8 @@ export default {
     getButtonClass() {
       return {
         'Vlt-dropdown__btn': true,
-        'min-width-button': this.minWidth,
         'Vlt-dropdown__btn--app': this.app,
       };
-    },
-
-    getButtonStyle() {
-      return this.minWidth ? { 'min-width': this.minWidth } : {};
     },
 
     toggleDropdown(event) {
@@ -114,10 +107,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.min-width-button {
-  display: flex;
-  justify-content: space-between;
-}
-</style>

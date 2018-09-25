@@ -70,11 +70,6 @@
             label="app styling"
             :options="['cat', 'dog', 'hamster', 'rabbit']"
           />
-          <vlt-dropdown
-            showSelection
-            minWidth="200px"
-            :options="['minWidth', 'dog', 'hamster', 'rabbit']"
-          />
         </div>
       </div>
     </div>
