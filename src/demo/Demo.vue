@@ -55,11 +55,25 @@
       <div class="Vlt-col">
         <h4>Dropdown</h4>
         <div>
-          <vlt-dropdown label="Favourite pet" :options="['cat', 'dog', 'hamster', 'rabbit']"/>
           <vlt-dropdown
-            show-selection
             label="Favourite pet"
             :options="['cat', 'dog', 'hamster', 'rabbit']"
+          />
+          <vlt-dropdown
+            showSelection
+            label="Favourite pet"
+            :options="['cat', 'dog', 'hamster', 'rabbit']"
+          />
+          <vlt-dropdown
+            showSelection
+            app
+            label="app styling"
+            :options="['cat', 'dog', 'hamster', 'rabbit']"
+          />
+          <vlt-dropdown
+            showSelection
+            minWidth="200px"
+            :options="['minWidth', 'dog', 'hamster', 'rabbit']"
           />
         </div>
       </div>
