@@ -34,11 +34,11 @@ npm install svg-sprite-loader --save-dev
 *Webpack config*
 ``` bash
 {
-    test: /\.svg$/,
-    loader: 'svg-sprite-loader',
-    options: {
-      symbolId: 'V' 
-    }
+  test: /\.svg$/,
+  loader: 'svg-sprite-loader',
+  options: {
+    symbolId: 'V' 
+  }
 } 
 ```
 
@@ -56,18 +56,18 @@ data () {
 *In your vue component*
 ``` bash
 <template>
-	<vlt-icon icon="help" />
+  <vlt-icon icon="help" />
 </template>
 
 <script>
-	import { VltIcon } from '@vonagevolta/vue';
+  import { VltIcon } from '@vonagevolta/vue';
 
-	export default {
+  export default {
     components: {
       VltIcon
     }
-		...
-	}
+    ...
+  }
 </script>
 ```
 
