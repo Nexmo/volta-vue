@@ -19,7 +19,7 @@ export default {
   name: 'vlt-field',
 
   components: {
-    VltTooltip
+    VltTooltip,
   },
 
   data() {
@@ -34,7 +34,7 @@ export default {
     errorMessage: String,
     label: String,
     optional: Boolean,
-    tooltip: String
+    tooltip: String,
   },
 
   watch: {
