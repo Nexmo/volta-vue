@@ -12,7 +12,7 @@
 const VALID_TYPES = ['critical', 'good', 'tip', 'shoutout', 'warning'];
 
 export default {
-  name: 'VltCallout',
+  name: 'vlt-callout',
 
   props: {
     dismissable: Boolean,

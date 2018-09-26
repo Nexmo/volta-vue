@@ -8,7 +8,7 @@
 import VltIcon from './VltIcon';
 
 export default {
-  name: 'VltTitle',
+  name: 'vlt-title',
 
   props: {
     color: String,
