@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'VltSteps',
+  name: 'vlt-steps',
 
   props: {
     count: Number,

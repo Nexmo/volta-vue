@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'VltSelect',
+  name: 'vlt-select',
 
   props: {
     id: String,

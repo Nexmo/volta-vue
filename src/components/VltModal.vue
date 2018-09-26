@@ -51,7 +51,7 @@
 import VltIcon from './VltIcon';
 
 export default {
-  name: 'vlt-input',
+  name: 'vlt-modal',
 
   components: {
     VltIcon,
