@@ -60,15 +60,19 @@
             :options="['cat', 'dog', 'hamster', 'rabbit']"
           />
           <vlt-dropdown
+            app
+            label="app styling"
+            :options="['cat', 'dog', 'hamster', 'rabbit']"
+          />
+          <vlt-dropdown
             showSelection
-            label="Favourite pet"
+            label="showSelection with label"
             :options="['cat', 'dog', 'hamster', 'rabbit']"
           />
           <vlt-dropdown
             showSelection
             app
-            label="app styling"
-            :options="['cat', 'dog', 'hamster', 'rabbit']"
+            :options="['showSelection with no label', 'dog', 'hamster', 'rabbit']"
           />
         </div>
       </div>

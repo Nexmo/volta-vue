@@ -7,7 +7,7 @@
       <span v-if="label && (!hideLabel || !selectedOption)">
         {{label}}<span v-if="showSelection">:</span>
       </span>
-      <span v-if="showSelection">
+      <span v-if="showSelection" :class="{ 'Vlt-dropdown__selection': label }">
         {{ property && selectedOption ? selectedOption[property] : selectedOption }}
       </span>
     </button>
