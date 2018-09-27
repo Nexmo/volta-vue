@@ -96,9 +96,9 @@ export default {
 
     pages() {
       const left = Math.max(1, this.currentPage - 1);
-      const right = Math.min(
-        this.currentPage + 1,
-        this.newRowsTotal / this.pageSize,
+      const actualTotal = this.total ? this.total : this.newRowsTotal;
+      const right = Math.ceil(
+        actualTotal / this.pageSize,
       );
 
       const pages = [];
@@ -175,3 +175,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.Vlt-table__pagination {
+  height: 35px;
+}
+</style>
