@@ -61,6 +61,7 @@ const Components = [
     html: 'vlt-dropdown',
     icon: 'circle-down',
     propertyRows: [
+      { property: 'app', type: 'Boolean', default: false },
       { property: 'id', type: 'String' },
       { property: 'label', type: 'String' },
       { property: 'selected', type: 'String', default: 'the first option in the options array' },
