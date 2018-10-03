@@ -77,6 +77,7 @@ const Components = [
     propertyRows: [
       { property: 'big', type: 'Boolean', default: false },
       { property: 'elastic', type: 'Boolean', default: false },
+      { property: 'error', type: 'Boolean', default: true },
       { property: 'error-message', type: 'String' },
       { property: 'label', type: 'String' },
       { property: 'optional', type: 'Boolean', default: false },
