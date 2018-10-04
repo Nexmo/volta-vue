@@ -13,7 +13,7 @@
         !(props.secondary || props.primary || props.destructive || props.quaternary),
       'Vlt-btn--small': props.small,
       'Vlt-btn--large': props.large,
-    }, data.staticClass, data.class
+    }
     ]"
     v-on="listeners"
   >
