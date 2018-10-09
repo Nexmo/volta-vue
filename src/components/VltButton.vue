@@ -1,6 +1,5 @@
 <template functional>
   <button
-    :id="prop.id"
     class="Vlt-btn Vlt-btn--no-focus"
     :class="[{
       'Vlt-btn--icon': !props.label,
@@ -45,10 +44,6 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
-    },
-    id: {
-      type: String,
-      required: false,
     },
     icon: {
       type: String,
