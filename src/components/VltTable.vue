@@ -33,7 +33,7 @@
 
     <div v-if="rows.length === 0" class="Vlt-empty Vlt-empty--search">
       <div class="Vlt-empty__content">
-        <p>There are no results for this search.</p>
+        <p>{{ emptyMessage }}</p>
       </div>
     </div>
   </div>
@@ -54,6 +54,10 @@ export default {
     currentPage: {
       type: Number,
       default: 1,
+    },
+    emptyMessage: {
+      type: String,
+      default: 'There are no results for this search',
     },
     pagination: Boolean,
     pageSize: {
@@ -95,14 +99,13 @@ export default {
     },
 
     pages() {
-      const left = Math.max(1, this.currentPage - 1);
       const actualTotal = this.total ? this.total : this.newRowsTotal;
       const right = Math.ceil(
         actualTotal / this.pageSize,
       );
 
       const pages = [];
-      for (let i = left; i <= right; i += 1) {
+      for (let i = 1; i <= right; i += 1) {
         pages.push({
           number: i,
           click: (event) => {
