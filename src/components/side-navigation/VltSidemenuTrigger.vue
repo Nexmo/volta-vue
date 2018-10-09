@@ -7,6 +7,7 @@
     @click="isActive = !isActive">
     <vlt-icon :icon="icon" :color="color" />
     <span class="Vlt-sidemenu__label">{{label}}</span>
+    <vlt-badge v-if="badge" :color="badgeColor">{{badge}}</vlt-badge>
   </p>
 </template>
 
@@ -14,6 +15,7 @@
 /* eslint-disable no-param-reassign */
 import Vue from 'vue';
 import VltIcon from '../VltIcon';
+import VltBadge from '../VltBadge';
 
 Vue.directive('click-outside', {
   bind(el, binding, vnode) {
@@ -42,6 +44,8 @@ export default {
 
   props: {
     active: Boolean,
+    badge: String,
+    badgeColor: String,
     color: String,
     collapsed: Boolean,
     icon: String,
@@ -65,6 +69,7 @@ export default {
   },
 
   components: {
+    VltBadge,
     VltIcon,
   },
 
@@ -75,3 +80,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+  .Vlt-badge {
+    margin-right: 20px !important
+  }
+</style>
