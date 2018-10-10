@@ -2,6 +2,7 @@
   <div class="Vlt-steps">
     <div
       v-for="(step, index) in items"
+      :id="id"
       :key="index"
       @click="select(index)"
       class="Vlt-steps__item"
@@ -16,9 +17,22 @@ export default {
   name: 'vlt-steps',
 
   props: {
-    count: Number,
-    steps: Array,
-    selected: Number,
+    count: {
+      type: Number,
+      required: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
+    steps: {
+      type: Array,
+      required: false,
+    },
+    selected: {
+      type: Number,
+      default: 0,
+    },
   },
 
   data() {

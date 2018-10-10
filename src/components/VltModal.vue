@@ -62,7 +62,10 @@ export default {
       default: true,
       type: Boolean,
     },
-    cancelText: String,
+    cancelText: {
+      type: String,
+      required: false,
+    },
     confirmBtnIcon: {
       type: String,
       required: false,
@@ -75,19 +78,43 @@ export default {
       default: false,
       type: Boolean,
     },
-    extraBtnClass: String,
-    extraBtnIcon: String,
-    extraBtnLabel: String,
-    id: String,
+    extraBtnClass: {
+      type: String,
+      required: false,
+    },
+    extraBtnIcon: {
+      type: String,
+      required: false,
+    },
+    extraBtnLabel: {
+      type: String,
+      required: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
     large: Boolean,
-    message: String,
+    message: {
+      type: String,
+      required: false,
+    },
     notify: {
       default: false,
       type: Boolean,
     },
-    okText: String,
-    title: String,
-    visible: Boolean,
+    okText: {
+      type: String,
+      required: false,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    visible: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   methods: {
@@ -106,7 +133,7 @@ export default {
     getCancelText() {
       if (this.canCancel && this.cancelText) {
         return this.cancelText;
-      } else if (this.canCancel) {
+      } if (this.canCancel) {
         return 'Cancel';
       }
       return null;

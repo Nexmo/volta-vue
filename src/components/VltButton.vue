@@ -15,6 +15,7 @@
       'Vlt-btn--large': props.large,
     }, data.staticClass, data.class
     ]"
+    :id="id"
     v-on="listeners"
   >
     <vlt-icon v-if="props.icon" :spin="props.spin" :icon="props.icon" />
@@ -44,6 +45,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    id: {
+      type: String,
+      required: false,
     },
     icon: {
       type: String,

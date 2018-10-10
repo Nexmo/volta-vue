@@ -1,5 +1,5 @@
 <template>
-   <div class="Vlt-dropdown" :class="{ 'Vlt-dropdown--expanded' : expanded }">
+   <div :id="id" class="Vlt-dropdown" :class="{ 'Vlt-dropdown--expanded' : expanded }">
     <button
       :class="getButtonClass()"
       @click="toggleDropdown($event)"
@@ -26,26 +26,43 @@
 </template>
 
 <script>
+/* eslint-disable prefer-destructuring */
 export default {
   name: 'vlt-dropdown',
 
   props: {
     app: {
       type: Boolean,
-      required: false,
+      default: false,
     },
     hideLabel: {
       type: Boolean,
       default: false,
     },
-    label: String,
-    options: Array,
-    property: String,
+    id: {
+      type: String,
+      required: false,
+    },
+    label: {
+      type: String,
+      required: false,
+    },
+    options: {
+      type: Array,
+      default: () => [],
+    },
+    property: {
+      type: String,
+      required: false,
+    },
     selected: {
       type: [Object, String],
       required: false,
     },
-    showSelection: Boolean,
+    showSelection: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -78,10 +95,8 @@ export default {
     },
 
     selectOption(option) {
-      const selection = option;
-
-      this.selectedOption = selection;
-      this.$emit('input', selection);
+      this.selectedOption = option;
+      this.$emit('input', option);
       this.expanded = false;
       document.removeEventListener('click', this.bodyListener);
     },

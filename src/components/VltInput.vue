@@ -36,16 +36,43 @@ export default {
 
   props: {
     disabled: Boolean,
-    hint: String,
-    id: String,
+    hint: {
+      type: String,
+      required: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
     // used for big input elements
-    label: String,
-    max: String,
-    maxlength: String,
-    min: String,
-    placeholder: String,
-    rows: Number | String,
-    size: Number | String,
+    label: {
+      type: String,
+      required: false,
+    },
+    max: {
+      type: String,
+      required: false,
+    },
+    maxlength: {
+      type: String,
+      required: false,
+    },
+    min: {
+      type: String,
+      required: false,
+    },
+    placeholder: {
+      type: String,
+      required: false,
+    },
+    rows: {
+      type: [Number, String],
+      required: false,
+    },
+    size: {
+      type: [Number, String],
+      required: false,
+    },
     textarea: {
       default: false,
       type: Boolean,
@@ -54,7 +81,10 @@ export default {
       default: 'text',
       type: String,
     },
-    val: String || Number,
+    val: {
+      type: [Number, String],
+      required: false,
+    },
   },
 
   computed: {

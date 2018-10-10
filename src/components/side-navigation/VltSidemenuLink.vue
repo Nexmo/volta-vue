@@ -1,7 +1,8 @@
 <template>
   <router-link
     v-if="to"
-    class="Vlt-sidemenu__link "
+    :id="id"
+    class="Vlt-sidemenu__link"
     :to="to"
     active-class="Vlt-sidemenu__link_active"
     exact
@@ -14,6 +15,7 @@
     v-else
     class="Vlt-sidemenu__link "
     :href="href"
+    :id="id"
     active-class="Vlt-sidemenu__link_active"
     :target="external ? '_blank' : ''"
   >
@@ -32,6 +34,7 @@ export default {
     color: String,
     external: Boolean,
     href: String,
+    id: String,
     icon: String,
     label: String,
     to: String,

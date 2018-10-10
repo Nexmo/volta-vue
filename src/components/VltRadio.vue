@@ -1,5 +1,5 @@
 <template>
-  <div class="Vlt-radio" :class="{ 'Vlt-radio--inline': inline }">
+  <div :id="id" class="Vlt-radio" :class="{ 'Vlt-radio--inline': inline }">
     <label>
       <span class="Vlt-radio__button">
         <input
@@ -25,20 +25,39 @@ export default {
   name: 'vlt-radio',
 
   props: {
-    checked: Boolean,
+    checked: {
+      type: Boolean,
+      default: false,
+    },
     disabled: {
       type: Boolean,
       default: false,
     },
-    hint: String,
+    hint: {
+      type: String,
+      required: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
     inline: {
       type: Boolean,
       default: false,
     },
-    label: String,
-    name: String,
+    label: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
     // need to use 'val' so we can emit the value to the parent, value does not work with v-model
-    val: String,
+    val: {
+      type: String,
+      required: false,
+    },
   },
 
   computed: {

@@ -1,5 +1,5 @@
 <template>
-  <span class="Vlt-tooltip">
+  <span :id="id" class="Vlt-tooltip">
     <slot>
       <vlt-icon class="Vlt-blue" icon="help-negative" small></vlt-icon>
     </slot>
@@ -13,8 +13,18 @@ export default {
   name: 'vlt-tooltip',
 
   props: {
-    position: String,
-    title: String,
+    position: {
+      type: String,
+      required: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
   },
 
   components: {

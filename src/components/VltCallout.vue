@@ -1,5 +1,5 @@
 <template>
-  <div class="Vlt-callout" :class="classArray">
+  <div :id="id" class="Vlt-callout" :class="classArray">
     <i></i>
     <div class="Vlt-callout__content">
       <slot></slot>
@@ -15,7 +15,14 @@ export default {
   name: 'vlt-callout',
 
   props: {
-    dismissable: Boolean,
+    dismissable: {
+      type: Boolean,
+      default: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
     type: {
       type: String,
       required: true,
@@ -34,8 +41,8 @@ export default {
       const classArray = VALID_TYPES.filter((type) => type === this.type)
         .map((type) => `Vlt-callout--${type}`);
 
-      return this.dismissable && this.dismissed ?
-        ['Vlt-callout--dismissed', ...classArray]
+      return this.dismissable && this.dismissed
+        ? ['Vlt-callout--dismissed', ...classArray]
         : classArray;
     },
   },

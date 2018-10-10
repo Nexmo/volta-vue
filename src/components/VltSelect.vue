@@ -17,8 +17,14 @@ export default {
   name: 'vlt-select',
 
   props: {
-    id: String,
-    options: Array,
+    id: {
+      type: String,
+      required: false,
+    },
+    options: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>
