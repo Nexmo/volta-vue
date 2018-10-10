@@ -9,7 +9,7 @@
         <vlt-tooltip v-if="tooltip" :title="tooltip" />
       </label>
       <slot></slot>
-      <small v-if="error" class="Vlt-form__element__error">{{errorMessage}}</small>
+      <small v-if="error" class="Vlt-form__element__error">{{error}}</small>
   </div>
 </template>
 
@@ -39,10 +39,6 @@ export default {
       default: false,
     },
     error: {
-      type: Boolean,
-      default: false,
-    },
-    errorMessage: {
       type: String,
       required: false,
     },
