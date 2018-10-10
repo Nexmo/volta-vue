@@ -133,7 +133,7 @@ export default {
     getCancelText() {
       if (this.canCancel && this.cancelText) {
         return this.cancelText;
-      } else if (this.canCancel) {
+      } if (this.canCancel) {
         return 'Cancel';
       }
       return null;

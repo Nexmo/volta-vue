@@ -41,8 +41,8 @@ export default {
       const classArray = VALID_TYPES.filter((type) => type === this.type)
         .map((type) => `Vlt-callout--${type}`);
 
-      return this.dismissable && this.dismissed ?
-        ['Vlt-callout--dismissed', ...classArray]
+      return this.dismissable && this.dismissed
+        ? ['Vlt-callout--dismissed', ...classArray]
         : classArray;
     },
   },

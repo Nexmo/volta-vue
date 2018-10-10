@@ -26,6 +26,7 @@
 </template>
 
 <script>
+/* eslint-disable prefer-destructuring */
 export default {
   name: 'vlt-dropdown',
 
@@ -48,7 +49,7 @@ export default {
     },
     options: {
       type: Array,
-      default: [],
+      default: () => [],
     },
     property: {
       type: String,
@@ -94,10 +95,8 @@ export default {
     },
 
     selectOption(option) {
-      const selection = option;
-
-      this.selectedOption = selection;
-      this.$emit('input', selection);
+      this.selectedOption = option;
+      this.$emit('input', option);
       this.expanded = false;
       document.removeEventListener('click', this.bodyListener);
     },
