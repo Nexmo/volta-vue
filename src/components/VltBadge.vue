@@ -1,5 +1,5 @@
 <template>
-  <span v-if="!dismissed" class="Vlt-badge" :class="classObject">
+  <span :id="id" v-if="!dismissed" class="Vlt-badge" :class="classObject">
     <slot></slot>
     <button v-if="dismissable" @click="dismiss($event)" class="Vlt-badge__dismiss"></button>
   </span>
@@ -10,14 +10,30 @@ export default {
   name: 'vlt-badge',
 
   props: {
-    color: String,
-    dismissable: Boolean,
-    large: Boolean,
+    color: {
+      type: String,
+      default: 'blue',
+    },
+    dismissable: {
+      type: Boolean,
+      default: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
+    large: {
+      type: Boolean,
+      default: false,
+    },
     stacked: {
       type: Boolean,
       default: false,
     },
-    small: Boolean,
+    small: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {

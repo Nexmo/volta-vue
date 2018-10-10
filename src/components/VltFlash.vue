@@ -1,5 +1,5 @@
 <template>
-  <div class="Vlt-callout Vlt-flash" :class="classObject" :style="styleObject">
+  <div :id="id" class="Vlt-callout Vlt-flash" :class="classObject" :style="styleObject">
     <i></i>
     <div class="Vlt-callout__content">
       <p><slot></slot></p>
@@ -26,19 +26,32 @@ export default {
       type: Boolean,
       default: false,
     },
-    dismissable: Boolean,
+    dismissable: {
+      type: Boolean,
+      default: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
     type: {
       type: String,
       default: 'shoutout',
       validator: (val) => VALID_TYPES.includes(val),
     },
-    small: Boolean,
+    small: {
+      type: Boolean,
+      default: false,
+    },
     timeout: {
       type: Number,
       default: 5000,
       required: false,
     },
-    visible: Boolean,
+    visible: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {

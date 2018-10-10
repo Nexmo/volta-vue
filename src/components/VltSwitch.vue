@@ -1,5 +1,5 @@
 <template>
-  <div class="Vlt-switch" :class="{'Vlt-switch--red': red, 'Vlt-switch--small': small}">
+  <div :id="id" class="Vlt-switch" :class="{'Vlt-switch--red': red, 'Vlt-switch--small': small}">
     <label>
       <input type="checkbox" v-on="inputListeners" :checked="checked" />
       <!-- Without @click.stop, click on switch will trigger 2 click events, one for the input
@@ -14,6 +14,10 @@ export default {
   name: 'vlt-switch',
 
   props: {
+    id: {
+      type: String,
+      required: false,
+    },
     small: {
       type: Boolean,
       default: false,
@@ -22,7 +26,10 @@ export default {
       type: Boolean,
       default: false,
     },
-    checked: Boolean,
+    checked: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {

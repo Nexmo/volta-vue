@@ -1,5 +1,6 @@
 <template>
     <div
+      :id="id"
       class="Vlt-form__element"
       :class="[{'Vlt-form__element--big' : big}, {'Vlt-form__element--elastic': elastic}]"
     >
@@ -29,12 +30,34 @@ export default {
   },
 
   props: {
-    big: Boolean,
-    elastic: Boolean,
-    errorMessage: String,
-    label: String,
-    optional: Boolean,
-    tooltip: String,
+    big: {
+      type: Boolean,
+      default: false,
+    },
+    elastic: {
+      type: Boolean,
+      default: false,
+    },
+    errorMessage: {
+      type: String,
+      required: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
+    label: {
+      type: String,
+      required: false,
+    },
+    optional: {
+      type: Boolean,
+      default: false,
+    },
+    tooltip: {
+      type: String,
+      required: false,
+    },
   },
 
   watch: {

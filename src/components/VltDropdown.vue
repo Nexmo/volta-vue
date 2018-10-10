@@ -1,5 +1,5 @@
 <template>
-   <div class="Vlt-dropdown" :class="{ 'Vlt-dropdown--expanded' : expanded }">
+   <div :id="id" class="Vlt-dropdown" :class="{ 'Vlt-dropdown--expanded' : expanded }">
     <button
       :class="getButtonClass()"
       @click="toggleDropdown($event)"
@@ -32,20 +32,36 @@ export default {
   props: {
     app: {
       type: Boolean,
-      required: false,
+      default: false,
     },
     hideLabel: {
       type: Boolean,
       default: false,
     },
-    label: String,
-    options: Array,
-    property: String,
+    id: {
+      type: String,
+      required: false,
+    },
+    label: {
+      type: String,
+      required: false,
+    },
+    options: {
+      type: Array,
+      default: [],
+    },
+    property: {
+      type: String,
+      required: false,
+    },
     selected: {
       type: [Object, String],
       required: false,
     },
-    showSelection: Boolean,
+    showSelection: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {

@@ -34,7 +34,7 @@ export default {
   props: {
     icon: {
       type: String,
-      default: '',
+      required: true,
     },
     clickable: {
       type: Boolean,
@@ -42,6 +42,7 @@ export default {
     },
     color: {
       type: String,
+      required: false,
     },
     noClass: {
       type: Boolean,

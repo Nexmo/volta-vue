@@ -11,8 +11,14 @@ export default {
   name: 'vlt-title',
 
   props: {
-    color: String,
-    iconColor: String,
+    color: {
+      type: String,
+      required: false,
+    },
+    iconColor: {
+      type: String,
+      required: false,
+    },
     icon: {
       type: String,
       required: true,

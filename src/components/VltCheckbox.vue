@@ -1,5 +1,5 @@
 <template>
-  <div class="Vlt-checkbox" :class="{ 'Vlt-checkbox--inline': inline }">
+  <div :id="id" class="Vlt-checkbox" :class="{ 'Vlt-checkbox--inline': inline }">
     <label>
       <span class="Vlt-checkbox__button">
         <input
@@ -24,17 +24,26 @@ export default {
   name: 'vlt-checkbox',
 
   props: {
-    checked: Boolean,
+    checked: {
+      type: Boolean,
+      default: false,
+    },
     disabled: {
       type: Boolean,
       default: false,
     },
-    id: String,
+    id: {
+      type: String,
+      required: false,
+    },
     inline: {
       type: Boolean,
       default: false,
     },
-    label: String,
+    label: {
+      type: String,
+      required: true,
+    },
     tooltipPosition: {
       type: String,
       required: false,

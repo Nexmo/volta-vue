@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="rows.length > 0" class="Vlt-table Vlt-table--data">
+    <div v-if="rows.length > 0" :id="id" class="Vlt-table Vlt-table--data">
       <table>
         <thead>
           <tr>
@@ -59,7 +59,14 @@ export default {
       type: String,
       default: 'There are no results for this search',
     },
-    pagination: Boolean,
+    id: {
+      type: String,
+      required: false,
+    },
+    pagination: {
+      type: Boolean,
+      default: false,
+    },
     pageSize: {
       type: [Number, String],
       default: 20,

@@ -1,5 +1,6 @@
 <template>
   <div
+    :id="id"
     class="Vlt-tabs__panel"
     :class="{ 'Vlt-tabs__panel_active': active, 'Vlt-tabs__panel_disabled': disabled }"
   >
@@ -12,9 +13,22 @@ export default {
   name: 'vlt-tab',
 
   props: {
-    disabled: Boolean,
-    icon: String,
-    label: String,
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    icon: {
+      type: String,
+      required: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
+    label: {
+      type: String,
+      required: true,
+    },
   },
 
   data() {

@@ -1,5 +1,5 @@
 <template>
-  <div class="Vlt-col" :class="getClassObject()">
+  <div :id="id" class="Vlt-col" :class="getClassObject()">
     <slot></slot>
   </div>
 </template>
@@ -9,11 +9,30 @@ export default {
   name: 'VltCol',
 
   props: {
-    center: Boolean,
-    right: Boolean,
-    mWidth: String,
-    sWidth: String,
-    width: String,
+    center: {
+      type: Boolean,
+      default: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
+    right: {
+      type: Boolean,
+      default: false,
+    },
+    mWidth: {
+      type: String,
+      required: false,
+    },
+    sWidth: {
+      type: String,
+      required: false,
+    },
+    width: {
+      type: String,
+      required: false,
+    },
   },
 
   methods: {

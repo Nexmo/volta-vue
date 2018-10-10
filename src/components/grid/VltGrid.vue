@@ -9,14 +9,38 @@ export default {
   name: 'VltGrid',
 
   props: {
-    bottom: Boolean,
-    center: Boolean,
-    flush: Boolean,
-    middle: Boolean,
-    narrow: Boolean,
-    margin: String,
-    marginBottom: String,
-    marginTop: String,
+    bottom: {
+      type: Boolean,
+      default: false,
+    },
+    center: {
+      type: Boolean,
+      default: false,
+    },
+    flush: {
+      type: Boolean,
+      default: false,
+    },
+    middle: {
+      type: Boolean,
+      default: false,
+    },
+    narrow: {
+      type: Boolean,
+      default: false,
+    },
+    margin: {
+      type: String,
+      required: false,
+    },
+    marginBottom: {
+      type: String,
+      required: false,
+    },
+    marginTop: {
+      type: String,
+      required: false,
+    },
   },
 
   methods: {
