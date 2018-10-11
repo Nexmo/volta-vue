@@ -239,6 +239,7 @@ const Components = [
     icon: 'more-negative',
     propertyRows: [
       { property: 'count', type: 'Number' },
+      { property: 'disabled', type: 'Array' },
       { property: 'selected', type: 'Number' },
       { property: 'steps', type: 'Array' },
     ],

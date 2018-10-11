@@ -21,6 +21,10 @@ export default {
       type: Number,
       required: false,
     },
+    disabled: {
+      type: Array,
+      required: false,
+    },
     id: {
       type: String,
       required: false,
@@ -56,7 +60,10 @@ export default {
     },
 
     select(index) {
-      this.selectedIndex = index;
+      if (!this.disabled || this.disabled.indexOf(index) === -1) {
+        this.selectedIndex = index;
+        this.$emit('update', this.selectedIndex);
+      }
     },
 
     uncomplete(index) {
@@ -77,12 +84,18 @@ export default {
       for (let i = 0; i < this.steps.length; i += 1) {
         const item = {
           done: false,
-          title: this.steps[0],
+          title: this.steps[i],
         };
 
         this.items.push(item);
       }
     }
+  },
+
+  watch: {
+    selected(value) {
+      this.selectedIndex = value;
+    },
   },
 };
 </script>

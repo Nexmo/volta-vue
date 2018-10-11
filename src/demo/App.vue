@@ -52,7 +52,13 @@
 <script>
 import VoltaIcons from '@vonagevolta/core/dist/symbol/volta-icons.svg';
 
-import { VltButton, VltIcon, VltTabs, VltTab, VltTable } from '../components';
+import {
+  VltButton,
+  VltIcon,
+  VltTabs,
+  VltTab,
+  VltTable,
+} from '../components';
 import Components from './data';
 import VoltaVueDemo from './Demo';
 

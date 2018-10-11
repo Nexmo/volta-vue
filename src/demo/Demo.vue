@@ -243,7 +243,8 @@
         <h4>Steps</h4>
         <div>
           <vlt-steps :count="3" /> <br />
-          <vlt-steps :steps="['one', 'two']" />
+          <vlt-steps :steps="['one', 'two']" /> <br />
+          <vlt-steps :steps="['one', 'two', 'three']" :disabled="[2]" />
         </div>
       </div>
     </div>
