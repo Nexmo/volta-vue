@@ -2,14 +2,14 @@
     <div
       :id="id"
       class="Vlt-form__element"
-      :class="[{'Vlt-form__element--big' : big}, {'Vlt-form__element--elastic': elastic}]"
+      :class="classObject"
     >
       <label v-if="!big && label" class="Vlt-label">{{label}}
         <small class="Vlt-form__element_optional" v-if="optional">(optional)</small>
         <vlt-tooltip v-if="tooltip" :title="tooltip" />
       </label>
       <slot></slot>
-      <small v-if="!valid" class="Vlt-form__element__error">{{errorMessage}}</small>
+      <small v-if="error" class="Vlt-form__element__error">{{error}}</small>
   </div>
 </template>
 
@@ -38,7 +38,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    errorMessage: {
+    error: {
       type: String,
       required: false,
     },
@@ -60,9 +60,13 @@ export default {
     },
   },
 
-  watch: {
-    errorMessage(value) {
-      this.valid = !value;
+  computed: {
+    classObject() {
+      return {
+        'Vlt-form__element--big': this.big,
+        'Vlt-form__element--elastic': this.elastic,
+        'Vlt-form__element--error': this.error,
+      };
     },
   },
 };
