@@ -113,9 +113,9 @@ export default {
     selected(selected) {
       this.selectedOption = selected;
     },
-    options(options) {
-      if (!this.selected) {
-        this.selectedOption = options[0];
+    options(value) {
+      if (value && !this.selectedOption) {
+        this.selectedOption = value[0];
         this.$emit('input', this.selectedOption);
       }
     },
