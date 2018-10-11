@@ -85,6 +85,9 @@
           <vlt-field>
             I am wrapped in a field
           </vlt-field>
+          <vlt-field error="Something is wrong">
+            I am wrapped in a field with an error
+          </vlt-field>
         </div>
       </div>
     </div>
