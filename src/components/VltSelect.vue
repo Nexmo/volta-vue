@@ -1,14 +1,14 @@
 <template>
-  <div :class="`Vlt-form__element Vlt-form__element--${size || 'big'}`">
+  <div :class="`Vlt-form__element Vlt-form__element--${big ? 'big' : 'small'}`">
     <div class="Vlt-select">
       <select :id="id" v-on="inputListeners">
-        <option v-if="!!firstOptionText" selected value="">{{ firstOptionText }}</option>
+        <option v-if="!!selected" selected value="">{{ selected }}</option>
         <option v-for="option in options" :value="option.value || option" :key="option.value || option">
           {{ option.label || option }}
         </option>
       </select>
-      <label v-if="!!labelText" :for="id">
-        {{ labelText }}
+      <label v-if="!!label" :for="id">
+        {{ label }}
       </label>
     </div>
   </div>
@@ -26,17 +26,17 @@ export default {
       type: Array,
       required: true,
     },
-    labelText: {
+    label: {
       type: String,
       required: false,
     },
-    firstOptionText: {
+    selected: {
       type: String,
       required: false,
     },
-    size: {
-      type: String,
-      validator: value => ['big', 'small'].includes(value),
+    big: {
+      type: Boolean,
+      required: false,
     },
   },
   computed: {
@@ -49,7 +49,7 @@ export default {
           vm.$emit('input', value);
         }
       };
-    }
-  }
+    },
+  },
 };
 </script>
