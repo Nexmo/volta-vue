@@ -1,5 +1,5 @@
 <template>
-  <div :class="`Vlt-form__element Vlt-form__element--${big ? 'big' : 'small'}`">
+  <div :class="[{ 'Vlt-form__element--big':  big }, 'Vlt-form__element']">
     <div class="Vlt-select">
       <select :id="id" v-on="inputListeners">
         <option v-if="!!selected" selected value="">{{ selected }}</option>
