@@ -9,7 +9,7 @@
     "pull-request-link": "sh bin/pull-request-link.sh"
   },
   "dependencies": {
-    "@vonagevolta/core": "^1.2.19",
+    "@vonagevolta/core": "^1.2.27",
     "tooltip.js": "^1.2.0",
     "vue": "^2.5.11"
   },
