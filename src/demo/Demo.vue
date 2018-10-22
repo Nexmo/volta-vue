@@ -193,7 +193,7 @@
         <h4>Select</h4>
         <div>
           <vlt-field>
-            <vlt-select :options="['dog', 'rabbit']"/>
+            <vlt-select :options="['dog', 'rabbit']"  selected="Please pick one" label="Select one" big/>
           </vlt-field>
         </div>
       </div>
