@@ -1,21 +1,22 @@
 <template>
-  <div class="Vlt-select">
-    <select :id="id">
-      <option
-        v-for="o in options"
-        :value="o.value || o"
-        :key="o.value || o"
-      >
-        {{o.label || o}}
-      </option>
-    </select>
+  <div :class="`Vlt-form__element Vlt-form__element--${size || 'big'}`">
+    <div class="Vlt-select">
+      <select :id="id" v-on="inputListeners">
+        <option v-if="!!firstOptionText" selected value="">{{ firstOptionText }}</option>
+        <option v-for="option in options" :value="option.value || option" :key="option.value || option">
+          {{ option.label || option }}
+        </option>
+      </select>
+      <label v-if="!!labelText" :for="id">
+        {{ labelText }}
+      </label>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'vlt-select',
-
   props: {
     id: {
       type: String,
@@ -23,8 +24,32 @@ export default {
     },
     options: {
       type: Array,
-      required: true,
+      required: true
+    },
+    labelText: {
+      type: String,
+      required: false
+    },
+    firstOptionText: {
+      type: String,
+      required: false
+    },
+    size: {
+      type: String,
+      validator: value => ['big', 'small'].includes(value)
     },
   },
+  computed: {
+    inputListeners() {
+      const vm = this;
+
+      return {
+        ...this.$listeners,
+        input({ target: { value } }) {
+          vm.$emit("input", value);
+        }
+      };
+    }
+  }
 };
 </script>
