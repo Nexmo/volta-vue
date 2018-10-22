@@ -24,19 +24,19 @@ export default {
     },
     options: {
       type: Array,
-      required: true
+      required: true,
     },
     labelText: {
       type: String,
-      required: false
+      required: false,
     },
     firstOptionText: {
       type: String,
-      required: false
+      required: false,
     },
     size: {
       type: String,
-      validator: value => ['big', 'small'].includes(value)
+      validator: value => ['big', 'small'].includes(value),
     },
   },
   computed: {
@@ -46,7 +46,7 @@ export default {
       return {
         ...this.$listeners,
         input({ target: { value } }) {
-          vm.$emit("input", value);
+          vm.$emit('input', value);
         }
       };
     }
