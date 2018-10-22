@@ -16,7 +16,7 @@
     <div class="Vlt-modal__panel" @keyup.enter="confirm" @keyup.esc="close">
       <header class="Vlt-modal__header">
         <h4>{{ title }}</h4>
-        <button class="Vlt-modal__dismiss" aria-label="Close" @click="close"></button>
+        <a class="Vlt-modal__dismiss" aria-label="Close" @click="close"></a>
       </header>
       <section class="Vlt-modal__content">
         <slot><p>{{message}}</p></slot>
