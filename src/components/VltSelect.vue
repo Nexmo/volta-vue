@@ -4,9 +4,9 @@
       <option v-if="!!selected" selected value="">{{ selected }}</option>
       <option
         v-for="option in options"
-        :value="option.value || option"
-        :key="option.value || option">
-        {{ option.label || option }}
+        :value="option[property] || option"
+        :key="option[property] || option">
+        {{ option[labelProperty] || option }}
       </option>
     </select>
     <label v-if="!!label" :for="id">
@@ -27,7 +27,15 @@ export default {
       type: Array,
       required: true,
     },
+    labelProperty: {
+      type: String,
+      required: false,
+    },
     label: {
+      type: String,
+      required: false,
+    },
+    property: {
       type: String,
       required: false,
     },
