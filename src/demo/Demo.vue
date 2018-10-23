@@ -190,13 +190,26 @@
 
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
-        <h4>Select</h4>
+        <h4>Select (big)</h4>
         <div>
           <vlt-field big>
             <vlt-select
               :options="['dog', 'rabbit']"
               selected="Please pick one"
               label="Select one" />
+          </vlt-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Select (normal)</h4>
+        <div>
+          <vlt-field label="Select one">
+            <vlt-select
+              :options="['lion', 'tiger']"
+              selected="Please pick one" />
           </vlt-field>
         </div>
       </div>

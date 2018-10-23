@@ -181,9 +181,10 @@ const Components = [
     propertyRows: [
       { property: 'id', type: 'String' },
       { property: 'options', type: 'Array' },
+      { property: 'property', type: 'String' },
+      { property: 'labelProperty', type: 'String' },
       { property: 'label', type: 'String' },
       { property: 'selected', type: 'String' },
-      { property: 'isBig', type: 'Boolean', default: 'false' },
     ],
     code: '<vlt-select :options="[]" />',
   },
