@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="rows.length > 0" :id="id" class="Vlt-table Vlt-table--data">
+    <div v-if="rows.length > 0" :id="id" :class="{ 'Vlt-table--data': data }" class="Vlt-table">
       <table>
         <thead>
           <tr>
@@ -54,6 +54,10 @@ export default {
     currentPage: {
       type: Number,
       default: 1,
+    },
+    data: {
+      type: Boolean,
+      default: false,
     },
     emptyMessage: {
       type: String,
