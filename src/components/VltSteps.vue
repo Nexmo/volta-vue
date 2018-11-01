@@ -21,6 +21,10 @@ export default {
       type: Number,
       required: false,
     },
+    complete: {
+      type: Array,
+      required: false,
+    },
     disabled: {
       type: Array,
       required: false,
@@ -47,15 +51,11 @@ export default {
   },
 
   methods: {
-    complete(index) {
-      this.steps[index].done = true;
-      this.selectedIndex = index + 1;
-    },
-
     getClassObject(step, index) {
       return {
         'Vlt-steps__item_selected': this.selectedIndex === index,
-        'Vlt-steps__item_done': step.done,
+        'Vlt-steps__item_disabled': this.disabled && this.disabled.indexOf(index) >= 0,
+        'Vlt-steps__item_done': this.complete && this.complete.indexOf(index) >= 0,
       };
     },
 
@@ -65,25 +65,16 @@ export default {
         this.$emit('update', this.selectedIndex);
       }
     },
-
-    uncomplete(index) {
-      this.steps[index].done = false;
-    },
   },
 
   mounted() {
     if (this.count) {
       for (let i = 0; i < parseInt(this.count, 10); i += 1) {
-        const item = {
-          done: false,
-        };
-
-        this.items.push(item);
+        this.items.push(i);
       }
     } else {
       for (let i = 0; i < this.steps.length; i += 1) {
         const item = {
-          done: false,
           title: this.steps[i],
         };
 
@@ -99,3 +90,11 @@ export default {
   },
 };
 </script>
+<!-- eslint-disable max-len -->
+<style lang="scss" scoped>
+  .Vlt-steps__item:not(.Vlt-steps__item_selected):not(.Vlt-steps__item_done):not(.Vlt-steps__item_disabled) {
+    &:before {
+      cursor: pointer;
+    }
+  }
+</style>

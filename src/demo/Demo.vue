@@ -263,7 +263,8 @@
         <div>
           <vlt-steps :count="3" /> <br />
           <vlt-steps :steps="['one', 'two']" /> <br />
-          <vlt-steps :steps="['one', 'two', 'three']" :disabled="[2]" />
+          <vlt-steps :steps="['one', 'two', 'three']" :disabled="[2]" /> <br />
+          <vlt-steps :steps="['one', 'two', 'three']" :complete="[0]" :disabled="[0]" />
         </div>
       </div>
     </div>
