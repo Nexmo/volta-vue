@@ -322,6 +322,40 @@
             <vlt-tab label="Disabled" icon="cart" disabled>
             </vlt-tab>
           </vlt-tabs>
+
+          <vlt-tabs bordered>
+            <vlt-tab label="One">
+              Step One
+            </vlt-tab>
+            <vlt-tab label="Two">
+              Step Two
+            </vlt-tab>
+            <vlt-tab label="Disabled" disabled>
+            </vlt-tab>
+          </vlt-tabs>
+
+          <vlt-tabs shadow>
+            <vlt-tab label="One">
+              Step One
+            </vlt-tab>
+            <vlt-tab label="Two">
+              Step Two
+            </vlt-tab>
+            <vlt-tab label="Disabled" disabled>
+            </vlt-tab>
+            <vlt-tab label="Four">
+              Step Four
+            </vlt-tab>
+            <vlt-tab label="Five">
+              Step Five
+            </vlt-tab>
+            <vlt-tab label="Six">
+              Step Six
+            </vlt-tab>
+            <vlt-tab label="Seven">
+              Step Seven
+            </vlt-tab>
+          </vlt-tabs>
         </div>
       </div>
     </div>
