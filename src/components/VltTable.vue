@@ -82,7 +82,7 @@ export default {
     mobile: {
       type: Boolean,
       default: false,
-    }, 
+    },
     pagination: {
       type: Boolean,
       default: false,
@@ -113,9 +113,9 @@ export default {
 
   computed: {
     classObject() {
-      return { 
-        'Vlt-table--data': this.data || this.dataCols, 
-        'Vlt-table--data--cols': this.dataCols, 
+      return {
+        'Vlt-table--data': this.data || this.dataCols,
+        'Vlt-table--data--cols': this.dataCols,
         'Vlt-table--mobile-stack': this.mobile,
       };
     },
@@ -157,7 +157,8 @@ export default {
         left = 2;
         right = this.totalPages - 1;
       } else if (this.totalPages === 3) {
-        left = right = 2;
+        left = 2;
+        right = 2;
       }
 
       if (left && right) {

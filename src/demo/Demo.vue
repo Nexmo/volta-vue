@@ -298,7 +298,7 @@
             :rows="[
               { name: 'Rasmus  Nichols', job: 'Baker'},
               { name: 'Sandra  Jackson', job: 'Engineer'}
-            ]" 
+            ]"
             data
           >
           <template slot="item" slot-scope="slotProps">
@@ -311,7 +311,7 @@
             :rows="[
               { name: 'Rasmus  Nichols', job: 'Baker'},
               { name: 'Sandra  Jackson', job: 'Engineer'}
-            ]" 
+            ]"
             data-cols
             mobile
           >
