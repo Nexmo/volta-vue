@@ -1,6 +1,10 @@
 <template>
   <div class="Vlt-tabs">
-    <ul class="Vlt-tabs__header">
+    <ul class="Vlt-tabs__header"
+        :class="{
+          'Vlt-tabs__header--bordered': bordered,
+          'Vlt-tabs__header--shadow': shadow
+        }">
       <li
         v-for="(tab, index) in tabs"
         class="Vlt-tabs__link"
@@ -44,6 +48,10 @@ export default {
       type: Number,
       default: 0,
     },
+    bordered: {
+      type: Boolean,
+      default: false,
+    },
     icon: {
       type: Boolean,
       default: false,
@@ -52,6 +60,10 @@ export default {
       type: String,
       required: false,
     },
+    shadow: {
+      type: Boolean,
+      default: false,
+    }
   },
 
   data() {
