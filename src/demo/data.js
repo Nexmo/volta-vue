@@ -283,7 +283,9 @@ const Components = [
     html: 'vlt-tabs',
     icon: 'tabs',
     propertyRows: [
+      { property: 'bordered', type: 'Boolean', default: false },
       { property: 'icon', type: 'Boolean', default: false },
+      { property: 'shadow', type: 'Boolean', default: false },
     ],
     code: '<vlt-tabs></vlt-tabs>',
   },
