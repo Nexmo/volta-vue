@@ -7,7 +7,7 @@
       @click="select(index)"
       class="Vlt-steps__item"
       :class="getClassObject(step, index)">
-      {{step.title}}
+      {{step ? step.title : ''}}
     </div>
   </div>
 </template>
@@ -69,17 +69,11 @@ export default {
 
   mounted() {
     if (this.count) {
-      for (let i = 0; i < parseInt(this.count, 10); i += 1) {
-        this.items.push(i);
-      }
+      this.items = Array(parseInt(this.count, 10));
     } else {
-      for (let i = 0; i < this.steps.length; i += 1) {
-        const item = {
-          title: this.steps[i],
-        };
-
-        this.items.push(item);
-      }
+      this.items = this.steps.map((title) => ({
+        title,
+      }));
     }
   },
 
