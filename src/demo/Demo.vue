@@ -293,6 +293,33 @@
               <td>{{ slotProps.item.job }}</td>
             </template>
           </vlt-table>
+          <vlt-table
+            :columns="[{ title: 'Name' }, { title: 'Job' }]"
+            :rows="[
+              { name: 'Rasmus  Nichols', job: 'Baker'},
+              { name: 'Sandra  Jackson', job: 'Engineer'}
+            ]" 
+            data
+          >
+          <template slot="item" slot-scope="slotProps">
+              <td>{{ slotProps.item.name }}</td>
+              <td>{{ slotProps.item.job }}</td>
+            </template>
+          </vlt-table>
+          <vlt-table
+            :columns="[{ title: 'Name' }, { title: 'Job' }]"
+            :rows="[
+              { name: 'Rasmus  Nichols', job: 'Baker'},
+              { name: 'Sandra  Jackson', job: 'Engineer'}
+            ]" 
+            data-cols
+            mobile
+          >
+            <template slot="item" slot-scope="slotProps">
+              <td>{{ slotProps.item.name }}</td>
+              <td>{{ slotProps.item.job }}</td>
+            </template>
+          </vlt-table>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="rows.length > 0" :id="id" :class="{ 'Vlt-table--data': data }" class="Vlt-table">
+    <div v-if="rows.length > 0" :id="id" :class="classObject" class="Vlt-table">
       <table>
         <thead>
           <tr>
@@ -67,6 +67,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    dataCols: {
+      type: Boolean,
+      default: false,
+    },
     emptyMessage: {
       type: String,
       default: 'There are no results for this search',
@@ -75,6 +79,10 @@ export default {
       type: String,
       required: false,
     },
+    mobile: {
+      type: Boolean,
+      default: false,
+    }, 
     pagination: {
       type: Boolean,
       default: false,
@@ -104,6 +112,14 @@ export default {
   },
 
   computed: {
+    classObject() {
+      return { 
+        'Vlt-table--data': this.data || this.dataCols, 
+        'Vlt-table--data--cols': this.dataCols, 
+        'Vlt-table--mobile-stack': this.mobile,
+      };
+    },
+
     visibleRows() {
       if (!this.pagination) return this.newRows;
 
