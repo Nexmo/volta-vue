@@ -242,9 +242,8 @@ const Components = [
     html: 'vlt-steps',
     icon: 'more-negative',
     propertyRows: [
-      { property: 'complete', type: 'Array' },
       { property: 'count', type: 'Number' },
-      { property: 'disabled', type: 'Array' },
+      { property: 'id', type: 'String' },
       { property: 'selected', type: 'Number' },
       { property: 'steps', type: 'Array' },
     ],
