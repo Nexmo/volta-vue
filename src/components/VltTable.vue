@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="rows.length > 0" :id="id" :class="{ 'Vlt-table--data': data }" class="Vlt-table">
+    <div v-if="rows.length > 0" :id="id" :class="classObject" class="Vlt-table">
       <table>
         <thead>
           <tr>
@@ -24,9 +24,23 @@
 
     <div v-if="rows.length > 0 && pagination" class="Vlt-table__pagination">
       <ul>
+          <li v-if="newCurrentPage !== 1">
+              <a href="#" @click.prevent="pageChanged(newCurrentPage-1)">Prev</a>
+          </li>
+          <li :class="{ 'Vlt-table__pagination__current': newCurrentPage === 1 }">
+              <a href="#" @click.prevent="pageChanged(1)">1</a>
+          </li>
+          <li v-if="paginationLeftEllipsis">...</li>
           <li v-for="page in pages" :key="page.number"
              :class="{ 'Vlt-table__pagination__current': page.number === newCurrentPage }">
               <a href="#" @click.prevent="page.click">{{ page.number }}</a>
+          </li>
+          <li v-if="paginationRightEllipsis">...</li>
+          <li :class="{ 'Vlt-table__pagination__current': newCurrentPage === totalPages }">
+              <a href="#" @click.prevent="pageChanged(totalPages)">{{ totalPages }}</a>
+          </li>
+          <li v-if="newCurrentPage !== totalPages">
+              <a href="#" @click.prevent="pageChanged(newCurrentPage+1)">Next</a>
           </li>
       </ul>
     </div>
@@ -59,6 +73,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    dataCols: {
+      type: Boolean,
+      default: false,
+    },
     emptyMessage: {
       type: String,
       default: 'There are no results for this search',
@@ -66,6 +84,10 @@ export default {
     id: {
       type: String,
       required: false,
+    },
+    mobile: {
+      type: Boolean,
+      default: false,
     },
     pagination: {
       type: Boolean,
@@ -96,6 +118,14 @@ export default {
   },
 
   computed: {
+    classObject() {
+      return {
+        'Vlt-table--data': this.data || this.dataCols,
+        'Vlt-table--data--cols': this.dataCols,
+        'Vlt-table--mobile-stack': this.mobile,
+      };
+    },
+
     visibleRows() {
       if (!this.pagination) return this.newRows;
 
@@ -109,24 +139,57 @@ export default {
       return this.newRows.slice(start, end);
     },
 
-    pages() {
+    totalPages() {
       const actualTotal = this.total ? this.total : this.newRowsTotal;
-      const right = Math.ceil(
-        actualTotal / this.pageSize,
-      );
+      return Math.ceil(actualTotal / this.pageSize);
+    },
 
+    pages() {
+      let left;
+      let right;
       const pages = [];
-      for (let i = 1; i <= right; i += 1) {
-        pages.push({
-          number: i,
-          click: (event) => {
-            this.pageChanged(i);
-            // Set focus on element to keep tab order
-            this.$nextTick(() => event.target.focus());
-          },
-        });
+
+      if (this.totalPages > 9) {
+        left = this.currentPage - 3;
+        if (left <= 1) {
+          left = 2;
+        }
+
+        right = this.currentPage + 3;
+        if (right >= this.totalPages - 1) {
+          right = this.totalPages - 1;
+        }
+      } else if (this.totalPages >= 4) {
+        left = 2;
+        right = this.totalPages - 1;
+      } else if (this.totalPages === 3) {
+        left = 2;
+        right = 2;
+      }
+
+      if (left && right) {
+        for (let i = left; i <= right; i += 1) {
+          pages.push({
+            number: i,
+            click: (event) => {
+              this.pageChanged(i);
+              // Set focus on element to keep tab order
+              this.$nextTick(() => event.target.focus());
+            },
+          });
+        }
       }
       return pages;
+    },
+
+    paginationLeftEllipsis() {
+      return this.totalPages > 9 && this.pages.length && this.pages[0].number !== 2;
+    },
+
+    paginationRightEllipsis() {
+      return this.totalPages > 9
+             && this.pages.length
+             && this.pages[this.pages.length - 1].number !== this.totalPages - 1;
     },
   },
 

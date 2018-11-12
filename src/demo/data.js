@@ -267,6 +267,8 @@ const Components = [
     propertyRows: [
       { property: 'columns', type: 'Array' },
       { property: 'current-page', type: 'Number', default: 1 },
+      { property: 'data-cols', type: 'Boolean', default: false },
+      { property: 'mobile', type: 'Boolean', default: false },
       { property: 'pagination', type: 'Boolean', default: false },
       { property: 'page-size', type: 'Number', default: 20 },
       { property: 'rows', type: 'Array' },
