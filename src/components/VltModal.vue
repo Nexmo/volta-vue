@@ -38,7 +38,8 @@
           >
             {{getCancelText()}}
           </button>
-          <button class="Vlt-btn Vlt-btn--app" :class="getPrimaryBtnClass()" @click="confirm">
+          <button class="Vlt-btn Vlt-btn--app" :class="getPrimaryBtnClass()" @click="confirm"
+                  ref="confirmButton">
             <vlt-icon v-if="confirmBtnIcon" :icon="confirmBtnIcon"></vlt-icon>
             {{getOkText()}}
           </button>
@@ -117,6 +118,10 @@ export default {
     },
   },
 
+  mounted() {
+    if (this.visible) this.$refs.confirmButton.focus();
+  },
+
   methods: {
     close() {
       this.$emit('close');
@@ -152,6 +157,12 @@ export default {
     if (this.dynamic) {
       document.body.appendChild(this.$el);
     }
+  },
+
+  watch: {
+    visible(value) {
+      if (value) this.$refs.confirmButton.focus();
+    },
   },
 };
 </script>
