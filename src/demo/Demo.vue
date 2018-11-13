@@ -261,9 +261,11 @@
       <div class="Vlt-col">
         <h4>Steps</h4>
         <div>
-          <vlt-steps :count="3" /> <br />
-          <vlt-steps :steps="['one', 'two']" /> <br />
-          <vlt-steps :steps="['one', 'two', 'three']" :disabled="[2]" />
+          <vlt-steps :count="3" key="steps-one" /> <br />
+          <vlt-steps :steps="[{ disabled: true }, {}, {}]" key="steps-two" :selected="1" /> <br />
+          <vlt-steps :steps="[{ title: 'one' }, { title: 'two' }]" key="steps-three"  /> <br />
+          <vlt-steps :steps="[{ title: 'one', disabled: true }, { title: 'two' }, { title: 'three' }]" key="steps-four" :selected="1" /> <br />
+          <vlt-steps :steps="[{ title: 'one', conplete: true, disabled: true }, { title: 'two' }, { title: 'three' }]" key="steps-five" :selected="1" />
         </div>
       </div>
     </div>
