@@ -211,6 +211,7 @@ const Components = [
     icon: 'menu',
     propertyRows: [
       { property: 'color', type: 'String' },
+      { property: 'exact', type: 'Boolean' },
       { property: 'external', type: 'Boolean' },
       { property: 'href', type: 'String' },
       { property: 'icon', type: 'String' },
