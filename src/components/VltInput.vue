@@ -1,31 +1,29 @@
 <template>
-  <div>
-    <div :class="{'Vlt-input': !textarea, 'Vlt-textarea': textarea}">
-      <textarea
-        v-if="textarea"
-        :disabled="disabled"
-        :id="id"
-        :maxlength="maxlength"
-        :placeholder="placeholder"
-        :rows="rows"
-        :value="val"
-        v-on="inputListeners"
-      />
-      <input
-        v-else
-        :disabled="disabled"
-        :id="id"
-        :max="max"
-        :maxlength="maxlength"
-        :min="min"
-        :size="size"
-        :placeholder="placeholder"
-        :type="type"
-        :value="val"
-        v-on="inputListeners"
-      />
-      <label v-if="label">{{label}}</label>
-    </div>
+  <div :class="[{'Vlt-input': !textarea, 'Vlt-textarea': textarea}, className]">
+    <textarea
+      v-if="textarea"
+      :disabled="disabled"
+      :id="id"
+      :maxlength="maxlength"
+      :placeholder="placeholder"
+      :rows="rows"
+      :value="val"
+      v-on="inputListeners"
+    />
+    <input
+      v-else
+      :disabled="disabled"
+      :id="id"
+      :max="max"
+      :maxlength="maxlength"
+      :min="min"
+      :size="size"
+      :placeholder="placeholder"
+      :type="type"
+      :value="val"
+      v-on="inputListeners"
+    />
+    <label v-if="label">{{label}}</label>
     <small v-if="hint" class="Vlt-form__element__hint">{{hint}}</small>
   </div>
 </template>
@@ -85,6 +83,11 @@ export default {
       type: [Number, String],
       required: false,
     },
+    className: {
+      type: String,
+      required: false,
+      default: () => '',
+    }
   },
 
   computed: {

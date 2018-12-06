@@ -25,3 +25,5 @@ export { default as VltTabs } from './VltTabs';
 export { default as VltTable } from './VltTable';
 export { default as VltTitle } from './VltTitle';
 export { default as VltTooltip } from './VltTooltip';
+export { default as VltGroupButton } from './VltGroupButton';
+export { default as VltComposite } from './VltComposite';

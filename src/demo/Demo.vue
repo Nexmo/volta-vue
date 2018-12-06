@@ -408,6 +408,41 @@
         </div>
       </div>
     </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Composite</h4>
+          <vlt-field>
+            <vlt-composite>
+              <div class="Vlt-composite__prepend">
+                <vlt-select id="test1" :options="['composition']" selected="composite" class-name="Vlt-native-dropdown" is-in-composite/>
+              </div>
+              <vlt-input id="test2" placeholder="e.g. 1105" class-name="Vlt-input"/>
+            </vlt-composite>
+          </vlt-field>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Single Select Group Button</h4>
+        <div>
+          <vlt-field>
+            <vlt-group-button :val="groupBtnVal" :options="['biscuits', 'cake', 'bread']" v-model="groupBtnVal"/>
+          </vlt-field>
+        </div>
+      </div>
+    </div>
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Multiple Select Group Button</h4>
+        <div>
+          <vlt-field>
+            <vlt-group-button :val="multipleGroupBtnVal" :options="['biscuits', 'cake', 'bread']" v-model="multipleGroupBtnVal"/>
+          </vlt-field>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -437,6 +472,8 @@ import {
   VltTable,
   VltTitle,
   VltTooltip,
+  VltGroupButton,
+  VltComposite,
 } from '../components';
 
 export default {
@@ -467,6 +504,8 @@ export default {
     VltTable,
     VltTitle,
     VltTooltip,
+    VltGroupButton,
+    VltComposite,
   },
 
   data() {
@@ -475,6 +514,8 @@ export default {
       modalLargeVisible: false,
       modalVisible: false,
       topFlashVisible: false,
+      groupBtnVal: 'biscuits',
+      multipleGroupBtnVal: ['cake'],
     };
   },
 };
