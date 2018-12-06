@@ -324,6 +324,28 @@ const Components = [
     ],
     code: '<vlt-tooltip title="Text" />',
   },
+  {
+    title: 'Composite',
+    html: 'vlt-composite',
+    icon: 'type',
+    propertyRows: [
+      { property: 'big', type: 'Boolean', default: 'false' },
+      { property: 'className', type: 'String', default: '' },
+    ],
+    code: '<vlt-composite></vlt-composite>',
+  },
+  {
+    title: 'GroupButton',
+    html: 'vlt-group-button',
+    icon: 'circle-nested',
+    propertyRows: [
+      { property: 'big', type: 'Boolean', default: 'false' },
+      { property: 'val', type: '[String, Object, Array]' },
+      { property: 'options', type: 'Array', default: '[]' },
+      { property: 'className', type: 'String', default: '' },
+    ],
+    code: '<vlt-group-button :val="cake" :options="[biscuits, cake, bread]"/>',
+  },
 ];
 
 export default Components;
