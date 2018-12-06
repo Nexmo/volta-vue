@@ -329,7 +329,6 @@ const Components = [
     html: 'vlt-composite',
     icon: 'type',
     propertyRows: [
-      { property: 'big', type: 'Boolean', default: 'false' },
       { property: 'className', type: 'String', default: '' },
     ],
     code: '<vlt-composite></vlt-composite>',
