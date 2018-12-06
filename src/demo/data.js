@@ -330,6 +330,7 @@ const Components = [
     icon: 'type',
     propertyRows: [
       { property: 'big', type: 'Boolean', default: 'false' },
+      { property: 'className', type: 'String', default: '' },
     ],
     code: '<vlt-composite></vlt-composite>',
   },
@@ -341,6 +342,7 @@ const Components = [
       { property: 'big', type: 'Boolean', default: 'false' },
       { property: 'val', type: '[String, Object, Array]' },
       { property: 'options', type: 'Array', default: '[]' },
+      { property: 'className', type: 'String', default: '' },
     ],
     code: '<vlt-group-button :val="cake" :options="[biscuits, cake, bread]"/>',
   },

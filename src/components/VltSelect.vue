@@ -1,5 +1,5 @@
 <template>
-  <div :class="[className , 'Vlt-select', isInComposite ? 'Vlt-select__in-composite' : '']">
+  <div :class="[className , 'Vlt-select', isInComposite ? 'Vlt-select--composite' : '']">
     <select :id="id" :value="val" v-on="inputListeners">
       <option v-if="!!selected" selected value="">{{ selected }}</option>
       <option
@@ -67,7 +67,7 @@ export default {
   .Vlt-select select {
     -webkit-appearance: none;
   }
-  .Vlt-select.Vlt-select__in-composite select{
+  .Vlt-select.Vlt-select--composite select{
     border: 0;
   }
 </style>

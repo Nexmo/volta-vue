@@ -1,5 +1,5 @@
 <template>
-  <div :class="['Vlt-btn-group Vlt-btn-group--app', big ? 'Vlt-btn-group--big' : '']">
+  <div :class="['Vlt-btn-group Vlt-btn-group--app', big ? 'Vlt-btn-group--big' : '', className]">
     <button v-for="option in options"
             :class="['Vlt-btn Vlt-btn--tertiary', isMatching(val, option) ? activeClassName : '']"
             :value="option.value || option"
@@ -44,6 +44,10 @@ export default {
     activeClassName: {
       type: String,
       default: () => 'Vlt-btn_active',
+    },
+    className: {
+      type: String,
+      default: () => '',
     },
   },
   methods: {
