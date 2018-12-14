@@ -15,7 +15,7 @@
       'Vlt-btn--large': props.large,
     }, data.staticClass, data.class
     ]"
-    :id="id"
+    :id="props.id"
     v-on="listeners"
   >
     <vlt-icon v-if="props.icon" :spin="props.spin" :icon="props.icon" />

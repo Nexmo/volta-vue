@@ -16,7 +16,7 @@
       <div class="Vlt-col">
         <h4>Button</h4>
         <div>
-          <vlt-button primary label="Primary"/>
+          <vlt-button id="primary" primary label="Primary"/>
           <vlt-button secondary label="Secondary"/>
           <vlt-button label="Tertiary"/>
           <vlt-button quaternary label="Quaternary"/>
