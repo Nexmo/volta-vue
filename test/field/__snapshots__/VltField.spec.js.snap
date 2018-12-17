@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-field has error "something is wrong" 1`] = `
+<div
+  class="Vlt-form__element Vlt-form__element--error"
+>
+  <!---->
+    
+  <small
+    class="Vlt-form__element__error"
+  >
+    something is wrong
+  </small>
+</div>
+`;
+
+exports[`vlt-field has label "Test field" 1`] = `
+<div
+  class="Vlt-form__element"
+>
+  <label
+    class="Vlt-label"
+  >
+    Test field
+      
+    <!---->
+     
+    <!---->
+  </label>
+    
+  <!---->
+</div>
+`;
+
+exports[`vlt-field has tooltip "Hello World" 1`] = `
+<div
+  class="Vlt-form__element"
+>
+  <label
+    class="Vlt-label"
+  >
+    Test field
+      
+    <!---->
+     
+    <vlt-tooltip-stub
+      title="Hello World"
+    />
+  </label>
+    
+  <!---->
+</div>
+`;
+
+exports[`vlt-field is big 1`] = `
+<div
+  class="Vlt-form__element Vlt-form__element--big"
+>
+  <!---->
+    
+  <!---->
+</div>
+`;
+
+exports[`vlt-field is big with label "Test field" 1`] = `
+<div
+  class="Vlt-form__element Vlt-form__element--big"
+>
+  <!---->
+    
+  <!---->
+</div>
+`;
+
+exports[`vlt-field is optional 1`] = `
+<div
+  class="Vlt-form__element"
+>
+  <!---->
+    
+  <!---->
+</div>
+`;
+
+exports[`vlt-field renders correctly 1`] = `
+<div
+  class="Vlt-form__element"
+>
+  <!---->
+    
+  <!---->
+</div>
+`;
