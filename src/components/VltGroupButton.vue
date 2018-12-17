@@ -33,12 +33,10 @@ export default {
     },
     options: {
       type: Array,
-      required: true,
       default: () => [],
     },
     val: {
       type: [Array, Object, String],
-      required: true,
       default: () => [],
     },
     activeClassName: {
