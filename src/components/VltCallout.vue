@@ -25,7 +25,7 @@ export default {
     },
     type: {
       type: String,
-      required: true,
+      default: 'tip',
       validator: (val) => VALID_TYPES.includes(val),
     },
   },
