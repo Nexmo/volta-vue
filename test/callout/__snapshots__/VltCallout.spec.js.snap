@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-badge is dismissable 1`] = `
+<div
+  class="Vlt-callout Vlt-callout--tip"
+>
+  <i />
+   
+  <div
+    class="Vlt-callout__content"
+  />
+   
+  <button
+    class="Vlt-callout__dismiss"
+  />
+</div>
+`;
+
+exports[`vlt-badge is dismissed 1`] = `
+<div
+  class="Vlt-callout Vlt-callout--dismissed Vlt-callout--tip"
+>
+  <i />
+   
+  <div
+    class="Vlt-callout__content"
+  />
+   
+  <button
+    class="Vlt-callout__dismiss"
+  />
+</div>
+`;
+
+exports[`vlt-badge is type critical 1`] = `
+<div
+  class="Vlt-callout Vlt-callout--critical"
+>
+  <i />
+   
+  <div
+    class="Vlt-callout__content"
+  />
+   
+  <!---->
+</div>
+`;
+
+exports[`vlt-badge renders correctly 1`] = `
+<div
+  class="Vlt-callout Vlt-callout--tip"
+>
+  <i />
+   
+  <div
+    class="Vlt-callout__content"
+  />
+   
+  <!---->
+</div>
+`;
