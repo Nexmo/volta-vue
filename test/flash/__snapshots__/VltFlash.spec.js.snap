@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-flash is a bottom flash 1`] = `
+<div
+  class="Vlt-callout Vlt-flash Vlt-callout--shoutout Vlt-flash--bottom"
+>
+  <i />
+   
+  <div
+    class="Vlt-callout__content"
+  >
+    <p />
+  </div>
+   
+  <!---->
+</div>
+`;
+
+exports[`vlt-flash is a small flash 1`] = `
+<div
+  class="Vlt-callout Vlt-flash Vlt-callout--shoutout Vlt-flash--small"
+>
+  <i />
+   
+  <div
+    class="Vlt-callout__content"
+  >
+    <p />
+  </div>
+   
+  <!---->
+</div>
+`;
+
+exports[`vlt-flash is dismissable 1`] = `
+<div
+  class="Vlt-callout Vlt-flash Vlt-callout--shoutout"
+>
+  <i />
+   
+  <div
+    class="Vlt-callout__content"
+  >
+    <p />
+  </div>
+   
+  <button
+    class="Vlt-callout__dismiss"
+  />
+</div>
+`;
+
+exports[`vlt-flash is type critical 1`] = `
+<div
+  class="Vlt-callout Vlt-flash Vlt-callout--critical"
+>
+  <i />
+   
+  <div
+    class="Vlt-callout__content"
+  >
+    <p />
+  </div>
+   
+  <!---->
+</div>
+`;
+
+exports[`vlt-flash is visible 1`] = `
+<div
+  class="Vlt-callout Vlt-flash Vlt-callout--shoutout Vlt-flash_visible"
+  style="top: 20px;"
+>
+  <i />
+   
+  <div
+    class="Vlt-callout__content"
+  >
+    <p />
+  </div>
+   
+  <!---->
+</div>
+`;
+
+exports[`vlt-flash renders correctly 1`] = `
+<div
+  class="Vlt-callout Vlt-flash Vlt-callout--shoutout"
+>
+  <i />
+   
+  <div
+    class="Vlt-callout__content"
+  >
+    <p />
+  </div>
+   
+  <!---->
+</div>
+`;
