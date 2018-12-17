@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
 import { VltCallout } from '../../src/components';
 
-describe('vlt-badge', () => {
+describe('vlt-callout', () => {
   let wrapper;
 
   beforeEach(() => {
