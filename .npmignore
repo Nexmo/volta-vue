@@ -11,3 +11,5 @@ src/*.js
 .prettierrc
 index.html
 webpack.config.js
+coverage/
+test/
