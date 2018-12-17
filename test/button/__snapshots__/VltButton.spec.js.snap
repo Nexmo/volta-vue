@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`vlt-button property disabled is set to true 1`] = `
+exports[`vlt-button prop disabled is set to true 1`] = `
 <button
   class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--disabled Vlt-btn--tertiary"
 >
@@ -9,7 +9,7 @@ exports[`vlt-button property disabled is set to true 1`] = `
 </button>
 `;
 
-exports[`vlt-button property icon is set to bin 1`] = `
+exports[`vlt-button prop icon is set to bin 1`] = `
 <button
   class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
 >
@@ -24,7 +24,7 @@ exports[`vlt-button property icon is set to bin 1`] = `
 </button>
 `;
 
-exports[`vlt-button property id is set to test-button 1`] = `
+exports[`vlt-button prop id is set to test-button 1`] = `
 <button
   class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
   id="test-button"
@@ -34,7 +34,7 @@ exports[`vlt-button property id is set to test-button 1`] = `
 </button>
 `;
 
-exports[`vlt-button property primary is set to true 1`] = `
+exports[`vlt-button prop primary is set to true 1`] = `
 <button
   class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--primary"
 >
