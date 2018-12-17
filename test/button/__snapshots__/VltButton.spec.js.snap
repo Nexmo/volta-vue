@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-button property disabled is set to true 1`] = `
+<button
+  class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--disabled Vlt-btn--tertiary"
+>
+  <!---->
+   
+</button>
+`;
+
+exports[`vlt-button property icon is set to bin 1`] = `
+<button
+  class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
+>
+  <svg
+    class="Vlt-icon"
+  >
+    <use
+      xlink:href="#V_Vlt-icon-bin"
+    />
+  </svg>
+   
+</button>
+`;
+
+exports[`vlt-button property id is set to test-button 1`] = `
+<button
+  class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
+  id="test-button"
+>
+  <!---->
+   
+</button>
+`;
+
+exports[`vlt-button property primary is set to true 1`] = `
+<button
+  class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--primary"
+>
+  <!---->
+   
+</button>
+`;
+
+exports[`vlt-button renders correctly 1`] = `
+<button
+  class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
+>
+  <!---->
+   
+</button>
+`;
