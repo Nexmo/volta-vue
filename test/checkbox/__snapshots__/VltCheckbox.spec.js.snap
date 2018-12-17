@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-checkbox has a "Hello World" tooltip 1`] = `
+<div
+  class="Vlt-checkbox"
+>
+  <label>
+    <span
+      class="Vlt-checkbox__button"
+    >
+      <input
+        type="checkbox"
+      />
+       
+      <span
+        class="Vlt-checkbox__icon"
+      />
+    </span>
+    
+    Is test ok?
+    
+    <vlt-tooltip-stub
+      title="Hello World"
+    />
+  </label>
+</div>
+`;
+
+exports[`vlt-checkbox is disabled 1`] = `
+<div
+  class="Vlt-checkbox"
+>
+  <label>
+    <span
+      class="Vlt-checkbox__button"
+    >
+      <input
+        disabled="disabled"
+        type="checkbox"
+      />
+       
+      <span
+        class="Vlt-checkbox__icon"
+      />
+    </span>
+    
+    Is test ok?
+    
+    <!---->
+  </label>
+</div>
+`;
+
+exports[`vlt-checkbox renders correctly with label "Is test ok?" 1`] = `
+<div
+  class="Vlt-checkbox"
+>
+  <label>
+    <span
+      class="Vlt-checkbox__button"
+    >
+      <input
+        type="checkbox"
+      />
+       
+      <span
+        class="Vlt-checkbox__icon"
+      />
+    </span>
+    
+    Is test ok?
+    
+    <!---->
+  </label>
+</div>
+`;
