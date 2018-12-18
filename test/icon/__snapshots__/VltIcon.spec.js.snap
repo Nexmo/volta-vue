@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-icon is red 1`] = `
+<svg
+  class="Vlt-icon Vlt-red"
+>
+  <use
+    xlink:href="#V_Vlt-icon-bin"
+  />
+</svg>
+`;
+
+exports[`vlt-icon renders correctly 1`] = `
+<svg
+  class="Vlt-icon"
+>
+  <use
+    xlink:href="#V_Vlt-icon-bin"
+  />
+</svg>
+`;
