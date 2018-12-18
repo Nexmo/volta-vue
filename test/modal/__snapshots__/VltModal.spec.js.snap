@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-modal can be opened 1`] = `
+<div
+  class="Vlt-modal Vlt-modal_visible"
+>
+  <div
+    class="Vlt-modal__panel"
+  >
+    <header
+      class="Vlt-modal__header"
+    >
+      <h4>
+        Title
+      </h4>
+       
+      <a
+        aria-label="Close"
+        class="Vlt-modal__dismiss"
+      />
+    </header>
+     
+    <section
+      class="Vlt-modal__content"
+    >
+      <p>
+        
+      </p>
+    </section>
+     
+    <footer
+      class="Vlt-modal__footer"
+    >
+      <!---->
+       
+      <button
+        class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+      >
+        
+          Cancel
+        
+      </button>
+       
+      <button
+        class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
+      >
+        <!---->
+        
+          Ok
+        
+      </button>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`vlt-modal has customer cancel button text "Delete" 1`] = `
+<div
+  class="Vlt-modal Vlt-modal_visible"
+>
+  <div
+    class="Vlt-modal__panel"
+  >
+    <header
+      class="Vlt-modal__header"
+    >
+      <h4>
+        Title
+      </h4>
+       
+      <a
+        aria-label="Close"
+        class="Vlt-modal__dismiss"
+      />
+    </header>
+     
+    <section
+      class="Vlt-modal__content"
+    >
+      <p>
+        
+      </p>
+    </section>
+     
+    <footer
+      class="Vlt-modal__footer"
+    >
+      <!---->
+       
+      <button
+        class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+      >
+        
+          Cancel
+        
+      </button>
+       
+      <button
+        class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
+      >
+        <!---->
+        
+          Delete
+        
+      </button>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`vlt-modal is a message modal 1`] = `
+<div
+  class="Vlt-modal Vlt-modal_visible Vlt-modal--message"
+>
+  <div
+    class="Vlt-modal__panel"
+  >
+    <header
+      class="Vlt-modal__header"
+    >
+      <h4>
+        Title
+      </h4>
+       
+      <a
+        aria-label="Close"
+        class="Vlt-modal__dismiss"
+      />
+    </header>
+     
+    <section
+      class="Vlt-modal__content"
+    >
+      <p>
+        true
+      </p>
+    </section>
+     
+    <footer
+      class="Vlt-modal__footer"
+    >
+      <!---->
+       
+      <button
+        class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+      >
+        
+          Cancel
+        
+      </button>
+       
+      <button
+        class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
+      >
+        <!---->
+        
+          Ok
+        
+      </button>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`vlt-modal renders correctly with title "Title" 1`] = `
+<div
+  class="Vlt-modal Vlt-modal_visible"
+>
+  <div
+    class="Vlt-modal__panel"
+  >
+    <header
+      class="Vlt-modal__header"
+    >
+      <h4>
+        Title
+      </h4>
+       
+      <a
+        aria-label="Close"
+        class="Vlt-modal__dismiss"
+      />
+    </header>
+     
+    <section
+      class="Vlt-modal__content"
+    >
+      <p>
+        
+      </p>
+    </section>
+     
+    <footer
+      class="Vlt-modal__footer"
+    >
+      <!---->
+       
+      <button
+        class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+      >
+        
+          Cancel
+        
+      </button>
+       
+      <button
+        class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
+      >
+        <!---->
+        
+          Ok
+        
+      </button>
+    </footer>
+  </div>
+</div>
+`;
