@@ -196,10 +196,12 @@
           <vlt-field big>
             <vlt-select
               :options="['dog', 'rabbit']"
-              selected="Please pick one"
-              label="Select one" />
+              label="Select one"
+              :val="select"
+              v-model="select" />
           </vlt-field>
         </div>
+        Value is: {{ select }}
       </div>
     </div>
 
@@ -210,9 +212,12 @@
           <vlt-field label="Select one">
             <vlt-select
               :options="['lion', 'tiger']"
-              selected="Please pick one" />
+              selected="Please pick one"
+              :val="select2"
+              v-model="select2" />
           </vlt-field>
         </div>
+        Value is: {{ select2 }}
       </div>
     </div>
 
@@ -518,6 +523,8 @@ export default {
       groupBtnVal: 'biscuits',
       multipleGroupBtnVal: ['cake'],
       radio: undefined,
+      select: 'dog',
+      select2: undefined,
     };
   },
 };
