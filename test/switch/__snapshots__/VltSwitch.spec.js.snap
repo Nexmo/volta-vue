@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-switch is red 1`] = `
+<div
+  class="Vlt-switch Vlt-switch--red"
+>
+  <label>
+    <input
+      type="checkbox"
+    />
+     
+    <span
+      class="Vlt-switch__slider"
+    />
+  </label>
+</div>
+`;
+
+exports[`vlt-switch renders correctly 1`] = `
+<div
+  class="Vlt-switch"
+>
+  <label>
+    <input
+      type="checkbox"
+    />
+     
+    <span
+      class="Vlt-switch__slider"
+    />
+  </label>
+</div>
+`;
