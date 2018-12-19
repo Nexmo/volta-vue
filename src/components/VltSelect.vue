@@ -1,6 +1,6 @@
 <template>
   <div :class="[className , 'Vlt-select', isInComposite ? 'Vlt-select--composite' : '']">
-    <select :id="id" :value="val" v-on="inputListeners">
+    <select :id="id" :value="val" @change="emitValue">
       <option v-if="!!selected" selected value="">{{ selected }}</option>
       <option
         v-for="option in options"
@@ -48,16 +48,10 @@ export default {
       default: '',
     },
   },
-  computed: {
-    inputListeners() {
-      const vm = this;
 
-      return {
-        ...this.$listeners,
-        input({ target: { value } }) {
-          vm.$emit('input', value);
-        },
-      };
+  methods: {
+    emitValue({ target: { value }}) {
+      this.$emit('input', value);
     },
   },
 };
