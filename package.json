@@ -9,7 +9,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@vonagevolta/core": "^1.2.30",
+    "@vonagevolta/core": "^1.2.31",
     "tooltip.js": "^1.2.0",
     "vue": "^2.5.11"
   },
