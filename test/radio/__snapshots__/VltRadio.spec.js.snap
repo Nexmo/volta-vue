@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-radio renders correctly with label "Do I pass?", name "pass" and value "Yes" 1`] = `
+<div
+  class="Vlt-radio"
+>
+  <label>
+    <span
+      class="Vlt-radio__button"
+    >
+      <input
+        name="pass"
+        type="radio"
+        value="Yes"
+      />
+       
+      <span
+        class="Vlt-radio__icon"
+      />
+    </span>
+     
+    <span>
+      
+      Do I pass?
+      
+      <!---->
+    </span>
+  </label>
+</div>
+`;
