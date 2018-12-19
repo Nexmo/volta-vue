@@ -8,7 +8,7 @@
           :disabled="disabled"
           :name="name"
           :value="val"
-          v-on="inputListeners"
+          @change="emitValue"
         />
         <span class="Vlt-radio__icon"></span>
       </span>
@@ -55,22 +55,16 @@ export default {
     },
     // need to use 'val' so we can emit the value to the parent, value does not work with v-model
     val: {
-      type: String,
-      required: false,
+      type: [ String, Number ],
+      required: true,
     },
   },
 
-  computed: {
-    inputListeners() {
-      const vm = this;
-
-      return Object.assign({}, this.$listeners, {
-        input(event) {
-          vm.$emit('input', event.target.value);
-        },
-      });
-    },
-  },
+  methods: {
+    emitValue($event) {
+      this.$emit('input', $event.target.value);
+    }
+  }
 };
 </script>
 
