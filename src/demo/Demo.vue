@@ -181,10 +181,11 @@
       <div class="Vlt-col">
         <h4>Radio</h4>
         <div>
-          <vlt-radio inline disabled name="animal" label="Cat"/>
-          <vlt-radio inline name="animal" label="Dog"/>
-          <vlt-radio inline name="animal" label="Rabbit"/>
+          <vlt-radio inline disabled name="animal" label="Cat" val="cat" v-model="radio"/>
+          <vlt-radio inline name="animal" label="Dog" val="dog" v-model="radio"/>
+          <vlt-radio inline name="animal" label="Rabbit" val="rabbit" v-model="radio"/>
         </div>
+        Selected value is: {{ radio }}
       </div>
     </div>
 
@@ -516,6 +517,7 @@ export default {
       topFlashVisible: false,
       groupBtnVal: 'biscuits',
       multipleGroupBtnVal: ['cake'],
+      radio: undefined,
     };
   },
 };
