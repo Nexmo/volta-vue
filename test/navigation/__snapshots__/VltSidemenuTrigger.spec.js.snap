@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-sidemenu-trigger renders correctly with a rocket icon 1`] = `
+<p
+  class="Vlt-sidemenu__trigger"
+>
+  <vlt-icon-stub
+    clickable="true"
+    icon="rocket"
+  />
+   
+  <span
+    class="Vlt-sidemenu__label"
+  >
+    
+  </span>
+   
+  <!---->
+</p>
+`;
