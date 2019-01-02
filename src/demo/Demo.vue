@@ -302,7 +302,7 @@
             </template>
           </vlt-table>
           <vlt-table
-            :columns="[{ title: 'Name' }, { title: 'Job' }]"
+            :columns="[{ title: 'Name', sortable: true, property: 'name' }, { title: 'Job' }]"
             :rows="[
               { name: 'Rasmus  Nichols', job: 'Baker'},
               { name: 'Sandra  Jackson', job: 'Engineer'}
