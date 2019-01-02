@@ -72,7 +72,7 @@ data () {
 ```
 
 ## Running tests
-We use ((Vue Test Utils)[https://vue-test-utils.vuejs.org/]) with ((Jest)[https://jestjs.io/en/]) for unit testing.
+We use [Vue Test Utils](https://vue-test-utils.vuejs.org/) with [Jest](https://jestjs.io/en/) for unit testing.
 You can run all the tests: 
 ``` bash
 npm test
