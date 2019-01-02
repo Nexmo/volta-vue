@@ -9,6 +9,7 @@ export { default as VltFlash } from './VltFlash';
 export { default as VltGrid } from './grid/VltGrid';
 export { default as VltIcon } from './VltIcon';
 export { default as VltInput } from './VltInput';
+export { default as VltMargin } from './VltMargin';
 export { default as VltModal } from './VltModal';
 export { default as VltRadio } from './VltRadio';
 export { default as VltSelect } from './VltSelect';
