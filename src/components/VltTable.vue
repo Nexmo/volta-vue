@@ -47,8 +47,7 @@
 
     <div v-if="rows.length === 0" class="Vlt-empty Vlt-empty--search">
       <div class="Vlt-empty__content">
-        <p v-if="!hasEmptyMessageSlot">{{ emptyMessage }}</p>
-        <slot name="empty-message"></slot>
+        <slot name="empty-message">{{ emptyMessage }}</slot>
       </div>
     </div>
   </div>
@@ -192,10 +191,6 @@ export default {
              && this.pages.length
              && this.pages[this.pages.length - 1].number !== this.totalPages - 1;
     },
-
-    hasEmptyMessageSlot () {
-      return !!this.$slots['empty-message']
-    }
   },
 
   watch: {
