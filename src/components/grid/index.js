@@ -1,5 +1,5 @@
-import VltCol from './VltCol.vue';
-import VltGrid from './VltGrid.vue';
+import VltCol from './VltCol';
+import VltGrid from './VltGrid';
 
 export {
   VltCol,

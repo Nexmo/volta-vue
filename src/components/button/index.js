@@ -1,5 +1,5 @@
-import VltButton from './VltButton.vue';
-import VltGroupButton from './VltGroupButton.vue';
+import VltButton from './VltButton';
+import VltGroupButton from './VltGroupButton';
 
 export {
   VltButton,

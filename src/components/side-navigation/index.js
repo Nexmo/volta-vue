@@ -1,8 +1,8 @@
-import VltSidemenu from './VltSidemenu.vue';
-import VltSidemenuItem from './VltSidemenuItem.vue';
-import VltSidemenuLink from './VltSidemenuLink.vue';
-import VltSidemenuTitle from './VltSidemenuTitle.vue';
-import VltSidemenuTrigger from './VltSidemenuTrigger.vue';
+import VltSidemenu from './VltSidemenu';
+import VltSidemenuItem from './VltSidemenuItem';
+import VltSidemenuLink from './VltSidemenuLink';
+import VltSidemenuTitle from './VltSidemenuTitle';
+import VltSidemenuTrigger from './VltSidemenuTrigger';
 
 export {
   VltSidemenu,
