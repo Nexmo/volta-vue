@@ -2,11 +2,9 @@
 
 exports[`vlt-input is textarea 1`] = `
 <div
-  class="Vlt-input"
+  class="Vlt-textarea"
 >
-  <input
-    type="text"
-  />
+  <textarea />
    
   <!---->
    

@@ -17,7 +17,7 @@ describe('vlt-input', () => {
   });
 
   test('is textarea', () => {
-    wrapper.setProps({ teaxtarea: true });
+    wrapper.setProps({ textarea: true });
     expect(wrapper.element).toMatchSnapshot();
   });
 
