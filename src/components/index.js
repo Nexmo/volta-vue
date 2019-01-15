@@ -1,30 +1,62 @@
-export { default as VltBadge } from './VltBadge';
-export { default as VltButton } from './VltButton';
-export { default as VltCallout } from './VltCallout';
-export { default as VltCol } from './grid/VltCol';
-export { default as VltCheckbox } from './VltCheckbox';
-export { default as VltDropdown } from './VltDropdown';
-export { default as VltField } from './VltField';
-export { default as VltFlash } from './VltFlash';
-export { default as VltGrid } from './grid/VltGrid';
-export { default as VltIcon } from './VltIcon';
-export { default as VltInput } from './VltInput';
-export { default as VltMargin } from './VltMargin';
-export { default as VltModal } from './VltModal';
-export { default as VltRadio } from './VltRadio';
-export { default as VltSelect } from './VltSelect';
-export { default as VltSidemenu } from './side-navigation/VltSidemenu';
-export { default as VltSidemenuItem } from './side-navigation/VltSidemenuItem';
-export { default as VltSidemenuLink } from './side-navigation/VltSidemenuLink';
-export { default as VltSidemenuTitle } from './side-navigation/VltSidemenuTitle';
-export { default as VltSidemenuTrigger } from './side-navigation/VltSidemenuTrigger';
-export { default as VltSpinner } from './VltSpinner';
-export { default as VltSteps } from './VltSteps';
-export { default as VltSwitch } from './VltSwitch';
-export { default as VltTab } from './VltTab';
-export { default as VltTabs } from './VltTabs';
-export { default as VltTable } from './VltTable';
-export { default as VltTitle } from './VltTitle';
-export { default as VltTooltip } from './VltTooltip';
-export { default as VltGroupButton } from './VltGroupButton';
-export { default as VltComposite } from './VltComposite';
+import VltBadge from './badge/VltBadge';
+import { VltButton, VltGroupButton } from './button';
+import VltCallout from './callout/VltCallout';
+import VltCheckbox from './checkbox/VltCheckbox';
+import { VltCol, VltGrid } from './grid';
+import VltComposite from './composite/VltComposite';
+import VltDropdown from './dropdown/VltDropdown';
+import VltField from './field/VltField';
+import VltFlash from './flash/VltFlash';
+import VltIcon from './icon/VltIcon';
+import VltInput from './input/VltInput';
+import VltMargin from './margin/VltMargin';
+import VltModal from './modal/VltModal';
+import VltRadio from './radio/VltRadio';
+import VltSelect from './select/VltSelect';
+import {
+  VltSidemenu,
+  VltSidemenuItem,
+  VltSidemenuLink,
+  VltSidemenuTitle,
+  VltSidemenuTrigger,
+} from './side-navigation';
+import VltSpinner from './spinner/VltSpinner';
+import VltSteps from './steps/VltSteps';
+import VltSwitch from './switch/VltSwitch';
+import { VltTab, VltTabs } from './tabs';
+import VltTable from './table/VltTable';
+import VltTitle from './title/VltTitle';
+import VltTooltip from './tooltip/VltTooltip';
+
+export {
+  VltBadge,
+  VltButton,
+  VltCallout,
+  VltCheckbox,
+  VltCol,
+  VltComposite,
+  VltDropdown,
+  VltField,
+  VltFlash,
+  VltGrid,
+  VltGroupButton,
+  VltIcon,
+  VltInput,
+  VltMargin,
+  VltModal,
+  VltRadio,
+  VltSelect,
+  VltSidemenu,
+  VltSidemenuItem,
+  VltSidemenuLink,
+  VltSidemenuTitle,
+  VltSidemenuTrigger,
+  VltSpinner,
+  VltSteps,
+  VltSwitch,
+  VltTab,
+  VltTabs,
+  VltTable,
+  VltTitle,
+  VltTooltip,
+};

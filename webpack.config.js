@@ -66,8 +66,8 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json'],
   },
   plugins: [
-    new HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
+    new HotModuleReplacementPlugin(),
   ],
   devtool: '#eval-source-map',
 };
