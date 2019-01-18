@@ -8,10 +8,6 @@ describe('vlt-callout', () => {
     wrapper = shallowMount(VltCallout);
   });
 
-  test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
-
   test('renders correctly', () => {
     expect(wrapper.element).toMatchSnapshot();
   });

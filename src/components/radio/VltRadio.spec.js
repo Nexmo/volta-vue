@@ -14,10 +14,6 @@ describe('vlt-radio', () => {
     });
   });
 
-  test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
-
   test('renders correctly with label "Do I pass?", name "pass" and value "Yes"', () => {
     expect(wrapper.element).toMatchSnapshot();
   });

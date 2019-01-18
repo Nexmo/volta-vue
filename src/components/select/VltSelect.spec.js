@@ -13,10 +13,6 @@ describe('vlt-select', () => {
     });
   });
 
-  test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
-
   test('renders correctly with options "red", "yellow", "blue"', () => {
     expect(wrapper.element).toMatchSnapshot();
   });

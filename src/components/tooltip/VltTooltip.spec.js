@@ -12,10 +12,6 @@ describe('vlt-tooltip', () => {
     });
   });
 
-  test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
-
   test('renders correctly with text "Tooltip Test"', () => {
     expect(wrapper.element).toMatchSnapshot();
   });

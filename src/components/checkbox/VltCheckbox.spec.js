@@ -12,10 +12,6 @@ describe('vlt-checkbox', () => {
     });
   });
 
-  test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
-
   test('renders correctly with label "Is test ok?"', () => {
     expect(wrapper.element).toMatchSnapshot();
   });

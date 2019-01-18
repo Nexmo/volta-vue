@@ -13,10 +13,6 @@ describe('vlt-title', () => {
     });
   });
 
-  test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
-
   test('renders correctly with text "Test Title" and rocket icon', () => {
     expect(wrapper.element).toMatchSnapshot();
   });

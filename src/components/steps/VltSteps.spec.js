@@ -13,10 +13,6 @@ describe('vlt-steps', () => {
       });
     });
 
-    test('is a Vue instance', () => {
-      expect(wrapper.isVueInstance()).toBeTruthy();
-    });
-
     test('renders correctly with 3 steps', () => {
       expect(wrapper.element).toMatchSnapshot();
     });

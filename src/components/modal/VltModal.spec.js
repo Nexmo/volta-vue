@@ -12,10 +12,6 @@ describe('vlt-modal', () => {
     });
   });
 
-  test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
-
   test('can be opened', () => {
     wrapper.setProps({ visible: true });
     expect(wrapper.element).toMatchSnapshot();

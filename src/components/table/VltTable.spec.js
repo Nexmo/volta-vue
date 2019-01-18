@@ -21,14 +21,6 @@ const fullTableProps = {
 describe('vlt-table', () => {
   let wrapper;
 
-  beforeEach(() => {
-  });
-
-  test('is a Vue instance', () => {
-    wrapper = shallowMount(VltTable);
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
-
   test('renders empty state', () => {
     wrapper = shallowMount(VltTable);
     expect(wrapper.element).toMatchSnapshot();

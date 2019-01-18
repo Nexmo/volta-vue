@@ -8,10 +8,6 @@ describe('vlt-dropdown', () => {
     wrapper = shallowMount(VltDropdown);
   });
 
-  test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
-
   test('renders correctly', () => {
     expect(wrapper.element).toMatchSnapshot();
   });

@@ -19,10 +19,6 @@ describe('vlt-grid', () => {
     wrapper = mount(App);
   });
 
-  test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
-
   test('renders correctly with three columns', () => {
     expect(wrapper.element).toMatchSnapshot();
   });

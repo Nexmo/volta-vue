@@ -12,10 +12,6 @@ describe('vlt-sidemenu-trigger', () => {
     });
   });
 
-  test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
-
   test('renders correctly with a rocket icon', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
