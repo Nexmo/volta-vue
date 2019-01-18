@@ -47,7 +47,7 @@
 
     <div v-if="rows.length === 0" class="Vlt-empty Vlt-empty--search">
       <div class="Vlt-empty__content">
-        <slot name="empty-message">{{ emptyMessage }}</slot>
+        <slot name="empty-message"><p>{{ emptyMessage }}</p></slot>
       </div>
     </div>
   </div>
