@@ -59,15 +59,15 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new VueLoaderPlugin(),
+    new HotModuleReplacementPlugin(),
+  ],
   resolve: {
     alias: {
       vue$: 'vue/dist/vue.esm.js',
     },
     extensions: ['*', '.js', '.vue', '.json'],
   },
-  plugins: [
-    new VueLoaderPlugin(),
-    new HotModuleReplacementPlugin(),
-  ],
   devtool: '#eval-source-map',
 };
