@@ -55,7 +55,7 @@ export default {
     },
     // need to use 'val' so we can emit the value to the parent, value does not work with v-model
     val: {
-      type: [ String, Number ],
+      type: [String, Number],
       required: true,
     },
   },
@@ -63,8 +63,8 @@ export default {
   methods: {
     emitValue($event) {
       this.$emit('input', $event.target.value);
-    }
-  }
+    },
+  },
 };
 </script>
 

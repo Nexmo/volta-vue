@@ -18,7 +18,8 @@
     :id="props.id"
     v-on="listeners"
   >
-    <component v-if="props.icon" :is="injections.components.VltIcon" :spin="props.spin" :icon="props.icon"></component>
+    <component v-if="props.icon" :is="injections.components.VltIcon"
+               :spin="props.spin" :icon="props.icon"></component>
     <slot>{{props.label}}</slot>
   </button>
 </template>
@@ -32,9 +33,9 @@ export default {
   inject: {
     components: {
       default: {
-        VltIcon
-      }
-    }
+        VltIcon,
+      },
+    },
   },
 
   props: {

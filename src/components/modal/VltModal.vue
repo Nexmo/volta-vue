@@ -49,8 +49,8 @@
 </template>
 
 <script>
-import VltIcon from '../icon/VltIcon';
 import Vue from 'vue';
+import VltIcon from '../icon/VltIcon';
 
 export default {
   name: 'vlt-modal',
@@ -155,11 +155,11 @@ export default {
 
     setFocusToCofirmButton() {
       const vm = this;
-      // due to v-if if the modal is mounted with visible = false the button will not 
+      // due to v-if if the modal is mounted with visible = false the button will not
       // yet be mounted so we need to wait for the next tick to set the focus
-      Vue.nextTick(function () {
+      Vue.nextTick(() => {
         if (vm.$refs) {
-          vm.$refs.confirmButton.focus(); 
+          vm.$refs.confirmButton.focus();
         }
       });
     },
@@ -173,7 +173,7 @@ export default {
 
   watch: {
     visible(value) {
-      if (this.visible) this.setFocusToCofirmButton();
+      if (value) this.setFocusToCofirmButton();
     },
   },
 };

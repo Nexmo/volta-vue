@@ -270,8 +270,20 @@
           <vlt-steps :count="3" key="steps-one" /> <br />
           <vlt-steps :steps="[{ disabled: true }, {}, {}]" key="steps-two" :selected="1" /> <br />
           <vlt-steps :steps="[{ title: 'one' }, { title: 'two' }]" key="steps-three"  /> <br />
-          <vlt-steps :steps="[{ title: 'one', disabled: true }, { title: 'two' }, { title: 'three' }]" key="steps-four" :selected="1" /> <br />
-          <vlt-steps :steps="[{ title: 'one', conplete: true, disabled: true }, { title: 'two' }, { title: 'three' }]" key="steps-five" :selected="1" />
+          <vlt-steps
+            :steps="[
+              { title: 'one', disabled: true },
+              { title: 'two' },
+              { title: 'three' }
+            ]"
+            key="steps-four" :selected="1" /> <br />
+          <vlt-steps
+            :steps="[
+              { title: 'one', conplete: true, disabled: true },
+              { title: 'two' },
+              { title: 'three' }
+            ]"
+            key="steps-five" :selected="1" />
         </div>
       </div>
     </div>
@@ -421,7 +433,12 @@
           <vlt-field>
             <vlt-composite>
               <div class="Vlt-composite__prepend">
-                <vlt-select id="test1" :options="['composition']" selected="composite" class-name="Vlt-native-dropdown" is-in-composite/>
+                <vlt-select id="test1"
+                  :options="['composition']"
+                  selected="composite"
+                  class-name="Vlt-native-dropdown"
+                  is-in-composite
+                />
               </div>
               <vlt-input id="test2" placeholder="e.g. 1105" class-name="Vlt-input"/>
             </vlt-composite>
@@ -434,7 +451,11 @@
         <h4>Single Select Group Button</h4>
         <div>
           <vlt-field>
-            <vlt-group-button :val="groupBtnVal" :options="['biscuits', 'cake', 'bread']" v-model="groupBtnVal"/>
+            <vlt-group-button
+              :val="groupBtnVal"
+              :options="['biscuits', 'cake', 'bread']"
+              v-model="groupBtnVal"
+            />
           </vlt-field>
         </div>
       </div>
@@ -444,7 +465,11 @@
         <h4>Multiple Select Group Button</h4>
         <div>
           <vlt-field>
-            <vlt-group-button :val="multipleGroupBtnVal" :options="['biscuits', 'cake', 'bread']" v-model="multipleGroupBtnVal"/>
+            <vlt-group-button
+              :val="multipleGroupBtnVal"
+              :options="['biscuits', 'cake', 'bread']"
+              v-model="multipleGroupBtnVal"
+            />
           </vlt-field>
         </div>
       </div>

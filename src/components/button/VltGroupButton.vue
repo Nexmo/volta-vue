@@ -16,13 +16,15 @@
 const isMatching = (val = '', option = 'default') => {
   if (typeof val === 'string') return val === option;
   if (Array.isArray(val) && typeof option === 'string') return val.includes(option);
-  if (Array.isArray(val) && typeof option === 'object') return val.some(v => v.value === option.value);
+  if (Array.isArray(val) && typeof option === 'object') return val.some((v) => (v.value === option.value));
   return val.value === option.value;
 };
 
-const singleSelect = (val, option) => isMatching(val, option) ? '' : option;
+const singleSelect = (val, option) => (isMatching(val, option) ? '' : option);
 
-const multiSelect = (val, option) => isMatching(val, option) ? val.filter(v => !isMatching(v, option)) : [...val, option];
+const multiSelect = (val, opt) => (
+  isMatching(val, opt) ? val.filter((v) => !isMatching(v, opt)) : [...val, opt]
+);
 
 export default {
   name: 'vlt-group-button',
@@ -55,9 +57,7 @@ export default {
     isMatching,
   },
 };
-
 </script>
-
 <style lang="scss" scoped>
   .Vlt-btn {
     margin-top: 24px;

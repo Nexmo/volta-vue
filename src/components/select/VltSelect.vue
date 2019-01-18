@@ -50,7 +50,7 @@ export default {
   },
 
   methods: {
-    emitValue({ target: { value }}) {
+    emitValue({ target: { value } }) {
       this.$emit('input', value);
     },
   },

@@ -46,7 +46,8 @@ export default {
   computed: {
     classArray() {
       const classes = [];
-
+      /* eslint-disable guard-for-in */
+      /* eslint-disable no-restricted-syntax */
       for (const prop in this.$props) {
         const value = this.$props[prop];
         if (value && (prop === 'bottom' || prop === 'top')) {

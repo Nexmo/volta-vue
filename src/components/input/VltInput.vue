@@ -87,7 +87,7 @@ export default {
       type: String,
       required: false,
       default: () => '',
-    }
+    },
   },
 
   computed: {

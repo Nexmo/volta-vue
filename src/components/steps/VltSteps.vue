@@ -33,7 +33,7 @@ export default {
     steps: {
       type: Array,
       required: false,
-    }
+    },
   },
 
   data() {
@@ -92,7 +92,7 @@ export default {
 
     steps() {
       this.applyTemplate();
-    }
+    },
   },
 };
 </script>

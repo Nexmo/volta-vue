@@ -63,7 +63,7 @@ export default {
     shadow: {
       type: Boolean,
       default: false,
-    }
+    },
   },
 
   data() {
