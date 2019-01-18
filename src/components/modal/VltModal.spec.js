@@ -30,7 +30,7 @@ describe('vlt-modal', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('has customer cancel button text "Delete"', () => {
+  test('has customer Ok button text "Delete"', () => {
     wrapper.setProps({
       okText: 'Delete',
       visible: true,

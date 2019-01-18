@@ -54,7 +54,7 @@ exports[`vlt-modal can be opened 1`] = `
 </div>
 `;
 
-exports[`vlt-modal has customer cancel button text "Delete" 1`] = `
+exports[`vlt-modal has customer Ok button text "Delete" 1`] = `
 <div
   class="Vlt-modal Vlt-modal_visible"
 >
