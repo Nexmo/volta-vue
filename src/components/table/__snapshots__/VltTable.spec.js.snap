@@ -113,96 +113,17 @@ exports[`vlt-table can sort "Name" column descending 1`] = `
 `;
 
 exports[`vlt-table pagination is shown 1`] = `
-<div>
-  <div
-    class="Vlt-table"
-  >
-    <table>
-      <thead>
-        <tr>
-          <th
-            class="Vlt-table__col--sortable"
-          >
-            
-            Name
-          
-          </th>
-          <th
-            class=""
-          >
-            
-            Position
-          
-          </th>
-        </tr>
-      </thead>
-       
-      <tbody>
-        <tr />
-      </tbody>
-    </table>
-  </div>
-   
-  <div
-    class="Vlt-table__pagination"
-  >
-    <ul>
-      <!---->
-       
-      <li
-        class="Vlt-table__pagination__current"
-      >
-        <a
-          href="#"
-        >
-          1
-        </a>
-      </li>
-       
-      <!---->
-       
-      <li
-        class=""
-      >
-        <a
-          href="#"
-        >
-          2
-        </a>
-      </li>
-      <li
-        class=""
-      >
-        <a
-          href="#"
-        >
-          3
-        </a>
-      </li>
-       
-      <!---->
-       
-      <li
-        class=""
-      >
-        <a
-          href="#"
-        >
-          4
-        </a>
-      </li>
-       
-      <li>
-        <a
-          href="#"
-        >
-          Next
-        </a>
-      </li>
-    </ul>
-  </div>
-   
-  <!---->
+<div class="Vlt-table__pagination">
+  <ul>
+    <!---->
+    <li class="Vlt-table__pagination__current"><a href="#">1</a></li>
+    <!---->
+    <li class=""><a href="#">2</a></li>
+    <li class=""><a href="#">3</a></li>
+    <!---->
+    <li class=""><a href="#">4</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
 </div>
 `;
 

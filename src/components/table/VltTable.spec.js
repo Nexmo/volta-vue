@@ -40,7 +40,7 @@ describe('vlt-table', () => {
         total: 4,
       },
     });
-    expect(wrapper.element).toMatchSnapshot();
+    expect(wrapper.find('.Vlt-table__pagination')).toMatchSnapshot();
   });
 
   test('"page-change" is emitted with "3" when navigating to page "3"', () => {
