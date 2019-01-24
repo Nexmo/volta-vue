@@ -27,27 +27,31 @@ describe('vlt-dropdown', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('second option is selected and selection is shown', () => {
+  test('when "showSelection" is true, button text is "yellow"', () => {
     wrapper.setProps({
       options: ['red', 'yellow', 'blue'],
       showSelection: true,
     });
     wrapper.find('button').trigger('click');
     wrapper.findAll('.Vlt-dropdown__link').at(1).trigger('click');
-    expect(wrapper.element).toMatchSnapshot();
+
+    expect(wrapper.find('.Vlt-dropdown__btn').text()).toBe('yellow');
+    expect(wrapper.vm.selectedOption).toBe('yellow');
   });
 
-  test('has label, second option is selected, selection not shown', () => {
+  test('when has label and "showSelection" is false, button text is "Pick one"', () => {
     wrapper.setProps({
       options: ['red', 'yellow', 'blue'],
       label: 'Pick one',
     });
     wrapper.find('button').trigger('click');
     wrapper.findAll('.Vlt-dropdown__link').at(1).trigger('click');
-    expect(wrapper.element).toMatchSnapshot();
+
+    expect(wrapper.find('.Vlt-dropdown__btn').text()).toBe('Pick one');
+    expect(wrapper.vm.selectedOption).toBe('yellow');
   });
 
-  test('has label, second option is selected, selection shown', () => {
+  test('when has label, "showSelection" is true and "hideLabel" is true,  dropdown button has text "yellow"', () => {
     wrapper.setProps({
       options: ['red', 'yellow', 'blue'],
       label: 'Pick one',
@@ -56,10 +60,12 @@ describe('vlt-dropdown', () => {
     });
     wrapper.find('button').trigger('click');
     wrapper.findAll('.Vlt-dropdown__link').at(1).trigger('click');
-    expect(wrapper.element).toMatchSnapshot();
+
+    expect(wrapper.find('.Vlt-dropdown__btn').text()).toBe('yellow');
+    expect(wrapper.vm.selectedOption).toBe('yellow');
   });
 
-  test('has label, second option is selected, selection and label shown', () => {
+  test('when has label, "showSelection" is true and "hideLabel" is false,  dropdown button has text "Pick one: yellow"', () => {
     wrapper.setProps({
       options: ['red', 'yellow', 'blue'],
       label: 'Pick one',
@@ -67,6 +73,8 @@ describe('vlt-dropdown', () => {
     });
     wrapper.find('button').trigger('click');
     wrapper.findAll('.Vlt-dropdown__link').at(1).trigger('click');
-    expect(wrapper.element).toMatchSnapshot();
+
+    expect(wrapper.find('.Vlt-dropdown__btn').text().replace(/[\s]{2,}/g, ' ')).toContain('Pick one: yellow');
+    expect(wrapper.vm.selectedOption).toBe('yellow');
   });
 });
