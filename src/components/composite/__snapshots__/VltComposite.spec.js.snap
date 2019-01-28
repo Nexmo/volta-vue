@@ -31,7 +31,7 @@ exports[`vlt-composite renders correctly appended button 1`] = `
 </div>
 `;
 
-exports[`vlt-composite renders correctly prended select 1`] = `
+exports[`vlt-composite renders correctly prended button 1`] = `
 <div
   class="Vlt-composite"
 >
