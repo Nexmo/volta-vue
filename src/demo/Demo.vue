@@ -432,15 +432,26 @@
         <h4>Composite</h4>
           <vlt-field>
             <vlt-composite>
-              <div class="Vlt-composite__prepend">
-                <vlt-select id="test1"
+              <template slot="prepend">
+                <vlt-select
                   :options="['composition']"
                   selected="composite"
                   class-name="Vlt-native-dropdown"
                   is-in-composite
                 />
-              </div>
-              <vlt-input id="test2" placeholder="e.g. 1105" class-name="Vlt-input"/>
+              </template>
+              <vlt-input placeholder="e.g. 1105" />
+            </vlt-composite>
+          </vlt-field>
+
+          <vlt-field>
+            <vlt-composite>
+              <vlt-input placeholder="Search" />
+              <template slot="append">
+                <vlt-button
+                  icon="search"
+                />
+              </template>
             </vlt-composite>
           </vlt-field>
       </div>

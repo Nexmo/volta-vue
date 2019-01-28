@@ -1,7 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`vlt-composite renders correctly 1`] = `
+exports[`vlt-composite renders correctly appended button 1`] = `
 <div
   class="Vlt-composite"
-/>
+>
+  <!---->
+   
+  <div
+    class="Vlt-input"
+  >
+    <input
+      type="text"
+    />
+     
+    <!---->
+     
+    <!---->
+  </div>
+   
+  <div
+    class="Vlt-composite__append"
+  >
+    <button
+      class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
+    >
+      <!---->
+       
+    </button>
+  </div>
+</div>
+`;
+
+exports[`vlt-composite renders correctly prended select 1`] = `
+<div
+  class="Vlt-composite"
+>
+  <div
+    class="Vlt-composite__prepend"
+  >
+    <button
+      class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
+    >
+      <!---->
+       
+    </button>
+  </div>
+   
+  <div
+    class="Vlt-input"
+  >
+    <input
+      type="text"
+    />
+     
+    <!---->
+     
+    <!---->
+  </div>
+   
+  <!---->
+</div>
 `;
