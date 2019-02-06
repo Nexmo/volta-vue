@@ -118,6 +118,8 @@ const Components = [
     html: 'vlt-input',
     icon: 'type',
     propertyRows: [
+      { property: 'additionalAttributes', type: 'Object' },
+      { property: 'className', type: 'String' },
       { property: 'disabled', type: 'Boolean', default: false },
       { property: 'hint', type: 'String' },
       { property: 'id', type: 'String' },

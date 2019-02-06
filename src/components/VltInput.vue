@@ -9,6 +9,7 @@
       :rows="rows"
       :value="val"
       v-on="inputListeners"
+      v-bind="additionalAttributes"
     />
     <input
       v-else
@@ -22,6 +23,7 @@
       :type="type"
       :value="val"
       v-on="inputListeners"
+      v-bind="additionalAttributes"
     />
     <label v-if="label">{{label}}</label>
     <small v-if="hint" class="Vlt-form__element__hint">{{hint}}</small>
@@ -33,7 +35,20 @@ export default {
   name: 'vlt-input',
 
   props: {
-    disabled: Boolean,
+    additionalAttributes: {
+      type: Object,
+      required: false,
+    },
+    className: {
+      type: String,
+      required: false,
+      default: () => '',
+    },
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     hint: {
       type: String,
       required: false,
@@ -83,22 +98,18 @@ export default {
       type: [Number, String],
       required: false,
     },
-    className: {
-      type: String,
-      required: false,
-      default: () => '',
-    }
   },
 
   computed: {
     inputListeners() {
       const vm = this;
 
-      return Object.assign({}, this.$listeners, {
+      return {
+        ...this.$listeners,
         input(event) {
           vm.$emit('input', event.target.value);
         },
-      });
+      };
     },
   },
 };
