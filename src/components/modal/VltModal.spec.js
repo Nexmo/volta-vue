@@ -50,6 +50,13 @@ describe('vlt-modal', () => {
     expect(wrapper.emitted('confirm')).toBeTruthy();
   });
 
+  test('can footer be hidden', () => {
+    wrapper.setProps({
+      hideFooter: true,
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   test('can be closed', () => {
     wrapper.setProps({ visible: true });
     wrapper.find('.Vlt-modal__dismiss').trigger('click');

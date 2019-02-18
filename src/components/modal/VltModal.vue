@@ -50,7 +50,7 @@
 
 <script>
 import Vue from 'vue';
-import VltIcon from '../icon/VltIcon';
+import VltIcon from '../icon/VltIcon.vue';
 
 export default {
   name: 'vlt-modal',
@@ -94,7 +94,7 @@ export default {
     },
     hideFooter: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     id: {
       type: String,
