@@ -21,7 +21,7 @@
       <section class="Vlt-modal__content">
         <slot><p>{{message}}</p></slot>
       </section>
-      <footer class="Vlt-modal__footer">
+      <footer v-if="!hideFooter" class="Vlt-modal__footer">
           <button
             v-if="extraBtnLabel"
             class="Vlt-btn Vlt-btn--app"
@@ -49,8 +49,8 @@
 </template>
 
 <script>
-import VltIcon from './VltIcon';
 import Vue from 'vue';
+import { VltIcon } from '@vonagevolta/vue';
 
 export default {
   name: 'vlt-modal',
@@ -117,6 +117,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    hideFooter: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   mounted() {
@@ -154,6 +158,9 @@ export default {
     },
 
     setFocusToCofirmButton() {
+      if (this.hideFooter) {
+        return;
+      }
       const vm = this;
       // due to v-if if the modal is mounted with visible = false the button will not 
       // yet be mounted so we need to wait for the next tick to set the focus

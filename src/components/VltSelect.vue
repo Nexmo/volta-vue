@@ -1,11 +1,12 @@
 <template>
   <div :class="[className , 'Vlt-select', isInComposite ? 'Vlt-select--composite' : '']">
-    <select :id="id" :value="val" v-on="inputListeners">
+    <select :id="id" :value="val" v-on="inputListeners" :disabled="disabled">
       <option v-if="!!selected" selected value="">{{ selected }}</option>
       <option
         v-for="option in options"
-        :value="option.value || option"
-        :key="option.value || option">
+        :value="option.label ? option.value : option"
+        :disabled="option.disabled"
+        :key="option.label ? `${option.value}-${option.label}` : option">
         {{ option.label || option }}
       </option>
     </select>
@@ -46,6 +47,10 @@ export default {
     className: {
       type: String,
       default: '',
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
