@@ -21,7 +21,7 @@
       <section class="Vlt-modal__content">
         <slot><p>{{message}}</p></slot>
       </section>
-      <footer v-if="!hideFooter" class="Vlt-modal__footer">
+      <footer v-if="!noFooter" class="Vlt-modal__footer">
           <button
             v-if="extraBtnLabel"
             class="Vlt-btn Vlt-btn--app"
@@ -92,10 +92,6 @@ export default {
       type: String,
       required: false,
     },
-    hideFooter: {
-      type: Boolean,
-      default: false,
-    },
     id: {
       type: String,
       required: false,
@@ -104,6 +100,10 @@ export default {
     message: {
       type: String,
       required: false,
+    },
+    noFooter: {
+      type: Boolean,
+      default: false,
     },
     notify: {
       default: false,
@@ -158,7 +158,7 @@ export default {
     },
 
     setFocusToCofirmButton() {
-      if (this.hideFooter) {
+      if (this.noFooter) {
         return;
       }
       const vm = this;

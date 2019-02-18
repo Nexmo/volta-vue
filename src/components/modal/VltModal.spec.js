@@ -50,9 +50,10 @@ describe('vlt-modal', () => {
     expect(wrapper.emitted('confirm')).toBeTruthy();
   });
 
-  test('can footer be hidden', () => {
+  test('modal without footer', () => {
     wrapper.setProps({
-      hideFooter: true,
+      noFooter: 1,
+      visible: true,
     });
     expect(wrapper.element).toMatchSnapshot();
   });
