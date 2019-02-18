@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-title icon is red 1`] = `
+<h2
+  class="Vlt-title--icon"
+>
+  <vlt-icon-stub
+    clickable="true"
+    color="red"
+    icon="rocket"
+  />
+  Test Title
+
+</h2>
+`;
+
+exports[`vlt-title renders correctly with text "Test Title" and rocket icon 1`] = `
+<h2
+  class="Vlt-title--icon"
+>
+  <vlt-icon-stub
+    clickable="true"
+    icon="rocket"
+  />
+  Test Title
+
+</h2>
+`;

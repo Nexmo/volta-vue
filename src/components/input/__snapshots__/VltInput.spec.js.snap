@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-input is textarea 1`] = `
+<div
+  class="Vlt-textarea"
+>
+  <textarea />
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`vlt-input renders correctly 1`] = `
+<div
+  class="Vlt-input"
+>
+  <input
+    type="text"
+  />
+   
+  <!---->
+   
+  <!---->
+</div>
+`;

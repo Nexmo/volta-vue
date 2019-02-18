@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-badge is dismissable 1`] = `
+<span
+  class="Vlt-badge Vlt-badge--dismissable Vlt-badge--blue"
+>
+   
+  <button
+    class="Vlt-badge__dismiss"
+  />
+</span>
+`;
+
+exports[`vlt-badge is dismissed 1`] = `<!---->`;
+
+exports[`vlt-badge is red 1`] = `
+<span
+  class="Vlt-badge Vlt-badge--red"
+>
+   
+  <!---->
+</span>
+`;
+
+exports[`vlt-badge renders correctly 1`] = `
+<span
+  class="Vlt-badge Vlt-badge--blue"
+>
+   
+  <!---->
+</span>
+`;
