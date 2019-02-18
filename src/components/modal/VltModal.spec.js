@@ -52,7 +52,7 @@ describe('vlt-modal', () => {
 
   test('modal without footer', () => {
     wrapper.setProps({
-      noFooter: 1,
+      noFooter: true,
       visible: true,
     });
     expect(wrapper.element).toMatchSnapshot();
