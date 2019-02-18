@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "lint": "eslint .",
-    "pull-request-link": "sh bin/pull-request-link.sh",
     "test": "jest"
   },
   "dependencies": {
@@ -86,7 +85,7 @@
   "homepage": "https://github.com/Nexmo/volta-vue#readme",
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint && npm run pull-request-link && npm test"
+      "pre-push": "npm run lint"
     }
   }
 }

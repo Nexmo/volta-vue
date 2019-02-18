@@ -14,7 +14,7 @@
 <script>
 
 const isMatching = (val = '', option = 'default') => {
-  if (typeof val === 'string') return val === option;
+  if (typeof val === 'string' || typeof val === 'number') return val === option;
   if (Array.isArray(val) && typeof option === 'string') return val.includes(option);
   if (Array.isArray(val) && typeof option === 'object') return val.some((v) => (v.value === option.value));
   return val.value === option.value;
