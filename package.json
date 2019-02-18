@@ -1,7 +1,7 @@
 {
   "name": "@vonagevolta/vue",
   "description": "Vue.js components for Vonage Volta",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "scripts": {
     "dev": "webpack-dev-server",
     "lint": "eslint .",
@@ -85,7 +85,7 @@
   "homepage": "https://github.com/Nexmo/volta-vue#readme",
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint"
+      "pre-push": "npm run lint && npm run test"
     }
   }
 }
