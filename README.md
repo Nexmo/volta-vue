@@ -71,10 +71,22 @@ data () {
 </script>
 ```
 
+## Running tests
+We use [Vue Test Utils](https://vue-test-utils.vuejs.org/) with [Jest](https://jestjs.io/en/) for unit testing.
+You can run all the tests: 
+``` bash
+npm test
+```
+Or a single test:
+``` bash
+npm test test/radio/VltRadio.spec.js
+```
+
+
 ## Viewing the docs
 
 Clone repo
 
 ``` bash
-npm run-script dev
+npm run dev
 ```

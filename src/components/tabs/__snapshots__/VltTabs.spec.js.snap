@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-tabs renders correctly 1`] = `
+<div
+  class="Vlt-tabs"
+>
+  <ul
+    class="Vlt-tabs__header"
+  >
+    <li
+      class="Vlt-tabs__link Vlt-tabs__link_active"
+    >
+      <!---->
+       
+      <span>
+        One
+      </span>
+    </li>
+    <li
+      class="Vlt-tabs__link"
+    >
+      <!---->
+       
+      <span>
+        Two
+      </span>
+    </li>
+    <li
+      class="Vlt-tabs__link"
+    >
+      <!---->
+       
+      <span>
+        Three
+      </span>
+    </li>
+  </ul>
+   
+  <div
+    class="Vlt-tabs__content"
+  >
+    <div
+      class="Vlt-tabs__panel Vlt-tabs__panel_active"
+    />
+    <div
+      class="Vlt-tabs__panel"
+    />
+    <div
+      class="Vlt-tabs__panel"
+    />
+  </div>
+</div>
+`;

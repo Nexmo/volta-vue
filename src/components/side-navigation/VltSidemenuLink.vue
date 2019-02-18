@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import VltIcon from '../VltIcon';
+import VltIcon from '../icon/VltIcon';
 
 export default {
   name: 'VltSidemenuLink',

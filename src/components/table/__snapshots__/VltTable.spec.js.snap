@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-table can sort "Name" column ascending 1`] = `
+<div>
+  <div
+    class="Vlt-table"
+  >
+    <table>
+      <thead>
+        <tr>
+          <th
+            class="Vlt-table__col--sortable Vlt-table__col--ascending"
+          >
+            
+            Name
+          
+          </th>
+          <th
+            class=""
+          >
+            
+            Position
+          
+          </th>
+        </tr>
+      </thead>
+       
+      <tbody>
+        <tr>
+          <td>
+            Nisha
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Mie
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Louis
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Julien
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`vlt-table can sort "Name" column descending 1`] = `
+<div>
+  <div
+    class="Vlt-table"
+  >
+    <table>
+      <thead>
+        <tr>
+          <th
+            class="Vlt-table__col--sortable Vlt-table__col--descending"
+          >
+            
+            Name
+          
+          </th>
+          <th
+            class=""
+          >
+            
+            Position
+          
+          </th>
+        </tr>
+      </thead>
+       
+      <tbody>
+        <tr>
+          <td>
+            Julien
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Louis
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Mie
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Nisha
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`vlt-table pagination is shown 1`] = `
+<div class="Vlt-table__pagination">
+  <ul>
+    <!---->
+    <li class="Vlt-table__pagination__current"><a href="#">1</a></li>
+    <!---->
+    <li class=""><a href="#">2</a></li>
+    <li class=""><a href="#">3</a></li>
+    <!---->
+    <li class=""><a href="#">4</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</div>
+`;
+
+exports[`vlt-table renders correctly with two columns, "Name" and "Position" 1`] = `
+<div>
+  <div
+    class="Vlt-table"
+  >
+    <table>
+      <thead>
+        <tr>
+          <th
+            class="Vlt-table__col--sortable"
+          >
+            
+            Name
+          
+          </th>
+          <th
+            class=""
+          >
+            
+            Position
+          
+          </th>
+        </tr>
+      </thead>
+       
+      <tbody>
+        <tr />
+        <tr />
+        <tr />
+        <tr />
+      </tbody>
+    </table>
+  </div>
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`vlt-table renders empty state 1`] = `
+<div>
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="Vlt-empty Vlt-empty--search"
+  >
+    <div
+      class="Vlt-empty__content"
+    >
+      <p>
+        There are no results for this search
+      </p>
+    </div>
+  </div>
+</div>
+`;

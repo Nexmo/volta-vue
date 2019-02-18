@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-margin renders correctly 1`] = `
+<div
+  class=""
+/>
+`;
+
+exports[`vlt-margin renders with a top margin of 2 1`] = `
+<div
+  class="Vlt-margin--top2"
+/>
+`;
+
+exports[`vlt-margin renders with a top margin of 2 on small screens 1`] = `
+<div
+  class="Vlt-margin--S-top2"
+/>
+`;

@@ -14,8 +14,8 @@
 <script>
 /* eslint-disable no-param-reassign */
 import Vue from 'vue';
-import VltIcon from '../VltIcon';
-import VltBadge from '../VltBadge';
+import VltIcon from '../icon/VltIcon';
+import VltBadge from '../badge/VltBadge';
 
 Vue.directive('click-outside', {
   bind(el, binding, vnode) {

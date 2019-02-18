@@ -181,10 +181,11 @@
       <div class="Vlt-col">
         <h4>Radio</h4>
         <div>
-          <vlt-radio inline disabled name="animal" label="Cat"/>
-          <vlt-radio inline name="animal" label="Dog"/>
-          <vlt-radio inline name="animal" label="Rabbit"/>
+          <vlt-radio inline disabled name="animal" label="Cat" val="cat" v-model="radio"/>
+          <vlt-radio inline name="animal" label="Dog" val="dog" v-model="radio"/>
+          <vlt-radio inline name="animal" label="Rabbit" val="rabbit" v-model="radio"/>
         </div>
+        Selected value is: {{ radio }}
       </div>
     </div>
 
@@ -195,10 +196,12 @@
           <vlt-field big>
             <vlt-select
               :options="['dog', 'rabbit']"
-              selected="Please pick one"
-              label="Select one" />
+              label="Select one"
+              :val="select"
+              v-model="select" />
           </vlt-field>
         </div>
+        Value is: {{ select }}
       </div>
     </div>
 
@@ -209,9 +212,12 @@
           <vlt-field label="Select one">
             <vlt-select
               :options="['lion', 'tiger']"
-              selected="Please pick one" />
+              selected="Please pick one"
+              :val="select2"
+              v-model="select2" />
           </vlt-field>
         </div>
+        Value is: {{ select2 }}
       </div>
     </div>
 
@@ -264,8 +270,20 @@
           <vlt-steps :count="3" key="steps-one" /> <br />
           <vlt-steps :steps="[{ disabled: true }, {}, {}]" key="steps-two" :selected="1" /> <br />
           <vlt-steps :steps="[{ title: 'one' }, { title: 'two' }]" key="steps-three"  /> <br />
-          <vlt-steps :steps="[{ title: 'one', disabled: true }, { title: 'two' }, { title: 'three' }]" key="steps-four" :selected="1" /> <br />
-          <vlt-steps :steps="[{ title: 'one', conplete: true, disabled: true }, { title: 'two' }, { title: 'three' }]" key="steps-five" :selected="1" />
+          <vlt-steps
+            :steps="[
+              { title: 'one', disabled: true },
+              { title: 'two' },
+              { title: 'three' }
+            ]"
+            key="steps-four" :selected="1" /> <br />
+          <vlt-steps
+            :steps="[
+              { title: 'one', conplete: true, disabled: true },
+              { title: 'two' },
+              { title: 'three' }
+            ]"
+            key="steps-five" :selected="1" />
         </div>
       </div>
     </div>
@@ -296,7 +314,7 @@
             </template>
           </vlt-table>
           <vlt-table
-            :columns="[{ title: 'Name' }, { title: 'Job' }]"
+            :columns="[{ title: 'Name', sortable: true, property: 'name' }, { title: 'Job' }]"
             :rows="[
               { name: 'Rasmus  Nichols', job: 'Baker'},
               { name: 'Sandra  Jackson', job: 'Engineer'}
@@ -414,10 +432,26 @@
         <h4>Composite</h4>
           <vlt-field>
             <vlt-composite>
-              <div class="Vlt-composite__prepend">
-                <vlt-select id="test1" :options="['composition']" selected="composite" class-name="Vlt-native-dropdown" is-in-composite/>
-              </div>
-              <vlt-input id="test2" placeholder="e.g. 1105" class-name="Vlt-input"/>
+              <template slot="prepend">
+                <vlt-select
+                  :options="['composition']"
+                  selected="composite"
+                  class-name="Vlt-native-dropdown"
+                  is-in-composite
+                />
+              </template>
+              <vlt-input placeholder="e.g. 1105" />
+            </vlt-composite>
+          </vlt-field>
+
+          <vlt-field>
+            <vlt-composite>
+              <vlt-input placeholder="Search" />
+              <template slot="append">
+                <vlt-button
+                  icon="search"
+                />
+              </template>
             </vlt-composite>
           </vlt-field>
       </div>
@@ -428,7 +462,11 @@
         <h4>Single Select Group Button</h4>
         <div>
           <vlt-field>
-            <vlt-group-button :val="groupBtnVal" :options="['biscuits', 'cake', 'bread']" v-model="groupBtnVal"/>
+            <vlt-group-button
+              :val="groupBtnVal"
+              :options="['biscuits', 'cake', 'bread']"
+              v-model="groupBtnVal"
+            />
           </vlt-field>
         </div>
       </div>
@@ -438,7 +476,11 @@
         <h4>Multiple Select Group Button</h4>
         <div>
           <vlt-field>
-            <vlt-group-button :val="multipleGroupBtnVal" :options="['biscuits', 'cake', 'bread']" v-model="multipleGroupBtnVal"/>
+            <vlt-group-button
+              :val="multipleGroupBtnVal"
+              :options="['biscuits', 'cake', 'bread']"
+              v-model="multipleGroupBtnVal"
+            />
           </vlt-field>
         </div>
       </div>
@@ -516,6 +558,9 @@ export default {
       topFlashVisible: false,
       groupBtnVal: 'biscuits',
       multipleGroupBtnVal: ['cake'],
+      radio: undefined,
+      select: 'dog',
+      select2: undefined,
     };
   },
 };
