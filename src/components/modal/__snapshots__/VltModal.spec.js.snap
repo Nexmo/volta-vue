@@ -162,6 +162,39 @@ exports[`vlt-modal is a message modal 1`] = `
 </div>
 `;
 
+exports[`vlt-modal modal without footer 1`] = `
+<div
+  class="Vlt-modal Vlt-modal_visible"
+>
+  <div
+    class="Vlt-modal__panel"
+  >
+    <header
+      class="Vlt-modal__header"
+    >
+      <h4>
+        Title
+      </h4>
+       
+      <a
+        aria-label="Close"
+        class="Vlt-modal__dismiss"
+      />
+    </header>
+     
+    <section
+      class="Vlt-modal__content"
+    >
+      <p>
+        
+      </p>
+    </section>
+     
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`vlt-modal renders correctly with title "Title" 1`] = `
 <div
   class="Vlt-modal Vlt-modal_visible"

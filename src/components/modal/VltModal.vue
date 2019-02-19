@@ -21,7 +21,7 @@
       <section class="Vlt-modal__content">
         <slot><p>{{message}}</p></slot>
       </section>
-      <footer class="Vlt-modal__footer">
+      <footer v-if="!noFooter" class="Vlt-modal__footer">
           <button
             v-if="extraBtnLabel"
             class="Vlt-btn Vlt-btn--app"
@@ -50,7 +50,7 @@
 
 <script>
 import Vue from 'vue';
-import VltIcon from '../icon/VltIcon';
+import VltIcon from '../icon/VltIcon.vue';
 
 export default {
   name: 'vlt-modal',
@@ -100,6 +100,10 @@ export default {
     message: {
       type: String,
       required: false,
+    },
+    noFooter: {
+      type: Boolean,
+      default: false,
     },
     notify: {
       default: false,
@@ -154,6 +158,9 @@ export default {
     },
 
     setFocusToCofirmButton() {
+      if (this.noFooter) {
+        return;
+      }
       const vm = this;
       // due to v-if if the modal is mounted with visible = false the button will not
       // yet be mounted so we need to wait for the next tick to set the focus
