@@ -154,7 +154,7 @@ const Components = [
       { property: 'ok-text', type: 'String' },
       { property: 'title', type: 'String' },
       { property: 'visible', type: 'Boolean', default: false },
-      { property: 'noFooter', type: 'Boolean', default: false },
+      { property: 'no-footer', type: 'Boolean', default: false },
     ],
     eventRows: [
       { event: 'close', description: 'when the modal is cancelled' },
