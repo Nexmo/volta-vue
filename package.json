@@ -3,6 +3,7 @@
   "description": "Vue.js components for Vonage Volta",
   "version": "0.0.17",
   "scripts": {
+    "ci": "npm run lint && npm test",
     "dev": "webpack-dev-server",
     "lint": "eslint .",
     "test": "jest"
