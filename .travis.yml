@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - lts/*
+env:
+  global:
+    secure: pN++MDBPe4Jh9YjKYR6/B10gtS/KF51qwUdtZJV7v2dY0g+ImF/SmYhTUF9smuraxioqaImxhagvIGEu+NkWlSR4UOtcAM+CNNpRx6jCNPYmMukEGJGQeU2r1qR7vifu/Irff9kYYfKejyRdyEDvWfNW0aGHHCTMSlvsHhFMrVsH9fwRIIVA7MSKBMBDz5qgPFX/BilBRhVW86eIZLNfHjcQT0Y+7+aPm3Jn+QUujVtClG4Rxi0LPt+F8wpw11suOaEEilTtDA9Mjlxi6pQxOUuOdN1tAkh6UbkupUrGNRTG44QSdRQ8IjgDL9hUMUGF7VN/j4vrpGJN+fhpvVEgeS6tL4y5UNjb2lWW/uc/J8xoaoSvUEprDjFyOocHr87QNL7/foiGAS2S8hrjvdx1uvnsalrZ/jTG+1Md+NqSbD8SM0luLbJ6W3GZuIHjnzLI3yxT5xlxZM8yioGpZu+bGSmOmhjIvPzVWJa0FhrarRGfTdioEe8VZISjlOhEMLoVRJ7UQeMvoKDC4j9aFBHgw/6cYXAa3ADtt30RyTWIePUyjdMYr+qyn1ON7/AATm4f0vWTR0sOeBN3vzlzBnPkapBct9GmsppXZpBHLvpoUQn3Q+5E7oiudluG45kWmx6e0LYtbXwBUBPr+at/w5aVVORPV98yZzGlGtwXlv5EPn0=
+before_install:
+  - npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+script: npm run ci
