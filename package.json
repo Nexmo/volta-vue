@@ -89,7 +89,6 @@
   "homepage": "https://github.com/Nexmo/volta-vue#readme",
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint && npm run test"
     }
   }
 }
