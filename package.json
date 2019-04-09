@@ -6,10 +6,12 @@
     "ci": "npm run lint && npm test",
     "dev": "webpack-dev-server",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook"
   },
   "dependencies": {
     "@vonagevolta/core": "^1.2.31",
+    "dir-compare": "^1.7.2",
     "tooltip.js": "^1.2.0",
     "vue": "^2.5.11"
   },
@@ -19,6 +21,7 @@
     "not ie <= 8"
   ],
   "devDependencies": {
+    "@storybook/vue": "^5.0.6",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.6",
