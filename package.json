@@ -10,6 +10,9 @@
     "storybook": "start-storybook"
   },
   "dependencies": {
+    "@storybook/addon-knobs": "^5.0.6",
+    "@storybook/addon-notes": "^5.0.6",
+    "@storybook/addons": "^5.0.6",
     "@vonagevolta/core": "^1.2.31",
     "dir-compare": "^1.7.2",
     "tooltip.js": "^1.2.0",
@@ -88,7 +91,6 @@
   },
   "homepage": "https://github.com/Nexmo/volta-vue#readme",
   "husky": {
-    "hooks": {
-    }
+    "hooks": {}
   }
 }
