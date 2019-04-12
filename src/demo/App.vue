@@ -104,6 +104,7 @@ export default {
   },
 
   mounted() {
+    require("particle.js");
     this.components = Components;
   },
 };

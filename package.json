@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@vonagevolta/core": "^1.2.30",
+    "install": "^0.12.2",
+    "npm": "^6.7.0",
+    "particles.js": "git+https://github.com/Nexmo/particles.js.git",
     "tooltip.js": "^1.2.0",
     "vue": "^2.5.11"
   },

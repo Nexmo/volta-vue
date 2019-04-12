@@ -1,5 +1,18 @@
 const Components = [
   {
+    title: 'Accordion',
+    html: 'vlt-accordion',
+    icon: 'circle-down',
+    propertyRows: [
+      { property: 'app', type: 'Boolean', default: false },
+      { property: 'id', type: 'String' },
+      { property: 'label', type: 'String' },
+      { property: 'selected', type: 'String', default: 'the first option in the options array' },
+      { property: 'show-selection', type: 'Boolean' },
+    ],
+    code: '<vlt-accordion label="Label" :options="[]" />',
+  },
+  {
     title: 'Badge',
     html: 'vlt-badge',
     icon: 'bookmark',

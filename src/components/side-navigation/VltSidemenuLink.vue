@@ -1,5 +1,5 @@
 <template>
-  <router-link
+  <!-- <router-link
     v-if="to"
     :id="id"
     class="Vlt-sidemenu__link"
@@ -9,7 +9,7 @@
   >
     <vlt-icon :icon="icon" :color="color" />
     <span class="Vlt-sidemenu__label">{{label}}</span>
-  </router-link>
+  </router-link> -->
 
   <a
     v-else

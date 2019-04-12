@@ -1,3 +1,4 @@
+export { default as VltAccordion } from './VltAccordion';
 export { default as VltBadge } from './VltBadge';
 export { default as VltButton } from './VltButton';
 export { default as VltCallout } from './VltCallout';
