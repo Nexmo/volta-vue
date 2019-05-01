@@ -50,7 +50,7 @@
 
 <script>
 import Vue from 'vue';
-import VltIcon from '../icon/VltIcon.vue';
+import VltIcon from '../icon/VltIcon';
 
 export default {
   name: 'vlt-modal',
