@@ -16,6 +16,7 @@
     }, data.staticClass, data.class
     ]"
     :id="props.id"
+    :disabled="props.disabled"
     v-on="listeners"
   >
     <component v-if="props.icon" :is="injections.components.VltIcon"
