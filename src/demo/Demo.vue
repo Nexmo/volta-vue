@@ -259,6 +259,7 @@
         <div>
           <vlt-spinner />
           <vlt-spinner small/>
+          <vlt-spinner smaller/>
         </div>
       </div>
     </div>
