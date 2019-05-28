@@ -22,6 +22,7 @@
           <vlt-button quaternary label="Quaternary"/>
           <vlt-button icon="bin" label="Icon"/>
           <vlt-button app label="App"/>
+          <vlt-button label="Loading" spinner />
         </div>
       </div>
     </div>
