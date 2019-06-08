@@ -24,7 +24,6 @@ export default {
       return {
         'Vlt-icon': !this.noClass,
         pointer: this.pointer,
-        spin: this.spin,
         'Vlt-icon--small': this.small,
         [colorClass]: this.color,
       };
@@ -52,10 +51,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    spin: {
-      type: Boolean,
-      default: false,
-    },
     small: {
       type: Boolean,
       default: false,
@@ -67,8 +62,5 @@ export default {
 <style scoped>
 .Vlt-icon.pointer {
   cursor: pointer;
-}
-.spin {
-  animation: spin 1s infinite linear reverse;
 }
 </style>

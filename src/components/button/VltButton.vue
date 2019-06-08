@@ -20,7 +20,7 @@
     v-on="listeners"
   >
     <component v-if="props.icon" :is="injections.components.VltIcon"
-               :spin="props.spin" :icon="props.icon"></component>
+               :icon="props.icon"></component>
     <component v-if="props.spinner" :is="injections.components.VltSpinner"
                :smaller="true" :white="props.white"></component>
     <slot>{{props.label}}</slot>
@@ -85,10 +85,6 @@ export default {
       default: false,
     },
     small: {
-      type: Boolean,
-      default: false,
-    },
-    spin: {
       type: Boolean,
       default: false,
     },
