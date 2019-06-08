@@ -23,6 +23,7 @@
           <vlt-button icon="bin" label="Icon"/>
           <vlt-button app label="App"/>
           <vlt-button label="Loading" spinner />
+          <vlt-button secondary label="Loading" spinner-white />
         </div>
       </div>
     </div>

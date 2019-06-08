@@ -13,6 +13,7 @@ describe('vlt-button', () => {
     ['id', 'test-button'],
     ['disabled', true],
     ['spinner', true],
+    ['spinner-white', true],
   ])('prop %s is set to %s', (prop, value) => {
     const wrapper = shallowMount(VltButton, {
       context: {

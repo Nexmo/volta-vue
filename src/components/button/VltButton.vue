@@ -21,8 +21,8 @@
   >
     <component v-if="props.icon" :is="injections.components.VltIcon"
                :icon="props.icon"></component>
-    <component v-if="props.spinner" :is="injections.components.VltSpinner"
-               :smaller="true" :white="props.white"></component>
+    <component v-if="props.spinner || props.spinnerWhite" :is="injections.components.VltSpinner"
+               :smaller="true" :white="props.spinnerWhite"></component>
     <slot>{{props.label}}</slot>
   </button>
 </template>
@@ -96,7 +96,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    whiteSpinner: {
+    spinnerWhite: {
       type: Boolean,
       default: false,
     },
