@@ -26,6 +26,8 @@ exports[`vlt-composite renders correctly appended button 1`] = `
     >
       <!---->
        
+      <!---->
+       
     </button>
   </div>
 </div>
@@ -41,6 +43,8 @@ exports[`vlt-composite renders correctly prended button 1`] = `
     <button
       class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
     >
+      <!---->
+       
       <!---->
        
     </button>

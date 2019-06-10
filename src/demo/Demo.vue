@@ -22,6 +22,8 @@
           <vlt-button quaternary label="Quaternary"/>
           <vlt-button icon="bin" label="Icon"/>
           <vlt-button app label="App"/>
+          <vlt-button label="Loading" spinner />
+          <vlt-button secondary label="Loading" spinner-white />
         </div>
       </div>
     </div>
@@ -259,6 +261,7 @@
         <div>
           <vlt-spinner />
           <vlt-spinner small/>
+          <vlt-spinner smaller/>
         </div>
       </div>
     </div>

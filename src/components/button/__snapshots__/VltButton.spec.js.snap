@@ -1,10 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`vlt-button prop spinner-white is set to true 1`] = `
+<button
+  class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
+>
+  <!---->
+   
+  <div
+    class="Vlt-spinner Vlt-spinner--smaller Vlt-spinner--white"
+  />
+   
+</button>
+`;
+
+exports[`vlt-button prop spinner is set to true 1`] = `
+<button
+  class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
+>
+  <!---->
+   
+  <div
+    class="Vlt-spinner Vlt-spinner--smaller"
+  />
+   
+</button>
+`;
+
 exports[`vlt-button prop disabled is set to true 1`] = `
 <button
   class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--disabled Vlt-btn--tertiary"
   disabled="disabled"
 >
+  <!---->
+   
   <!---->
    
 </button>
@@ -22,6 +50,8 @@ exports[`vlt-button prop icon is set to bin 1`] = `
     />
   </svg>
    
+  <!---->
+   
 </button>
 `;
 
@@ -30,6 +60,8 @@ exports[`vlt-button prop id is set to test-button 1`] = `
   class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
   id="test-button"
 >
+  <!---->
+   
   <!---->
    
 </button>
@@ -41,6 +73,8 @@ exports[`vlt-button prop primary is set to true 1`] = `
 >
   <!---->
    
+  <!---->
+   
 </button>
 `;
 
@@ -48,6 +82,8 @@ exports[`vlt-button renders correctly 1`] = `
 <button
   class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
 >
+  <!---->
+   
   <!---->
    
 </button>
