@@ -26,6 +26,8 @@ const Components = [
       { property: 'quaternary', type: 'Boolean', default: false },
       { property: 'secondary', type: 'Boolean', default: false },
       { property: 'small', type: 'Boolean', default: false },
+      { property: 'spinner', type: 'Boolean', default: false },
+      { property: 'spinner-white', type: 'Boolean', default: false },
       { property: 'tooltip-title', type: 'String' },
     ],
     code: '<vlt-button label="Label" secondary />',
