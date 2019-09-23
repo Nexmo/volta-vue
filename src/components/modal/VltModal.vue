@@ -14,12 +14,12 @@
     }"
   >
     <div class="Vlt-modal__panel" @keyup.enter="confirm" @keyup.esc="close">
-      <header class="Vlt-modal__header">
+      <header id="vltModalHeader" class="Vlt-modal__header">
         <h4>{{ title }}</h4>
-        <a class="Vlt-modal__dismiss" aria-label="Close" @click="close"></a>
+        <a id="vltModalDismiss" class="Vlt-modal__dismiss" aria-label="Close" @click="close"></a>
       </header>
-      <section class="Vlt-modal__content">
-        <slot><p>{{message}}</p></slot>
+      <section id="vltModalContent" class="Vlt-modal__content">
+        <slot><p>{{ message }}</p></slot>
       </section>
       <footer v-if="!noFooter" class="Vlt-modal__footer">
           <button
@@ -36,12 +36,12 @@
             class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
             @click="close"
           >
-            {{getCancelText()}}
+            {{ getCancelText() }}
           </button>
           <button class="Vlt-btn Vlt-btn--app" :class="getPrimaryBtnClass()" @click="confirm"
                   ref="confirmButton">
             <vlt-icon v-if="confirmBtnIcon" :icon="confirmBtnIcon"></vlt-icon>
-            {{getOkText()}}
+            {{ getOkText() }}
           </button>
       </footer>
     </div>
