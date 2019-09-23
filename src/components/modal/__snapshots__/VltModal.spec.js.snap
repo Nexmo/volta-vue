@@ -9,6 +9,7 @@ exports[`vlt-modal can be opened 1`] = `
   >
     <header
       class="Vlt-modal__header"
+      id="vltModalHeader"
     >
       <h4>
         Title
@@ -17,11 +18,13 @@ exports[`vlt-modal can be opened 1`] = `
       <a
         aria-label="Close"
         class="Vlt-modal__dismiss"
+        id="vltModalDismiss"
       />
     </header>
      
     <section
       class="Vlt-modal__content"
+      id="vltModalContent"
     >
       <p>
         
@@ -63,6 +66,7 @@ exports[`vlt-modal has customer Ok button text "Delete" 1`] = `
   >
     <header
       class="Vlt-modal__header"
+      id="vltModalHeader"
     >
       <h4>
         Title
@@ -71,11 +75,13 @@ exports[`vlt-modal has customer Ok button text "Delete" 1`] = `
       <a
         aria-label="Close"
         class="Vlt-modal__dismiss"
+        id="vltModalDismiss"
       />
     </header>
      
     <section
       class="Vlt-modal__content"
+      id="vltModalContent"
     >
       <p>
         
@@ -117,6 +123,7 @@ exports[`vlt-modal is a message modal 1`] = `
   >
     <header
       class="Vlt-modal__header"
+      id="vltModalHeader"
     >
       <h4>
         Title
@@ -125,11 +132,13 @@ exports[`vlt-modal is a message modal 1`] = `
       <a
         aria-label="Close"
         class="Vlt-modal__dismiss"
+        id="vltModalDismiss"
       />
     </header>
      
     <section
       class="Vlt-modal__content"
+      id="vltModalContent"
     >
       <p>
         true
@@ -171,6 +180,7 @@ exports[`vlt-modal modal without footer 1`] = `
   >
     <header
       class="Vlt-modal__header"
+      id="vltModalHeader"
     >
       <h4>
         Title
@@ -179,11 +189,13 @@ exports[`vlt-modal modal without footer 1`] = `
       <a
         aria-label="Close"
         class="Vlt-modal__dismiss"
+        id="vltModalDismiss"
       />
     </header>
      
     <section
       class="Vlt-modal__content"
+      id="vltModalContent"
     >
       <p>
         
@@ -204,6 +216,7 @@ exports[`vlt-modal renders correctly with title "Title" 1`] = `
   >
     <header
       class="Vlt-modal__header"
+      id="vltModalHeader"
     >
       <h4>
         Title
@@ -212,11 +225,13 @@ exports[`vlt-modal renders correctly with title "Title" 1`] = `
       <a
         aria-label="Close"
         class="Vlt-modal__dismiss"
+        id="vltModalDismiss"
       />
     </header>
      
     <section
       class="Vlt-modal__content"
+      id="vltModalContent"
     >
       <p>
         
