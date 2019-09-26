@@ -295,7 +295,7 @@
       <div class="Vlt-col">
         <h4>Switch</h4>
         <div>
-          <vlt-switch /> <vlt-switch small />  <vlt-switch red />
+          <vlt-switch /> <vlt-switch small />  <vlt-switch red /> <vlt-switch disabled />
         </div>
       </div>
     </div>

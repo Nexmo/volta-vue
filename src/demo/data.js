@@ -260,6 +260,7 @@ const Components = [
     icon: 'switch',
     propertyRows: [
       { property: 'checked', type: 'Boolean', default: false },
+      { property: 'disabled', type: 'Boolean', default: false },
       { property: 'red', type: 'Boolean', default: false },
       { property: 'small', type: 'Boolean', default: false },
     ],
