@@ -1,15 +1,24 @@
 <template>
-   <div :id="id" class="Vlt-dropdown" :class="{ 'Vlt-dropdown--expanded' : expanded }">
+   <div
+    :id="id"
+    class="Vlt-dropdown"
+    :class="{
+      'Vlt-dropdown--expanded' : expanded,
+      'Vlt-dropdown__trigger Vlt-dropdown__trigger--btn': trigger
+    }"
+  >
     <button
       :class="getButtonClass()"
       @click="toggleDropdown($event)"
     >
-      <span v-if="label && (!hideLabel || !selectedOption)">
-        {{label}}<span v-if="showSelection">:</span>
-      </span>
-      <span v-if="showSelection" :class="{ 'Vlt-dropdown__selection': label }">
-        {{ property && selectedOption ? selectedOption[property] : selectedOption }}
-      </span>
+      <slot name="button-value">
+        <span v-if="label && (!hideLabel || !selectedOption)">
+          {{label}}<span v-if="showSelection">:</span>
+        </span>
+        <span v-if="showSelection" :class="{ 'Vlt-dropdown__selection': label }">
+          {{ property && selectedOption ? selectedOption[property] : selectedOption }}
+        </span>
+      </slot>
     </button>
     <div class="Vlt-dropdown__panel">
       <div class="Vlt-dropdown__panel__content">
@@ -47,6 +56,10 @@ export default {
       type: String,
       required: false,
     },
+    noArrow: {
+      type: Boolean,
+      default: false,
+    },
     options: {
       type: Array,
       default: () => [],
@@ -60,6 +73,14 @@ export default {
       required: false,
     },
     showSelection: {
+      type: Boolean,
+      default: false,
+    },
+    trigger: {
+      type: Boolean,
+      default: false,
+    },
+    unbordered: {
       type: Boolean,
       default: false,
     },
@@ -80,8 +101,10 @@ export default {
 
     getButtonClass() {
       return {
-        'Vlt-dropdown__btn': true,
+        'Vlt-dropdown__btn': !this.trigger,
         'Vlt-dropdown__btn--app': this.app,
+        'Vlt-btn Vlt-btn--tertiary Vlt-btn--': this.trigger,
+        'Vlt-btn--unbordered': this.unbordered,
       };
     },
 
@@ -122,3 +145,13 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+  .Vlt-dropdown .Vlt-btn.Vlt-btn--unbordered{
+    box-shadow: none;
+    svg{
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+</style>

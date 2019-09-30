@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { VltTable } from '..';
+import { VltGridList } from '..';
 
 const columns = [
   { title: 'Name', sortable: true, property: 'name' },
@@ -13,28 +13,28 @@ const rows = [
   { name: 'Nisha', position: 'JavaScript Developer' },
 ];
 
-const fullTableProps = {
+const fullGridProps = {
   columns,
   rows,
 };
 
-describe('vlt-table', () => {
+describe('vlt-grid-list', () => {
   let wrapper;
 
   test('renders empty state', () => {
-    wrapper = mount(VltTable);
+    wrapper = mount(VltGridList);
     expect(wrapper.element).toMatchSnapshot();
   });
 
   test('renders correctly with two columns, "Name" and "Position"', () => {
-    wrapper = mount(VltTable, { propsData: fullTableProps });
+    wrapper = mount(VltGridList, { propsData: fullGridProps });
     expect(wrapper.element).toMatchSnapshot();
   });
 
   test('pagination is shown', () => {
-    wrapper = mount(VltTable, {
+    wrapper = mount(VltGridList, {
       propsData: {
-        ...fullTableProps,
+        ...fullGridProps,
         pageSize: 1,
         pagination: true,
         total: 4,
@@ -44,9 +44,9 @@ describe('vlt-table', () => {
   });
 
   test('"page-change" is emitted with "3" when navigating to page "3"', () => {
-    wrapper = mount(VltTable, {
+    wrapper = mount(VltGridList, {
       propsData: {
-        ...fullTableProps,
+        ...fullGridProps,
         pageSize: 1,
         pagination: true,
         total: 4,
@@ -54,32 +54,5 @@ describe('vlt-table', () => {
     });
     wrapper.findAll('.Vlt-table__pagination a').at(2).trigger('click');
     expect(wrapper.emitted('page-change')).toEqual([[3]]);
-  });
-
-  test('can sort "Name" column descending', () => {
-    wrapper = mount(VltTable, {
-      propsData: {
-        ...fullTableProps,
-      },
-      scopedSlots: {
-        item: '<td>{{ props.item.name }}</td>',
-      },
-    });
-    wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
-    expect(wrapper.element).toMatchSnapshot();
-  });
-
-  test('can sort "Name" column ascending', () => {
-    wrapper = mount(VltTable, {
-      propsData: {
-        ...fullTableProps,
-      },
-      scopedSlots: {
-        item: '<td>{{ props.item.name }}</td>',
-      },
-    });
-    wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
-    wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
-    expect(wrapper.element).toMatchSnapshot();
   });
 });

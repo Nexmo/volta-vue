@@ -1,7 +1,7 @@
 <template>
   <svg
+    :class="classnames"
     @click="handleClick"
-    :class="getClassObject()"
   >
     <use :xlink:href="`#V_Vlt-icon-${icon}`" />
   </svg>
@@ -10,25 +10,6 @@
 <script>
 export default {
   name: 'vlt-icon',
-
-  methods: {
-    handleClick() {
-      if (this.clickable) {
-        this.$emit('click');
-      }
-    },
-
-    getClassObject() {
-      const colorClass = `Vlt-${this.color}`;
-
-      return {
-        'Vlt-icon': !this.noClass,
-        pointer: this.pointer,
-        'Vlt-icon--small': this.small,
-        [colorClass]: this.color,
-      };
-    },
-  },
 
   props: {
     icon: {
@@ -41,7 +22,7 @@ export default {
     },
     color: {
       type: String,
-      required: false,
+      default: '',
     },
     noClass: {
       type: Boolean,
@@ -55,12 +36,38 @@ export default {
       type: Boolean,
       default: false,
     },
+    smaller: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
+  computed: {
+    classnames() {
+      const colorClass = `Vlt-${this.color}`;
+
+      return {
+        'Vlt-icon': !this.noClass,
+        pointer: this.pointer,
+        'Vlt-icon--small': this.small && !this.smaller,
+        'Vlt-icon--smaller': this.smaller,
+        [colorClass]: this.color,
+      };
+    },
+  },
+
+  methods: {
+    handleClick() {
+      if (this.clickable) {
+        this.$emit('click');
+      }
+    },
   },
 };
 </script>
 
 <style scoped>
-.Vlt-icon.pointer {
-  cursor: pointer;
-}
+  .Vlt-icon.pointer {
+    cursor: pointer;
+  }
 </style>

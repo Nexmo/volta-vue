@@ -6,6 +6,7 @@ exports[`vlt-sidemenu-trigger renders correctly with a rocket icon 1`] = `
 >
   <vlt-icon-stub
     clickable="true"
+    color=""
     icon="rocket"
   />
    
