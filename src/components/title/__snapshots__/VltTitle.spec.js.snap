@@ -20,6 +20,7 @@ exports[`vlt-title renders correctly with text "Test Title" and rocket icon 1`] 
 >
   <vlt-icon-stub
     clickable="true"
+    color=""
     icon="rocket"
   />
   Test Title

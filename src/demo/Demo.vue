@@ -76,6 +76,15 @@
             app
             :options="['showSelection with no label', 'dog', 'hamster', 'rabbit']"
           />
+          <vlt-dropdown
+            trigger
+            unbordered
+            :options="['showSelection with no label', 'dog', 'hamster', 'rabbit']"
+          >
+            <template slot="button-value">
+              <vlt-icon icon="more-v-negative"/>
+            </template>
+          </vlt-dropdown>
         </div>
       </div>
     </div>
@@ -349,6 +358,29 @@
 
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
+        <h4>Grid List</h4>
+        <div>
+          <vlt-grid-list
+            :columns="[{ title: 'Name' }, { title: 'Job' }]"
+            :rows="[
+              { name: 'Rasmus  Nichols', job: 'Baker'},
+              { name: 'Sandra  Jackson', job: 'Engineer'}
+            ]"
+            :numberOfColumns="3"
+            custom
+          >
+            <template slot="rows">
+              <div v-for="row in tableRows" :key="row.job">
+                name: {{ row.name }} job: {{ row.job }}
+              </div>
+            </template>
+          </vlt-grid-list>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
         <h4>Tabs</h4>
         <div>
           <vlt-tabs>
@@ -519,6 +551,7 @@ import {
   VltTooltip,
   VltGroupButton,
   VltComposite,
+  VltGridList,
 } from '../components';
 
 export default {
@@ -551,6 +584,7 @@ export default {
     VltTooltip,
     VltGroupButton,
     VltComposite,
+    VltGridList,
   },
 
   data() {
@@ -564,6 +598,12 @@ export default {
       radio: undefined,
       select: 'dog',
       select2: undefined,
+      tableRows: [
+        { name: 'Rasmus  Nichols', job: 'Baker' },
+        { name: 'Sandra  Jackson', job: 'Engineer' },
+        { name: 'Michael  Dapaa', job: 'Comedian' },
+        { name: 'Burna  Wiz', job: 'Legend' },
+      ],
     };
   },
 };

@@ -27,6 +27,7 @@ import { VltTab, VltTabs } from './tabs';
 import VltTable from './table/VltTable';
 import VltTitle from './title/VltTitle';
 import VltTooltip from './tooltip/VltTooltip';
+import VltGridList from './grid-list/VltGridList';
 
 export {
   VltBadge,
@@ -39,6 +40,7 @@ export {
   VltField,
   VltFlash,
   VltGrid,
+  VltGridList,
   VltGroupButton,
   VltIcon,
   VltInput,

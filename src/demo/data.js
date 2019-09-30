@@ -67,6 +67,8 @@ const Components = [
       { property: 'label', type: 'String' },
       { property: 'selected', type: 'String', default: 'the first option in the options array' },
       { property: 'show-selection', type: 'Boolean' },
+      { property: 'trigger', type: 'Boolean' },
+      { property: 'unbordered', type: 'Boolean' },
     ],
     code: '<vlt-dropdown label="Label" :options="[]" />',
   },
@@ -110,6 +112,7 @@ const Components = [
       { property: 'no-class', type: 'Boolean', default: false },
       { property: 'pointer', type: 'Boolean', default: false },
       { property: 'small', type: 'Boolean', default: false },
+      { property: 'smaller', type: 'Boolean', default: false },
     ],
     code: '<vlt-icon icon="volume" />',
   },
@@ -284,6 +287,26 @@ const Components = [
               <td></td>
             </template>
           </vlt-table>`,
+  },
+  {
+    title: 'GridList',
+    html: 'vlt-grid-list',
+    icon: 'grid',
+    propertyRows: [
+      { property: 'columns', type: 'Array' },
+      { property: 'current-page', type: 'Number', default: 1 },
+      { property: 'pagination', type: 'Boolean', default: false },
+      { property: 'page-size', type: 'Number', default: 20 },
+      { property: 'rows', type: 'Array' },
+      { property: 'total', type: 'Number', default: 0 },
+    ],
+    code: `<vlt-grid-list :columns="[{ title: 'Name' }]" :rows="[]">
+            <template slot="rows">
+              <div v-for="row in [{ id: '1', name: 'Kunte' }]" :key="row.id">
+                {{ row.name}}
+              </div>
+            </template>
+          </vlt-grid-list>`,
   },
   {
     title: 'Tabs',
