@@ -13,6 +13,7 @@ import VltMargin from './margin/VltMargin';
 import VltModal from './modal/VltModal';
 import VltRadio from './radio/VltRadio';
 import VltSelect from './select/VltSelect';
+import { VltAccordion, VltAccordionItem } from './accordion';
 import {
   VltSidemenu,
   VltSidemenuItem,
@@ -30,6 +31,8 @@ import VltTooltip from './tooltip/VltTooltip';
 import VltGridList from './grid-list/VltGridList';
 
 export {
+  VltAccordion,
+  VltAccordionItem,
   VltBadge,
   VltButton,
   VltCallout,
