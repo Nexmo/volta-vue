@@ -1,5 +1,24 @@
 const Components = [
   {
+    title: 'Accordion',
+    html: 'vlt-accordion',
+    icon: 'chevron-up',
+    propertyRows: [
+      { property: 'id', type: 'String' },
+      { property: 'classNames', type: 'String' },
+    ],
+    code: '<vlt-accordion></vlt-accordion>',
+  },
+  {
+    title: 'Accordion Item',
+    html: 'vlt-accordion-item',
+    icon: 'chevron-down',
+    propertyRows: [
+      { property: 'expanded', type: 'Boolean', default: false },
+    ],
+    code: '<vlt-accordion-item><template slot="header">HEADER</template><div>Body</div></vlt-accordion-item>',
+  },
+  {
     title: 'Badge',
     html: 'vlt-badge',
     icon: 'bookmark',

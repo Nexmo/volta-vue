@@ -2,6 +2,24 @@
   <div>
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
+        <h4>Accordion</h4>
+        <div>
+          <vlt-accordion>
+          <vlt-accordion-item>
+            <template slot="header">Click me</template>
+            <div>Accordion body</div>
+          </vlt-accordion-item>
+          <vlt-accordion-item>
+            <template slot="header">Click me 2</template>
+            <div>Accordion body 2</div>
+          </vlt-accordion-item>
+          </vlt-accordion>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
         <h4>Badge</h4>
         <div>
           <vlt-badge>I'm a badge</vlt-badge>
@@ -525,6 +543,8 @@
 
 <script>
 import {
+  VltAccordion,
+  VltAccordionItem,
   VltBadge,
   VltButton,
   VltCallout,
@@ -558,6 +578,8 @@ export default {
   name: 'volta-vue-demo',
 
   components: {
+    VltAccordion,
+    VltAccordionItem,
     VltBadge,
     VltButton,
     VltCallout,

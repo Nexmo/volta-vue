@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-accordion should be rendered 1`] = `
+<div
+  class="Vlt-accordion accordion"
+  id="accq"
+/>
+`;
+
+exports[`vlt-accordion-item should be with the active class 1`] = `
+<div
+  class="Vlt-accordion__item Vlt-accordion__item_opened"
+>
+  <div
+    class="Vlt-accordion__trigger Vlt-accordion__trigger_active"
+  >
+    <div>
+      Need header content
+    </div>
+  </div>
+   
+  <div
+    class="Vlt-accordion__content Vlt-accordion__content_open"
+  />
+</div>
+`;
+
+exports[`vlt-accordion-item should be with the active class after trigger is clicked 1`] = `
+<div
+  class="Vlt-accordion__item Vlt-accordion__item_opened"
+>
+  <div
+    class="Vlt-accordion__trigger Vlt-accordion__trigger_active"
+  >
+    <div>
+      Need header content
+    </div>
+  </div>
+   
+  <div
+    class="Vlt-accordion__content Vlt-accordion__content_open"
+  />
+</div>
+`;
+
+exports[`vlt-accordion-item should be without the active class 1`] = `
+<div
+  class="Vlt-accordion__item"
+>
+  <div
+    class="Vlt-accordion__trigger"
+  >
+    <div>
+      Need header content
+    </div>
+  </div>
+   
+  <div
+    class="Vlt-accordion__content"
+  />
+</div>
+`;
