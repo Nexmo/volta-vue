@@ -105,6 +105,7 @@ export default {
         'Vlt-dropdown__btn--app': this.app,
         'Vlt-btn Vlt-btn--tertiary Vlt-btn--': this.trigger,
         'Vlt-btn--unbordered': this.unbordered,
+        'Vlt-btn--no-arrow': this.noArrow,
       };
     },
 
@@ -153,5 +154,8 @@ export default {
       margin-right: 0;
       margin-left: 0;
     }
+  }
+  .Vlt-dropdown .Vlt-btn.Vlt-btn--no-arrow::after{
+    display: none;
   }
 </style>
