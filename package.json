@@ -1,7 +1,7 @@
 {
   "name": "@vonagevolta/vue",
   "description": "Vue.js components for Vonage Volta",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "scripts": {
     "ci": "npm run lint && npm test",
     "dev": "webpack-dev-server",
