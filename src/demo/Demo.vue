@@ -95,8 +95,9 @@
             :options="['showSelection with no label', 'dog', 'hamster', 'rabbit']"
           />
           <vlt-dropdown
-            trigger
             unbordered
+            trigger
+            no-arrow
             :options="['showSelection with no label', 'dog', 'hamster', 'rabbit']"
           >
             <template slot="button-value">
