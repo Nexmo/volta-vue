@@ -1,15 +1,15 @@
 <template>
-    <div
-      :id="id"
-      class="Vlt-form__element"
-      :class="classObject"
-    >
-      <label v-if="!big && label" class="Vlt-label">{{label}}
-        <small class="Vlt-form__element_optional" v-if="optional">(optional)</small>
-        <vlt-tooltip v-if="tooltip" :title="tooltip" />
-      </label>
-      <slot></slot>
-      <small v-if="error" class="Vlt-form__element__error">{{error}}</small>
+  <div
+    :id="id"
+    :class="classObject"
+    class="Vlt-form__element"
+  >
+    <label v-if="!big && label" class="Vlt-label">{{ label }}
+      <small v-if="optional" class="Vlt-form__element_optional">(optional)</small>
+      <vlt-tooltip v-if="tooltip" :title="tooltip" />
+    </label>
+    <slot></slot>
+    <small v-if="error" :id="errorId" class="Vlt-form__element__error">{{ error }}</small>
   </div>
 </template>
 
@@ -21,12 +21,6 @@ export default {
 
   components: {
     VltTooltip,
-  },
-
-  data() {
-    return {
-      valid: true,
-    };
   },
 
   props: {
@@ -41,14 +35,17 @@ export default {
     error: {
       type: String,
       required: false,
+      default: '',
     },
     id: {
       type: String,
       required: false,
+      default: '',
     },
     label: {
       type: String,
       required: false,
+      default: '',
     },
     optional: {
       type: Boolean,
@@ -57,7 +54,14 @@ export default {
     tooltip: {
       type: String,
       required: false,
+      default: '',
     },
+  },
+
+  data() {
+    return {
+      valid: true,
+    };
   },
 
   computed: {
@@ -67,6 +71,10 @@ export default {
         'Vlt-form__element--elastic': this.elastic,
         'Vlt-form__element--error': this.error,
       };
+    },
+    errorId() {
+      if (this.id) return `${this.id}-error`;
+      return '';
     },
   },
 };

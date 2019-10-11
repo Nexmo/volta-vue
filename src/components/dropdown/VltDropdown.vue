@@ -1,11 +1,11 @@
 <template>
-   <div
+  <div
     :id="id"
-    class="Vlt-dropdown"
     :class="{
       'Vlt-dropdown--expanded' : expanded,
       'Vlt-dropdown__trigger Vlt-dropdown__trigger--btn': trigger
     }"
+    class="Vlt-dropdown"
   >
     <button
       :class="getButtonClass()"
@@ -13,7 +13,7 @@
     >
       <slot name="button-value">
         <span v-if="label && (!hideLabel || !selectedOption)">
-          {{label}}<span v-if="showSelection">:</span>
+          {{ label }}<span v-if="showSelection">:</span>
         </span>
         <span v-if="showSelection" :class="{ 'Vlt-dropdown__selection': label }">
           {{ property && selectedOption ? selectedOption[property] : selectedOption }}
@@ -23,9 +23,9 @@
     <div class="Vlt-dropdown__panel">
       <div class="Vlt-dropdown__panel__content">
         <ul>
-          <li v-for="option in options" :key="option">
+          <li v-for="option in options" :key="option" :id="createId(option)">
             <a class="Vlt-dropdown__link" @click="selectOption(option)">
-              <span class="Vlt-dropdown__label">{{property ? option[property] : option}}</span>
+              <span class="Vlt-dropdown__label">{{ property ? option[property] : option }}</span>
             </a>
           </li>
         </ul>
@@ -50,10 +50,12 @@ export default {
     },
     id: {
       type: String,
+      default: '',
       required: false,
     },
     label: {
       type: String,
+      default: '',
       required: false,
     },
     noArrow: {
@@ -66,10 +68,12 @@ export default {
     },
     property: {
       type: String,
+      default: '',
       required: false,
     },
     selected: {
       type: [Object, String],
+      default: '',
       required: false,
     },
     showSelection: {
@@ -93,6 +97,25 @@ export default {
     };
   },
 
+  watch: {
+    selected(selected) {
+      this.selectedOption = selected;
+    },
+    options(value) {
+      if (value && !this.selectedOption) {
+        this.selectedOption = value[0];
+        this.$emit('input', this.selectedOption);
+      }
+    },
+  },
+
+  mounted() {
+    if (!this.selected) {
+      this.selectedOption = this.options[0];
+      this.$emit('input', this.selectedOption);
+    }
+  },
+
   methods: {
     bodyListener() {
       this.expanded = false;
@@ -105,6 +128,7 @@ export default {
         'Vlt-dropdown__btn--app': this.app,
         'Vlt-btn Vlt-btn--tertiary Vlt-btn--': this.trigger,
         'Vlt-btn--unbordered': this.unbordered,
+        'Vlt-btn--no-arrow': this.noArrow,
       };
     },
 
@@ -123,24 +147,8 @@ export default {
       this.expanded = false;
       document.removeEventListener('click', this.bodyListener);
     },
-  },
-
-  mounted() {
-    if (!this.selected) {
-      this.selectedOption = this.options[0];
-      this.$emit('input', this.selectedOption);
-    }
-  },
-
-  watch: {
-    selected(selected) {
-      this.selectedOption = selected;
-    },
-    options(value) {
-      if (value && !this.selectedOption) {
-        this.selectedOption = value[0];
-        this.$emit('input', this.selectedOption);
-      }
+    createId(option) {
+      return `${this.id}-${(option.label || option).replace(/\s/g, '')}DropdownLink`;
     },
   },
 };
@@ -153,5 +161,8 @@ export default {
       margin-right: 0;
       margin-left: 0;
     }
+  }
+  .Vlt-dropdown .Vlt-btn.Vlt-btn--no-arrow::after{
+    display: none;
   }
 </style>
