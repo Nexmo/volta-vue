@@ -50,12 +50,10 @@ export default {
     },
     id: {
       type: String,
-      default: '',
       required: false,
     },
     label: {
       type: String,
-      default: '',
       required: false,
     },
     noArrow: {
@@ -68,12 +66,10 @@ export default {
     },
     property: {
       type: String,
-      default: '',
       required: false,
     },
     selected: {
       type: [Object, String],
-      default: '',
       required: false,
     },
     showSelection: {

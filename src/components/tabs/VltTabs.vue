@@ -49,7 +49,7 @@ export default {
     },
     id: {
       type: String,
-      default: '',
+      required: false,
     },
     shadow: {
       type: Boolean,

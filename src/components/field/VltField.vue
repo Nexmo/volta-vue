@@ -35,17 +35,14 @@ export default {
     error: {
       type: String,
       required: false,
-      default: '',
     },
     id: {
       type: String,
       required: false,
-      default: '',
     },
     label: {
       type: String,
       required: false,
-      default: '',
     },
     optional: {
       type: Boolean,
@@ -54,7 +51,6 @@ export default {
     tooltip: {
       type: String,
       required: false,
-      default: '',
     },
   },
 

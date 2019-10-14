@@ -3,7 +3,6 @@
 exports[`vlt-field has error "something is wrong" 1`] = `
 <div
   class="Vlt-form__element Vlt-form__element--error"
-  id=""
 >
   <!---->
     
@@ -19,7 +18,6 @@ exports[`vlt-field has error "something is wrong" 1`] = `
 exports[`vlt-field has label "Test field" 1`] = `
 <div
   class="Vlt-form__element"
-  id=""
 >
   <label
     class="Vlt-label"
@@ -38,7 +36,6 @@ exports[`vlt-field has label "Test field" 1`] = `
 exports[`vlt-field has tooltip "Hello World" 1`] = `
 <div
   class="Vlt-form__element"
-  id=""
 >
   <label
     class="Vlt-label"
@@ -59,7 +56,6 @@ exports[`vlt-field has tooltip "Hello World" 1`] = `
 exports[`vlt-field is big 1`] = `
 <div
   class="Vlt-form__element Vlt-form__element--big"
-  id=""
 >
   <!---->
     
@@ -70,7 +66,6 @@ exports[`vlt-field is big 1`] = `
 exports[`vlt-field is big with label "Test field" 1`] = `
 <div
   class="Vlt-form__element Vlt-form__element--big"
-  id=""
 >
   <!---->
     
@@ -81,7 +76,6 @@ exports[`vlt-field is big with label "Test field" 1`] = `
 exports[`vlt-field is optional 1`] = `
 <div
   class="Vlt-form__element"
-  id=""
 >
   <!---->
     
@@ -92,7 +86,6 @@ exports[`vlt-field is optional 1`] = `
 exports[`vlt-field renders correctly 1`] = `
 <div
   class="Vlt-form__element"
-  id=""
 >
   <!---->
     

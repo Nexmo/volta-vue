@@ -3,7 +3,6 @@
 exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
 <div
   class="Vlt-dropdown Vlt-dropdown--expanded"
-  id=""
 >
   <button
     class="Vlt-dropdown__btn"
@@ -21,7 +20,7 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
     >
       <ul>
         <li
-          id="-redDropdownLink"
+          id="undefined-redDropdownLink"
         >
           <a
             class="Vlt-dropdown__link"
@@ -34,7 +33,7 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
           </a>
         </li>
         <li
-          id="-yellowDropdownLink"
+          id="undefined-yellowDropdownLink"
         >
           <a
             class="Vlt-dropdown__link"
@@ -47,7 +46,7 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
           </a>
         </li>
         <li
-          id="-blueDropdownLink"
+          id="undefined-blueDropdownLink"
         >
           <a
             class="Vlt-dropdown__link"
@@ -68,7 +67,6 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
 exports[`vlt-dropdown renders correctly 1`] = `
 <div
   class="Vlt-dropdown"
-  id=""
 >
   <button
     class="Vlt-dropdown__btn"
@@ -93,7 +91,6 @@ exports[`vlt-dropdown renders correctly 1`] = `
 exports[`vlt-dropdown renders correctly with label "Pick one" 1`] = `
 <div
   class="Vlt-dropdown"
-  id=""
 >
   <button
     class="Vlt-dropdown__btn"
@@ -122,7 +119,6 @@ exports[`vlt-dropdown renders correctly with label "Pick one" 1`] = `
 exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1`] = `
 <div
   class="Vlt-dropdown Vlt-dropdown__trigger Vlt-dropdown__trigger--btn"
-  id=""
 >
   <button
     class="Vlt-btn Vlt-btn--tertiary Vlt-btn-- Vlt-btn--unbordered"
@@ -140,7 +136,7 @@ exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1
     >
       <ul>
         <li
-          id="-redDropdownLink"
+          id="undefined-redDropdownLink"
         >
           <a
             class="Vlt-dropdown__link"
@@ -153,7 +149,7 @@ exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1
           </a>
         </li>
         <li
-          id="-yellowDropdownLink"
+          id="undefined-yellowDropdownLink"
         >
           <a
             class="Vlt-dropdown__link"
@@ -166,7 +162,7 @@ exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1
           </a>
         </li>
         <li
-          id="-blueDropdownLink"
+          id="undefined-blueDropdownLink"
         >
           <a
             class="Vlt-dropdown__link"
