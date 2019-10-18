@@ -22,7 +22,7 @@
           <tr v-for="(row, index) in visibleRows" :key="index" @click="clickRow(row)">
             <slot :item="row" :index="index" name="item"></slot>
           </tr>
-          <slot name="rows"/>
+          <slot :rows="visibleRows" name="rows"/>
         </tbody>
       </table>
     </div>
