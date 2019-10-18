@@ -8,6 +8,7 @@ exports[`vlt-field has error "something is wrong" 1`] = `
     
   <small
     class="Vlt-form__element__error"
+    id=""
   >
     something is wrong
   </small>
@@ -22,7 +23,7 @@ exports[`vlt-field has label "Test field" 1`] = `
     class="Vlt-label"
   >
     Test field
-      
+    
     <!---->
      
     <!---->
@@ -40,7 +41,7 @@ exports[`vlt-field has tooltip "Hello World" 1`] = `
     class="Vlt-label"
   >
     Test field
-      
+    
     <!---->
      
     <vlt-tooltip-stub

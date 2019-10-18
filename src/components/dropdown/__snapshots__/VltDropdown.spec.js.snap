@@ -19,7 +19,9 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
       class="Vlt-dropdown__panel__content"
     >
       <ul>
-        <li>
+        <li
+          id="undefined-redDropdownLink"
+        >
           <a
             class="Vlt-dropdown__link"
           >
@@ -30,7 +32,9 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
             </span>
           </a>
         </li>
-        <li>
+        <li
+          id="undefined-yellowDropdownLink"
+        >
           <a
             class="Vlt-dropdown__link"
           >
@@ -41,7 +45,9 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
             </span>
           </a>
         </li>
-        <li>
+        <li
+          id="undefined-blueDropdownLink"
+        >
           <a
             class="Vlt-dropdown__link"
           >
@@ -129,7 +135,9 @@ exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1
       class="Vlt-dropdown__panel__content"
     >
       <ul>
-        <li>
+        <li
+          id="undefined-redDropdownLink"
+        >
           <a
             class="Vlt-dropdown__link"
           >
@@ -140,7 +148,9 @@ exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1
             </span>
           </a>
         </li>
-        <li>
+        <li
+          id="undefined-yellowDropdownLink"
+        >
           <a
             class="Vlt-dropdown__link"
           >
@@ -151,7 +161,9 @@ exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1
             </span>
           </a>
         </li>
-        <li>
+        <li
+          id="undefined-blueDropdownLink"
+        >
           <a
             class="Vlt-dropdown__link"
           >

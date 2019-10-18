@@ -9,6 +9,7 @@ exports[`vlt-tabs renders correctly 1`] = `
   >
     <li
       class="Vlt-tabs__link Vlt-tabs__link_active"
+      id=""
     >
       <!---->
        
@@ -18,6 +19,7 @@ exports[`vlt-tabs renders correctly 1`] = `
     </li>
     <li
       class="Vlt-tabs__link"
+      id=""
     >
       <!---->
        
@@ -27,6 +29,7 @@ exports[`vlt-tabs renders correctly 1`] = `
     </li>
     <li
       class="Vlt-tabs__link"
+      id=""
     >
       <!---->
        
