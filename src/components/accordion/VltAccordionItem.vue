@@ -59,9 +59,13 @@ export default {
     },
   },
 
+  mounted() {
+    this.isExpanded = this.expanded;
+  },
+
   methods: {
     toggleCollapsible() {
-      this.isExpanded = !this.isExpanded;
+      this.isExpanded = !this.expanded;
     },
   },
 };
