@@ -65,7 +65,7 @@ export default {
 
   methods: {
     toggleCollapsible() {
-      this.isExpanded = !this.expanded;
+      this.isExpanded = !this.isExpanded;
     },
   },
 };
