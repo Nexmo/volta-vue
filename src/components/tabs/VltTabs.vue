@@ -66,7 +66,8 @@ export default {
   },
 
   watch: {
-    activeIndex() {
+    activeIndex(val) {
+      this.activeTab = val;
       this.updateTabsActive();
     },
   },
@@ -81,6 +82,7 @@ export default {
     selectTab(index) {
       this.activeTab = index;
       this.updateTabsActive();
+      this.$emit('change', index);
     },
 
     updateTabsActive() {
