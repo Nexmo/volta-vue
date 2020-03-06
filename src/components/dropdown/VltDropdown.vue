@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: 'vit-dropdown',
+  name: 'vlt-dropdown',
 
   props: {
     app: {
