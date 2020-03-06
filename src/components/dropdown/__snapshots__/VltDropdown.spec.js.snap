@@ -58,6 +58,8 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
             </span>
           </a>
         </li>
+         
+        <!---->
       </ul>
     </div>
   </div>
@@ -82,7 +84,10 @@ exports[`vlt-dropdown renders correctly 1`] = `
     <div
       class="Vlt-dropdown__panel__content"
     >
-      <ul />
+      <ul>
+         
+        <!---->
+      </ul>
     </div>
   </div>
 </div>
@@ -110,7 +115,10 @@ exports[`vlt-dropdown renders correctly with label "Pick one" 1`] = `
     <div
       class="Vlt-dropdown__panel__content"
     >
-      <ul />
+      <ul>
+         
+        <!---->
+      </ul>
     </div>
   </div>
 </div>
@@ -174,6 +182,8 @@ exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1
             </span>
           </a>
         </li>
+         
+        <!---->
       </ul>
     </div>
   </div>
