@@ -1,7 +1,7 @@
 <template>
   <div class="Vlt-table__pagination">
     <ul>
-      <li v-if="newCurrentPage !== 1">
+      <li v-if="newCurrentPage !== 1" class="Vlt-table__pagination__prev">
         <a href="#" @click.prevent="pageChanged(newCurrentPage - 1)">Prev</a>
       </li>
       <li :class="{ 'Vlt-table__pagination__current': newCurrentPage === 1 }">
@@ -19,7 +19,7 @@
       <li :class="{ 'Vlt-table__pagination__current': newCurrentPage === totalPages }">
         <a href="#" @click.prevent="pageChanged(totalPages)">{{ totalPages }}</a>
       </li>
-      <li v-if="newCurrentPage !== totalPages">
+      <li v-if="newCurrentPage !== totalPages" class="Vlt-table__pagination__next">
         <a href="#" @click.prevent="pageChanged(newCurrentPage + 1)">Next</a>
       </li>
     </ul>

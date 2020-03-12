@@ -10,7 +10,7 @@ exports[`vlt-grid-list pagination is shown 1`] = `
     <li class=""><a href="#">3</a></li>
     <!---->
     <li class=""><a href="#">4</a></li>
-    <li><a href="#">Next</a></li>
+    <li class="Vlt-table__pagination__next"><a href="#">Next</a></li>
   </ul>
 </div>
 `;
