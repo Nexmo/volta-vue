@@ -2,6 +2,24 @@
   <div>
     <div class="Vlt-grid Vlt-grid--margin-bottom3">
       <div class="Vlt-col">
+        <h4>Accordion</h4>
+        <div>
+          <vlt-accordion>
+          <vlt-accordion-item>
+            <template slot="header">Click me</template>
+            <div>Accordion body</div>
+          </vlt-accordion-item>
+          <vlt-accordion-item>
+            <template slot="header">Click me 2</template>
+            <div>Accordion body 2</div>
+          </vlt-accordion-item>
+          </vlt-accordion>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
         <h4>Badge</h4>
         <div>
           <vlt-badge>I'm a badge</vlt-badge>
@@ -22,6 +40,8 @@
           <vlt-button quaternary label="Quaternary"/>
           <vlt-button icon="bin" label="Icon"/>
           <vlt-button app label="App"/>
+          <vlt-button label="Loading" spinner />
+          <vlt-button secondary label="Loading" spinner-white />
         </div>
       </div>
     </div>
@@ -74,6 +94,16 @@
             app
             :options="['showSelection with no label', 'dog', 'hamster', 'rabbit']"
           />
+          <vlt-dropdown
+            unbordered
+            trigger
+            no-arrow
+            :options="['showSelection with no label', 'dog', 'hamster', 'rabbit']"
+          >
+            <template slot="button-value">
+              <vlt-icon icon="more-v-negative"/>
+            </template>
+          </vlt-dropdown>
         </div>
       </div>
     </div>
@@ -259,6 +289,7 @@
         <div>
           <vlt-spinner />
           <vlt-spinner small/>
+          <vlt-spinner smaller/>
         </div>
       </div>
     </div>
@@ -292,7 +323,7 @@
       <div class="Vlt-col">
         <h4>Switch</h4>
         <div>
-          <vlt-switch /> <vlt-switch small />  <vlt-switch red />
+          <vlt-switch /> <vlt-switch small />  <vlt-switch red /> <vlt-switch disabled />
         </div>
       </div>
     </div>
@@ -340,6 +371,29 @@
               <td>{{ slotProps.item.job }}</td>
             </template>
           </vlt-table>
+        </div>
+      </div>
+    </div>
+
+    <div class="Vlt-grid Vlt-grid--margin-bottom3">
+      <div class="Vlt-col">
+        <h4>Grid List</h4>
+        <div>
+          <vlt-grid-list
+            :columns="[{ title: 'Name' }, { title: 'Job' }]"
+            :rows="[
+              { name: 'Rasmus  Nichols', job: 'Baker'},
+              { name: 'Sandra  Jackson', job: 'Engineer'}
+            ]"
+            :numberOfColumns="3"
+            custom
+          >
+            <template slot="rows">
+              <div v-for="row in tableRows" :key="row.job">
+                name: {{ row.name }} job: {{ row.job }}
+              </div>
+            </template>
+          </vlt-grid-list>
         </div>
       </div>
     </div>
@@ -490,6 +544,8 @@
 
 <script>
 import {
+  VltAccordion,
+  VltAccordionItem,
   VltBadge,
   VltButton,
   VltCallout,
@@ -516,12 +572,15 @@ import {
   VltTooltip,
   VltGroupButton,
   VltComposite,
+  VltGridList,
 } from '../components';
 
 export default {
   name: 'volta-vue-demo',
 
   components: {
+    VltAccordion,
+    VltAccordionItem,
     VltBadge,
     VltButton,
     VltCallout,
@@ -548,6 +607,7 @@ export default {
     VltTooltip,
     VltGroupButton,
     VltComposite,
+    VltGridList,
   },
 
   data() {
@@ -561,6 +621,12 @@ export default {
       radio: undefined,
       select: 'dog',
       select2: undefined,
+      tableRows: [
+        { name: 'Rasmus  Nichols', job: 'Baker' },
+        { name: 'Sandra  Jackson', job: 'Engineer' },
+        { name: 'Michael  Dapaa', job: 'Comedian' },
+        { name: 'Burna  Wiz', job: 'Legend' },
+      ],
     };
   },
 };

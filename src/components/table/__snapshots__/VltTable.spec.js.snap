@@ -4,6 +4,7 @@ exports[`vlt-table can sort "Name" column ascending 1`] = `
 <div>
   <div
     class="Vlt-table"
+    id=""
   >
     <table>
       <thead>
@@ -46,6 +47,7 @@ exports[`vlt-table can sort "Name" column ascending 1`] = `
             Julien
           </td>
         </tr>
+         
       </tbody>
     </table>
   </div>
@@ -60,6 +62,7 @@ exports[`vlt-table can sort "Name" column descending 1`] = `
 <div>
   <div
     class="Vlt-table"
+    id=""
   >
     <table>
       <thead>
@@ -102,6 +105,7 @@ exports[`vlt-table can sort "Name" column descending 1`] = `
             Nisha
           </td>
         </tr>
+         
       </tbody>
     </table>
   </div>
@@ -122,7 +126,7 @@ exports[`vlt-table pagination is shown 1`] = `
     <li class=""><a href="#">3</a></li>
     <!---->
     <li class=""><a href="#">4</a></li>
-    <li><a href="#">Next</a></li>
+    <li class="Vlt-table__pagination__next"><a href="#">Next</a></li>
   </ul>
 </div>
 `;
@@ -131,6 +135,7 @@ exports[`vlt-table renders correctly with two columns, "Name" and "Position" 1`]
 <div>
   <div
     class="Vlt-table"
+    id=""
   >
     <table>
       <thead>
@@ -157,6 +162,7 @@ exports[`vlt-table renders correctly with two columns, "Name" and "Position" 1`]
         <tr />
         <tr />
         <tr />
+         
       </tbody>
     </table>
   </div>

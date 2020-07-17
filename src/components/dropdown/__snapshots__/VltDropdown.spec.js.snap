@@ -19,7 +19,9 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
       class="Vlt-dropdown__panel__content"
     >
       <ul>
-        <li>
+        <li
+          id="undefined-redDropdownLink"
+        >
           <a
             class="Vlt-dropdown__link"
           >
@@ -30,7 +32,9 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
             </span>
           </a>
         </li>
-        <li>
+        <li
+          id="undefined-yellowDropdownLink"
+        >
           <a
             class="Vlt-dropdown__link"
           >
@@ -41,7 +45,9 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
             </span>
           </a>
         </li>
-        <li>
+        <li
+          id="undefined-blueDropdownLink"
+        >
           <a
             class="Vlt-dropdown__link"
           >
@@ -52,6 +58,8 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
             </span>
           </a>
         </li>
+         
+        <!---->
       </ul>
     </div>
   </div>
@@ -76,7 +84,10 @@ exports[`vlt-dropdown renders correctly 1`] = `
     <div
       class="Vlt-dropdown__panel__content"
     >
-      <ul />
+      <ul>
+         
+        <!---->
+      </ul>
     </div>
   </div>
 </div>
@@ -91,7 +102,7 @@ exports[`vlt-dropdown renders correctly with label "Pick one" 1`] = `
   >
     <span>
       
-      Pick one
+        Pick one
       <!---->
     </span>
      
@@ -104,7 +115,76 @@ exports[`vlt-dropdown renders correctly with label "Pick one" 1`] = `
     <div
       class="Vlt-dropdown__panel__content"
     >
-      <ul />
+      <ul>
+         
+        <!---->
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1`] = `
+<div
+  class="Vlt-dropdown Vlt-dropdown__trigger Vlt-dropdown__trigger--btn"
+>
+  <button
+    class="Vlt-btn Vlt-btn--tertiary Vlt-btn-- Vlt-btn--unbordered"
+  >
+    <!---->
+     
+    <!---->
+  </button>
+   
+  <div
+    class="Vlt-dropdown__panel"
+  >
+    <div
+      class="Vlt-dropdown__panel__content"
+    >
+      <ul>
+        <li
+          id="undefined-redDropdownLink"
+        >
+          <a
+            class="Vlt-dropdown__link"
+          >
+            <span
+              class="Vlt-dropdown__label"
+            >
+              red
+            </span>
+          </a>
+        </li>
+        <li
+          id="undefined-yellowDropdownLink"
+        >
+          <a
+            class="Vlt-dropdown__link"
+          >
+            <span
+              class="Vlt-dropdown__label"
+            >
+              yellow
+            </span>
+          </a>
+        </li>
+        <li
+          id="undefined-blueDropdownLink"
+        >
+          <a
+            class="Vlt-dropdown__link"
+          >
+            <span
+              class="Vlt-dropdown__label"
+            >
+              blue
+            </span>
+          </a>
+        </li>
+         
+        <!---->
+      </ul>
     </div>
   </div>
 </div>

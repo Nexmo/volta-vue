@@ -27,6 +27,15 @@ describe('vlt-dropdown', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  test('renders fine when unbordered is true and trigger is true', () => {
+    wrapper.setProps({
+      options: ['red', 'yellow', 'blue'],
+      unbordered: true,
+      trigger: true,
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   test('when "showSelection" is true, button text is "yellow"', () => {
     wrapper.setProps({
       options: ['red', 'yellow', 'blue'],

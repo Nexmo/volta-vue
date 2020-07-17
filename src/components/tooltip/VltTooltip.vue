@@ -25,6 +25,10 @@ export default {
       type: String,
       required: true,
     },
+    large: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   components: {
@@ -34,7 +38,7 @@ export default {
   mounted() {
     return new Tooltip(this.$el, {
       html: true,
-      template: `<div class="Vlt-tooltip--js" role="tooltip">
+      template: `<div class="Vlt-tooltip--js ${this.large ? 'Vlt-tooltip--large' : ''}" role="tooltip">
                       <div class="tooltip-arrow Vlt-tooltip__arrow"></div>
                       <div class="tooltip-inner Vlt-tooltip__content"></div>
                     </div>`,

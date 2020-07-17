@@ -1,5 +1,24 @@
 const Components = [
   {
+    title: 'Accordion',
+    html: 'vlt-accordion',
+    icon: 'chevron-up',
+    propertyRows: [
+      { property: 'id', type: 'String' },
+      { property: 'classNames', type: 'String' },
+    ],
+    code: '<vlt-accordion></vlt-accordion>',
+  },
+  {
+    title: 'Accordion Item',
+    html: 'vlt-accordion-item',
+    icon: 'chevron-down',
+    propertyRows: [
+      { property: 'expanded', type: 'Boolean', default: false },
+    ],
+    code: '<vlt-accordion-item><template slot="header">HEADER</template><div>Body</div></vlt-accordion-item>',
+  },
+  {
     title: 'Badge',
     html: 'vlt-badge',
     icon: 'bookmark',
@@ -26,7 +45,8 @@ const Components = [
       { property: 'quaternary', type: 'Boolean', default: false },
       { property: 'secondary', type: 'Boolean', default: false },
       { property: 'small', type: 'Boolean', default: false },
-      { property: 'spin', type: 'Boolean', default: false },
+      { property: 'spinner', type: 'Boolean', default: false },
+      { property: 'spinner-white', type: 'Boolean', default: false },
       { property: 'tooltip-title', type: 'String' },
     ],
     code: '<vlt-button label="Label" secondary />',
@@ -66,6 +86,12 @@ const Components = [
       { property: 'label', type: 'String' },
       { property: 'selected', type: 'String', default: 'the first option in the options array' },
       { property: 'show-selection', type: 'Boolean' },
+      { property: 'trigger', type: 'Boolean', default: false },
+      { property: 'unbordered', type: 'Boolean', default: false },
+      { property: 'no-arrow', type: 'Boolean', default: false },
+      { property: 'manual-select', type: 'Boolean', default: false },
+      { property: 'value-key', type: 'String' },
+      { property: 'label-key', type: 'String' },
     ],
     code: '<vlt-dropdown label="Label" :options="[]" />',
   },
@@ -108,8 +134,8 @@ const Components = [
       { property: 'color', type: 'String' },
       { property: 'no-class', type: 'Boolean', default: false },
       { property: 'pointer', type: 'Boolean', default: false },
-      { property: 'spin', type: 'Boolean', default: false },
       { property: 'small', type: 'Boolean', default: false },
+      { property: 'smaller', type: 'Boolean', default: false },
     ],
     code: '<vlt-icon icon="volume" />',
   },
@@ -260,6 +286,7 @@ const Components = [
     icon: 'switch',
     propertyRows: [
       { property: 'checked', type: 'Boolean', default: false },
+      { property: 'disabled', type: 'Boolean', default: false },
       { property: 'red', type: 'Boolean', default: false },
       { property: 'small', type: 'Boolean', default: false },
     ],
@@ -284,6 +311,26 @@ const Components = [
               <td></td>
             </template>
           </vlt-table>`,
+  },
+  {
+    title: 'GridList',
+    html: 'vlt-grid-list',
+    icon: 'grid',
+    propertyRows: [
+      { property: 'columns', type: 'Array' },
+      { property: 'current-page', type: 'Number', default: 1 },
+      { property: 'pagination', type: 'Boolean', default: false },
+      { property: 'page-size', type: 'Number', default: 20 },
+      { property: 'rows', type: 'Array' },
+      { property: 'total', type: 'Number', default: 0 },
+    ],
+    code: `<vlt-grid-list :columns="[{ title: 'Name' }]" :rows="[]">
+            <template slot="rows">
+              <div v-for="row in [{ id: '1', name: 'Kunte' }]" :key="row.id">
+                {{ row.name}}
+              </div>
+            </template>
+          </vlt-grid-list>`,
   },
   {
     title: 'Tabs',

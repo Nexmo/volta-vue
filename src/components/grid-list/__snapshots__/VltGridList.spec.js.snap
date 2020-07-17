@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-grid-list pagination is shown 1`] = `
+<div class="Vlt-table__pagination">
+  <ul>
+    <!---->
+    <li class="Vlt-table__pagination__current"><a href="#">1</a></li>
+    <!---->
+    <li class=""><a href="#">2</a></li>
+    <li class=""><a href="#">3</a></li>
+    <!---->
+    <li class=""><a href="#">4</a></li>
+    <li class="Vlt-table__pagination__next"><a href="#">Next</a></li>
+  </ul>
+</div>
+`;
+
+exports[`vlt-grid-list renders correctly with two columns, "Name" and "Position" 1`] = `
+<div
+  columns="[object Object],[object Object]"
+>
+  <div
+    class=" Vlt-grid"
+    id=""
+  />
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`vlt-grid-list renders empty state 1`] = `
+<div>
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="Vlt-empty Vlt-empty--search"
+  >
+    <div
+      class="Vlt-empty__content"
+    >
+      <p>
+        There are no results for this search
+      </p>
+    </div>
+  </div>
+</div>
+`;

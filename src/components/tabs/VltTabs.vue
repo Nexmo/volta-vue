@@ -1,33 +1,24 @@
 <template>
   <div class="Vlt-tabs">
-    <ul class="Vlt-tabs__header"
-        :class="{
-          'Vlt-tabs__header--bordered': bordered,
-          'Vlt-tabs__header--shadow': shadow
-        }">
+    <ul :class="{ 'Vlt-tabs__header--bordered': bordered, 'Vlt-tabs__header--shadow': shadow }" class="Vlt-tabs__header">
       <li
         v-for="(tab, index) in tabs"
+        :id="tab.id ? `${tab.id}-header` : ''"
+        :class="{ 'Vlt-tabs__link_active' : index === activeTab, 'Vlt-tabs__link_disabled': tab.disabled }"
+        :key="index"
         class="Vlt-tabs__link"
         @click="selectTab(index)"
-        :class="{
-          'Vlt-tabs__link_active' : index === activeTab,
-          'Vlt-tabs__link_disabled': tab.disabled
-        }"
-       :key="index"
       >
-       <vlt-icon v-if="tab.iconName && !hasIcons" :icon="tab.iconName" no-class />
-
-       <vlt-tooltip :title="tab.label" v-if="hasIcons">
-         <vlt-icon :icon="tab.iconName" no-class />
-       </vlt-tooltip>
-
-       <span v-else>{{ tab.label }}</span>
-     </li>
+        <vlt-icon v-if="tab.iconName && !hasIcons" :icon="tab.iconName" no-class />
+        <vlt-tooltip v-if="hasIcons" :title="tab.label">
+          <vlt-icon :icon="tab.iconName" no-class />
+        </vlt-tooltip>
+        <span v-else>{{ tab.label }}</span>
+      </li>
     </ul>
     <div class="Vlt-tabs__content">
       <slot></slot>
     </div>
-
   </div>
 </template>
 
@@ -74,6 +65,13 @@ export default {
     };
   },
 
+  watch: {
+    activeIndex(val) {
+      this.activeTab = val;
+      this.updateTabsActive();
+    },
+  },
+
   mounted() {
     this.activeTab = this.activeIndex;
     this.updateTabsActive();
@@ -84,6 +82,7 @@ export default {
     selectTab(index) {
       this.activeTab = index;
       this.updateTabsActive();
+      this.$emit('change', index);
     },
 
     updateTabsActive() {
@@ -94,12 +93,6 @@ export default {
           tab.deactivate();
         }
       });
-    },
-  },
-
-  watch: {
-    activeIndex() {
-      this.updateTabsActive();
     },
   },
 };

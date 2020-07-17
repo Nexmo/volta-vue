@@ -16,16 +16,20 @@
     }, data.staticClass, data.class
     ]"
     :id="props.id"
+    :disabled="props.disabled"
     v-on="listeners"
   >
     <component v-if="props.icon" :is="injections.components.VltIcon"
-               :spin="props.spin" :icon="props.icon"></component>
+               :icon="props.icon"></component>
+    <component v-if="props.spinner || props.spinnerWhite" :is="injections.components.VltSpinner"
+               :smaller="true" :white="props.spinnerWhite"></component>
     <slot>{{props.label}}</slot>
   </button>
 </template>
 
 <script>
 import VltIcon from '../icon/VltIcon';
+import VltSpinner from '../spinner/VltSpinner';
 
 export default {
   name: 'vlt-button',
@@ -34,6 +38,7 @@ export default {
     components: {
       default: {
         VltIcon,
+        VltSpinner,
       },
     },
   },
@@ -83,13 +88,17 @@ export default {
       type: Boolean,
       default: false,
     },
-    spin: {
-      type: Boolean,
-      default: false,
-    },
     tooltipTitle: {
       type: String,
       default: '',
+    },
+    spinner: {
+      type: Boolean,
+      default: false,
+    },
+    spinnerWhite: {
+      type: Boolean,
+      default: false,
     },
   },
 };
