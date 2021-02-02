@@ -15,12 +15,15 @@
               @click="sort(col)"
             >
               {{ col.title }}
+              <vlt-tooltip v-if="col.tooltipText" position="top" :title="col.tooltipText">
+                <vlt-icon icon="info" smaller color="grey-500" />
+              </vlt-tooltip>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(row, index) in visibleRows" :key="index" @click="clickRow(row)">
-            <slot :item="row" :index="index" name="item"></slot>
+            <slot :item="row" :index="index" name="item" />
           </tr>
           <slot :rows="visibleRows" name="rows" />
         </tbody>
@@ -39,9 +42,9 @@
 
     <div v-if="rows.length === 0" class="Vlt-empty Vlt-empty--search">
       <div class="Vlt-empty__content">
-        <slot name="empty-message"
-          ><p>{{ emptyMessage }}</p></slot
-        >
+        <slot name="empty-message">
+          <p>{{ emptyMessage }}</p>
+        </slot>
       </div>
     </div>
   </div>
@@ -50,12 +53,16 @@
 <script>
   import paginationMixin from '../../mixins/pagination';
   import Pagination from '../pagination/Pagination';
+  import VltTooltip from '../tooltip/VltTooltip';
+  import VltIcon from '../icon/VltIcon';
 
   export default {
-    name: 'vlt-table',
+    name: 'VltTable',
 
     components: {
       Pagination,
+      VltTooltip,
+      VltIcon,
     },
     // TODO: currently sorting / pagination is only client side, improve
     // so that if available sorting / pagination is doen by the server
@@ -101,11 +108,16 @@
     },
 
     computed: {
+      columnsContainTooltip() {
+        return !!this.columns.find(item => item.tooltipText);
+      },
+
       classObject() {
         return {
           'Vlt-table--data': this.data || this.dataCols,
           'Vlt-table--data--cols': this.dataCols,
           'Vlt-table--mobile-stack': this.mobile,
+          'Vlt-overflow-initial': this.columnsContainTooltip,
         };
       },
 
@@ -142,3 +154,9 @@
     },
   };
 </script>
+
+<style lang="scss" scoped>
+  .Vlt-overflow-initial {
+    overflow: initial;
+  }
+</style>

@@ -24,11 +24,38 @@ describe('vlt-table', () => {
   test('renders empty state', () => {
     wrapper = mount(VltTable);
     expect(wrapper.element).toMatchSnapshot();
+    expect(wrapper.vm.columnsContainTooltip).toBeFalsy();
+    expect(wrapper.vm.classObject).toStrictEqual({
+      'Vlt-overflow-initial': false,
+      'Vlt-table--data': false,
+      'Vlt-table--data--cols': false,
+      'Vlt-table--mobile-stack': false,
+    });
   });
 
   test('renders correctly with two columns, "Name" and "Position"', () => {
     wrapper = mount(VltTable, { propsData: fullTableProps });
     expect(wrapper.element).toMatchSnapshot();
+  });
+
+  test('renders correctly with a tooltip passed in the column object', () => {
+    wrapper = mount(VltTable, {
+      propsData: {
+        columns: [
+          ...fullTableProps.columns,
+          { title: 'With a tooltip', property: 'position', tooltipText: 'the text will show in a tooltip' },
+        ],
+        rows: fullTableProps.rows,
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
+    expect(wrapper.vm.columnsContainTooltip).toBeTruthy();
+    expect(wrapper.vm.classObject).toStrictEqual({
+      'Vlt-overflow-initial': true,
+      'Vlt-table--data': false,
+      'Vlt-table--data--cols': false,
+      'Vlt-table--mobile-stack': false,
+    });
   });
 
   test('pagination is shown', () => {

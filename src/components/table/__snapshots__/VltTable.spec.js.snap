@@ -14,14 +14,16 @@ exports[`vlt-table can sort "Name" column ascending 1`] = `
           >
             
             Name
-          
+            
+            <!---->
           </th>
           <th
             class=""
           >
             
             Position
-          
+            
+            <!---->
           </th>
         </tr>
       </thead>
@@ -72,14 +74,16 @@ exports[`vlt-table can sort "Name" column descending 1`] = `
           >
             
             Name
-          
+            
+            <!---->
           </th>
           <th
             class=""
           >
             
             Position
-          
+            
+            <!---->
           </th>
         </tr>
       </thead>
@@ -131,6 +135,68 @@ exports[`vlt-table pagination is shown 1`] = `
 </div>
 `;
 
+exports[`vlt-table renders correctly with a tooltip passed in the column object 1`] = `
+<div>
+  <div
+    class="Vlt-table Vlt-overflow-initial"
+    id=""
+  >
+    <table>
+      <thead>
+        <tr>
+          <th
+            class="Vlt-table__col--sortable"
+          >
+            
+            Name
+            
+            <!---->
+          </th>
+          <th
+            class=""
+          >
+            
+            Position
+            
+            <!---->
+          </th>
+          <th
+            class=""
+          >
+            
+            With a tooltip
+            
+            <span
+              class="Vlt-tooltip"
+            >
+              <svg
+                class="Vlt-icon Vlt-icon--smaller Vlt-grey-500"
+              >
+                <use
+                  xlink:href="#V_Vlt-icon-info"
+                />
+              </svg>
+            </span>
+          </th>
+        </tr>
+      </thead>
+       
+      <tbody>
+        <tr />
+        <tr />
+        <tr />
+        <tr />
+         
+      </tbody>
+    </table>
+  </div>
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
 exports[`vlt-table renders correctly with two columns, "Name" and "Position" 1`] = `
 <div>
   <div
@@ -145,14 +211,16 @@ exports[`vlt-table renders correctly with two columns, "Name" and "Position" 1`]
           >
             
             Name
-          
+            
+            <!---->
           </th>
           <th
             class=""
           >
             
             Position
-          
+            
+            <!---->
           </th>
         </tr>
       </thead>

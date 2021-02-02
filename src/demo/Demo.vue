@@ -301,7 +301,7 @@
         <h4>Table</h4>
         <div>
           <vlt-table
-            :columns="[{ title: 'Name' }, { title: 'Job' }]"
+            :columns="[{ title: 'Name', tooltipText: 'this will appear in a tooltip' }, { title: 'Job' }]"
             :rows="[
               { name: 'Rasmus  Nichols', job: 'Baker' },
               { name: 'Sandra  Jackson', job: 'Engineer' },
