@@ -12,13 +12,15 @@ describe('vlt-switch', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('is red', () => {
+  test('is red', async () => {
     wrapper.setProps({ red: true });
+    await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('can be checked', () => {
+  test('can be checked', async () => {
     wrapper.find('input').trigger('click');
+    await wrapper.vm.$nextTick();
     expect(wrapper.emitted('input')).toEqual([[true]]);
   });
 });
