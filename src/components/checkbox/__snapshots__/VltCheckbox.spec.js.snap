@@ -19,9 +19,17 @@ exports[`vlt-checkbox has a "Hello World" tooltip 1`] = `
     
     Is test ok?
     
-    <vlt-tooltip-stub
-      title="Hello World"
-    />
+    <span
+      class="Vlt-tooltip"
+    >
+      <svg
+        class="Vlt-blue Vlt-icon Vlt-icon--small"
+      >
+        <use
+          xlink:href="#V_Vlt-icon-help-negative"
+        />
+      </svg>
+    </span>
   </label>
 </div>
 `;
