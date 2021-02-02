@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vlt-spinner renders correctly if smaller 1`] = `
+<div
+  class="Vlt-spinner Vlt-spinner--smaller"
+/>
+`;
+
+exports[`vlt-spinner renders correctly if white 1`] = `
+<div
+  class="Vlt-spinner Vlt-spinner--white"
+/>
+`;
+
+exports[`vlt-spinner renders correctly with if small 1`] = `
+<div
+  class="Vlt-spinner Vlt-spinner--small"
+/>
+`;
+
+exports[`vlt-spinner renders correctly with no props 1`] = `
+<div
+  class="Vlt-spinner"
+/>
+`;
