@@ -56,7 +56,7 @@ describe('vlt-table', () => {
     expect(wrapper.emitted('page-change')).toEqual([[3]]);
   });
 
-  test('can sort "Name" column descending', () => {
+  test('can sort "Name" column descending', async () => {
     wrapper = mount(VltTable, {
       propsData: {
         ...fullTableProps,
@@ -66,10 +66,11 @@ describe('vlt-table', () => {
       },
     });
     wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
+    await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('can sort "Name" column ascending', () => {
+  test('can sort "Name" column ascending', async () => {
     wrapper = mount(VltTable, {
       propsData: {
         ...fullTableProps,
@@ -80,6 +81,7 @@ describe('vlt-table', () => {
     });
     wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
     wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
+    await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
 });
