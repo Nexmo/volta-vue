@@ -40,8 +40,8 @@ exports[`vlt-modal can be opened 1`] = `
         class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
       >
         
-          Cancel
-        
+        Cancel
+      
       </button>
        
       <button
@@ -49,8 +49,8 @@ exports[`vlt-modal can be opened 1`] = `
       >
         <!---->
         
-          Ok
-        
+        Ok
+      
       </button>
     </footer>
   </div>
@@ -97,8 +97,8 @@ exports[`vlt-modal has customer Ok button text "Delete" 1`] = `
         class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
       >
         
-          Cancel
-        
+        Cancel
+      
       </button>
        
       <button
@@ -106,8 +106,8 @@ exports[`vlt-modal has customer Ok button text "Delete" 1`] = `
       >
         <!---->
         
-          Delete
-        
+        Delete
+      
       </button>
     </footer>
   </div>
@@ -154,8 +154,8 @@ exports[`vlt-modal is a message modal 1`] = `
         class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
       >
         
-          Cancel
-        
+        Cancel
+      
       </button>
        
       <button
@@ -163,8 +163,8 @@ exports[`vlt-modal is a message modal 1`] = `
       >
         <!---->
         
-          Ok
-        
+        Ok
+      
       </button>
     </footer>
   </div>
@@ -247,8 +247,8 @@ exports[`vlt-modal renders correctly with title "Title" 1`] = `
         class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
       >
         
-          Cancel
-        
+        Cancel
+      
       </button>
        
       <button
@@ -256,8 +256,8 @@ exports[`vlt-modal renders correctly with title "Title" 1`] = `
       >
         <!---->
         
-          Ok
-        
+        Ok
+      
       </button>
     </footer>
   </div>

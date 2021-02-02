@@ -10,7 +10,6 @@ exports[`vlt-title icon is red 1`] = `
     icon="rocket"
   />
   Test Title
-
 </h2>
 `;
 
@@ -24,6 +23,5 @@ exports[`vlt-title renders correctly with text "Test Title" and rocket icon 1`] 
     icon="rocket"
   />
   Test Title
-
 </h2>
 `;
