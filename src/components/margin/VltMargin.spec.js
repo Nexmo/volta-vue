@@ -12,13 +12,15 @@ describe('vlt-margin', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('renders with a top margin of 2', () => {
+  test('renders with a top margin of 2', async () => {
     wrapper.setProps({ top: 2 });
+    await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('renders with a top margin of 2 on small screens', () => {
+  test('renders with a top margin of 2 on small screens', async () => {
     wrapper.setProps({ sTop: 2 });
+    await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
 });
