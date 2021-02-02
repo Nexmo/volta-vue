@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" class="Vlt-switch" :class="{'Vlt-switch--red': red, 'Vlt-switch--small': small}">
+  <div :id="id" class="Vlt-switch" :class="{ 'Vlt-switch--red': red, 'Vlt-switch--small': small }">
     <label>
       <input type="checkbox" v-on:change="onChange" :checked="checked" :disabled="disabled" />
       <!-- Without @click.stop, click on switch will trigger 2 click events, one for the input

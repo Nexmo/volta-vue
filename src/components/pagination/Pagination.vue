@@ -27,37 +27,37 @@
 </template>
 
 <script>
-// TODO: pagination should wrap both table and grid list so the scroll pagination can be added here
-export default {
-  name: 'pagination',
+  // TODO: pagination should wrap both table and grid list so the scroll pagination can be added here
+  export default {
+    name: 'pagination',
 
-  props: {
-    pageChanged: {
-      type: Function,
-      default: () => {},
+    props: {
+      pageChanged: {
+        type: Function,
+        default: () => {},
+      },
+      totalPages: {
+        type: Number,
+        default: 1,
+      },
+      newCurrentPage: {
+        type: Number,
+        default: 1,
+      },
+      paginationRightEllipsis: {
+        type: Boolean,
+        default: false,
+      },
+      paginationLeftEllipsis: {
+        type: Boolean,
+        default: false,
+      },
+      pages: {
+        type: Array,
+        default: () => [],
+      },
     },
-    totalPages: {
-      type: Number,
-      default: 1,
-    },
-    newCurrentPage: {
-      type: Number,
-      default: 1,
-    },
-    paginationRightEllipsis: {
-      type: Boolean,
-      default: false,
-    },
-    paginationLeftEllipsis: {
-      type: Boolean,
-      default: false,
-    },
-    pages: {
-      type: Array,
-      default: () => [],
-    },
-  },
-};
+  };
 </script>
 
 <style lang="scss" scoped>

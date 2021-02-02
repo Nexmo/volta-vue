@@ -58,6 +58,7 @@ module.exports = {
     'arrow-parens': [1, 'as-needed'],
     'comma-dangle': 0, // handled by prettier
     'vue/html-indent': 0, // managed by prettier
+    indent: 0, // managed by prettier
     'max-len': 0,
     'object-curly-newline': 0,
   },

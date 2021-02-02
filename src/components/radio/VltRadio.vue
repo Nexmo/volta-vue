@@ -6,8 +6,8 @@
         <span class="Vlt-radio__icon"></span>
       </span>
       <span>
-        {{label}}
-        <small v-if="hint" class="Vlt-radio__hint">{{hint}}</small>
+        {{ label }}
+        <small v-if="hint" class="Vlt-radio__hint">{{ hint }}</small>
       </span>
     </label>
   </div>

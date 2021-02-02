@@ -8,7 +8,7 @@
     :exact="exact"
   >
     <vlt-icon :icon="icon" :color="color" />
-    <span class="Vlt-sidemenu__label">{{label}}</span>
+    <span class="Vlt-sidemenu__label">{{ label }}</span>
   </router-link>
 
   <a
@@ -20,32 +20,32 @@
     :target="external ? '_blank' : ''"
   >
     <vlt-icon :icon="icon" :color="color" />
-    <span class="Vlt-sidemenu__label">{{label}}</span>
+    <span class="Vlt-sidemenu__label">{{ label }}</span>
   </a>
 </template>
 
 <script>
-import VltIcon from '../icon/VltIcon';
+  import VltIcon from '../icon/VltIcon';
 
-export default {
-  name: 'VltSidemenuLink',
+  export default {
+    name: 'VltSidemenuLink',
 
-  props: {
-    color: String,
-    exact: {
-      type: Boolean,
-      default: false,
+    props: {
+      color: String,
+      exact: {
+        type: Boolean,
+        default: false,
+      },
+      external: Boolean,
+      href: String,
+      id: String,
+      icon: String,
+      label: String,
+      to: String,
     },
-    external: Boolean,
-    href: String,
-    id: String,
-    icon: String,
-    label: String,
-    to: String,
-  },
 
-  components: {
-    VltIcon,
-  },
-};
+    components: {
+      VltIcon,
+    },
+  };
 </script>

@@ -1,19 +1,21 @@
 <template functional>
   <button
     class="Vlt-btn Vlt-btn--no-focus"
-    :class="[{
-      'Vlt-btn--icon': !props.label,
-      'Vlt-btn--disabled': props.disabled,
-      'Vlt-btn--app': props.app,
-      'Vlt-btn--primary': props.primary,
-      'Vlt-btn--quaternary': props.quaternary,
-      'Vlt-btn--secondary': props.secondary,
-      'Vlt-btn--destructive': props.destructive,
-      'Vlt-btn--tertiary':
-        !(props.secondary || props.primary || props.destructive || props.quaternary),
-      'Vlt-btn--small': props.small,
-      'Vlt-btn--large': props.large,
-    }, data.staticClass, data.class
+    :class="[
+      {
+        'Vlt-btn--icon': !props.label,
+        'Vlt-btn--disabled': props.disabled,
+        'Vlt-btn--app': props.app,
+        'Vlt-btn--primary': props.primary,
+        'Vlt-btn--quaternary': props.quaternary,
+        'Vlt-btn--secondary': props.secondary,
+        'Vlt-btn--destructive': props.destructive,
+        'Vlt-btn--tertiary': !(props.secondary || props.primary || props.destructive || props.quaternary),
+        'Vlt-btn--small': props.small,
+        'Vlt-btn--large': props.large,
+      },
+      data.staticClass,
+      data.class,
     ]"
     :id="props.id"
     :disabled="props.disabled"
@@ -26,7 +28,7 @@
       :smaller="true"
       :white="props.spinnerWhite"
     ></component>
-    <slot>{{props.label}}</slot>
+    <slot>{{ props.label }}</slot>
   </button>
 </template>
 

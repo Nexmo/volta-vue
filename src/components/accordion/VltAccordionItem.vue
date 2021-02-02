@@ -10,14 +10,8 @@
 </template>
 
 <script>
-  import VltIcon from '../icon/VltIcon';
-
   export default {
     name: 'vlt-accordion-item',
-
-    components: {
-      VltIcon,
-    },
 
     props: {
       expanded: {

@@ -12,12 +12,12 @@
           <div class="Vlt-grid">
             <div class="Vlt-col">
               <h3 class="Vlt-title--icon" :id="component.title">
-                <vlt-icon :icon="component.icon" />{{component.title}} - {{component.html}}
+                <vlt-icon :icon="component.icon" />{{ component.title }} - {{ component.html }}
               </h3>
             </div>
             <div class="Vlt-col Vlt-col--right">
               <vlt-button app label="Copy component" @click="copyToClipboard(`copy-${component.title}`, $event)" />
-              <div class="code" :id="`copy-${component.title}`">{{component.code}}</div>
+              <div class="code" :id="`copy-${component.title}`">{{ component.code }}</div>
             </div>
           </div>
 
@@ -46,13 +46,7 @@
 <script>
   import VoltaIcons from '@vonagevolta/volta2/dist/symbol/volta-icons.svg';
 
-  import {
-    VltButton,
-    VltIcon,
-    VltTabs,
-    VltTab,
-    VltTable,
-  } from '../components';
+  import { VltButton, VltIcon, VltTabs, VltTab, VltTable } from '../components';
   import Components from './data';
   import VoltaVueDemo from './Demo';
 
@@ -72,11 +66,7 @@
       return {
         components: [],
         eventColumns: [{ title: 'Event' }, { title: 'Description' }],
-        propertyColumns: [
-          { title: 'Property' },
-          { title: 'Type' },
-          { title: 'Default' },
-        ],
+        propertyColumns: [{ title: 'Property' }, { title: 'Type' }, { title: 'Default' }],
         username: undefined,
         VoltaIcons,
         VltTable,
