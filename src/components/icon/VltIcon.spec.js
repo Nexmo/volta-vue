@@ -16,8 +16,9 @@ describe('vlt-icon', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('is red', () => {
+  test('is red', async () => {
     wrapper.setProps({ color: 'red' });
+    await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
 });
