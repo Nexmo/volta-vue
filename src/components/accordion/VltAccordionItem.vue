@@ -10,63 +10,63 @@
 </template>
 
 <script>
-import VltIcon from '../icon/VltIcon';
+  import VltIcon from '../icon/VltIcon';
 
-export default {
-  name: 'vlt-accordion-item',
+  export default {
+    name: 'vlt-accordion-item',
 
-  components: {
-    VltIcon,
-  },
-
-  props: {
-    expanded: {
-      type: Boolean,
-      default: false,
+    components: {
+      VltIcon,
     },
-  },
 
-  data() {
-    return {
-      isExpanded: false,
-    };
-  },
+    props: {
+      expanded: {
+        type: Boolean,
+        default: false,
+      },
+    },
 
-  computed: {
-    classNames() {
+    data() {
       return {
-        'Vlt-accordion__item_opened': this.isExpanded,
+        isExpanded: false,
       };
     },
-    contentClassNames() {
-      return {
-        'Vlt-accordion__content_open': this.isExpanded,
-      };
-    },
-    headerClassNames() {
-      return {
-        'Vlt-accordion__trigger_active': this.isExpanded,
-      };
-    },
-  },
 
-  watch: {
-    expanded(val) {
-      this.isExpanded = val;
+    computed: {
+      classNames() {
+        return {
+          'Vlt-accordion__item_opened': this.isExpanded,
+        };
+      },
+      contentClassNames() {
+        return {
+          'Vlt-accordion__content_open': this.isExpanded,
+        };
+      },
+      headerClassNames() {
+        return {
+          'Vlt-accordion__trigger_active': this.isExpanded,
+        };
+      },
     },
-    isExpanded(val) {
-      this.$emit('expanded', val);
-    },
-  },
 
-  mounted() {
-    this.isExpanded = this.expanded;
-  },
-
-  methods: {
-    toggleCollapsible() {
-      this.isExpanded = !this.isExpanded;
+    watch: {
+      expanded(val) {
+        this.isExpanded = val;
+      },
+      isExpanded(val) {
+        this.$emit('expanded', val);
+      },
     },
-  },
-};
+
+    mounted() {
+      this.isExpanded = this.expanded;
+    },
+
+    methods: {
+      toggleCollapsible() {
+        this.isExpanded = !this.isExpanded;
+      },
+    },
+  };
 </script>

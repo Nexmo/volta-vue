@@ -13,9 +13,7 @@ const Components = [
     title: 'Accordion Item',
     html: 'vlt-accordion-item',
     icon: 'chevron-down',
-    propertyRows: [
-      { property: 'expanded', type: 'Boolean', default: false },
-    ],
+    propertyRows: [{ property: 'expanded', type: 'Boolean', default: false }],
     code: '<vlt-accordion-item><template slot="header">HEADER</template><div>Body</div></vlt-accordion-item>',
   },
   {
@@ -26,9 +24,7 @@ const Components = [
       { property: 'color', type: 'String' },
       { property: 'dismissable', type: 'Boolean', default: true },
     ],
-    eventRows: [
-      { event: 'dismissed', description: 'when the badge is dismissed' },
-    ],
+    eventRows: [{ event: 'dismissed', description: 'when the badge is dismissed' }],
     code: '<vlt-badge></vlt-badge>',
   },
   {
@@ -254,18 +250,14 @@ const Components = [
     title: 'Sidemenu title',
     html: 'vlt-sidemenu-title',
     icon: 'menu',
-    propertyRows: [
-      { property: 'label', type: 'String' },
-    ],
+    propertyRows: [{ property: 'label', type: 'String' }],
     code: '<vlt-sidemenu-title label="Label" />',
   },
   {
     title: 'Spinner',
     html: 'vlt-spinner',
     icon: 'reload',
-    propertyRows: [
-      { property: 'small', type: 'Boolean' },
-    ],
+    propertyRows: [{ property: 'small', type: 'Boolean' }],
     code: '<vlt-spinner />',
   },
   {
@@ -379,9 +371,7 @@ const Components = [
     title: 'Composite',
     html: 'vlt-composite',
     icon: 'type',
-    propertyRows: [
-      { property: 'className', type: 'String', default: '' },
-    ],
+    propertyRows: [{ property: 'className', type: 'String', default: '' }],
     code: '<vlt-composite></vlt-composite>',
   },
   {

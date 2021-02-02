@@ -25,16 +25,25 @@ describe('vlt-group-button', () => {
   test('when single selection, "yellow" is emitted', async () => {
     wrapper.setProps({ val: undefined });
     await wrapper.vm.$nextTick();
-    wrapper.findAll('button').at(1).trigger('click');
+    wrapper
+      .findAll('button')
+      .at(1)
+      .trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.emitted('input')).toBeTruthy();
     expect(wrapper.emitted('input')).toEqual([['yellow']]);
   });
 
   test('when multi selection, "[ yellow, blue ]" is emitted', async () => {
-    wrapper.findAll('button').at(1).trigger('click');
+    wrapper
+      .findAll('button')
+      .at(1)
+      .trigger('click');
     await wrapper.vm.$nextTick();
-    wrapper.findAll('button').at(2).trigger('click');
+    wrapper
+      .findAll('button')
+      .at(2)
+      .trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.emitted('input')).toBeTruthy();
     expect(wrapper.emitted('input')).toEqual([[['yellow']], [['blue']]]);

@@ -52,7 +52,10 @@ describe('vlt-table', () => {
         total: 4,
       },
     });
-    wrapper.findAll('.Vlt-table__pagination a').at(2).trigger('click');
+    wrapper
+      .findAll('.Vlt-table__pagination a')
+      .at(2)
+      .trigger('click');
     expect(wrapper.emitted('page-change')).toEqual([[3]]);
   });
 
@@ -65,7 +68,10 @@ describe('vlt-table', () => {
         item: '<td>{{ props.item.name }}</td>',
       },
     });
-    wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
+    wrapper
+      .findAll('.Vlt-table__col--sortable')
+      .at(0)
+      .trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -79,8 +85,14 @@ describe('vlt-table', () => {
         item: '<td>{{ props.item.name }}</td>',
       },
     });
-    wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
-    wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
+    wrapper
+      .findAll('.Vlt-table__col--sortable')
+      .at(0)
+      .trigger('click');
+    wrapper
+      .findAll('.Vlt-table__col--sortable')
+      .at(0)
+      .trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });

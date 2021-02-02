@@ -10,36 +10,36 @@
 </template>
 
 <script>
-export default {
-  name: 'vlt-switch',
+  export default {
+    name: 'vlt-switch',
 
-  props: {
-    id: {
-      type: String,
-      required: false,
+    props: {
+      id: {
+        type: String,
+        required: false,
+      },
+      small: {
+        type: Boolean,
+        default: false,
+      },
+      red: {
+        type: Boolean,
+        default: false,
+      },
+      checked: {
+        type: Boolean,
+        default: false,
+      },
+      disabled: {
+        type: Boolean,
+        default: false,
+      },
     },
-    small: {
-      type: Boolean,
-      default: false,
-    },
-    red: {
-      type: Boolean,
-      default: false,
-    },
-    checked: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-  },
 
-  methods: {
-    onChange(event) {
-      this.$emit('input', event.target.checked);
+    methods: {
+      onChange(event) {
+        this.$emit('input', event.target.checked);
+      },
     },
-  },
-};
+  };
 </script>

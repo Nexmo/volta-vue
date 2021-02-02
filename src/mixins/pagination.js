@@ -57,7 +57,7 @@ const paginationMixin = {
         for (let i = left; i <= right; i += 1) {
           pages.push({
             number: i,
-            click: (event) => {
+            click: event => {
               this.pageChanged(i);
               // Set focus on element to keep tab order
               this.$nextTick(() => event.target.focus());
@@ -73,9 +73,9 @@ const paginationMixin = {
     },
 
     paginationRightEllipsis() {
-      return this.totalPages > 9
-             && this.pages.length
-             && this.pages[this.pages.length - 1].number !== this.totalPages - 1;
+      return (
+        this.totalPages > 9 && this.pages.length && this.pages[this.pages.length - 1].number !== this.totalPages - 1
+      );
     },
   },
 
