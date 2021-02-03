@@ -306,6 +306,7 @@
               { name: 'Rasmus  Nichols', job: 'Baker' },
               { name: 'Sandra  Jackson', job: 'Engineer' },
             ]"
+            show-checkbox-selector
           >
             <template slot="item" slot-scope="slotProps">
               <td>{{ slotProps.item.name }}</td>

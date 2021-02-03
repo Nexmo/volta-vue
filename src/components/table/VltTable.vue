@@ -4,6 +4,14 @@
       <table>
         <thead>
           <tr>
+            <th v-if="showCheckboxSelector" class="Vlt-checkbox-col">
+              <vlt-checkbox
+                :id="`${id}-headerSelectAllCheckbox`"
+                :checked="isSelectAllChecked"
+                label=""
+                @input="emitSelectAll"
+              />
+            </th>
             <th
               v-for="(col, index) in columns"
               :key="index"
@@ -22,7 +30,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(row, index) in visibleRows" :key="index" @click="clickRow(row)">
+          <tr v-for="(row, index) in visibleRows" :key="index" @click="clickRow($row)">
+            <td v-if="showCheckboxSelector">
+              <vlt-checkbox
+                :id="`${index}-row-checkbox`"
+                :checked="isCheckboxChecked(row)"
+                label=""
+                @click="$event => emitRowSelect($event, row)"
+              />
+            </td>
             <slot :item="row" :index="index" name="item" />
           </tr>
           <slot :rows="visibleRows" name="rows" />
@@ -55,6 +71,7 @@
   import Pagination from '../pagination/Pagination';
   import VltTooltip from '../tooltip/VltTooltip';
   import VltIcon from '../icon/VltIcon';
+  import VltCheckbox from '../checkbox/VltCheckbox';
 
   export default {
     name: 'VltTable',
@@ -63,9 +80,10 @@
       Pagination,
       VltTooltip,
       VltIcon,
+      VltCheckbox,
     },
     // TODO: currently sorting / pagination is only client side, improve
-    // so that if available sorting / pagination is doen by the server
+    // so that if available sorting / pagination is done by the server
 
     mixins: [paginationMixin],
 
@@ -95,6 +113,10 @@
         type: Boolean,
         default: false,
       },
+      showCheckboxSelector: {
+        type: Boolean,
+        default: false,
+      },
     },
 
     data() {
@@ -104,6 +126,8 @@
         newRows: this.rows,
         newRowsTotal: this.rows.length,
         newCurrentPage: this.currentPage,
+        isSelectAllChecked: false,
+        listRowsSelected: [],
       };
     },
 
@@ -151,6 +175,34 @@
       clickRow(row) {
         this.$emit('click', row);
       },
+
+      emitSelectAll(val) {
+        this.isSelectAllChecked = val;
+        if (val) {
+          this.listRowsSelected = []; // clear list of individual selectedcheckboxes when select all box is selected
+        }
+        this.$emit('selectAll', val);
+      },
+
+      isCheckboxChecked(row) {
+        return this.listRowsSelected.includes(row) || this.isSelectAllChecked;
+      },
+
+      emitRowSelect($event, row) {
+        $event.stopPropagation();
+        const isChecked = $event.target.checked;
+        if (!isChecked && this.isSelectAllChecked) {
+          // user previously clicked "Select All" and now is unticking a single box
+          // we untick the "Select All" and add all rows other than the one unticked
+          this.isSelectAllChecked = false;
+          this.listRowsSelected = this.rows.filter(item => item !== row);
+        } else if (isChecked && !this.listRowsSelected.includes(row)) {
+          this.listRowsSelected.push(row);
+        } else if (!isChecked && this.listRowsSelected.includes(row)) {
+          this.listRowsSelected = this.listRowsSelected.filter(item => item !== row);
+        }
+        this.$emit('selectRow', { isChecked, listRowsSelected: this.listRowsSelected });
+      },
     },
   };
 </script>
@@ -158,5 +210,9 @@
 <style lang="scss" scoped>
   .Vlt-overflow-initial {
     overflow: initial;
+  }
+
+  .Vlt-checkbox-col {
+    width: 50px;
   }
 </style>
