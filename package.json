@@ -6,7 +6,8 @@
     "ci": "npm run lint && npm test",
     "dev": "webpack-dev-server",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "test-ci": "jest --coverage && jest-coverage-badges --input \"./coverage-frontend/coverage-summary.json\""
   },
   "dependencies": {
     "@vonagevolta/volta2": "^0.1.2",
@@ -42,6 +43,7 @@
     "file-loader": "^1.1.11",
     "husky": "^1.0.0-rc.13",
     "jest": "26.4.2",
+    "jest-coverage-badges": "^1.1.2",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-serializer-vue": "^2.0.2",
     "jsdom": "^13.1.0",

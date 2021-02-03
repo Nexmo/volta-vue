@@ -13,9 +13,6 @@ module.exports = {
     '.*\\.(vue)$': 'vue-jest',
     '^.+\\.js$': 'babel-jest',
   },
-  // transformIgnorePatterns: [
-  //   '/node_modules/(?!@vonagevolta/vue|@vonage/.*|lit-.*|@material/.*).+\\.(js|vue|)$',
-  // ],
   collectCoverage: false,
   coverageDirectory: 'coverage-frontend',
   collectCoverageFrom: ['**/components/**/*.vue', '!**/node_modules/**'],
@@ -23,7 +20,3 @@ module.exports = {
   snapshotSerializers: ['jest-serializer-vue'],
   watchPathIgnorePatterns: ['node_modules'],
 };
-
-// "jest": {
-//   "testEnvironment": "node",
-// },

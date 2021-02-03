@@ -1,60 +1,75 @@
 # volta-vue
 
+![Coverage lines](./coverage/badge-lines.svg)
+![Coverage functions](./coverage/badge-functions.svg)
+![Coverage branches](./coverage/badge-branches.svg)
+![Coverage statements](./coverage/badge-statements.svg)
+
 > Vue.js single file components for Vonage [Volta](https://github.com/Nexmo/volta) authored with [vue-loader](https://github.com/vuejs/vue-loader)
 
 ## Contributing
+
 ### Steps
+
 1. Create a branch from the **develop** branch
 2. Make your changes and commit to your branch
 3. Create a pull request to merge your branch to **develop**
 
 ### Guidelines
+
 - Create one branch per feature/fix
 - Branches should be deleted after being merged in to **develop**
 
 ## Getting Started with NPM
-``` bash
+
+```bash
 npm install @vonagevolta/vue
 ```
 
 ### Fonts
+
 Set the font variable value before loading the volta style sheet
-``` bash
+
+```bash
 $Vlt-font-url: '~@vonagevolta/core/fonts/';
 @import '~@vonagevolta/core/scss/volta';
 ```
 
 ### Icons
+
 Icons have a dependency on [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)
 
-``` bash
+```bash
 npm install svg-sprite-loader --save-dev
 ```
 
-*Webpack config*
-``` bash
+_Webpack config_
+
+```bash
 {
   test: /\.svg$/,
   loader: 'svg-sprite-loader',
   options: {
-    symbolId: 'V' 
+    symbolId: 'V'
   }
-} 
+}
 ```
 
-*App.vue*
-``` bash
+_App.vue_
+
+```bash
 import VoltaIcons from '@vonagevolta/core/dist/symbol/volta-icons.svg';
 ...
 data () {
-  return { 
+  return {
     VoltaIcons
   }
 }
 ```
 
-*In your vue component*
-``` bash
+_In your vue component_
+
+```bash
 <template>
   <vlt-icon icon="help" />
 </template>
@@ -72,21 +87,24 @@ data () {
 ```
 
 ## Running tests
+
 We use [Vue Test Utils](https://vue-test-utils.vuejs.org/) with [Jest](https://jestjs.io/en/) for unit testing.
-You can run all the tests: 
-``` bash
+You can run all the tests:
+
+```bash
 npm test
 ```
+
 Or a single test:
-``` bash
+
+```bash
 npm test test/radio/VltRadio.spec.js
 ```
-
 
 ## Viewing the docs
 
 Clone repo
 
-``` bash
+```bash
 npm run dev
 ```
