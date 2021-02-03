@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { VltTable } from '..';
+import VltCheckbox from '../checkbox/VltCheckbox';
 
 const columns = [
   { title: 'Name', sortable: true, property: 'name' },
@@ -122,5 +123,87 @@ describe('vlt-table', () => {
       .trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
+  });
+
+  test('renders correctly select column and Select All behavior is correct', async () => {
+    wrapper = mount(VltTable, {
+      propsData: {
+        id: 'tableId',
+        rows: fullTableProps.rows,
+        columns: fullTableProps.columns,
+        showCheckboxSelector: true,
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
+
+    expect(wrapper.vm.isSelectAllChecked).toBeFalsy();
+    expect(wrapper.vm.listRowsSelected).toStrictEqual([]);
+    expect(wrapper.emitted().selectAll).toBeFalsy();
+
+    // click "Select All" selects all checkboxes
+    wrapper.find('input#tableId-headerSelectAllCheckbox').trigger('click');
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.isSelectAllChecked).toBeTruthy();
+    expect(wrapper.vm.listRowsSelected).toStrictEqual([]);
+    expect(wrapper.emitted().selectAll).toBeTruthy();
+    // click a single box when all are selected de-selects the header "Select All"
+    // and adds all other rows to the list of selected rows
+    wrapper
+      .findAll('input')
+      .at(1)
+      .trigger('click');
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.isSelectAllChecked).toBeFalsy();
+    expect(wrapper.vm.listRowsSelected).toStrictEqual([
+      // Louis (first row) is absent
+      { name: 'Mie', position: 'UX Designer' },
+      { name: 'Julien', position: 'Java Developer' },
+      { name: 'Nisha', position: 'JavaScript Developer' },
+    ]);
+    expect(wrapper.emitted().selectRow[0][0]).toStrictEqual({
+      isChecked: false,
+      listRowsSelected: [
+        { name: 'Mie', position: 'UX Designer' },
+        { name: 'Julien', position: 'Java Developer' },
+        { name: 'Nisha', position: 'JavaScript Developer' },
+      ],
+    });
+  });
+
+  test('renders correctly select column and emits event on single click', async () => {
+    wrapper = mount(VltTable, {
+      propsData: {
+        id: 'tableId',
+        rows: fullTableProps.rows,
+        columns: fullTableProps.columns,
+        showCheckboxSelector: true,
+      },
+    });
+
+    // click a single row's checkbox
+    wrapper
+      .findAll('input')
+      .at(1)
+      .trigger('click');
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.isSelectAllChecked).toBeFalsy();
+    expect(wrapper.vm.listRowsSelected).toStrictEqual([{ name: 'Louis', position: 'Front End Developer' }]);
+    expect(wrapper.emitted().selectRow[0][0]).toStrictEqual({
+      isChecked: true,
+      listRowsSelected: [{ name: 'Louis', position: 'Front End Developer' }],
+    });
+
+    // deselect that same row
+    wrapper
+      .findAll('input')
+      .at(1)
+      .trigger('click');
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.isSelectAllChecked).toBeFalsy();
+    expect(wrapper.vm.listRowsSelected).toStrictEqual([]);
+    expect(wrapper.emitted().selectRow[1][0]).toStrictEqual({
+      isChecked: false,
+      listRowsSelected: [],
+    });
   });
 });
