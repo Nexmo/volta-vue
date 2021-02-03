@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils';
 import { VltTable } from '..';
-import VltCheckbox from '../checkbox/VltCheckbox';
 
 const columns = [
   { title: 'Name', sortable: true, property: 'name' },
