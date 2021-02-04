@@ -101,8 +101,7 @@ exports[`vlt-dropdown renders correctly with label "Pick one" 1`] = `
     class="Vlt-dropdown__btn"
   >
     <span>
-      
-        Pick one
+       Pick one
       <!---->
     </span>
      

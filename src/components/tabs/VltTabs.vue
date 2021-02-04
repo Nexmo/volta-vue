@@ -1,10 +1,13 @@
 <template>
   <div class="Vlt-tabs">
-    <ul :class="{ 'Vlt-tabs__header--bordered': bordered, 'Vlt-tabs__header--shadow': shadow }" class="Vlt-tabs__header">
+    <ul
+      :class="{ 'Vlt-tabs__header--bordered': bordered, 'Vlt-tabs__header--shadow': shadow }"
+      class="Vlt-tabs__header"
+    >
       <li
         v-for="(tab, index) in tabs"
         :id="tab.id ? `${tab.id}-header` : ''"
-        :class="{ 'Vlt-tabs__link_active' : index === activeTab, 'Vlt-tabs__link_disabled': tab.disabled }"
+        :class="{ 'Vlt-tabs__link_active': index === activeTab, 'Vlt-tabs__link_disabled': tab.disabled }"
         :key="index"
         class="Vlt-tabs__link"
         @click="selectTab(index)"
@@ -23,77 +26,77 @@
 </template>
 
 <script>
-import VltIcon from '../icon/VltIcon';
-import VltTooltip from '../tooltip/VltTooltip';
+  import VltIcon from '../icon/VltIcon';
+  import VltTooltip from '../tooltip/VltTooltip';
 
-export default {
-  name: 'vlt-tabs',
+  export default {
+    name: 'vlt-tabs',
 
-  components: {
-    VltIcon,
-    VltTooltip,
-  },
+    components: {
+      VltIcon,
+      VltTooltip,
+    },
 
-  props: {
-    activeIndex: {
-      type: Number,
-      default: 0,
+    props: {
+      activeIndex: {
+        type: Number,
+        default: 0,
+      },
+      bordered: {
+        type: Boolean,
+        default: false,
+      },
+      icon: {
+        type: Boolean,
+        default: false,
+      },
+      id: {
+        type: String,
+        required: false,
+      },
+      shadow: {
+        type: Boolean,
+        default: false,
+      },
     },
-    bordered: {
-      type: Boolean,
-      default: false,
-    },
-    icon: {
-      type: Boolean,
-      default: false,
-    },
-    id: {
-      type: String,
-      required: false,
-    },
-    shadow: {
-      type: Boolean,
-      default: false,
-    },
-  },
 
-  data() {
-    return {
-      activeTab: 0,
-      tabs: [],
-      hasIcons: false,
-    };
-  },
+    data() {
+      return {
+        activeTab: 0,
+        tabs: [],
+        hasIcons: false,
+      };
+    },
 
-  watch: {
-    activeIndex(val) {
-      this.activeTab = val;
+    watch: {
+      activeIndex(val) {
+        this.activeTab = val;
+        this.updateTabsActive();
+      },
+    },
+
+    mounted() {
+      this.activeTab = this.activeIndex;
       this.updateTabsActive();
-    },
-  },
-
-  mounted() {
-    this.activeTab = this.activeIndex;
-    this.updateTabsActive();
-    this.hasIcons = this.icon;
-  },
-
-  methods: {
-    selectTab(index) {
-      this.activeTab = index;
-      this.updateTabsActive();
-      this.$emit('change', index);
+      this.hasIcons = this.icon;
     },
 
-    updateTabsActive() {
-      this.tabs.forEach((tab, i) => {
-        if (this.activeTab === i) {
-          tab.activate();
-        } else {
-          tab.deactivate();
-        }
-      });
+    methods: {
+      selectTab(index) {
+        this.activeTab = index;
+        this.updateTabsActive();
+        this.$emit('change', index);
+      },
+
+      updateTabsActive() {
+        this.tabs.forEach((tab, i) => {
+          if (this.activeTab === i) {
+            tab.activate();
+          } else {
+            tab.deactivate();
+          }
+        });
+      },
     },
-  },
-};
+  };
 </script>

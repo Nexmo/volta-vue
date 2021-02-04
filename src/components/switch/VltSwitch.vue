@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" class="Vlt-switch" :class="{'Vlt-switch--red': red, 'Vlt-switch--small': small}">
+  <div :id="id" class="Vlt-switch" :class="{ 'Vlt-switch--red': red, 'Vlt-switch--small': small }">
     <label>
       <input type="checkbox" v-on:change="onChange" :checked="checked" :disabled="disabled" />
       <!-- Without @click.stop, click on switch will trigger 2 click events, one for the input
@@ -10,36 +10,36 @@
 </template>
 
 <script>
-export default {
-  name: 'vlt-switch',
+  export default {
+    name: 'vlt-switch',
 
-  props: {
-    id: {
-      type: String,
-      required: false,
+    props: {
+      id: {
+        type: String,
+        required: false,
+      },
+      small: {
+        type: Boolean,
+        default: false,
+      },
+      red: {
+        type: Boolean,
+        default: false,
+      },
+      checked: {
+        type: Boolean,
+        default: false,
+      },
+      disabled: {
+        type: Boolean,
+        default: false,
+      },
     },
-    small: {
-      type: Boolean,
-      default: false,
-    },
-    red: {
-      type: Boolean,
-      default: false,
-    },
-    checked: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-  },
 
-  methods: {
-    onChange(event) {
-      this.$emit('input', event.target.checked);
+    methods: {
+      onChange(event) {
+        this.$emit('input', event.target.checked);
+      },
     },
-  },
-};
+  };
 </script>

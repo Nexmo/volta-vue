@@ -44,9 +44,17 @@ exports[`vlt-field has tooltip "Hello World" 1`] = `
     
     <!---->
      
-    <vlt-tooltip-stub
-      title="Hello World"
-    />
+    <span
+      class="Vlt-tooltip"
+    >
+      <svg
+        class="Vlt-blue Vlt-icon Vlt-icon--small"
+      >
+        <use
+          xlink:href="#V_Vlt-icon-help-negative"
+        />
+      </svg>
+    </span>
   </label>
     
   <!---->

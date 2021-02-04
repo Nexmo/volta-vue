@@ -9,9 +9,7 @@
   >
     <button :class="getButtonClass()" :disabled="disabled" @click="toggleDropdown($event)">
       <slot name="button-value">
-        <span v-if="label && (!hideLabel || !selectedOption)">
-          {{ label }}<span v-if="showSelection">:</span>
-        </span>
+        <span v-if="label && (!hideLabel || !selectedOption)"> {{ label }}<span v-if="showSelection">:</span> </span>
         <span v-if="showSelection" :class="{ 'Vlt-dropdown__selection': label }">
           {{ selectedOption[labelKey] || selectedOption }}
         </span>
@@ -35,143 +33,147 @@
 </template>
 
 <script>
-export default {
-  name: 'vlt-dropdown',
+  export default {
+    name: 'vlt-dropdown',
 
-  props: {
-    app: {
-      type: Boolean,
-      default: false,
-    },
-    hideLabel: {
-      type: Boolean,
-      default: false,
-    },
-    id: { // eslint-disable-line
-      type: String,
-      required: false,
-    },
-    label: { // eslint-disable-line
-      type: String,
-      required: false,
-    },
-    noArrow: {
-      type: Boolean,
-      default: false,
-    },
-    options: {
-      type: Array,
-      default: () => [],
-    },
-    property: { // eslint-disable-line
-      type: String,
-      required: false,
-    },
-    selected: { // eslint-disable-line
-      type: [Object, String],
-      required: false,
-    },
-    showSelection: {
-      type: Boolean,
-      default: false,
-    },
-    trigger: {
-      type: Boolean,
-      default: false,
-    },
-    unbordered: {
-      type: Boolean,
-      default: false,
-    },
-    labelKey: {
-      type: String,
-      default: '',
-    },
-    valueKey: {
-      type: String,
-      default: '',
-    },
-    manualSelect: {
-      // to control the first automatic selection
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-  },
-
-  data() {
-    return {
-      expanded: false,
-      selectedOption: this.selected,
-    };
-  },
-
-  computed: {
-    newOptionIsUsed() {
-      return !!this.$slots.newOption;
-    },
-  },
-
-  watch: {
-    selected(selected) {
-      this.selectedOption = selected;
-    },
-    options(value) {
-      if (value && !this.selectedOption && !this.manualSelect) {
-        [this.selectedOption] = value;
-        this.$emit('input', this.selectedOption);
-      }
-    },
-  },
-
-  mounted() {
-    if (!this.selected && !this.manualSelect) {
-      [this.selectedOption] = this.options;
-      this.$emit('input', this.selectedOption);
-    }
-  },
-
-  methods: {
-    bodyListener() {
-      this.expanded = false;
-      document.removeEventListener('click', this.bodyListener);
+    props: {
+      app: {
+        type: Boolean,
+        default: false,
+      },
+      hideLabel: {
+        type: Boolean,
+        default: false,
+      },
+      id: {
+        // eslint-disable-line
+        type: String,
+        required: false,
+      },
+      label: {
+        // eslint-disable-line
+        type: String,
+        required: false,
+      },
+      noArrow: {
+        type: Boolean,
+        default: false,
+      },
+      options: {
+        type: Array,
+        default: () => [],
+      },
+      property: {
+        // eslint-disable-line
+        type: String,
+        required: false,
+      },
+      selected: {
+        // eslint-disable-line
+        type: [Object, String],
+        required: false,
+      },
+      showSelection: {
+        type: Boolean,
+        default: false,
+      },
+      trigger: {
+        type: Boolean,
+        default: false,
+      },
+      unbordered: {
+        type: Boolean,
+        default: false,
+      },
+      labelKey: {
+        type: String,
+        default: '',
+      },
+      valueKey: {
+        type: String,
+        default: '',
+      },
+      manualSelect: {
+        // to control the first automatic selection
+        type: Boolean,
+        default: false,
+      },
+      disabled: {
+        type: Boolean,
+        default: false,
+      },
     },
 
-    getButtonClass() {
+    data() {
       return {
-        'Vlt-dropdown__btn': !this.trigger,
-        'Vlt-dropdown__btn--app': this.app,
-        'Vlt-btn Vlt-btn--tertiary Vlt-btn--': this.trigger,
-        'Vlt-btn--unbordered': this.unbordered,
-        'Vlt-btn--no-arrow': this.noArrow,
+        expanded: false,
+        selectedOption: this.selected,
       };
     },
 
-    toggleDropdown(event) {
-      event.stopPropagation();
-      if (this.disabled) return;
-      this.expanded = !this.expanded;
+    computed: {
+      newOptionIsUsed() {
+        return !!this.$slots.newOption;
+      },
+    },
 
-      if (this.expanded) {
-        document.addEventListener('click', this.bodyListener);
+    watch: {
+      selected(selected) {
+        this.selectedOption = selected;
+      },
+      options(value) {
+        if (value && !this.selectedOption && !this.manualSelect) {
+          [this.selectedOption] = value;
+          this.$emit('input', this.selectedOption);
+        }
+      },
+    },
+
+    mounted() {
+      if (!this.selected && !this.manualSelect) {
+        [this.selectedOption] = this.options;
+        this.$emit('input', this.selectedOption);
       }
     },
 
-    selectOption(option) {
-      this.selectedOption = option;
-      this.$emit('input', option);
-      this.expanded = false;
-      document.removeEventListener('click', this.bodyListener);
-    },
+    methods: {
+      bodyListener() {
+        this.expanded = false;
+        document.removeEventListener('click', this.bodyListener);
+      },
 
-    createId(option) {
-      return `${this.id}-${(option.label || option[this.labelKey] || option).replace(/\s/g, '')}DropdownLink`;
+      getButtonClass() {
+        return {
+          'Vlt-dropdown__btn': !this.trigger,
+          'Vlt-dropdown__btn--app': this.app,
+          'Vlt-btn Vlt-btn--tertiary Vlt-btn--': this.trigger,
+          'Vlt-btn--unbordered': this.unbordered,
+          'Vlt-btn--no-arrow': this.noArrow,
+        };
+      },
+
+      toggleDropdown(event) {
+        event.stopPropagation();
+        if (this.disabled) return;
+        this.expanded = !this.expanded;
+
+        if (this.expanded) {
+          document.addEventListener('click', this.bodyListener);
+        }
+      },
+
+      selectOption(option) {
+        this.selectedOption = option;
+        this.$emit('input', option);
+        this.expanded = false;
+        document.removeEventListener('click', this.bodyListener);
+      },
+
+      createId(option) {
+        return `${this.id}-${(option.label || option[this.labelKey] || option).replace(/\s/g, '')}DropdownLink`;
+      },
     },
-  },
-};
+  };
 </script>
 
 <style lang="scss" scoped>

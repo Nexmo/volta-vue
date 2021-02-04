@@ -5,7 +5,7 @@
 </template>
 
 <script>
-export default {
-  name: 'VltSidemenu',
-};
+  export default {
+    name: 'VltSidemenu',
+  };
 </script>

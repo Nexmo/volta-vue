@@ -5,18 +5,18 @@
 </template>
 
 <script>
-export default {
-  name: 'vlt-accordion',
+  export default {
+    name: 'vlt-accordion',
 
-  props: {
-    classNames: {
-      type: String,
-      default: '',
+    props: {
+      classNames: {
+        type: String,
+        default: '',
+      },
+      id: {
+        type: String,
+        default: '',
+      },
     },
-    id: {
-      type: String,
-      default: '',
-    },
-  },
-};
+  };
 </script>

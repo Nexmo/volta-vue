@@ -9,40 +9,52 @@ exports[`vlt-table can sort "Name" column ascending 1`] = `
     <table>
       <thead>
         <tr>
+          <!---->
+           
           <th
             class="Vlt-table__col--sortable Vlt-table__col--ascending"
           >
             
             Name
-          
+            
+            <!---->
           </th>
           <th
             class=""
           >
             
             Position
-          
+            
+            <!---->
           </th>
         </tr>
       </thead>
        
       <tbody>
         <tr>
+          <!---->
+           
           <td>
             Nisha
           </td>
         </tr>
         <tr>
+          <!---->
+           
           <td>
             Mie
           </td>
         </tr>
         <tr>
+          <!---->
+           
           <td>
             Louis
           </td>
         </tr>
         <tr>
+          <!---->
+           
           <td>
             Julien
           </td>
@@ -67,40 +79,52 @@ exports[`vlt-table can sort "Name" column descending 1`] = `
     <table>
       <thead>
         <tr>
+          <!---->
+           
           <th
             class="Vlt-table__col--sortable Vlt-table__col--descending"
           >
             
             Name
-          
+            
+            <!---->
           </th>
           <th
             class=""
           >
             
             Position
-          
+            
+            <!---->
           </th>
         </tr>
       </thead>
        
       <tbody>
         <tr>
+          <!---->
+           
           <td>
             Julien
           </td>
         </tr>
         <tr>
+          <!---->
+           
           <td>
             Louis
           </td>
         </tr>
         <tr>
+          <!---->
+           
           <td>
             Mie
           </td>
         </tr>
         <tr>
+          <!---->
+           
           <td>
             Nisha
           </td>
@@ -131,6 +155,262 @@ exports[`vlt-table pagination is shown 1`] = `
 </div>
 `;
 
+exports[`vlt-table renders correctly select column and Select All behavior is correct 1`] = `
+<div>
+  <div
+    class="Vlt-table"
+    id="tableId"
+  >
+    <table>
+      <thead>
+        <tr>
+          <th
+            class="Vlt-checkbox-col"
+          >
+            <div
+              class="Vlt-checkbox"
+              id="tableId-headerSelectAllCheckbox"
+            >
+              <label>
+                <span
+                  class="Vlt-checkbox__button"
+                >
+                  <input
+                    id="tableId-headerSelectAllCheckbox"
+                    type="checkbox"
+                  />
+                   
+                  <span
+                    class="Vlt-checkbox__icon"
+                  />
+                </span>
+                
+    
+    
+                <!---->
+              </label>
+            </div>
+          </th>
+           
+          <th
+            class="Vlt-table__col--sortable"
+          >
+            
+            Name
+            
+            <!---->
+          </th>
+          <th
+            class=""
+          >
+            
+            Position
+            
+            <!---->
+          </th>
+        </tr>
+      </thead>
+       
+      <tbody>
+        <tr>
+          <td>
+            <div
+              class="Vlt-checkbox"
+              id="0-row-checkbox"
+            >
+              <label>
+                <span
+                  class="Vlt-checkbox__button"
+                >
+                  <input
+                    id="0-row-checkbox"
+                    type="checkbox"
+                  />
+                   
+                  <span
+                    class="Vlt-checkbox__icon"
+                  />
+                </span>
+                
+    
+    
+                <!---->
+              </label>
+            </div>
+          </td>
+           
+        </tr>
+        <tr>
+          <td>
+            <div
+              class="Vlt-checkbox"
+              id="1-row-checkbox"
+            >
+              <label>
+                <span
+                  class="Vlt-checkbox__button"
+                >
+                  <input
+                    id="1-row-checkbox"
+                    type="checkbox"
+                  />
+                   
+                  <span
+                    class="Vlt-checkbox__icon"
+                  />
+                </span>
+                
+    
+    
+                <!---->
+              </label>
+            </div>
+          </td>
+           
+        </tr>
+        <tr>
+          <td>
+            <div
+              class="Vlt-checkbox"
+              id="2-row-checkbox"
+            >
+              <label>
+                <span
+                  class="Vlt-checkbox__button"
+                >
+                  <input
+                    id="2-row-checkbox"
+                    type="checkbox"
+                  />
+                   
+                  <span
+                    class="Vlt-checkbox__icon"
+                  />
+                </span>
+                
+    
+    
+                <!---->
+              </label>
+            </div>
+          </td>
+           
+        </tr>
+        <tr>
+          <td>
+            <div
+              class="Vlt-checkbox"
+              id="3-row-checkbox"
+            >
+              <label>
+                <span
+                  class="Vlt-checkbox__button"
+                >
+                  <input
+                    id="3-row-checkbox"
+                    type="checkbox"
+                  />
+                   
+                  <span
+                    class="Vlt-checkbox__icon"
+                  />
+                </span>
+                
+    
+    
+                <!---->
+              </label>
+            </div>
+          </td>
+           
+        </tr>
+         
+      </tbody>
+    </table>
+  </div>
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`vlt-table renders correctly with a tooltip passed in the column object 1`] = `
+<div>
+  <div
+    class="Vlt-table Vlt-overflow-initial"
+    id=""
+  >
+    <table>
+      <thead>
+        <tr>
+          <!---->
+           
+          <th
+            class="Vlt-table__col--sortable"
+          >
+            
+            Name
+            
+            <!---->
+          </th>
+          <th
+            class=""
+          >
+            
+            Position
+            
+            <!---->
+          </th>
+          <th
+            class=""
+          >
+            
+            With a tooltip
+            
+            <span
+              class="Vlt-tooltip"
+            >
+              <svg
+                class="Vlt-icon Vlt-icon--smaller Vlt-grey-500"
+              >
+                <use
+                  xlink:href="#V_Vlt-icon-info"
+                />
+              </svg>
+            </span>
+          </th>
+        </tr>
+      </thead>
+       
+      <tbody>
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
+         
+      </tbody>
+    </table>
+  </div>
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
 exports[`vlt-table renders correctly with two columns, "Name" and "Position" 1`] = `
 <div>
   <div
@@ -140,28 +420,44 @@ exports[`vlt-table renders correctly with two columns, "Name" and "Position" 1`]
     <table>
       <thead>
         <tr>
+          <!---->
+           
           <th
             class="Vlt-table__col--sortable"
           >
             
             Name
-          
+            
+            <!---->
           </th>
           <th
             class=""
           >
             
             Position
-          
+            
+            <!---->
           </th>
         </tr>
       </thead>
        
       <tbody>
-        <tr />
-        <tr />
-        <tr />
-        <tr />
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
          
       </tbody>
     </table>

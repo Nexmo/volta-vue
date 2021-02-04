@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const { HotModuleReplacementPlugin } = require('webpack');
@@ -33,11 +34,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        use: ['vue-style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.css$/,
@@ -65,10 +62,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new VueLoaderPlugin(),
-    new HotModuleReplacementPlugin(),
-  ],
+  plugins: [new VueLoaderPlugin(), new HotModuleReplacementPlugin()],
   resolve: {
     alias: {
       vue$: 'vue/dist/vue.esm.js',

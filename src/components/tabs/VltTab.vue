@@ -9,58 +9,58 @@
 </template>
 
 <script>
-export default {
-  name: 'vlt-tab',
+  export default {
+    name: 'vlt-tab',
 
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    icon: {
-      type: String,
-      required: false,
-    },
-    id: {
-      type: String,
-      required: false,
-    },
-    label: {
-      type: String,
-      required: true,
-    },
-  },
-
-  data() {
-    return {
-      active: false,
-      iconName: undefined,
-    };
-  },
-
-  created() {
-    this.$parent.tabs.push(this);
-  },
-
-  mounted() {
-    this.iconName = this.icon;
-  },
-
-  methods: {
-    activate() {
-      this.active = true;
+    props: {
+      disabled: {
+        type: Boolean,
+        default: false,
+      },
+      icon: {
+        type: String,
+        required: false,
+      },
+      id: {
+        type: String,
+        required: false,
+      },
+      label: {
+        type: String,
+        required: true,
+      },
     },
 
-    deactivate() {
-      this.active = false;
+    data() {
+      return {
+        active: false,
+        iconName: undefined,
+      };
     },
-  },
 
-  beforeDestroy() {
-    const index = this.$parent.tabs.indexOf(this);
-    if (index >= 0) {
-      this.$parent.tabs.splice(index, 1);
-    }
-  },
-};
+    created() {
+      this.$parent.tabs.push(this);
+    },
+
+    mounted() {
+      this.iconName = this.icon;
+    },
+
+    methods: {
+      activate() {
+        this.active = true;
+      },
+
+      deactivate() {
+        this.active = false;
+      },
+    },
+
+    beforeDestroy() {
+      const index = this.$parent.tabs.indexOf(this);
+      if (index >= 0) {
+        this.$parent.tabs.splice(index, 1);
+      }
+    },
+  };
 </script>

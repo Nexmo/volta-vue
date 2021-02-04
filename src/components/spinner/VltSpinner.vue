@@ -10,26 +10,24 @@
 </template>
 
 <script>
-export default {
-  name: 'vlt-spinner',
+  export default {
+    name: 'vlt-spinner',
 
-  props: {
-    small: {
-      type: Boolean,
-      default: false,
+    props: {
+      small: {
+        type: Boolean,
+        default: false,
+      },
+      smaller: {
+        type: Boolean,
+        default: false,
+      },
+      white: {
+        type: Boolean,
+        default: false,
+      },
     },
-    smaller: {
-      type: Boolean,
-      default: false,
-    },
-    white: {
-      type: Boolean,
-      default: false,
-    },
-  },
-};
+  };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

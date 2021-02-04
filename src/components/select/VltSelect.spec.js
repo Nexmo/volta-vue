@@ -18,7 +18,10 @@ describe('vlt-select', () => {
   });
 
   test('selected value is "blue"', () => {
-    wrapper.findAll('option').at(2).setSelected();
+    wrapper
+      .findAll('option')
+      .at(2)
+      .setSelected();
     expect(wrapper.emitted('input')).toEqual([['blue']]);
   });
 });

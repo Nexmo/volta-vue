@@ -1,10 +1,11 @@
 <template>
   <div :class="['Vlt-btn-group Vlt-btn-group--app', big ? 'Vlt-btn-group--big' : '', className]">
-    <button v-for="option in options"
-            :class="['Vlt-btn Vlt-btn--tertiary', isMatching(val, option) ? activeClassName : '']"
-            :value="option.value || option"
-            :key="option.value || option"
-            @click="handleClick(option)"
+    <button
+      v-for="option in options"
+      :class="['Vlt-btn Vlt-btn--tertiary', isMatching(val, option) ? activeClassName : '']"
+      :value="option.value || option"
+      :key="option.value || option"
+      @click="handleClick(option)"
     >
       {{ option.label || option }}
     </button>
@@ -12,51 +13,51 @@
 </template>
 
 <script>
+  const isMatching = (val = '', option = 'default') => {
+    if (typeof val === 'string' || typeof val === 'number') return val === option;
+    if (Array.isArray(val) && typeof option === 'string') return val.includes(option);
+    if (Array.isArray(val) && typeof option === 'object') return val.some(v => v.value === option.value);
+    return val.value === option.value;
+  };
 
-const isMatching = (val = '', option = 'default') => {
-  if (typeof val === 'string' || typeof val === 'number') return val === option;
-  if (Array.isArray(val) && typeof option === 'string') return val.includes(option);
-  if (Array.isArray(val) && typeof option === 'object') return val.some((v) => (v.value === option.value));
-  return val.value === option.value;
-};
+  const singleSelect = (val, option) => (isMatching(val, option) ? '' : option);
 
-const singleSelect = (val, option) => (isMatching(val, option) ? '' : option);
+  const multiSelect = (val, opt) => (isMatching(val, opt) ? val.filter(v => !isMatching(v, opt)) : [...val, opt]);
 
-const multiSelect = (val, opt) => (
-  isMatching(val, opt) ? val.filter((v) => !isMatching(v, opt)) : [...val, opt]
-);
-
-export default {
-  name: 'vlt-group-button',
-  props: {
-    big: {
-      type: Boolean,
-      default: () => false,
+  export default {
+    name: 'vlt-group-button',
+    props: {
+      big: {
+        type: Boolean,
+        default: () => false,
+      },
+      options: {
+        type: Array,
+        default: () => [],
+      },
+      val: {
+        type: [Array, Object, String],
+        default: () => [],
+      },
+      activeClassName: {
+        type: String,
+        default: () => 'Vlt-btn_active',
+      },
+      className: {
+        type: String,
+        default: () => '',
+      },
     },
-    options: {
-      type: Array,
-      default: () => [],
+    methods: {
+      handleClick(clickedOption) {
+        this.$emit(
+          'input',
+          Array.isArray(this.val) ? multiSelect(this.val, clickedOption) : singleSelect(this.val, clickedOption)
+        );
+      },
+      isMatching,
     },
-    val: {
-      type: [Array, Object, String],
-      default: () => [],
-    },
-    activeClassName: {
-      type: String,
-      default: () => 'Vlt-btn_active',
-    },
-    className: {
-      type: String,
-      default: () => '',
-    },
-  },
-  methods: {
-    handleClick(clickedOption) {
-      this.$emit('input', Array.isArray(this.val) ? multiSelect(this.val, clickedOption) : singleSelect(this.val, clickedOption));
-    },
-    isMatching,
-  },
-};
+  };
 </script>
 <style lang="scss" scoped>
   .Vlt-btn {

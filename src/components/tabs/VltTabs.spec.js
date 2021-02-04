@@ -25,19 +25,22 @@ describe('vlt-tabs', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('second tab can be selected', () => {
+  test('second tab can be selected', async () => {
     const secondTab = wrapper.findAll('li').at(1);
     secondTab.trigger('click');
+    await wrapper.vm.$nextTick();
     expect(secondTab.attributes('class')).toBe(activeTabClass);
   });
 
-  test('second tab can be selected, then third tab', () => {
+  test('second tab can be selected, then third tab', async () => {
     const secondTab = wrapper.findAll('li').at(1);
     secondTab.trigger('click');
+    await wrapper.vm.$nextTick();
     expect(secondTab.attributes('class')).toBe(activeTabClass);
 
     const thirdTab = wrapper.findAll('li').at(2);
     thirdTab.trigger('click');
+    await wrapper.vm.$nextTick();
     expect(secondTab.attributes('class')).toBe(tabClass);
     expect(thirdTab.attributes('class')).toBe(activeTabClass);
   });

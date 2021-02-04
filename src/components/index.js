@@ -14,13 +14,7 @@ import VltModal from './modal/VltModal';
 import VltRadio from './radio/VltRadio';
 import VltSelect from './select/VltSelect';
 import { VltAccordion, VltAccordionItem } from './accordion';
-import {
-  VltSidemenu,
-  VltSidemenuItem,
-  VltSidemenuLink,
-  VltSidemenuTitle,
-  VltSidemenuTrigger,
-} from './side-navigation';
+import { VltSidemenu, VltSidemenuItem, VltSidemenuLink, VltSidemenuTitle, VltSidemenuTrigger } from './side-navigation';
 import VltSpinner from './spinner/VltSpinner';
 import VltSteps from './steps/VltSteps';
 import VltSwitch from './switch/VltSwitch';
