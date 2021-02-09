@@ -131,6 +131,7 @@ describe('vlt-table', () => {
         rows: fullTableProps.rows,
         columns: fullTableProps.columns,
         showCheckboxSelector: true,
+        useItemSlot: true,
       },
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -176,6 +177,7 @@ describe('vlt-table', () => {
         rows: fullTableProps.rows,
         columns: fullTableProps.columns,
         showCheckboxSelector: true,
+        useItemSlot: true,
       },
     });
 
@@ -204,5 +206,18 @@ describe('vlt-table', () => {
       isChecked: false,
       listRowsSelected: [],
     });
+  });
+
+  test('renders correctly if showing checbkoxes but using rows slot ', async () => {
+    wrapper = mount(VltTable, {
+      propsData: {
+        id: 'tableId',
+        rows: fullTableProps.rows,
+        columns: fullTableProps.columns,
+        showCheckboxSelector: true,
+        useItemSlot: false,
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

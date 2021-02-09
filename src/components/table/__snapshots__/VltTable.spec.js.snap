@@ -155,6 +155,90 @@ exports[`vlt-table pagination is shown 1`] = `
 </div>
 `;
 
+exports[`vlt-table renders correctly if showing checbkoxes but using rows slot  1`] = `
+<div>
+  <div
+    class="Vlt-table"
+    id="tableId"
+  >
+    <table>
+      <thead>
+        <tr>
+          <th
+            class="Vlt-checkbox-col"
+          >
+            <div
+              class="Vlt-checkbox"
+              id="tableId-headerSelectAllCheckbox"
+            >
+              <label>
+                <span
+                  class="Vlt-checkbox__button"
+                >
+                  <input
+                    id="tableId-headerSelectAllCheckbox"
+                    type="checkbox"
+                  />
+                   
+                  <span
+                    class="Vlt-checkbox__icon"
+                  />
+                </span>
+                
+    
+    
+                <!---->
+              </label>
+            </div>
+          </th>
+           
+          <th
+            class="Vlt-table__col--sortable"
+          >
+            
+            Name
+            
+            <!---->
+          </th>
+          <th
+            class=""
+          >
+            
+            Position
+            
+            <!---->
+          </th>
+        </tr>
+      </thead>
+       
+      <tbody>
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
+         
+      </tbody>
+    </table>
+  </div>
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
 exports[`vlt-table renders correctly select column and Select All behavior is correct 1`] = `
 <div>
   <div

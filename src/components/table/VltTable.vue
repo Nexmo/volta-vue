@@ -30,8 +30,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(row, index) in visibleRows" :key="index" @click="clickRow($row)">
-            <td v-if="showCheckboxSelector">
+          <tr v-for="(row, index) in visibleRows" :key="index" @click="clickRow(row)">
+            <td v-if="showCheckboxSelector && useItemSlot">
               <vlt-checkbox
                 :id="`${index}-row-checkbox`"
                 :checked="isCheckboxChecked(row)"
@@ -114,6 +114,12 @@
         default: false,
       },
       showCheckboxSelector: {
+        type: Boolean,
+        default: false,
+      },
+      useItemSlot: {
+        // useful in conjonction with showCheckboxSelector. Will hide the checkboxes if the user of the component
+        // prefers using the "rows" slot instead of the "item" one and show their own checkbox/implement custom logic
         type: Boolean,
         default: false,
       },
