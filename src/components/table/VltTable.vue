@@ -119,7 +119,7 @@
       },
       useItemSlot: {
         // useful in conjonction with showCheckboxSelector. Will hide the checkboxes if the user of the component
-        // prefers using the "rows" slot instead of the "item" one
+        // prefers using the "rows" slot instead of the "item" one and show their own checkbox/implement custom logic
         type: Boolean,
         default: false,
       },
