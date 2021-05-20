@@ -227,10 +227,7 @@ describe('vlt-table', () => {
         id: 'tableId',
         rows: fullTableProps.rows,
         columns: fullTableProps.columns,
-        footers: [
-          { display: 'UX Designer' },
-          { value: '123.56', display: '€ 123.56000' },
-        ],
+        footers: [{ display: 'UX Designer' }, { value: '123.56', display: '€ 123.56000' }],
       },
     });
     expect(wrapper.element).toMatchSnapshot();
