@@ -11,7 +11,7 @@
 <script>
   import Vue from 'vue';
 
-  Vue.prototype.$FlashBus = new Vue();
+  global.$FlashBus = new Vue();
 
   const VALID_TYPES = ['critical', 'good', 'shoutout', 'warning'];
 
@@ -103,9 +103,9 @@
         this.flashVisible = false;
         this.$emit('dismissed');
         if (this.bottom) {
-          this.$FlashBus.$emit('bottom-dismissed', this.index);
+          global.$FlashBus.$emit('bottom-dismissed', this.index);
         } else {
-          this.$FlashBus.$emit('top-dismissed', this.index);
+          global.$FlashBus.$emit('top-dismissed', this.index);
         }
       },
     },
@@ -114,7 +114,7 @@
       const self = this;
 
       if (this.bottom) {
-        this.$FlashBus.$on('bottom-dismissed', index => {
+        global.$FlashBus.$on('bottom-dismissed', index => {
           if (self.flashVisible) {
             if (index < self.index) {
               self.index -= 1;
@@ -123,7 +123,7 @@
           }
         });
       } else {
-        this.$FlashBus.$on('top-dismissed', index => {
+        global.$FlashBus.$on('top-dismissed', index => {
           if (self.flashVisible) {
             if (index < self.index) {
               self.index -= 1;
