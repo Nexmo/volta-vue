@@ -61,6 +61,8 @@ exports[`vlt-table can sort "Name" column ascending 1`] = `
         </tr>
          
       </tbody>
+       
+      <!---->
     </table>
   </div>
    
@@ -131,6 +133,8 @@ exports[`vlt-table can sort "Name" column descending 1`] = `
         </tr>
          
       </tbody>
+       
+      <!---->
     </table>
   </div>
    
@@ -152,6 +156,81 @@ exports[`vlt-table pagination is shown 1`] = `
     <li class=""><a href="#">4</a></li>
     <li class="Vlt-table__pagination__next"><a href="#">Next</a></li>
   </ul>
+</div>
+`;
+
+exports[`vlt-table renders correctly if footers are available 1`] = `
+<div>
+  <div
+    class="Vlt-table"
+    id="tableId"
+  >
+    <table>
+      <thead>
+        <tr>
+          <!---->
+           
+          <th
+            class="Vlt-table__col--sortable"
+          >
+            
+            Name
+            
+            <!---->
+          </th>
+          <th
+            class=""
+          >
+            
+            Position
+            
+            <!---->
+          </th>
+        </tr>
+      </thead>
+       
+      <tbody>
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
+        <tr>
+          <!---->
+           
+        </tr>
+         
+      </tbody>
+       
+      <tfoot>
+        <tr>
+          <!---->
+           
+          <td>
+            <b>
+              UX Designer
+            </b>
+          </td>
+          <td>
+            <b>
+              € 123.56000
+            </b>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+   
+  <!---->
+   
+  <!---->
 </div>
 `;
 
@@ -230,6 +309,8 @@ exports[`vlt-table renders correctly if showing checbkoxes but using rows slot  
         </tr>
          
       </tbody>
+       
+      <!---->
     </table>
   </div>
    
@@ -410,6 +491,8 @@ exports[`vlt-table renders correctly select column and Select All behavior is co
         </tr>
          
       </tbody>
+       
+      <!---->
     </table>
   </div>
    
@@ -486,6 +569,8 @@ exports[`vlt-table renders correctly with a tooltip passed in the column object 
         </tr>
          
       </tbody>
+       
+      <!---->
     </table>
   </div>
    
@@ -544,6 +629,8 @@ exports[`vlt-table renders correctly with two columns, "Name" and "Position" 1`]
         </tr>
          
       </tbody>
+       
+      <!---->
     </table>
   </div>
    
