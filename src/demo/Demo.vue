@@ -306,6 +306,7 @@
               { name: 'Rasmus  Nichols', job: 'Baker' },
               { name: 'Sandra  Jackson', job: 'Engineer' },
             ]"
+            :footers="[{ display: 'Baker' }, { value: '10.5', display: '€ 10.50000' }]"
             show-checkbox-selector
           >
             <template slot="item" slot-scope="slotProps">
@@ -319,6 +320,7 @@
               { name: 'Rasmus  Nichols', job: 'Baker' },
               { name: 'Sandra  Jackson', job: 'Engineer' },
             ]"
+            :footers="[{ display: 'Baker' }, { value: '10.5', display: '€ 10.50000' }]"
             data
           >
             <template slot="item" slot-scope="slotProps">

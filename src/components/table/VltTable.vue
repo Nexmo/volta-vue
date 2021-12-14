@@ -43,6 +43,14 @@
           </tr>
           <slot :rows="visibleRows" name="rows" />
         </tbody>
+        <tfoot v-if="footers.length > 0">
+          <tr>
+            <td v-if="showCheckboxSelector"></td>
+            <td v-for="(footerValue, index) in footers" :key="index">
+              <b>{{ footerValue.display }}</b>
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </div>
 
@@ -89,6 +97,10 @@
 
     props: {
       columns: {
+        type: Array,
+        default: () => [],
+      },
+      footers: {
         type: Array,
         default: () => [],
       },
