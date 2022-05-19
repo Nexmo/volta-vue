@@ -3,32 +3,31 @@
     class="Vlt-btn Vlt-btn--no-focus"
     :class="[
       {
-        'Vlt-btn--icon': !props.label,
-        'Vlt-btn--disabled': props.disabled,
-        'Vlt-btn--app': props.app,
-        'Vlt-btn--primary': props.primary,
-        'Vlt-btn--quaternary': props.quaternary,
-        'Vlt-btn--secondary': props.secondary,
-        'Vlt-btn--destructive': props.destructive,
-        'Vlt-btn--tertiary': !(props.secondary || props.primary || props.destructive || props.quaternary),
-        'Vlt-btn--small': props.small,
-        'Vlt-btn--large': props.large,
+        'Vlt-btn--icon': !$props.label,
+        'Vlt-btn--disabled': $props.disabled,
+        'Vlt-btn--app': $props.app,
+        'Vlt-btn--primary': $props.primary,
+        'Vlt-btn--quaternary': $props.quaternary,
+        'Vlt-btn--secondary': $props.secondary,
+        'Vlt-btn--destructive': $props.destructive,
+        'Vlt-btn--tertiary': !($props.secondary || $props.primary || $props.destructive || $props.quaternary),
+        'Vlt-btn--small': $props.small,
+        'Vlt-btn--large': $props.large,
       },
-      data.staticClass,
-      data.class,
+      $data.staticClass,
+      $data.class,
     ]"
-    :id="props.id"
-    :disabled="props.disabled"
-    v-on="listeners"
+    :id="$props.id"
+    :disabled="$props.disabled"
+    v-bind="$attrs"
   >
-    <component v-if="props.icon" :is="injections.components.VltIcon" :icon="props.icon"></component>
-    <component
-      v-if="props.spinner || props.spinnerWhite"
-      :is="injections.components.VltSpinner"
+    <vlt-icon v-if="$props.icon" :icon="$props.icon"></vlt-icon>
+    <vlt-spinner
+      v-if="$props.spinner || $props.spinnerWhite"
       :smaller="true"
-      :white="props.spinnerWhite"
-    ></component>
-    <slot>{{ props.label }}</slot>
+      :white="$props.spinnerWhite"
+    ></vlt-spinner>
+    <slot>{{ $props.label }}</slot>
   </button>
 </template>
 
@@ -39,13 +38,9 @@
   export default {
     name: 'vlt-button',
 
-    inject: {
-      components: {
-        default: {
-          VltIcon,
-          VltSpinner,
-        },
-      },
+    components: {
+      VltSpinner,
+      VltIcon,
     },
 
     props: {
