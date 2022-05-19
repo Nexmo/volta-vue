@@ -18,14 +18,15 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: 'pre',
-        test: /\.(js|vue)$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
-      {
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {
+          compilerOptions: {
+            compatConfig: {
+              MODE: 2,
+            },
+          },
+        },
       },
       {
         test: /\.js$/,
@@ -65,7 +66,7 @@ module.exports = {
   plugins: [new VueLoaderPlugin(), new HotModuleReplacementPlugin()],
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.esm.js',
+      vue: '@vue/compat',
     },
     extensions: ['*', '.js', '.vue', '.json'],
   },

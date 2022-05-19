@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <button
     class="Vlt-btn Vlt-btn--no-focus"
     :class="[
