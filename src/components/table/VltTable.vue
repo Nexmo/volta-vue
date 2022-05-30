@@ -36,7 +36,7 @@
                 :id="`${index}-row-checkbox`"
                 :checked="isCheckboxChecked(row)"
                 label=""
-                @click="$event => emitRowSelect($event, row)"
+                @click="($event) => emitRowSelect($event, row)"
               />
             </td>
             <slot :item="row" :index="index" name="item" />
@@ -178,10 +178,13 @@
     },
 
     watch: {
-      rows(newRows) {
-        this.newRows = newRows;
-        this.sort(this.currentSortColumn, true);
-        this.newRowsTotal = newRows.length;
+      rows: {
+        handler(newRows) {
+          this.newRows = newRows;
+          this.sort(this.currentSortColumn, true);
+          this.newRowsTotal = newRows.length;
+        },
+        deep: true,
       },
 
       currentPage(newCurrentPage) {

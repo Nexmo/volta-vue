@@ -101,9 +101,12 @@
     },
 
     watch: {
-      rows(newRows) {
-        this.newRows = newRows;
-        this.sort(this.currentSortColumn, true);
+      rows: {
+        handler(newRows) {
+          this.newRows = newRows;
+          this.sort(this.currentSortColumn, true);
+        },
+        deep: true,
       },
 
       currentPage(newCurrentPage) {

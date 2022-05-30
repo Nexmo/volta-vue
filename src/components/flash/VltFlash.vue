@@ -9,10 +9,6 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-
-  global.$FlashBus = new Vue();
-
   const VALID_TYPES = ['critical', 'good', 'shoutout', 'warning'];
 
   let countTop = 0;
@@ -102,36 +98,7 @@
 
         this.flashVisible = false;
         this.$emit('dismissed');
-        if (this.bottom) {
-          global.$FlashBus.$emit('bottom-dismissed', this.index);
-        } else {
-          global.$FlashBus.$emit('top-dismissed', this.index);
-        }
       },
-    },
-
-    mounted() {
-      const self = this;
-
-      if (this.bottom) {
-        global.$FlashBus.$on('bottom-dismissed', index => {
-          if (self.flashVisible) {
-            if (index < self.index) {
-              self.index -= 1;
-              self.styleObject.bottom = `${self.index * 70 - 50}px`;
-            }
-          }
-        });
-      } else {
-        global.$FlashBus.$on('top-dismissed', index => {
-          if (self.flashVisible) {
-            if (index < self.index) {
-              self.index -= 1;
-              self.styleObject.top = `${self.index * 70 - 50}px`;
-            }
-          }
-        });
-      }
     },
 
     computed: {

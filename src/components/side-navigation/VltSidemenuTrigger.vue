@@ -13,7 +13,7 @@
   import VltBadge from '../badge/VltBadge';
 
   Vue.directive('click-outside', {
-    bind(el, binding, vnode) {
+    beforeMount(el, binding, vnode) {
       vnode.context.event = () => {
         if (vnode.context.collapsed) {
           vnode.context.isActive = false;

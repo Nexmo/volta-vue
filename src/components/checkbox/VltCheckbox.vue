@@ -57,7 +57,7 @@
         const vm = this;
 
         return {
-          ...this.$listeners,
+          ...this.$attrs,
           input(event) {
             vm.$emit('input', event.target.checked);
           },

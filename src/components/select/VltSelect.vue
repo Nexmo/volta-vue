@@ -1,6 +1,6 @@
 <template>
   <div :class="[className, 'Vlt-select', isInComposite ? 'Vlt-select--composite' : '']">
-    <select :id="id" :value="val" :disabled="disabled" @change="emitValue">
+    <select :id="id" :value="modelValue" :disabled="disabled" @change="emitValue">
       <option v-if="!!selected" selected value="">{{ selected }}</option>
       <option
         v-for="option in options"
@@ -20,6 +20,9 @@
 <script>
   export default {
     name: 'vlt-select',
+    compatConfig: {
+      COMPONENT_V_MODEL: false,
+    },
     props: {
       id: {
         type: String,
@@ -37,9 +40,8 @@
         type: String,
         required: false,
       },
-      val: {
+      modelValue: {
         type: String,
-        required: false,
       },
       isInComposite: {
         type: Boolean,
@@ -57,7 +59,7 @@
 
     methods: {
       emitValue({ target: { value } }) {
-        this.$emit('input', value);
+        this.$emit('update:modelValue', value);
       },
     },
   };

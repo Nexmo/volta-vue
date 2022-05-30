@@ -6,11 +6,11 @@
         <div>
           <vlt-accordion>
             <vlt-accordion-item>
-              <template slot="header">Click me</template>
+              <template v-slot:header>Click me</template>
               <div>Accordion body</div>
             </vlt-accordion-item>
             <vlt-accordion-item>
-              <template slot="header">Click me 2</template>
+              <template v-slot:header>Click me 2</template>
               <div>Accordion body 2</div>
             </vlt-accordion-item>
           </vlt-accordion>
@@ -85,7 +85,7 @@
             no-arrow
             :options="['showSelection with no label', 'dog', 'hamster', 'rabbit']"
           >
-            <template slot="button-value">
+            <template v-slot:button-value>
               <vlt-icon icon="more-v-negative" />
             </template>
           </vlt-dropdown>
@@ -97,12 +97,8 @@
       <div class="Vlt-col">
         <h4>Field</h4>
         <div>
-          <vlt-field>
-            I am wrapped in a field
-          </vlt-field>
-          <vlt-field error="Something is wrong">
-            I am wrapped in a field with an error
-          </vlt-field>
+          <vlt-field> I am wrapped in a field </vlt-field>
+          <vlt-field error="Something is wrong"> I am wrapped in a field with an error </vlt-field>
         </div>
       </div>
     </div>
@@ -116,9 +112,7 @@
           <vlt-flash type="critical" bottom :visible="bottomFlashVisible" @dismissed="bottomFlashVisible = false">
             Bottom flash
           </vlt-flash>
-          <vlt-flash small :visible="topFlashVisible" @dismissed="topFlashVisible = false">
-            Top flash
-          </vlt-flash>
+          <vlt-flash small :visible="topFlashVisible" @dismissed="topFlashVisible = false"> Top flash </vlt-flash>
         </div>
       </div>
     </div>
@@ -309,7 +303,7 @@
             :footers="[{ display: 'Baker' }, { value: '10.5', display: '€ 10.50000' }]"
             show-checkbox-selector
           >
-            <template slot="item" slot-scope="slotProps">
+            <template v-slot:item="slotProps">
               <td>{{ slotProps.item.name }}</td>
               <td>{{ slotProps.item.job }}</td>
             </template>
@@ -323,7 +317,7 @@
             :footers="[{ display: 'Baker' }, { value: '10.5', display: '€ 10.50000' }]"
             data
           >
-            <template slot="item" slot-scope="slotProps">
+            <template v-slot:item="slotProps">
               <td>{{ slotProps.item.name }}</td>
               <td>{{ slotProps.item.job }}</td>
             </template>
@@ -337,7 +331,7 @@
             data-cols
             mobile
           >
-            <template slot="item" slot-scope="slotProps">
+            <template v-slot:item="slotProps">
               <td>{{ slotProps.item.name }}</td>
               <td>{{ slotProps.item.job }}</td>
             </template>
@@ -359,7 +353,7 @@
             :numberOfColumns="3"
             custom
           >
-            <template slot="rows">
+            <template v-slot:rows>
               <div v-for="row in tableRows" :key="row.job">name: {{ row.name }} job: {{ row.job }}</div>
             </template>
           </vlt-grid-list>
@@ -372,55 +366,31 @@
         <h4>Tabs</h4>
         <div>
           <vlt-tabs>
-            <vlt-tab label="Regular">
-              Regular tab
-            </vlt-tab>
-            <vlt-tab label="With icon" icon="gear">
-              With label
-            </vlt-tab>
+            <vlt-tab label="Regular"> Regular tab </vlt-tab>
+            <vlt-tab label="With icon" icon="gear"> With label </vlt-tab>
             <vlt-tab label="Disabled" disabled> </vlt-tab>
           </vlt-tabs>
 
           <vlt-tabs icon>
-            <vlt-tab label="One" icon="rocket">
-              Step One
-            </vlt-tab>
-            <vlt-tab label="Two" icon="star">
-              Step Two
-            </vlt-tab>
+            <vlt-tab label="One" icon="rocket"> Step One </vlt-tab>
+            <vlt-tab label="Two" icon="star"> Step Two </vlt-tab>
             <vlt-tab label="Disabled" icon="cart" disabled> </vlt-tab>
           </vlt-tabs>
 
           <vlt-tabs bordered>
-            <vlt-tab label="One">
-              Step One
-            </vlt-tab>
-            <vlt-tab label="Two">
-              Step Two
-            </vlt-tab>
+            <vlt-tab label="One"> Step One </vlt-tab>
+            <vlt-tab label="Two"> Step Two </vlt-tab>
             <vlt-tab label="Disabled" disabled> </vlt-tab>
           </vlt-tabs>
 
           <vlt-tabs shadow>
-            <vlt-tab label="One">
-              Step One
-            </vlt-tab>
-            <vlt-tab label="Two">
-              Step Two
-            </vlt-tab>
+            <vlt-tab label="One"> Step One </vlt-tab>
+            <vlt-tab label="Two"> Step Two </vlt-tab>
             <vlt-tab label="Disabled" disabled> </vlt-tab>
-            <vlt-tab label="Four">
-              Step Four
-            </vlt-tab>
-            <vlt-tab label="Five">
-              Step Five
-            </vlt-tab>
-            <vlt-tab label="Six">
-              Step Six
-            </vlt-tab>
-            <vlt-tab label="Seven">
-              Step Seven
-            </vlt-tab>
+            <vlt-tab label="Four"> Step Four </vlt-tab>
+            <vlt-tab label="Five"> Step Five </vlt-tab>
+            <vlt-tab label="Six"> Step Six </vlt-tab>
+            <vlt-tab label="Seven"> Step Seven </vlt-tab>
           </vlt-tabs>
         </div>
       </div>
@@ -451,7 +421,7 @@
         <h4>Composite</h4>
         <vlt-field>
           <vlt-composite>
-            <template slot="prepend">
+            <template v-slot:prepend>
               <vlt-select
                 :options="['composition']"
                 selected="composite"
@@ -466,7 +436,7 @@
         <vlt-field>
           <vlt-composite>
             <vlt-input placeholder="Search" />
-            <template slot="append">
+            <template v-slot:append>
               <vlt-button icon="search" />
             </template>
           </vlt-composite>

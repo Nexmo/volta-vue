@@ -56,7 +56,7 @@
       },
     },
 
-    beforeDestroy() {
+    beforeUnmount() {
       const index = this.$parent.tabs.indexOf(this);
       if (index >= 0) {
         this.$parent.tabs.splice(index, 1);

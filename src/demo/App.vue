@@ -22,7 +22,7 @@
           </div>
 
           <vlt-table v-if="component.propertyRows" :columns="propertyColumns" :rows="component.propertyRows">
-            <template slot="item" slot-scope="slotProps">
+            <template v-slot:item="slotProps">
               <td>{{ slotProps.item.property }}</td>
               <td>{{ slotProps.item.type }}</td>
               <td>
@@ -32,7 +32,7 @@
           </vlt-table>
 
           <vlt-table v-if="component.eventRows" :columns="eventColumns" :rows="component.eventRows">
-            <template slot="item" slot-scope="slotProps">
+            <template v-slot:item="slotProps">
               <td>{{ slotProps.item.event }}</td>
               <td>{{ slotProps.item.description }}</td>
             </template>

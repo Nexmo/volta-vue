@@ -121,11 +121,14 @@
       selected(selected) {
         this.selectedOption = selected;
       },
-      options(value) {
-        if (value && !this.selectedOption && !this.manualSelect) {
-          [this.selectedOption] = value;
-          this.$emit('input', this.selectedOption);
-        }
+      options: {
+        deep: true,
+        handler(value) {
+          if (value && !this.selectedOption && !this.manualSelect) {
+            [this.selectedOption] = value;
+            this.$emit('input', this.selectedOption);
+          }
+        },
       },
     },
 

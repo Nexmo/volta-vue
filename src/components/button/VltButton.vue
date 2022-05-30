@@ -3,31 +3,27 @@
     class="Vlt-btn Vlt-btn--no-focus"
     :class="[
       {
-        'Vlt-btn--icon': !$props.label,
-        'Vlt-btn--disabled': $props.disabled,
-        'Vlt-btn--app': $props.app,
-        'Vlt-btn--primary': $props.primary,
-        'Vlt-btn--quaternary': $props.quaternary,
-        'Vlt-btn--secondary': $props.secondary,
-        'Vlt-btn--destructive': $props.destructive,
-        'Vlt-btn--tertiary': !($props.secondary || $props.primary || $props.destructive || $props.quaternary),
-        'Vlt-btn--small': $props.small,
-        'Vlt-btn--large': $props.large,
+        'Vlt-btn--icon': !label,
+        'Vlt-btn--disabled': disabled,
+        'Vlt-btn--app': app,
+        'Vlt-btn--primary': primary,
+        'Vlt-btn--quaternary': quaternary,
+        'Vlt-btn--secondary': secondary,
+        'Vlt-btn--destructive': destructive,
+        'Vlt-btn--tertiary': !(secondary || primary || destructive || quaternary),
+        'Vlt-btn--small': small,
+        'Vlt-btn--large': large,
       },
       $data.staticClass,
       $data.class,
     ]"
-    :id="$props.id"
-    :disabled="$props.disabled"
-    v-bind="$attrs"
+    :id="id"
+    :disabled="disabled"
+    @click="$emit('click')"
   >
-    <vlt-icon v-if="$props.icon" :icon="$props.icon"></vlt-icon>
-    <vlt-spinner
-      v-if="$props.spinner || $props.spinnerWhite"
-      :smaller="true"
-      :white="$props.spinnerWhite"
-    ></vlt-spinner>
-    <slot>{{ $props.label }}</slot>
+    <vlt-icon v-if="icon" :icon="icon"></vlt-icon>
+    <vlt-spinner v-if="spinner || spinnerWhite" :smaller="true" :white="spinnerWhite"></vlt-spinner>
+    <slot>{{ label }}</slot>
   </button>
 </template>
 
