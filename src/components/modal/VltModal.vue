@@ -41,7 +41,7 @@
 </template>
 
 <script>
-  import Vue from 'vue';
+  import { nextTick } from 'vue';
   import VltIcon from '../icon/VltIcon';
 
   export default {
@@ -157,7 +157,7 @@
         const vm = this;
         // due to v-if if the modal is mounted with visible = false the button will not
         // yet be mounted so we need to wait for the next tick to set the focus
-        Vue.nextTick(() => {
+        nextTick(() => {
           if (vm.$refs) {
             vm.$refs.confirmButton.focus();
           }

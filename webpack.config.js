@@ -20,13 +20,6 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          compilerOptions: {
-            compatConfig: {
-              MODE: 2,
-            },
-          },
-        },
       },
       {
         test: /\.js$/,
@@ -66,7 +59,7 @@ module.exports = {
   plugins: [new VueLoaderPlugin(), new HotModuleReplacementPlugin()],
   resolve: {
     alias: {
-      vue: '@vue/compat',
+      vue: 'vue/dist/vue.esm-bundler.js',
     },
     extensions: ['*', '.js', '.vue', '.json'],
   },

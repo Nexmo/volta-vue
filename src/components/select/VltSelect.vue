@@ -20,9 +20,6 @@
 <script>
   export default {
     name: 'vlt-select',
-    compatConfig: {
-      COMPONENT_V_MODEL: false,
-    },
     props: {
       id: {
         type: String,

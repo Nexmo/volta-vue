@@ -17,9 +17,6 @@
   export default {
     name: 'vlt-radio',
     emits: ['update:modelValue'],
-    compatConfig: {
-      COMPONENT_V_MODEL: false,
-    },
     props: {
       checked: {
         type: Boolean,

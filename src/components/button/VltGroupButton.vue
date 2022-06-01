@@ -26,9 +26,6 @@
 
   export default {
     name: 'vlt-group-button',
-    compatConfig: {
-      COMPONENT_V_MODEL: false,
-    },
     props: {
       big: {
         type: Boolean,
