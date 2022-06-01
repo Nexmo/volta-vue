@@ -2,16 +2,16 @@
 
 exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
 <div
-  class="Vlt-dropdown Vlt-dropdown--expanded"
+  class="Vlt-dropdown--expanded Vlt-dropdown"
 >
   <button
     class="Vlt-dropdown__btn"
   >
-    <!---->
-     
-    <!---->
+    
+    <!--v-if-->
+    <!--v-if-->
+    
   </button>
-   
   <div
     class="Vlt-dropdown__panel"
   >
@@ -19,6 +19,7 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
       class="Vlt-dropdown__panel__content"
     >
       <ul>
+        
         <li
           id="undefined-redDropdownLink"
         >
@@ -58,8 +59,8 @@ exports[`vlt-dropdown can open dropdown panel with basic options 1`] = `
             </span>
           </a>
         </li>
-         
-        <!---->
+        
+        <!--v-if-->
       </ul>
     </div>
   </div>
@@ -73,11 +74,11 @@ exports[`vlt-dropdown renders correctly 1`] = `
   <button
     class="Vlt-dropdown__btn"
   >
-    <!---->
-     
-    <!---->
+    
+    <!--v-if-->
+    <!--v-if-->
+    
   </button>
-   
   <div
     class="Vlt-dropdown__panel"
   >
@@ -85,8 +86,9 @@ exports[`vlt-dropdown renders correctly 1`] = `
       class="Vlt-dropdown__panel__content"
     >
       <ul>
-         
-        <!---->
+        
+        
+        <!--v-if-->
       </ul>
     </div>
   </div>
@@ -100,14 +102,14 @@ exports[`vlt-dropdown renders correctly with label "Pick one" 1`] = `
   <button
     class="Vlt-dropdown__btn"
   >
+    
     <span>
-       Pick one
-      <!---->
+      Pick one
+      <!--v-if-->
     </span>
-     
-    <!---->
+    <!--v-if-->
+    
   </button>
-   
   <div
     class="Vlt-dropdown__panel"
   >
@@ -115,8 +117,9 @@ exports[`vlt-dropdown renders correctly with label "Pick one" 1`] = `
       class="Vlt-dropdown__panel__content"
     >
       <ul>
-         
-        <!---->
+        
+        
+        <!--v-if-->
       </ul>
     </div>
   </div>
@@ -125,16 +128,16 @@ exports[`vlt-dropdown renders correctly with label "Pick one" 1`] = `
 
 exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1`] = `
 <div
-  class="Vlt-dropdown Vlt-dropdown__trigger Vlt-dropdown__trigger--btn"
+  class="Vlt-dropdown__trigger Vlt-dropdown__trigger--btn Vlt-dropdown"
 >
   <button
     class="Vlt-btn Vlt-btn--tertiary Vlt-btn-- Vlt-btn--unbordered"
   >
-    <!---->
-     
-    <!---->
+    
+    <!--v-if-->
+    <!--v-if-->
+    
   </button>
-   
   <div
     class="Vlt-dropdown__panel"
   >
@@ -142,6 +145,7 @@ exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1
       class="Vlt-dropdown__panel__content"
     >
       <ul>
+        
         <li
           id="undefined-redDropdownLink"
         >
@@ -181,8 +185,8 @@ exports[`vlt-dropdown renders fine when unbordered is true and trigger is true 1
             </span>
           </a>
         </li>
-         
-        <!---->
+        
+        <!--v-if-->
       </ul>
     </div>
   </div>

@@ -9,7 +9,7 @@
   >
     <button :class="getButtonClass()" :disabled="disabled" @click="toggleDropdown($event)">
       <slot name="button-value">
-        <span v-if="label && (!hideLabel || !selectedOption)"> {{ label }}<span v-if="showSelection">:</span> </span>
+        <span v-if="label && (!hideLabel || !selectedOption)"> {{ label }}<span v-if="showSelection">: </span> </span>
         <span v-if="showSelection" :class="{ 'Vlt-dropdown__selection': label }">
           {{ (selectedOption && selectedOption[labelKey]) || selectedOption }}
         </span>

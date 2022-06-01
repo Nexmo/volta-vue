@@ -4,30 +4,26 @@ exports[`vlt-group-button is big 1`] = `
 <div
   class="Vlt-btn-group Vlt-btn-group--app Vlt-btn-group--big"
 >
+  
   <button
     class="Vlt-btn Vlt-btn--tertiary"
     value="red"
   >
-    
     red
-  
   </button>
   <button
     class="Vlt-btn Vlt-btn--tertiary"
     value="yellow"
   >
-    
     yellow
-  
   </button>
   <button
     class="Vlt-btn Vlt-btn--tertiary"
     value="blue"
   >
-    
     blue
-  
   </button>
+  
 </div>
 `;
 
@@ -35,29 +31,25 @@ exports[`vlt-group-button renders correctly with options ["red", "yellow", "blue
 <div
   class="Vlt-btn-group Vlt-btn-group--app"
 >
+  
   <button
     class="Vlt-btn Vlt-btn--tertiary"
     value="red"
   >
-    
     red
-  
   </button>
   <button
     class="Vlt-btn Vlt-btn--tertiary"
     value="yellow"
   >
-    
     yellow
-  
   </button>
   <button
     class="Vlt-btn Vlt-btn--tertiary"
     value="blue"
   >
-    
     blue
-  
   </button>
+  
 </div>
 `;

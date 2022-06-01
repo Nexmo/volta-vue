@@ -18,8 +18,10 @@ describe('vlt-input', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('emits "test" on value change', () => {
-    wrapper.find('input').setValue('test');
-    expect(wrapper.emitted('input')).toEqual([['test']]);
+  test('emits "test" on value change', async () => {
+    await wrapper.find('input').setValue('test');
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.emitted('input')[0]).toEqual(['test']);
   });
 });

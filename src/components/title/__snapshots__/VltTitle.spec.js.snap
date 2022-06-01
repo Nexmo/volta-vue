@@ -8,6 +8,10 @@ exports[`vlt-title icon is red 1`] = `
     clickable="true"
     color="red"
     icon="rocket"
+    noclass="false"
+    pointer="false"
+    small="false"
+    smaller="false"
   />
   Test Title
 </h2>
@@ -21,6 +25,10 @@ exports[`vlt-title renders correctly with text "Test Title" and rocket icon 1`] 
     clickable="true"
     color=""
     icon="rocket"
+    noclass="false"
+    pointer="false"
+    small="false"
+    smaller="false"
   />
   Test Title
 </h2>

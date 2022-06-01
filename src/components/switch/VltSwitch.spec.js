@@ -19,7 +19,7 @@ describe('vlt-switch', () => {
   });
 
   test('can be checked', async () => {
-    wrapper.find('input').trigger('click');
+    await wrapper.find('input').trigger('change');
     await wrapper.vm.$nextTick();
     expect(wrapper.emitted('input')).toEqual([[true]]);
   });

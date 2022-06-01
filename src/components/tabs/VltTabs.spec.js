@@ -1,24 +1,23 @@
 import { mount } from '@vue/test-utils';
-import Vue from 'vue';
+import { h } from 'vue';
 import { VltTabs, VltTab } from '..';
 
 const tabClass = 'Vlt-tabs__link';
-const activeTabClass = `${tabClass} Vlt-tabs__link_active`;
+const activeTabClass = `Vlt-tabs__link_active ${tabClass}`;
 
 describe('vlt-tabs', () => {
   let wrapper;
 
   beforeEach(() => {
-    const App = Vue.extend({
-      render(createElement) {
-        return createElement(VltTabs, {}, [
-          createElement(VltTab, { props: { label: 'One' } }),
-          createElement(VltTab, { props: { label: 'Two' } }),
-          createElement(VltTab, { props: { label: 'Three' } }),
+    wrapper = mount({
+      render() {
+        return h(VltTabs, {}, [
+          h(VltTab, { label: 'One' }),
+          h(VltTab, { label: 'Two' }),
+          h(VltTab, { label: 'Three' }),
         ]);
       },
     });
-    wrapper = mount(App);
   });
 
   test('renders correctly', () => {

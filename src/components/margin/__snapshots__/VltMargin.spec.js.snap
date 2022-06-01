@@ -3,17 +3,26 @@
 exports[`vlt-margin renders correctly 1`] = `
 <div
   class=""
-/>
+>
+  
+  
+</div>
 `;
 
 exports[`vlt-margin renders with a top margin of 2 1`] = `
 <div
   class="Vlt-margin--top2"
-/>
+>
+  
+  
+</div>
 `;
 
 exports[`vlt-margin renders with a top margin of 2 on small screens 1`] = `
 <div
   class="Vlt-margin--S-top2"
-/>
+>
+  
+  
+</div>
 `;

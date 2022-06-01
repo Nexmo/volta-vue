@@ -2,44 +2,55 @@
 
 exports[`vlt-accordion should be rendered 1`] = `
 <div
-  class="Vlt-accordion accordion"
+  class="accordion Vlt-accordion"
   id="accq"
-/>
+>
+  
+  
+</div>
 `;
 
 exports[`vlt-accordion-item should be with the active class 1`] = `
 <div
-  class="Vlt-accordion__item Vlt-accordion__item_opened"
+  class="Vlt-accordion__item_opened Vlt-accordion__item"
 >
   <div
-    class="Vlt-accordion__trigger Vlt-accordion__trigger_active"
+    class="Vlt-accordion__trigger_active Vlt-accordion__trigger"
   >
+    
     <div>
       Need header content
     </div>
+    
   </div>
-   
   <div
-    class="Vlt-accordion__content Vlt-accordion__content_open"
-  />
+    class="Vlt-accordion__content_open Vlt-accordion__content"
+  >
+    
+    
+  </div>
 </div>
 `;
 
 exports[`vlt-accordion-item should be with the active class after trigger is clicked 1`] = `
 <div
-  class="Vlt-accordion__item Vlt-accordion__item_opened"
+  class="Vlt-accordion__item_opened Vlt-accordion__item"
 >
   <div
-    class="Vlt-accordion__trigger Vlt-accordion__trigger_active"
+    class="Vlt-accordion__trigger_active Vlt-accordion__trigger"
   >
+    
     <div>
       Need header content
     </div>
+    
   </div>
-   
   <div
-    class="Vlt-accordion__content Vlt-accordion__content_open"
-  />
+    class="Vlt-accordion__content_open Vlt-accordion__content"
+  >
+    
+    
+  </div>
 </div>
 `;
 
@@ -50,13 +61,17 @@ exports[`vlt-accordion-item should be without the active class 1`] = `
   <div
     class="Vlt-accordion__trigger"
   >
+    
     <div>
       Need header content
     </div>
+    
   </div>
-   
   <div
     class="Vlt-accordion__content"
-  />
+  >
+    
+    
+  </div>
 </div>
 `;

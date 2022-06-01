@@ -2,264 +2,277 @@
 
 exports[`vlt-modal can be opened 1`] = `
 <div
-  class="Vlt-modal Vlt-modal_visible"
+  data-v-app=""
 >
+  
+  <!--
+    Note: maybe there will be cases is which we want the state of the modal to be
+    remembered on close, if that happens we can move v-if and put it instead on parent elements
+  -->
   <div
-    class="Vlt-modal__panel"
+    class="Vlt-modal Vlt-modal_visible"
   >
-    <header
-      class="Vlt-modal__header"
-      id="vltModalHeader"
+    <div
+      class="Vlt-modal__panel"
     >
-      <h4>
-        Title
-      </h4>
-       
-      <a
-        aria-label="Close"
-        class="Vlt-modal__dismiss"
-        id="vltModalDismiss"
-      />
-    </header>
-     
-    <section
-      class="Vlt-modal__content"
-      id="vltModalContent"
-    >
-      <p>
-        
-      </p>
-    </section>
-     
-    <footer
-      class="Vlt-modal__footer"
-    >
-      <!---->
-       
-      <button
-        class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+      <header
+        class="Vlt-modal__header"
+        id="vltModalHeader"
+      >
+        <h4>
+          Title
+        </h4>
+        <a
+          aria-label="Close"
+          class="Vlt-modal__dismiss"
+          id="vltModalDismiss"
+        />
+      </header>
+      <section
+        class="Vlt-modal__content"
+        id="vltModalContent"
       >
         
-        Cancel
-      
-      </button>
-       
-      <button
-        class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
-      >
-        <!---->
+        <p />
         
-        Ok
-      
-      </button>
-    </footer>
+      </section>
+      <footer
+        class="Vlt-modal__footer"
+      >
+        <!--v-if-->
+        <button
+          class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+        >
+          Cancel
+        </button>
+        <button
+          class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
+        >
+          <!--v-if-->
+           Ok
+        </button>
+      </footer>
+    </div>
   </div>
+  
 </div>
 `;
 
 exports[`vlt-modal has customer Ok button text "Delete" 1`] = `
 <div
-  class="Vlt-modal Vlt-modal_visible"
+  data-v-app=""
 >
+  
+  <!--
+    Note: maybe there will be cases is which we want the state of the modal to be
+    remembered on close, if that happens we can move v-if and put it instead on parent elements
+  -->
   <div
-    class="Vlt-modal__panel"
+    class="Vlt-modal Vlt-modal_visible"
   >
-    <header
-      class="Vlt-modal__header"
-      id="vltModalHeader"
+    <div
+      class="Vlt-modal__panel"
     >
-      <h4>
-        Title
-      </h4>
-       
-      <a
-        aria-label="Close"
-        class="Vlt-modal__dismiss"
-        id="vltModalDismiss"
-      />
-    </header>
-     
-    <section
-      class="Vlt-modal__content"
-      id="vltModalContent"
-    >
-      <p>
-        
-      </p>
-    </section>
-     
-    <footer
-      class="Vlt-modal__footer"
-    >
-      <!---->
-       
-      <button
-        class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+      <header
+        class="Vlt-modal__header"
+        id="vltModalHeader"
+      >
+        <h4>
+          Title
+        </h4>
+        <a
+          aria-label="Close"
+          class="Vlt-modal__dismiss"
+          id="vltModalDismiss"
+        />
+      </header>
+      <section
+        class="Vlt-modal__content"
+        id="vltModalContent"
       >
         
-        Cancel
-      
-      </button>
-       
-      <button
-        class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
-      >
-        <!---->
+        <p />
         
-        Delete
-      
-      </button>
-    </footer>
+      </section>
+      <footer
+        class="Vlt-modal__footer"
+      >
+        <!--v-if-->
+        <button
+          class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+        >
+          Cancel
+        </button>
+        <button
+          class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
+        >
+          <!--v-if-->
+           Delete
+        </button>
+      </footer>
+    </div>
   </div>
+  
 </div>
 `;
 
 exports[`vlt-modal is a message modal 1`] = `
 <div
-  class="Vlt-modal Vlt-modal_visible Vlt-modal--message"
+  data-v-app=""
 >
+  
+  <!--
+    Note: maybe there will be cases is which we want the state of the modal to be
+    remembered on close, if that happens we can move v-if and put it instead on parent elements
+  -->
   <div
-    class="Vlt-modal__panel"
+    class="Vlt-modal Vlt-modal_visible Vlt-modal--message"
   >
-    <header
-      class="Vlt-modal__header"
-      id="vltModalHeader"
+    <div
+      class="Vlt-modal__panel"
     >
-      <h4>
-        Title
-      </h4>
-       
-      <a
-        aria-label="Close"
-        class="Vlt-modal__dismiss"
-        id="vltModalDismiss"
-      />
-    </header>
-     
-    <section
-      class="Vlt-modal__content"
-      id="vltModalContent"
-    >
-      <p>
-        true
-      </p>
-    </section>
-     
-    <footer
-      class="Vlt-modal__footer"
-    >
-      <!---->
-       
-      <button
-        class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+      <header
+        class="Vlt-modal__header"
+        id="vltModalHeader"
+      >
+        <h4>
+          Title
+        </h4>
+        <a
+          aria-label="Close"
+          class="Vlt-modal__dismiss"
+          id="vltModalDismiss"
+        />
+      </header>
+      <section
+        class="Vlt-modal__content"
+        id="vltModalContent"
       >
         
-        Cancel
-      
-      </button>
-       
-      <button
-        class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
-      >
-        <!---->
+        <p>
+          true
+        </p>
         
-        Ok
-      
-      </button>
-    </footer>
+      </section>
+      <footer
+        class="Vlt-modal__footer"
+      >
+        <!--v-if-->
+        <button
+          class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+        >
+          Cancel
+        </button>
+        <button
+          class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
+        >
+          <!--v-if-->
+           Ok
+        </button>
+      </footer>
+    </div>
   </div>
+  
 </div>
 `;
 
 exports[`vlt-modal modal without footer 1`] = `
 <div
-  class="Vlt-modal Vlt-modal_visible"
+  data-v-app=""
 >
+  
+  <!--
+    Note: maybe there will be cases is which we want the state of the modal to be
+    remembered on close, if that happens we can move v-if and put it instead on parent elements
+  -->
   <div
-    class="Vlt-modal__panel"
+    class="Vlt-modal Vlt-modal_visible"
   >
-    <header
-      class="Vlt-modal__header"
-      id="vltModalHeader"
+    <div
+      class="Vlt-modal__panel"
     >
-      <h4>
-        Title
-      </h4>
-       
-      <a
-        aria-label="Close"
-        class="Vlt-modal__dismiss"
-        id="vltModalDismiss"
-      />
-    </header>
-     
-    <section
-      class="Vlt-modal__content"
-      id="vltModalContent"
-    >
-      <p>
+      <header
+        class="Vlt-modal__header"
+        id="vltModalHeader"
+      >
+        <h4>
+          Title
+        </h4>
+        <a
+          aria-label="Close"
+          class="Vlt-modal__dismiss"
+          id="vltModalDismiss"
+        />
+      </header>
+      <section
+        class="Vlt-modal__content"
+        id="vltModalContent"
+      >
         
-      </p>
-    </section>
-     
-    <!---->
+        <p />
+        
+      </section>
+      <!--v-if-->
+    </div>
   </div>
+  
 </div>
 `;
 
 exports[`vlt-modal renders correctly with title "Title" 1`] = `
 <div
-  class="Vlt-modal Vlt-modal_visible"
+  data-v-app=""
 >
+  
+  <!--
+    Note: maybe there will be cases is which we want the state of the modal to be
+    remembered on close, if that happens we can move v-if and put it instead on parent elements
+  -->
   <div
-    class="Vlt-modal__panel"
+    class="Vlt-modal Vlt-modal_visible"
   >
-    <header
-      class="Vlt-modal__header"
-      id="vltModalHeader"
+    <div
+      class="Vlt-modal__panel"
     >
-      <h4>
-        Title
-      </h4>
-       
-      <a
-        aria-label="Close"
-        class="Vlt-modal__dismiss"
-        id="vltModalDismiss"
-      />
-    </header>
-     
-    <section
-      class="Vlt-modal__content"
-      id="vltModalContent"
-    >
-      <p>
-        
-      </p>
-    </section>
-     
-    <footer
-      class="Vlt-modal__footer"
-    >
-      <!---->
-       
-      <button
-        class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+      <header
+        class="Vlt-modal__header"
+        id="vltModalHeader"
+      >
+        <h4>
+          Title
+        </h4>
+        <a
+          aria-label="Close"
+          class="Vlt-modal__dismiss"
+          id="vltModalDismiss"
+        />
+      </header>
+      <section
+        class="Vlt-modal__content"
+        id="vltModalContent"
       >
         
-        Cancel
-      
-      </button>
-       
-      <button
-        class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
-      >
-        <!---->
+        <p />
         
-        Ok
-      
-      </button>
-    </footer>
+      </section>
+      <footer
+        class="Vlt-modal__footer"
+      >
+        <!--v-if-->
+        <button
+          class="Vlt-btn Vlt-btn--app Vlt-btn--tertiary"
+        >
+          Cancel
+        </button>
+        <button
+          class="Vlt-btn Vlt-btn--app Vlt-btn--secondary"
+        >
+          <!--v-if-->
+           Ok
+        </button>
+      </footer>
+    </div>
   </div>
+  
 </div>
 `;

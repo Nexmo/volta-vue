@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import { h } from 'vue';
 import { mount } from '@vue/test-utils';
 import { VltCol, VltGrid } from '..';
 
@@ -6,12 +6,11 @@ describe('vlt-grid', () => {
   let wrapper;
 
   beforeEach(() => {
-    const App = Vue.extend({
-      render(createElement) {
-        return createElement(VltGrid, {}, [createElement(VltCol), createElement(VltCol), createElement(VltCol)]);
+    wrapper = mount({
+      render() {
+        return h(VltGrid, {}, [h(VltCol), h(VltCol), h(VltCol)]);
       },
     });
-    wrapper = mount(App);
   });
 
   test('renders correctly with three columns', () => {

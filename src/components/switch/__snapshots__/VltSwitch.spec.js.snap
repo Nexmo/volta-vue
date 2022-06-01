@@ -8,7 +8,8 @@ exports[`vlt-switch is red 1`] = `
     <input
       type="checkbox"
     />
-     
+    <!-- Without @click.stop, click on switch will trigger 2 click events, one for the input
+      and one for span.Vlt-switch__slider -->
     <span
       class="Vlt-switch__slider"
     />
@@ -24,7 +25,8 @@ exports[`vlt-switch renders correctly 1`] = `
     <input
       type="checkbox"
     />
-     
+    <!-- Without @click.stop, click on switch will trigger 2 click events, one for the input
+      and one for span.Vlt-switch__slider -->
     <span
       class="Vlt-switch__slider"
     />

@@ -47,10 +47,7 @@ describe('vlt-dropdown', () => {
     });
     await wrapper.vm.$nextTick();
     wrapper.find('button').trigger('click');
-    wrapper
-      .findAll('.Vlt-dropdown__link')
-      .at(1)
-      .trigger('click');
+    wrapper.findAll('.Vlt-dropdown__link').at(1).trigger('click');
     await wrapper.vm.$nextTick();
 
     expect(wrapper.find('.Vlt-dropdown__btn').text()).toBe('yellow');
@@ -64,10 +61,7 @@ describe('vlt-dropdown', () => {
     });
     await wrapper.vm.$nextTick();
     wrapper.find('button').trigger('click');
-    wrapper
-      .findAll('.Vlt-dropdown__link')
-      .at(1)
-      .trigger('click');
+    wrapper.findAll('.Vlt-dropdown__link').at(1).trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.Vlt-dropdown__btn').text()).toBe('Pick one');
     expect(wrapper.vm.selectedOption).toBe('yellow');
@@ -82,10 +76,7 @@ describe('vlt-dropdown', () => {
     });
     await wrapper.vm.$nextTick();
     wrapper.find('button').trigger('click');
-    wrapper
-      .findAll('.Vlt-dropdown__link')
-      .at(1)
-      .trigger('click');
+    wrapper.findAll('.Vlt-dropdown__link').at(1).trigger('click');
     await wrapper.vm.$nextTick();
 
     expect(wrapper.find('.Vlt-dropdown__btn').text()).toBe('yellow');
@@ -100,10 +91,7 @@ describe('vlt-dropdown', () => {
     });
     await wrapper.vm.$nextTick();
     wrapper.find('button').trigger('click');
-    wrapper
-      .findAll('.Vlt-dropdown__link')
-      .at(1)
-      .trigger('click');
+    wrapper.findAll('.Vlt-dropdown__link').at(1).trigger('click');
     await wrapper.vm.$nextTick();
     expect(
       wrapper

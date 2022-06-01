@@ -302,6 +302,7 @@
             ]"
             :footers="[{ display: 'Baker' }, { value: '10.5', display: '€ 10.50000' }]"
             show-checkbox-selector
+            use-item-slot
           >
             <template v-slot:item="slotProps">
               <td>{{ slotProps.item.name }}</td>

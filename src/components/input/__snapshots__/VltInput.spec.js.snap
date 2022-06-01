@@ -5,10 +5,8 @@ exports[`vlt-input is textarea 1`] = `
   class="Vlt-textarea"
 >
   <textarea />
-   
-  <!---->
-   
-  <!---->
+  <!--v-if-->
+  <!--v-if-->
 </div>
 `;
 
@@ -17,11 +15,10 @@ exports[`vlt-input renders correctly 1`] = `
   class="Vlt-input"
 >
   <input
+    size="20"
     type="text"
   />
-   
-  <!---->
-   
-  <!---->
+  <!--v-if-->
+  <!--v-if-->
 </div>
 `;
