@@ -79,10 +79,7 @@ describe('vlt-table', () => {
         total: 4,
       },
     });
-    wrapper
-      .findAll('.Vlt-table__pagination a')
-      .at(2)
-      .trigger('click');
+    wrapper.findAll('.Vlt-table__pagination a').at(2).trigger('click');
     expect(wrapper.emitted('page-change')).toEqual([[3]]);
   });
 
@@ -95,10 +92,7 @@ describe('vlt-table', () => {
         item: '<td>{{ props.item.name }}</td>',
       },
     });
-    wrapper
-      .findAll('.Vlt-table__col--sortable')
-      .at(0)
-      .trigger('click');
+    wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -112,14 +106,8 @@ describe('vlt-table', () => {
         item: '<td>{{ props.item.name }}</td>',
       },
     });
-    wrapper
-      .findAll('.Vlt-table__col--sortable')
-      .at(0)
-      .trigger('click');
-    wrapper
-      .findAll('.Vlt-table__col--sortable')
-      .at(0)
-      .trigger('click');
+    wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
+    wrapper.findAll('.Vlt-table__col--sortable').at(0).trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -137,29 +125,27 @@ describe('vlt-table', () => {
     expect(wrapper.element).toMatchSnapshot();
 
     expect(wrapper.vm.isSelectAllChecked).toBeFalsy();
-    expect(wrapper.vm.listRowsSelected).toStrictEqual([]);
+    expect(wrapper.vm.listRowsSelected).toStrictEqual(new Set());
     expect(wrapper.emitted().selectAll).toBeFalsy();
 
     // click "Select All" selects all checkboxes
-    wrapper.find('input#tableId-headerSelectAllCheckbox').trigger('click');
+    await wrapper.find('input#tableId-headerSelectAllCheckbox').trigger('click');
     await wrapper.vm.$nextTick();
-    expect(wrapper.vm.isSelectAllChecked).toBeTruthy();
-    expect(wrapper.vm.listRowsSelected).toStrictEqual([]);
-    expect(wrapper.emitted().selectAll).toBeTruthy();
+    expect(wrapper.vm.listRowsSelected).toStrictEqual(new Set(fullTableProps.rows));
+    expect(wrapper.emitted('selectAll')).toStrictEqual([[true]]);
     // click a single box when all are selected de-selects the header "Select All"
     // and adds all other rows to the list of selected rows
-    wrapper
-      .findAll('input')
-      .at(1)
-      .trigger('click');
+    wrapper.findAll('input').at(1).trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.isSelectAllChecked).toBeFalsy();
-    expect(wrapper.vm.listRowsSelected).toStrictEqual([
-      // Louis (first row) is absent
-      { name: 'Mie', position: 'UX Designer' },
-      { name: 'Julien', position: 'Java Developer' },
-      { name: 'Nisha', position: 'JavaScript Developer' },
-    ]);
+    expect(wrapper.vm.listRowsSelected).toStrictEqual(
+      new Set([
+        // Louis (first row) is absent
+        { name: 'Mie', position: 'UX Designer' },
+        { name: 'Julien', position: 'Java Developer' },
+        { name: 'Nisha', position: 'JavaScript Developer' },
+      ])
+    );
     expect(wrapper.emitted().selectRow[0][0]).toStrictEqual({
       isChecked: false,
       listRowsSelected: [
@@ -182,26 +168,20 @@ describe('vlt-table', () => {
     });
 
     // click a single row's checkbox
-    wrapper
-      .findAll('input')
-      .at(1)
-      .trigger('click');
+    await wrapper.findAll('input').at(1).trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.isSelectAllChecked).toBeFalsy();
-    expect(wrapper.vm.listRowsSelected).toStrictEqual([{ name: 'Louis', position: 'Front End Developer' }]);
+    expect(wrapper.vm.listRowsSelected).toStrictEqual(new Set([{ name: 'Louis', position: 'Front End Developer' }]));
     expect(wrapper.emitted().selectRow[0][0]).toStrictEqual({
       isChecked: true,
       listRowsSelected: [{ name: 'Louis', position: 'Front End Developer' }],
     });
 
     // deselect that same row
-    wrapper
-      .findAll('input')
-      .at(1)
-      .trigger('click');
+    wrapper.findAll('input').at(1).trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.isSelectAllChecked).toBeFalsy();
-    expect(wrapper.vm.listRowsSelected).toStrictEqual([]);
+    expect(wrapper.vm.listRowsSelected.size).toBe(0);
     expect(wrapper.emitted().selectRow[1][0]).toStrictEqual({
       isChecked: false,
       listRowsSelected: [],

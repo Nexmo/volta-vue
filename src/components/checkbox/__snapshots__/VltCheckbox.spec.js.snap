@@ -11,24 +11,23 @@ exports[`vlt-checkbox has a "Hello World" tooltip 1`] = `
       <input
         type="checkbox"
       />
-       
       <span
         class="Vlt-checkbox__icon"
       />
     </span>
-    
-    Is test ok?
-    
+     Is test ok? 
     <span
       class="Vlt-tooltip"
     >
+      
       <svg
-        class="Vlt-blue Vlt-icon Vlt-icon--small"
+        class="Vlt-icon Vlt-icon--small Vlt-blue"
       >
         <use
           xlink:href="#V_Vlt-icon-help-negative"
         />
       </svg>
+      
     </span>
   </label>
 </div>
@@ -43,18 +42,15 @@ exports[`vlt-checkbox is disabled 1`] = `
       class="Vlt-checkbox__button"
     >
       <input
-        disabled="disabled"
+        disabled=""
         type="checkbox"
       />
-       
       <span
         class="Vlt-checkbox__icon"
       />
     </span>
-    
-    Is test ok?
-    
-    <!---->
+     Is test ok? 
+    <!--v-if-->
   </label>
 </div>
 `;
@@ -70,15 +66,12 @@ exports[`vlt-checkbox renders correctly with label "Is test ok?" 1`] = `
       <input
         type="checkbox"
       />
-       
       <span
         class="Vlt-checkbox__icon"
       />
     </span>
-    
-    Is test ok?
-    
-    <!---->
+     Is test ok? 
+    <!--v-if-->
   </label>
 </div>
 `;

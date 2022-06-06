@@ -4,32 +4,17 @@ exports[`vlt-composite renders correctly appended button 1`] = `
 <div
   class="Vlt-composite"
 >
-  <!---->
-   
-  <div
-    class="Vlt-input"
-  >
-    <input
-      type="text"
-    />
-     
-    <!---->
-     
-    <!---->
-  </div>
-   
-  <div
-    class="Vlt-composite__append"
-  >
-    <button
-      class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
-    >
-      <!---->
-       
-      <!---->
-       
-    </button>
-  </div>
+  <!--v-if-->
+  
+  <vlt-input-stub
+    class=""
+    disabled="false"
+    size="20"
+    textarea="false"
+    type="text"
+  />
+  
+  <!--v-if-->
 </div>
 `;
 
@@ -37,31 +22,16 @@ exports[`vlt-composite renders correctly prended button 1`] = `
 <div
   class="Vlt-composite"
 >
-  <div
-    class="Vlt-composite__prepend"
-  >
-    <button
-      class="Vlt-btn Vlt-btn--no-focus Vlt-btn--icon Vlt-btn--tertiary"
-    >
-      <!---->
-       
-      <!---->
-       
-    </button>
-  </div>
-   
-  <div
-    class="Vlt-input"
-  >
-    <input
-      type="text"
-    />
-     
-    <!---->
-     
-    <!---->
-  </div>
-   
-  <!---->
+  <!--v-if-->
+  
+  <vlt-input-stub
+    class=""
+    disabled="false"
+    size="20"
+    textarea="false"
+    type="text"
+  />
+  
+  <!--v-if-->
 </div>
 `;

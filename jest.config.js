@@ -6,8 +6,7 @@
 process.env.TZ = 'UTC';
 
 module.exports = {
-  testEnvironment: 'node',
-  setupFiles: ['<rootDir>/testSetup.js'],
+  testEnvironment: 'jsdom',
   moduleFileExtensions: ['js', 'vue'],
   transform: {
     '.*\\.(vue)$': 'vue-jest',

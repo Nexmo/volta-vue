@@ -8,14 +8,14 @@ exports[`vlt-sidemenu-trigger renders correctly with a rocket icon 1`] = `
     clickable="true"
     color=""
     icon="rocket"
+    noclass="false"
+    pointer="false"
+    small="false"
+    smaller="false"
   />
-   
   <span
     class="Vlt-sidemenu__label"
-  >
-    
-  </span>
-   
-  <!---->
+  />
+  <!--v-if-->
 </p>
 `;

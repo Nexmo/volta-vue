@@ -16,7 +16,7 @@
 <script>
   export default {
     name: 'vlt-radio',
-
+    emits: ['update:modelValue'],
     props: {
       checked: {
         type: Boolean,
@@ -46,16 +46,19 @@
         type: String,
         required: true,
       },
-      // need to use 'val' so we can emit the value to the parent, value does not work with v-model
       val: {
         type: [String, Number],
         required: true,
       },
+      modelValue: {
+        type: [String, Number],
+      },
     },
 
     methods: {
-      emitValue($event) {
-        this.$emit('input', $event.target.value);
+      emitValue(event) {
+        console.log(event);
+        this.$emit('update:modelValue', event.target.value);
       },
     },
   };

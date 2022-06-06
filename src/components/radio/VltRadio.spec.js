@@ -18,8 +18,9 @@ describe('vlt-radio', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('emits "yes" on value change', () => {
-    wrapper.find('input').trigger('click');
-    expect(wrapper.emitted('input')).toEqual([['Yes']]);
+  test('emits "yes" on value change', async () => {
+    await wrapper.find('input').trigger('change');
+    await wrapper.vm.$nextTick();
+    expect(wrapper.emitted('update:modelValue')).toEqual([['Yes']]);
   });
 });

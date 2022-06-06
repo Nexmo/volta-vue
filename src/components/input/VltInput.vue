@@ -2,6 +2,7 @@
   <div :class="[{ 'Vlt-input': !textarea, 'Vlt-textarea': textarea }, className]">
     <textarea
       v-if="textarea"
+      v-bind="additionalAttributes"
       :disabled="disabled"
       :id="id"
       :maxlength="maxlength"
@@ -9,10 +10,10 @@
       :rows="rows"
       :value="val"
       v-on="inputListeners"
-      v-bind="additionalAttributes"
     />
     <input
       v-else
+      v-bind="additionalAttributes"
       :disabled="disabled"
       :id="id"
       :max="max"
@@ -23,7 +24,6 @@
       :type="type"
       :value="val"
       v-on="inputListeners"
-      v-bind="additionalAttributes"
     />
     <label v-if="label">{{ label }}</label>
     <small v-if="hint" class="Vlt-form__element__hint">{{ hint }}</small>
@@ -85,6 +85,7 @@
       size: {
         type: [Number, String],
         required: false,
+        default: 20,
       },
       textarea: {
         default: false,
@@ -105,7 +106,7 @@
         const vm = this;
 
         return {
-          ...this.$listeners,
+          ...this.$attrs,
           input(event) {
             vm.$emit('input', event.target.value);
           },

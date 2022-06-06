@@ -1,8 +1,11 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
+import { createRouter, createMemoryHistory } from 'vue-router';
 import App from './demo/App';
 
-// eslint-disable-next-line no-new
-new Vue({
-  el: '#app',
-  render: h => h(App),
+// get rid of the warnings for side-navigation
+const router = createRouter({
+  history: createMemoryHistory(),
+  routes: [{ path: '/:catchAll(.*)', component: {} }],
 });
+
+createApp(App).use(router).mount('#app');

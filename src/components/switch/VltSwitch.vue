@@ -37,8 +37,8 @@
     },
 
     methods: {
-      onChange(event) {
-        this.$emit('input', event.target.checked);
+      onChange() {
+        this.$emit('input', !this.checked);
       },
     },
   };

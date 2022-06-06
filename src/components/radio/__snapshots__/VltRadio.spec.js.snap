@@ -13,17 +13,13 @@ exports[`vlt-radio renders correctly with label "Do I pass?", name "pass" and va
         type="radio"
         value="Yes"
       />
-       
       <span
         class="Vlt-radio__icon"
       />
     </span>
-     
     <span>
-      
-      Do I pass?
-      
-      <!---->
+      Do I pass? 
+      <!--v-if-->
     </span>
   </label>
 </div>

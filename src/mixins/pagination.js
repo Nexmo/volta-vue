@@ -57,7 +57,7 @@ const paginationMixin = {
         for (let i = left; i <= right; i += 1) {
           pages.push({
             number: i,
-            click: event => {
+            click: (event) => {
               this.pageChanged(i);
               // Set focus on element to keep tab order
               this.$nextTick(() => event.target.focus());
@@ -80,9 +80,12 @@ const paginationMixin = {
   },
 
   watch: {
-    rows(newRows) {
-      this.newRows = newRows;
-      this.sort(this.currentSortColumn, true);
+    rows: {
+      handler(newRows) {
+        this.newRows = newRows;
+        this.sort(this.currentSortColumn, true);
+      },
+      deep: true,
     },
 
     currentPage(newCurrentPage) {

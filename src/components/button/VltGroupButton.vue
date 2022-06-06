@@ -2,7 +2,7 @@
   <div :class="['Vlt-btn-group Vlt-btn-group--app', big ? 'Vlt-btn-group--big' : '', className]">
     <button
       v-for="option in options"
-      :class="['Vlt-btn Vlt-btn--tertiary', isMatching(val, option) ? activeClassName : '']"
+      :class="['Vlt-btn Vlt-btn--tertiary', isMatching(modelValue, option) ? activeClassName : '']"
       :value="option.value || option"
       :key="option.value || option"
       @click="handleClick(option)"
@@ -35,7 +35,7 @@
         type: Array,
         default: () => [],
       },
-      val: {
+      modelValue: {
         type: [Array, Object, String],
         default: () => [],
       },
@@ -51,8 +51,10 @@
     methods: {
       handleClick(clickedOption) {
         this.$emit(
-          'input',
-          Array.isArray(this.val) ? multiSelect(this.val, clickedOption) : singleSelect(this.val, clickedOption)
+          'update:modelValue',
+          Array.isArray(this.modelValue)
+            ? multiSelect(this.modelValue, clickedOption)
+            : singleSelect(this.modelValue, clickedOption)
         );
       },
       isMatching,

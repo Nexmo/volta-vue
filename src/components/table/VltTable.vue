@@ -9,7 +9,7 @@
                 :id="`${id}-headerSelectAllCheckbox`"
                 :checked="isSelectAllChecked"
                 label=""
-                @input="emitSelectAll"
+                @changed="emitSelectAll"
               />
             </th>
             <th
@@ -36,7 +36,7 @@
                 :id="`${index}-row-checkbox`"
                 :checked="isCheckboxChecked(row)"
                 label=""
-                @click="$event => emitRowSelect($event, row)"
+                @changed="(checked) => updateRowSelection(row, checked)"
               />
             </td>
             <slot :item="row" :index="index" name="item" />
@@ -144,12 +144,15 @@
         newRows: this.rows,
         newRowsTotal: this.rows.length,
         newCurrentPage: this.currentPage,
-        isSelectAllChecked: false,
-        listRowsSelected: [],
+        listRowsSelected: new Set(),
       };
     },
 
     computed: {
+      isSelectAllChecked() {
+        return this.rows.length === this.listRowsSelected.size;
+      },
+
       columnsContainTooltip() {
         return !!this.columns.find(item => item.tooltipText);
       },
@@ -178,10 +181,13 @@
     },
 
     watch: {
-      rows(newRows) {
-        this.newRows = newRows;
-        this.sort(this.currentSortColumn, true);
-        this.newRowsTotal = newRows.length;
+      rows: {
+        handler(newRows) {
+          this.newRows = newRows;
+          this.sort(this.currentSortColumn, true);
+          this.newRowsTotal = newRows.length;
+        },
+        deep: true,
       },
 
       currentPage(newCurrentPage) {
@@ -194,32 +200,20 @@
         this.$emit('click', row);
       },
 
-      emitSelectAll(val) {
-        this.isSelectAllChecked = val;
-        if (val) {
-          this.listRowsSelected = []; // clear list of individual selectedcheckboxes when select all box is selected
-        }
-        this.$emit('selectAll', val);
+      emitSelectAll(checked) {
+        console.log('emitSelectAll', checked);
+        this.listRowsSelected = checked ? new Set(this.rows) : new Set();
+        this.$emit('selectAll', checked);
       },
 
       isCheckboxChecked(row) {
-        return this.listRowsSelected.includes(row) || this.isSelectAllChecked;
+        return this.listRowsSelected.has(row);
       },
 
-      emitRowSelect($event, row) {
-        $event.stopPropagation();
-        const isChecked = $event.target.checked;
-        if (!isChecked && this.isSelectAllChecked) {
-          // user previously clicked "Select All" and now is unticking a single box
-          // we untick the "Select All" and add all rows other than the one unticked
-          this.isSelectAllChecked = false;
-          this.listRowsSelected = this.rows.filter(item => item !== row);
-        } else if (isChecked && !this.listRowsSelected.includes(row)) {
-          this.listRowsSelected.push(row);
-        } else if (!isChecked && this.listRowsSelected.includes(row)) {
-          this.listRowsSelected = this.listRowsSelected.filter(item => item !== row);
-        }
-        this.$emit('selectRow', { isChecked, listRowsSelected: this.listRowsSelected });
+      updateRowSelection(row, isChecked) {
+        const updateMethod = isChecked ? 'add' : 'delete';
+        this.listRowsSelected[updateMethod](row);
+        this.$emit('selectRow', { isChecked, listRowsSelected: [...this.listRowsSelected] });
       },
     },
   };

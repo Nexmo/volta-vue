@@ -4,27 +4,17 @@ exports[`vlt-steps with count renders correctly with 3 steps 1`] = `
 <div
   class="Vlt-steps"
 >
+  
   <div
     class="Vlt-steps__item Vlt-steps__item_selected"
-  >
-    
-    
-  
-  </div>
+  />
   <div
     class="Vlt-steps__item"
-  >
-    
-    
-  
-  </div>
+  />
   <div
     class="Vlt-steps__item"
-  >
-    
-    
+  />
   
-  </div>
 </div>
 `;
 
@@ -32,26 +22,22 @@ exports[`vlt-steps with step objects renders correctly with 3 steps 1`] = `
 <div
   class="Vlt-steps"
 >
+  
   <div
     class="Vlt-steps__item Vlt-steps__item_selected Vlt-steps__item_done"
   >
-    
     One
-  
   </div>
   <div
     class="Vlt-steps__item Vlt-steps__item_disabled"
   >
-    
     Two
-  
   </div>
   <div
     class="Vlt-steps__item"
   >
-    
     Three
-  
   </div>
+  
 </div>
 `;

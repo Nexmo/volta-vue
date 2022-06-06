@@ -5,11 +5,12 @@ exports[`vlt-callout is dismissable 1`] = `
   class="Vlt-callout Vlt-callout--tip"
 >
   <i />
-   
   <div
     class="Vlt-callout__content"
-  />
-   
+  >
+    
+    
+  </div>
   <button
     class="Vlt-callout__dismiss"
   />
@@ -21,11 +22,12 @@ exports[`vlt-callout is dismissed 1`] = `
   class="Vlt-callout Vlt-callout--dismissed Vlt-callout--tip"
 >
   <i />
-   
   <div
     class="Vlt-callout__content"
-  />
-   
+  >
+    
+    
+  </div>
   <button
     class="Vlt-callout__dismiss"
   />
@@ -37,12 +39,13 @@ exports[`vlt-callout is type critical 1`] = `
   class="Vlt-callout Vlt-callout--critical"
 >
   <i />
-   
   <div
     class="Vlt-callout__content"
-  />
-   
-  <!---->
+  >
+    
+    
+  </div>
+  <!--v-if-->
 </div>
 `;
 
@@ -51,11 +54,12 @@ exports[`vlt-callout renders correctly 1`] = `
   class="Vlt-callout Vlt-callout--tip"
 >
   <i />
-   
   <div
     class="Vlt-callout__content"
-  />
-   
-  <!---->
+  >
+    
+    
+  </div>
+  <!--v-if-->
 </div>
 `;

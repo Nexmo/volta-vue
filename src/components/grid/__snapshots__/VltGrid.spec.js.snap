@@ -4,14 +4,25 @@ exports[`vlt-grid renders correctly with three columns 1`] = `
 <div
   class="Vlt-grid"
 >
+  
   <div
     class="Vlt-col"
-  />
+  >
+    
+    
+  </div>
   <div
     class="Vlt-col"
-  />
+  >
+    
+    
+  </div>
   <div
     class="Vlt-col"
-  />
+  >
+    
+    
+  </div>
+  
 </div>
 `;

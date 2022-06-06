@@ -52,10 +52,7 @@ describe('vlt-grid-list', () => {
         total: 4,
       },
     });
-    wrapper
-      .findAll('.Vlt-table__pagination a')
-      .at(2)
-      .trigger('click');
+    wrapper.findAll('.Vlt-table__pagination a').at(2).trigger('click');
     expect(wrapper.emitted('page-change')).toEqual([[3]]);
   });
 });

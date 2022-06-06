@@ -8,34 +8,44 @@
 
 <script>
   /* eslint-disable no-param-reassign */
-  import Vue from 'vue';
+  import { createApp, getCurrentInstance } from 'vue';
   import VltIcon from '../icon/VltIcon';
   import VltBadge from '../badge/VltBadge';
 
-  Vue.directive('click-outside', {
-    bind(el, binding, vnode) {
-      vnode.context.event = () => {
-        if (vnode.context.collapsed) {
-          vnode.context.isActive = false;
-        }
-      };
-
-      vnode.context.stopProp = event => {
-        event.stopPropagation();
-      };
-
-      el.addEventListener('click', vnode.context.stopProp);
-      document.body.addEventListener('click', vnode.context.event);
-    },
-
-    unbind(el, binding, vnode) {
-      el.removeEventListener('click', vnode.context.stopProp);
-      document.body.removeEventListener('click', vnode.context.event);
-    },
-  });
+  createApp({});
 
   export default {
     name: 'vlt-sidemenu-trigger',
+
+    // setup custom directive for component, this is hacky as hell but it works
+    // TODO: refactor into internal hooks methods and remove directive
+    setup() {
+      const { appContext }  = getCurrentInstance();
+      if (!('click-outside' in appContext.directives)) {
+        appContext.app.directive('click-outside', {
+          beforeMount(el, binding, vnode) {
+            const vm = binding.instance;
+            vm.event = () => {
+              if (vm.collapsed) {
+                vm.isActive = false;
+              }
+            };
+
+            vm.stopProp = event => {
+              event.stopPropagation();
+            };
+
+            el.addEventListener('click', vm.stopProp);
+            document.body.addEventListener('click', vm.event);
+          },
+
+          unmounted(el, binding, vnode) {
+            el.removeEventListener('click', binding.instance.stopProp);
+            document.body.removeEventListener('click', binding.instance.event);
+          },
+        });
+      }
+    },
 
     props: {
       active: Boolean,

@@ -9,9 +9,9 @@
   >
     <button :class="getButtonClass()" :disabled="disabled" @click="toggleDropdown($event)">
       <slot name="button-value">
-        <span v-if="label && (!hideLabel || !selectedOption)"> {{ label }}<span v-if="showSelection">:</span> </span>
+        <span v-if="label && (!hideLabel || !selectedOption)"> {{ label }}<span v-if="showSelection">: </span> </span>
         <span v-if="showSelection" :class="{ 'Vlt-dropdown__selection': label }">
-          {{ selectedOption[labelKey] || selectedOption }}
+          {{ (selectedOption && selectedOption[labelKey]) || selectedOption }}
         </span>
       </slot>
     </button>
@@ -121,11 +121,14 @@
       selected(selected) {
         this.selectedOption = selected;
       },
-      options(value) {
-        if (value && !this.selectedOption && !this.manualSelect) {
-          [this.selectedOption] = value;
-          this.$emit('input', this.selectedOption);
-        }
+      options: {
+        deep: true,
+        handler(value) {
+          if (value && !this.selectedOption && !this.manualSelect) {
+            [this.selectedOption] = value;
+            this.$emit('input', this.selectedOption);
+          }
+        },
       },
     },
 

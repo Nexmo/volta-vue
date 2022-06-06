@@ -9,66 +9,54 @@ exports[`vlt-table can sort "Name" column ascending 1`] = `
     <table>
       <thead>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
           <th
-            class="Vlt-table__col--sortable Vlt-table__col--ascending"
+            class="Vlt-table__col--sortable"
           >
-            
-            Name
-            
-            <!---->
+            Name 
+            <!--v-if-->
           </th>
           <th
             class=""
           >
-            
-            Position
-            
-            <!---->
+            Position 
+            <!--v-if-->
           </th>
+          
         </tr>
       </thead>
-       
       <tbody>
+        
         <tr>
-          <!---->
-           
-          <td>
-            Nisha
-          </td>
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
-          <td>
-            Mie
-          </td>
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
-          <td>
-            Louis
-          </td>
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
-          <td>
-            Julien
-          </td>
+          <!--v-if-->
+          
+          
         </tr>
-         
+        
+        
+        
       </tbody>
-       
-      <!---->
+      <!--v-if-->
     </table>
   </div>
-   
-  <!---->
-   
-  <!---->
+  <!--v-if-->
+  <!--v-if-->
 </div>
 `;
 
@@ -81,82 +69,117 @@ exports[`vlt-table can sort "Name" column descending 1`] = `
     <table>
       <thead>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
           <th
-            class="Vlt-table__col--sortable Vlt-table__col--descending"
+            class="Vlt-table__col--sortable"
           >
-            
-            Name
-            
-            <!---->
+            Name 
+            <!--v-if-->
           </th>
           <th
             class=""
           >
-            
-            Position
-            
-            <!---->
+            Position 
+            <!--v-if-->
           </th>
+          
         </tr>
       </thead>
-       
       <tbody>
+        
         <tr>
-          <!---->
-           
-          <td>
-            Julien
-          </td>
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
-          <td>
-            Louis
-          </td>
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
-          <td>
-            Mie
-          </td>
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
-          <td>
-            Nisha
-          </td>
+          <!--v-if-->
+          
+          
         </tr>
-         
+        
+        
+        
       </tbody>
-       
-      <!---->
+      <!--v-if-->
     </table>
   </div>
-   
-  <!---->
-   
-  <!---->
+  <!--v-if-->
+  <!--v-if-->
 </div>
 `;
 
 exports[`vlt-table pagination is shown 1`] = `
-<div class="Vlt-table__pagination">
-  <ul>
-    <!---->
-    <li class="Vlt-table__pagination__current"><a href="#">1</a></li>
-    <!---->
-    <li class=""><a href="#">2</a></li>
-    <li class=""><a href="#">3</a></li>
-    <!---->
-    <li class=""><a href="#">4</a></li>
-    <li class="Vlt-table__pagination__next"><a href="#">Next</a></li>
-  </ul>
-</div>
+DOMWrapper {
+  "isDisabled": [Function],
+  "wrapperElement": <div
+    class="Vlt-table__pagination"
+  >
+    <ul>
+      <!--v-if-->
+      <li
+        class="Vlt-table__pagination__current"
+      >
+        <a
+          href="#"
+        >
+          1
+        </a>
+      </li>
+      <!--v-if-->
+      
+      <li
+        class=""
+      >
+        <a
+          href="#"
+        >
+          2
+        </a>
+      </li>
+      <li
+        class=""
+      >
+        <a
+          href="#"
+        >
+          3
+        </a>
+      </li>
+      
+      <!--v-if-->
+      <li
+        class=""
+      >
+        <a
+          href="#"
+        >
+          4
+        </a>
+      </li>
+      <li
+        class="Vlt-table__pagination__next"
+      >
+        <a
+          href="#"
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+  </div>,
+}
 `;
 
 exports[`vlt-table renders correctly if footers are available 1`] = `
@@ -168,51 +191,53 @@ exports[`vlt-table renders correctly if footers are available 1`] = `
     <table>
       <thead>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
           <th
             class="Vlt-table__col--sortable"
           >
-            
-            Name
-            
-            <!---->
+            Name 
+            <!--v-if-->
           </th>
           <th
             class=""
           >
-            
-            Position
-            
-            <!---->
+            Position 
+            <!--v-if-->
           </th>
+          
         </tr>
       </thead>
-       
       <tbody>
+        
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
-         
+        
+        
+        
       </tbody>
-       
       <tfoot>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
           <td>
             <b>
               UX Designer
@@ -223,14 +248,13 @@ exports[`vlt-table renders correctly if footers are available 1`] = `
               € 123.56000
             </b>
           </td>
+          
         </tr>
       </tfoot>
     </table>
   </div>
-   
-  <!---->
-   
-  <!---->
+  <!--v-if-->
+  <!--v-if-->
 </div>
 `;
 
@@ -258,65 +282,62 @@ exports[`vlt-table renders correctly if showing checbkoxes but using rows slot  
                     id="tableId-headerSelectAllCheckbox"
                     type="checkbox"
                   />
-                   
                   <span
                     class="Vlt-checkbox__icon"
                   />
                 </span>
-                
-    
-    
-                <!---->
+                  
+                <!--v-if-->
               </label>
             </div>
           </th>
-           
+          
           <th
             class="Vlt-table__col--sortable"
           >
-            
-            Name
-            
-            <!---->
+            Name 
+            <!--v-if-->
           </th>
           <th
             class=""
           >
-            
-            Position
-            
-            <!---->
+            Position 
+            <!--v-if-->
           </th>
+          
         </tr>
       </thead>
-       
       <tbody>
+        
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
-         
+        
+        
+        
       </tbody>
-       
-      <!---->
+      <!--v-if-->
     </table>
   </div>
-   
-  <!---->
-   
-  <!---->
+  <!--v-if-->
+  <!--v-if-->
 </div>
 `;
 
@@ -344,39 +365,33 @@ exports[`vlt-table renders correctly select column and Select All behavior is co
                     id="tableId-headerSelectAllCheckbox"
                     type="checkbox"
                   />
-                   
                   <span
                     class="Vlt-checkbox__icon"
                   />
                 </span>
-                
-    
-    
-                <!---->
+                  
+                <!--v-if-->
               </label>
             </div>
           </th>
-           
+          
           <th
             class="Vlt-table__col--sortable"
           >
-            
-            Name
-            
-            <!---->
+            Name 
+            <!--v-if-->
           </th>
           <th
             class=""
           >
-            
-            Position
-            
-            <!---->
+            Position 
+            <!--v-if-->
           </th>
+          
         </tr>
       </thead>
-       
       <tbody>
+        
         <tr>
           <td>
             <div
@@ -391,19 +406,17 @@ exports[`vlt-table renders correctly select column and Select All behavior is co
                     id="0-row-checkbox"
                     type="checkbox"
                   />
-                   
                   <span
                     class="Vlt-checkbox__icon"
                   />
                 </span>
-                
-    
-    
-                <!---->
+                  
+                <!--v-if-->
               </label>
             </div>
           </td>
-           
+          
+          
         </tr>
         <tr>
           <td>
@@ -419,19 +432,17 @@ exports[`vlt-table renders correctly select column and Select All behavior is co
                     id="1-row-checkbox"
                     type="checkbox"
                   />
-                   
                   <span
                     class="Vlt-checkbox__icon"
                   />
                 </span>
-                
-    
-    
-                <!---->
+                  
+                <!--v-if-->
               </label>
             </div>
           </td>
-           
+          
+          
         </tr>
         <tr>
           <td>
@@ -447,19 +458,17 @@ exports[`vlt-table renders correctly select column and Select All behavior is co
                     id="2-row-checkbox"
                     type="checkbox"
                   />
-                   
                   <span
                     class="Vlt-checkbox__icon"
                   />
                 </span>
-                
-    
-    
-                <!---->
+                  
+                <!--v-if-->
               </label>
             </div>
           </td>
-           
+          
+          
         </tr>
         <tr>
           <td>
@@ -475,69 +484,61 @@ exports[`vlt-table renders correctly select column and Select All behavior is co
                     id="3-row-checkbox"
                     type="checkbox"
                   />
-                   
                   <span
                     class="Vlt-checkbox__icon"
                   />
                 </span>
-                
-    
-    
-                <!---->
+                  
+                <!--v-if-->
               </label>
             </div>
           </td>
-           
+          
+          
         </tr>
-         
+        
+        
+        
       </tbody>
-       
-      <!---->
+      <!--v-if-->
     </table>
   </div>
-   
-  <!---->
-   
-  <!---->
+  <!--v-if-->
+  <!--v-if-->
 </div>
 `;
 
 exports[`vlt-table renders correctly with a tooltip passed in the column object 1`] = `
 <div>
   <div
-    class="Vlt-table Vlt-overflow-initial"
+    class="Vlt-overflow-initial Vlt-table"
     id=""
   >
     <table>
       <thead>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
           <th
             class="Vlt-table__col--sortable"
           >
-            
-            Name
-            
-            <!---->
+            Name 
+            <!--v-if-->
           </th>
           <th
             class=""
           >
-            
-            Position
-            
-            <!---->
+            Position 
+            <!--v-if-->
           </th>
           <th
             class=""
           >
-            
-            With a tooltip
-            
+            With a tooltip 
             <span
               class="Vlt-tooltip"
             >
+              
               <svg
                 class="Vlt-icon Vlt-icon--smaller Vlt-grey-500"
               >
@@ -545,38 +546,43 @@ exports[`vlt-table renders correctly with a tooltip passed in the column object 
                   xlink:href="#V_Vlt-icon-info"
                 />
               </svg>
+              
             </span>
           </th>
+          
         </tr>
       </thead>
-       
       <tbody>
+        
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
-         
+        
+        
+        
       </tbody>
-       
-      <!---->
+      <!--v-if-->
     </table>
   </div>
-   
-  <!---->
-   
-  <!---->
+  <!--v-if-->
+  <!--v-if-->
 </div>
 `;
 
@@ -589,72 +595,72 @@ exports[`vlt-table renders correctly with two columns, "Name" and "Position" 1`]
     <table>
       <thead>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
           <th
             class="Vlt-table__col--sortable"
           >
-            
-            Name
-            
-            <!---->
+            Name 
+            <!--v-if-->
           </th>
           <th
             class=""
           >
-            
-            Position
-            
-            <!---->
+            Position 
+            <!--v-if-->
           </th>
+          
         </tr>
       </thead>
-       
       <tbody>
+        
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
         <tr>
-          <!---->
-           
+          <!--v-if-->
+          
+          
         </tr>
-         
+        
+        
+        
       </tbody>
-       
-      <!---->
+      <!--v-if-->
     </table>
   </div>
-   
-  <!---->
-   
-  <!---->
+  <!--v-if-->
+  <!--v-if-->
 </div>
 `;
 
 exports[`vlt-table renders empty state 1`] = `
 <div>
-  <!---->
-   
-  <!---->
-   
+  <!--v-if-->
+  <!--v-if-->
   <div
     class="Vlt-empty Vlt-empty--search"
   >
     <div
       class="Vlt-empty__content"
     >
+      
       <p>
         There are no results for this search
       </p>
+      
     </div>
   </div>
 </div>

@@ -90,8 +90,11 @@
         this.selectedIndex = value;
       },
 
-      steps() {
-        this.applyTemplate();
+      steps: {
+        handler() {
+          this.applyTemplate();
+        },
+        deep: true,
       },
     },
   };
