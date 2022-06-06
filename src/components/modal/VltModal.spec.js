@@ -45,20 +45,14 @@ describe('vlt-modal', () => {
   test('can be cancelled', async () => {
     wrapper.setProps({ visible: true });
     await wrapper.vm.$nextTick();
-    wrapper
-      .findAll('button')
-      .at(0)
-      .trigger('click');
+    wrapper.findAll('button').at(0).trigger('click');
     expect(wrapper.emitted('close')).toBeTruthy();
   });
 
   test('can be confirmed', async () => {
     wrapper.setProps({ visible: true });
     await wrapper.vm.$nextTick();
-    wrapper
-      .findAll('button')
-      .at(1)
-      .trigger('click');
+    wrapper.findAll('button').at(1).trigger('click');
     expect(wrapper.emitted('confirm')).toBeTruthy();
   });
 

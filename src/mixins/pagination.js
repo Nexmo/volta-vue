@@ -57,7 +57,7 @@ const paginationMixin = {
         for (let i = left; i <= right; i += 1) {
           pages.push({
             number: i,
-            click: event => {
+            click: (event) => {
               this.pageChanged(i);
               // Set focus on element to keep tab order
               this.$nextTick(() => event.target.focus());
