@@ -10,7 +10,7 @@
     "test-ci": "jest --coverage && jest-coverage-badges --input \"./coverage-frontend/coverage-summary.json\""
   },
   "dependencies": {
-    "@vonagevolta/volta2": "^0.1.2",
+    "@vonagevolta/volta2": "^0.2.0",
     "tooltip.js": "^1.2.0",
     "vue": "2.6.12"
   },
