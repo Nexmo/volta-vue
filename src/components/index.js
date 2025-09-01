@@ -1,28 +1,28 @@
-import VltBadge from './badge/VltBadge';
+import VltBadge from './badge/VltBadge.vue';
 import { VltButton, VltGroupButton } from './button';
-import VltCallout from './callout/VltCallout';
-import VltCheckbox from './checkbox/VltCheckbox';
+import VltCallout from './callout/VltCallout.vue';
+import VltCheckbox from './checkbox/VltCheckbox.vue';
 import { VltCol, VltGrid } from './grid';
-import VltComposite from './composite/VltComposite';
-import VltDropdown from './dropdown/VltDropdown';
-import VltField from './field/VltField';
-import VltFlash from './flash/VltFlash';
-import VltIcon from './icon/VltIcon';
-import VltInput from './input/VltInput';
-import VltMargin from './margin/VltMargin';
-import VltModal from './modal/VltModal';
-import VltRadio from './radio/VltRadio';
-import VltSelect from './select/VltSelect';
+import VltComposite from './composite/VltComposite.vue';
+import VltDropdown from './dropdown/VltDropdown.vue';
+import VltField from './field/VltField.vue';
+import VltFlash from './flash/VltFlash.vue';
+import VltIcon from './icon/VltIcon.vue';
+import VltInput from './input/VltInput.vue';
+import VltMargin from './margin/VltMargin.vue';
+import VltModal from './modal/VltModal.vue';
+import VltRadio from './radio/VltRadio.vue';
+import VltSelect from './select/VltSelect.vue';
 import { VltAccordion, VltAccordionItem } from './accordion';
 import { VltSidemenu, VltSidemenuItem, VltSidemenuLink, VltSidemenuTitle, VltSidemenuTrigger } from './side-navigation';
-import VltSpinner from './spinner/VltSpinner';
-import VltSteps from './steps/VltSteps';
-import VltSwitch from './switch/VltSwitch';
+import VltSpinner from './spinner/VltSpinner.vue';
+import VltSteps from './steps/VltSteps.vue';
+import VltSwitch from './switch/VltSwitch.vue';
 import { VltTab, VltTabs } from './tabs';
-import VltTable from './table/VltTable';
-import VltTitle from './title/VltTitle';
-import VltTooltip from './tooltip/VltTooltip';
-import VltGridList from './grid-list/VltGridList';
+import VltTable from './table/VltTable.vue';
+import VltTitle from './title/VltTitle.vue';
+import VltTooltip from './tooltip/VltTooltip.vue';
+import VltGridList from './grid-list/VltGridList.vue';
 
 export {
   VltAccordion,
