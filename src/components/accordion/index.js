@@ -1,2 +1,2 @@
-export { default as VltAccordion } from './VltAccordion';
-export { default as VltAccordionItem } from './VltAccordionItem';
+export { default as VltAccordion } from './VltAccordion.vue';
+export { default as VltAccordionItem } from './VltAccordionItem.vue';

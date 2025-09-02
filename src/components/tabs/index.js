@@ -1,4 +1,4 @@
-import VltTab from './VltTab';
-import VltTabs from './VltTabs';
+import VltTab from './VltTab.vue';
+import VltTabs from './VltTabs.vue';
 
 export { VltTab, VltTabs };

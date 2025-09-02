@@ -1,4 +1,4 @@
-import VltCol from './VltCol';
-import VltGrid from './VltGrid';
+import VltCol from './VltCol.vue';
+import VltGrid from './VltGrid.vue';
 
 export { VltCol, VltGrid };
